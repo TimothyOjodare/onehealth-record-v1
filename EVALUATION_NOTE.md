@@ -41,5 +41,5 @@ Three reasons:
 
 ## If you only have time for one repository
 
-Visit **`notifi-az`** ([link](https://github.com/YOUR_USERNAME/notifi-az)). That is
+Visit **`notifi-az`** ([link](https://github.com/timothyojodare/notifi-az)). That is
 the grading submission. This repository is supplementary.
