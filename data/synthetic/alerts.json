@@ -1,0 +1,2286 @@
+{
+  "_metadata": {
+    "n_alerts": 59,
+    "generated_at": "2026-05-04T17:07:57.093064+00:00"
+  },
+  "alerts": [
+    {
+      "alert_id": "ALERT-VECT-0039",
+      "kind": "VECTOR_ANOMALY",
+      "severity": "action",
+      "title": "Vector anomaly \u2014 Pinal County tick burden",
+      "summary": "Tick collection counts 26.2\u03c3 above baseline in Pinal Co. (last 4 weeks vs. trailing 22)",
+      "rationale": "Mean tick count in Pinal County over the past 4 weeks (924/trap) is 26.2 standard deviations above the trailing-22-week baseline (108\u00b131). Predominant species: Rhipicephalus sanguineus. Elevated risk for tick-borne diseases including ehrlichiosis and RMSF \u2014 consider clinician advisory for the county.",
+      "confidence": 0.99,
+      "geography": {
+        "county_fips": "04021",
+        "county_name": "Pinal"
+      },
+      "household_id": null,
+      "subjects": [],
+      "disease_snomed": null,
+      "disease_display": null,
+      "evidence": {
+        "z_score": 26.17,
+        "recent_mean": 923.8,
+        "baseline_mean": 108.3,
+        "baseline_sd": 31.2,
+        "recent_4wk_total": 3695,
+        "predominant_species": "Rhipicephalus sanguineus"
+      },
+      "dp_noised_count": 3694,
+      "generated_at": "2026-05-04T17:07:57.089143+00:00"
+    },
+    {
+      "alert_id": "ALERT-CROS-0001",
+      "kind": "CROSS_SPECIES_CLUSTER",
+      "severity": "action",
+      "title": "Cross-species Coccidioidomycosis (Valley Fever) cluster \u2014 Hernandez household",
+      "summary": "1 human + 1 animal case(s) of Coccidioidomycosis (Valley Fever) in same household",
+      "rationale": "The Hernandez household has confirmed cases of Coccidioidomycosis (Valley Fever) in both human and animal members. Index case: Maria Hernandez (Person, onset 2026-04-20). Secondary case(s) followed by 8 day(s), consistent with shared environmental exposure rather than direct transmission for this organism.",
+      "confidence": 0.93,
+      "geography": {
+        "county_fips": "04019",
+        "county_name": "Pima",
+        "lat": 32.22,
+        "lon": -110.93
+      },
+      "household_id": "HH-AZ-PIMA-001",
+      "subjects": [
+        "Patient/5987f320-d799-446b-821b-29ef986c37f3",
+        "AnimalPatient/4e8cc2f4-bd2f-46ce-82a8-2c3421ad13ab"
+      ],
+      "disease_snomed": "5294002",
+      "disease_display": "Coccidioidomycosis (Valley Fever)",
+      "evidence": {
+        "index_case": {
+          "ref": "Patient/5987f320-d799-446b-821b-29ef986c37f3",
+          "kind": "Person",
+          "onset": "2026-04-20",
+          "label": "Maria Hernandez"
+        },
+        "secondary_cases": [
+          {
+            "ref": "AnimalPatient/4e8cc2f4-bd2f-46ce-82a8-2c3421ad13ab",
+            "kind": "Animal",
+            "onset": "2026-04-28",
+            "label": "Rocco (dog)"
+          }
+        ],
+        "interval_days": 8
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.081431+00:00"
+    },
+    {
+      "alert_id": "ALERT-CROS-0002",
+      "kind": "CROSS_SPECIES_CLUSTER",
+      "severity": "action",
+      "title": "Cross-species Rocky Mountain Spotted Fever (canine) cluster \u2014 Martinez household",
+      "summary": "1 human + 1 animal case(s) of Rocky Mountain Spotted Fever (canine) in same household",
+      "rationale": "The Martinez household has confirmed cases of Rocky Mountain Spotted Fever (canine) in both human and animal members. Index case: Tucker (dog) (Animal, onset 2026-04-27). Secondary case(s) followed by 4 day(s), consistent with shared environmental exposure rather than direct transmission for this organism.",
+      "confidence": 0.93,
+      "geography": {
+        "county_fips": "04013",
+        "county_name": "Maricopa",
+        "lat": 33.45,
+        "lon": -112.07
+      },
+      "household_id": "HH-AZ-MARICOPA-G050",
+      "subjects": [
+        "AnimalPatient/e830a329-6d9a-4255-abc6-a633f583c2f4",
+        "Patient/36a7cc49-16e2-428a-bb77-2ca6a83f16d6"
+      ],
+      "disease_snomed": "186772009",
+      "disease_display": "Rocky Mountain Spotted Fever (canine)",
+      "evidence": {
+        "index_case": {
+          "ref": "AnimalPatient/e830a329-6d9a-4255-abc6-a633f583c2f4",
+          "kind": "Animal",
+          "onset": "2026-04-27",
+          "label": "Tucker (dog)"
+        },
+        "secondary_cases": [
+          {
+            "ref": "Patient/36a7cc49-16e2-428a-bb77-2ca6a83f16d6",
+            "kind": "Person",
+            "onset": "2026-05-01",
+            "label": "Dylan Martinez"
+          }
+        ],
+        "interval_days": 4
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.081474+00:00"
+    },
+    {
+      "alert_id": "ALERT-CROS-0003",
+      "kind": "CROSS_SPECIES_CLUSTER",
+      "severity": "action",
+      "title": "Cross-species Coccidioidomycosis (Valley Fever) cluster \u2014 Mitchell household",
+      "summary": "1 human + 1 animal case(s) of Coccidioidomycosis (Valley Fever) in same household",
+      "rationale": "The Mitchell household has confirmed cases of Coccidioidomycosis (Valley Fever) in both human and animal members. Index case: Elijah Mitchell (Person, onset 2026-03-15). Secondary case(s) followed by 0 day(s), consistent with shared environmental exposure rather than direct transmission for this organism.",
+      "confidence": 0.93,
+      "geography": {
+        "county_fips": "04013",
+        "county_name": "Maricopa",
+        "lat": 33.45,
+        "lon": -112.07
+      },
+      "household_id": "HH-AZ-MARICOPA-G088",
+      "subjects": [
+        "Patient/820e8b78-01ec-4b35-a790-d0b1a4cce305",
+        "AnimalPatient/89615c62-b0fd-48bb-9467-2e19af8edfec"
+      ],
+      "disease_snomed": "5294002",
+      "disease_display": "Coccidioidomycosis (Valley Fever)",
+      "evidence": {
+        "index_case": {
+          "ref": "Patient/820e8b78-01ec-4b35-a790-d0b1a4cce305",
+          "kind": "Person",
+          "onset": "2026-03-15",
+          "label": "Elijah Mitchell"
+        },
+        "secondary_cases": [
+          {
+            "ref": "AnimalPatient/89615c62-b0fd-48bb-9467-2e19af8edfec",
+            "kind": "Animal",
+            "onset": "2026-03-15",
+            "label": "Chloe (dog)"
+          }
+        ],
+        "interval_days": 0
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.081493+00:00"
+    },
+    {
+      "alert_id": "ALERT-CROS-0004",
+      "kind": "CROSS_SPECIES_CLUSTER",
+      "severity": "action",
+      "title": "Cross-species Canine Ehrlichiosis cluster \u2014 Cruz household",
+      "summary": "1 human + 1 animal case(s) of Canine Ehrlichiosis in same household",
+      "rationale": "The Cruz household has confirmed cases of Canine Ehrlichiosis in both human and animal members. Index case: Rocky (dog) (Animal, onset 2026-04-07). Secondary case(s) followed by 14 day(s), consistent with shared environmental exposure rather than direct transmission for this organism.",
+      "confidence": 0.93,
+      "geography": {
+        "county_fips": "04013",
+        "county_name": "Maricopa",
+        "lat": 33.45,
+        "lon": -112.07
+      },
+      "household_id": "HH-AZ-MARICOPA-G154",
+      "subjects": [
+        "AnimalPatient/5a65550e-c902-45a1-ade2-a003f5d680c4",
+        "Patient/fc9c4195-cf7b-466d-897f-c8a29dba9047"
+      ],
+      "disease_snomed": "31996006",
+      "disease_display": "Canine Ehrlichiosis",
+      "evidence": {
+        "index_case": {
+          "ref": "AnimalPatient/5a65550e-c902-45a1-ade2-a003f5d680c4",
+          "kind": "Animal",
+          "onset": "2026-04-07",
+          "label": "Rocky (dog)"
+        },
+        "secondary_cases": [
+          {
+            "ref": "Patient/fc9c4195-cf7b-466d-897f-c8a29dba9047",
+            "kind": "Person",
+            "onset": "2026-04-21",
+            "label": "Layla Cruz"
+          }
+        ],
+        "interval_days": 14
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.081505+00:00"
+    },
+    {
+      "alert_id": "ALERT-CROS-0005",
+      "kind": "CROSS_SPECIES_CLUSTER",
+      "severity": "action",
+      "title": "Cross-species Canine Ehrlichiosis cluster \u2014 Park household",
+      "summary": "1 human + 1 animal case(s) of Canine Ehrlichiosis in same household",
+      "rationale": "The Park household has confirmed cases of Canine Ehrlichiosis in both human and animal members. Index case: Bear (dog) (Animal, onset 2026-03-19). Secondary case(s) followed by 12 day(s), consistent with shared environmental exposure rather than direct transmission for this organism.",
+      "confidence": 0.93,
+      "geography": {
+        "county_fips": "04013",
+        "county_name": "Maricopa",
+        "lat": 33.45,
+        "lon": -112.07
+      },
+      "household_id": "HH-AZ-MARICOPA-G168",
+      "subjects": [
+        "AnimalPatient/b9cecf75-c712-4c70-ad2b-7351f87e07c5",
+        "Patient/52c9cd19-7d6c-4bee-854d-5f89b90f6967"
+      ],
+      "disease_snomed": "31996006",
+      "disease_display": "Canine Ehrlichiosis",
+      "evidence": {
+        "index_case": {
+          "ref": "AnimalPatient/b9cecf75-c712-4c70-ad2b-7351f87e07c5",
+          "kind": "Animal",
+          "onset": "2026-03-19",
+          "label": "Bear (dog)"
+        },
+        "secondary_cases": [
+          {
+            "ref": "Patient/52c9cd19-7d6c-4bee-854d-5f89b90f6967",
+            "kind": "Person",
+            "onset": "2026-03-31",
+            "label": "Hassan Park"
+          }
+        ],
+        "interval_days": 12
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.081519+00:00"
+    },
+    {
+      "alert_id": "ALERT-CROS-0006",
+      "kind": "CROSS_SPECIES_CLUSTER",
+      "severity": "action",
+      "title": "Cross-species Rocky Mountain Spotted Fever (canine) cluster \u2014 Mendoza household",
+      "summary": "1 human + 1 animal case(s) of Rocky Mountain Spotted Fever (canine) in same household",
+      "rationale": "The Mendoza household has confirmed cases of Rocky Mountain Spotted Fever (canine) in both human and animal members. Index case: Tucker (dog) (Animal, onset 2026-03-07). Secondary case(s) followed by 11 day(s), consistent with shared environmental exposure rather than direct transmission for this organism.",
+      "confidence": 0.93,
+      "geography": {
+        "county_fips": "04005",
+        "county_name": "Coconino",
+        "lat": 35.83,
+        "lon": -111.71
+      },
+      "household_id": "HH-AZ-COCONINO-G176",
+      "subjects": [
+        "AnimalPatient/e982c927-03ac-4cee-936e-84157ec48519",
+        "Patient/6be7e56c-57a5-40ec-a957-0e2497a4d784"
+      ],
+      "disease_snomed": "186772009",
+      "disease_display": "Rocky Mountain Spotted Fever (canine)",
+      "evidence": {
+        "index_case": {
+          "ref": "AnimalPatient/e982c927-03ac-4cee-936e-84157ec48519",
+          "kind": "Animal",
+          "onset": "2026-03-07",
+          "label": "Tucker (dog)"
+        },
+        "secondary_cases": [
+          {
+            "ref": "Patient/6be7e56c-57a5-40ec-a957-0e2497a4d784",
+            "kind": "Person",
+            "onset": "2026-03-18",
+            "label": "Sebastian Mendoza"
+          }
+        ],
+        "interval_days": 11
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.081531+00:00"
+    },
+    {
+      "alert_id": "ALERT-CROS-0007",
+      "kind": "CROSS_SPECIES_CLUSTER",
+      "severity": "action",
+      "title": "Cross-species Coccidioidomycosis (Valley Fever) cluster \u2014 Baker household",
+      "summary": "1 human + 1 animal case(s) of Coccidioidomycosis (Valley Fever) in same household",
+      "rationale": "The Baker household has confirmed cases of Coccidioidomycosis (Valley Fever) in both human and animal members. Index case: Jackson Baker (Person, onset 2026-04-02). Secondary case(s) followed by 0 day(s), consistent with shared environmental exposure rather than direct transmission for this organism.",
+      "confidence": 0.93,
+      "geography": {
+        "county_fips": "04021",
+        "county_name": "Pinal",
+        "lat": 32.88,
+        "lon": -111.76
+      },
+      "household_id": "HH-AZ-PINAL-G190",
+      "subjects": [
+        "Patient/e1cc6fc8-9921-4a72-a0e3-1bd5f53b8f7b",
+        "AnimalPatient/96febeab-d9da-4083-8655-7783c8a5422d"
+      ],
+      "disease_snomed": "5294002",
+      "disease_display": "Coccidioidomycosis (Valley Fever)",
+      "evidence": {
+        "index_case": {
+          "ref": "Patient/e1cc6fc8-9921-4a72-a0e3-1bd5f53b8f7b",
+          "kind": "Person",
+          "onset": "2026-04-02",
+          "label": "Jackson Baker"
+        },
+        "secondary_cases": [
+          {
+            "ref": "AnimalPatient/96febeab-d9da-4083-8655-7783c8a5422d",
+            "kind": "Animal",
+            "onset": "2026-04-02",
+            "label": "Bailey (dog)"
+          }
+        ],
+        "interval_days": 0
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.081540+00:00"
+    },
+    {
+      "alert_id": "ALERT-CROS-0008",
+      "kind": "CROSS_SPECIES_CLUSTER",
+      "severity": "action",
+      "title": "Cross-species Canine Ehrlichiosis cluster \u2014 Nelson household",
+      "summary": "1 human + 1 animal case(s) of Canine Ehrlichiosis in same household",
+      "rationale": "The Nelson household has confirmed cases of Canine Ehrlichiosis in both human and animal members. Index case: Daisy (dog) (Animal, onset 2026-04-02). Secondary case(s) followed by 6 day(s), consistent with shared environmental exposure rather than direct transmission for this organism.",
+      "confidence": 0.93,
+      "geography": {
+        "county_fips": "04015",
+        "county_name": "Mohave",
+        "lat": 35.19,
+        "lon": -114.05
+      },
+      "household_id": "HH-AZ-MOHAVE-G216",
+      "subjects": [
+        "AnimalPatient/64ff37d5-28eb-46e6-87c9-4b84146c800f",
+        "Patient/d93cbc5e-3fea-4ad1-9cb4-a28e19383ec9"
+      ],
+      "disease_snomed": "31996006",
+      "disease_display": "Canine Ehrlichiosis",
+      "evidence": {
+        "index_case": {
+          "ref": "AnimalPatient/64ff37d5-28eb-46e6-87c9-4b84146c800f",
+          "kind": "Animal",
+          "onset": "2026-04-02",
+          "label": "Daisy (dog)"
+        },
+        "secondary_cases": [
+          {
+            "ref": "Patient/d93cbc5e-3fea-4ad1-9cb4-a28e19383ec9",
+            "kind": "Person",
+            "onset": "2026-04-08",
+            "label": "Hassan Nelson"
+          }
+        ],
+        "interval_days": 6
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.081552+00:00"
+    },
+    {
+      "alert_id": "ALERT-CROS-0009",
+      "kind": "CROSS_SPECIES_CLUSTER",
+      "severity": "action",
+      "title": "Cross-species Salmonellosis (non-typhoidal) cluster \u2014 Green household",
+      "summary": "1 human + 1 animal case(s) of Salmonellosis (non-typhoidal) in same household",
+      "rationale": "The Green household has confirmed cases of Salmonellosis (non-typhoidal) in both human and animal members. Index case: Ella Green (Person, onset 2026-04-04). Secondary case(s) followed by 0 day(s), consistent with shared environmental exposure rather than direct transmission for this organism.",
+      "confidence": 0.93,
+      "geography": {
+        "county_fips": "04013",
+        "county_name": "Maricopa",
+        "lat": 33.45,
+        "lon": -112.07
+      },
+      "household_id": "HH-AZ-MARICOPA-G268",
+      "subjects": [
+        "Patient/ad927075-3ad4-4416-afb2-7f582f2d7e1f",
+        "AnimalPatient/da2fd1e8-67f4-46d5-b571-c2d189ab7c52"
+      ],
+      "disease_snomed": "302229004",
+      "disease_display": "Salmonellosis (non-typhoidal)",
+      "evidence": {
+        "index_case": {
+          "ref": "Patient/ad927075-3ad4-4416-afb2-7f582f2d7e1f",
+          "kind": "Person",
+          "onset": "2026-04-04",
+          "label": "Ella Green"
+        },
+        "secondary_cases": [
+          {
+            "ref": "AnimalPatient/da2fd1e8-67f4-46d5-b571-c2d189ab7c52",
+            "kind": "Animal",
+            "onset": "2026-04-04",
+            "label": "Lucy (dog)"
+          }
+        ],
+        "interval_days": 0
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.081561+00:00"
+    },
+    {
+      "alert_id": "ALERT-CROS-0010",
+      "kind": "CROSS_SPECIES_CLUSTER",
+      "severity": "action",
+      "title": "Cross-species Canine Ehrlichiosis cluster \u2014 Allen household",
+      "summary": "1 human + 1 animal case(s) of Canine Ehrlichiosis in same household",
+      "rationale": "The Allen household has confirmed cases of Canine Ehrlichiosis in both human and animal members. Index case: Milo (dog) (Animal, onset 2026-03-08). Secondary case(s) followed by 8 day(s), consistent with shared environmental exposure rather than direct transmission for this organism.",
+      "confidence": 0.93,
+      "geography": {
+        "county_fips": "04019",
+        "county_name": "Pima",
+        "lat": 32.22,
+        "lon": -110.93
+      },
+      "household_id": "HH-AZ-PIMA-G279",
+      "subjects": [
+        "AnimalPatient/572d599a-f1e5-420f-a4fd-07ac93ea0531",
+        "Patient/2c1044dd-c055-45f3-ac9e-31b82d16f2bf"
+      ],
+      "disease_snomed": "31996006",
+      "disease_display": "Canine Ehrlichiosis",
+      "evidence": {
+        "index_case": {
+          "ref": "AnimalPatient/572d599a-f1e5-420f-a4fd-07ac93ea0531",
+          "kind": "Animal",
+          "onset": "2026-03-08",
+          "label": "Milo (dog)"
+        },
+        "secondary_cases": [
+          {
+            "ref": "Patient/2c1044dd-c055-45f3-ac9e-31b82d16f2bf",
+            "kind": "Person",
+            "onset": "2026-03-16",
+            "label": "Aiden Allen"
+          }
+        ],
+        "interval_days": 8
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.081569+00:00"
+    },
+    {
+      "alert_id": "ALERT-CROS-0011",
+      "kind": "CROSS_SPECIES_CLUSTER",
+      "severity": "action",
+      "title": "Cross-species Salmonellosis (non-typhoidal) cluster \u2014 Anderson household",
+      "summary": "1 human + 1 animal case(s) of Salmonellosis (non-typhoidal) in same household",
+      "rationale": "The Anderson household has confirmed cases of Salmonellosis (non-typhoidal) in both human and animal members. Index case: Evelyn Anderson (Person, onset 2026-03-14). Secondary case(s) followed by 0 day(s), consistent with shared environmental exposure rather than direct transmission for this organism.",
+      "confidence": 0.93,
+      "geography": {
+        "county_fips": "04013",
+        "county_name": "Maricopa",
+        "lat": 33.45,
+        "lon": -112.07
+      },
+      "household_id": "HH-AZ-MARICOPA-G282",
+      "subjects": [
+        "Patient/dd090b09-afdc-488e-b1ba-62baa851de95",
+        "AnimalPatient/db114740-c60d-44ff-91f9-e791d03b1b9f"
+      ],
+      "disease_snomed": "302229004",
+      "disease_display": "Salmonellosis (non-typhoidal)",
+      "evidence": {
+        "index_case": {
+          "ref": "Patient/dd090b09-afdc-488e-b1ba-62baa851de95",
+          "kind": "Person",
+          "onset": "2026-03-14",
+          "label": "Evelyn Anderson"
+        },
+        "secondary_cases": [
+          {
+            "ref": "AnimalPatient/db114740-c60d-44ff-91f9-e791d03b1b9f",
+            "kind": "Animal",
+            "onset": "2026-03-14",
+            "label": "Daisy (dog)"
+          }
+        ],
+        "interval_days": 0
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.081578+00:00"
+    },
+    {
+      "alert_id": "ALERT-CROS-0012",
+      "kind": "CROSS_SPECIES_CLUSTER",
+      "severity": "action",
+      "title": "Cross-species Rocky Mountain Spotted Fever (canine) cluster \u2014 Baker household",
+      "summary": "1 human + 1 animal case(s) of Rocky Mountain Spotted Fever (canine) in same household",
+      "rationale": "The Baker household has confirmed cases of Rocky Mountain Spotted Fever (canine) in both human and animal members. Index case: Rocky (dog) (Animal, onset 2026-04-22). Secondary case(s) followed by 3 day(s), consistent with shared environmental exposure rather than direct transmission for this organism.",
+      "confidence": 0.93,
+      "geography": {
+        "county_fips": "04021",
+        "county_name": "Pinal",
+        "lat": 32.88,
+        "lon": -111.76
+      },
+      "household_id": "HH-AZ-PINAL-G283",
+      "subjects": [
+        "AnimalPatient/a4f4cea4-cf2e-4a2c-bf4f-7015d136b21a",
+        "Patient/c3515bef-5184-40d2-8f57-5b2cd80b5c54"
+      ],
+      "disease_snomed": "186772009",
+      "disease_display": "Rocky Mountain Spotted Fever (canine)",
+      "evidence": {
+        "index_case": {
+          "ref": "AnimalPatient/a4f4cea4-cf2e-4a2c-bf4f-7015d136b21a",
+          "kind": "Animal",
+          "onset": "2026-04-22",
+          "label": "Rocky (dog)"
+        },
+        "secondary_cases": [
+          {
+            "ref": "Patient/c3515bef-5184-40d2-8f57-5b2cd80b5c54",
+            "kind": "Person",
+            "onset": "2026-04-25",
+            "label": "Grace Baker"
+          }
+        ],
+        "interval_days": 3
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.081590+00:00"
+    },
+    {
+      "alert_id": "ALERT-CROS-0013",
+      "kind": "CROSS_SPECIES_CLUSTER",
+      "severity": "action",
+      "title": "Cross-species Canine Ehrlichiosis cluster \u2014 Bell household",
+      "summary": "1 human + 1 animal case(s) of Canine Ehrlichiosis in same household",
+      "rationale": "The Bell household has confirmed cases of Canine Ehrlichiosis in both human and animal members. Index case: Zeus (dog) (Animal, onset 2026-04-18). Secondary case(s) followed by 11 day(s), consistent with shared environmental exposure rather than direct transmission for this organism.",
+      "confidence": 0.93,
+      "geography": {
+        "county_fips": "04019",
+        "county_name": "Pima",
+        "lat": 32.22,
+        "lon": -110.93
+      },
+      "household_id": "HH-AZ-PIMA-G310",
+      "subjects": [
+        "AnimalPatient/925a3ec6-f12b-4a8f-bcbf-0d4e93afc94b",
+        "Patient/54434795-769f-4463-9a0a-aa4ae2afe494"
+      ],
+      "disease_snomed": "31996006",
+      "disease_display": "Canine Ehrlichiosis",
+      "evidence": {
+        "index_case": {
+          "ref": "AnimalPatient/925a3ec6-f12b-4a8f-bcbf-0d4e93afc94b",
+          "kind": "Animal",
+          "onset": "2026-04-18",
+          "label": "Zeus (dog)"
+        },
+        "secondary_cases": [
+          {
+            "ref": "Patient/54434795-769f-4463-9a0a-aa4ae2afe494",
+            "kind": "Person",
+            "onset": "2026-04-29",
+            "label": "Sofia Bell"
+          }
+        ],
+        "interval_days": 11
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.081597+00:00"
+    },
+    {
+      "alert_id": "ALERT-CROS-0014",
+      "kind": "CROSS_SPECIES_CLUSTER",
+      "severity": "action",
+      "title": "Cross-species Rocky Mountain Spotted Fever (canine) cluster \u2014 Murphy household",
+      "summary": "1 human + 1 animal case(s) of Rocky Mountain Spotted Fever (canine) in same household",
+      "rationale": "The Murphy household has confirmed cases of Rocky Mountain Spotted Fever (canine) in both human and animal members. Index case: Tucker (dog) (Animal, onset 2026-04-16). Secondary case(s) followed by 14 day(s), consistent with shared environmental exposure rather than direct transmission for this organism.",
+      "confidence": 0.93,
+      "geography": {
+        "county_fips": "04013",
+        "county_name": "Maricopa",
+        "lat": 33.45,
+        "lon": -112.07
+      },
+      "household_id": "HH-AZ-MARICOPA-G341",
+      "subjects": [
+        "AnimalPatient/f9bfb16f-becb-42ff-971b-015993c1101e",
+        "Patient/2ff04f8e-d5c1-43e4-86dc-f991536a8063"
+      ],
+      "disease_snomed": "186772009",
+      "disease_display": "Rocky Mountain Spotted Fever (canine)",
+      "evidence": {
+        "index_case": {
+          "ref": "AnimalPatient/f9bfb16f-becb-42ff-971b-015993c1101e",
+          "kind": "Animal",
+          "onset": "2026-04-16",
+          "label": "Tucker (dog)"
+        },
+        "secondary_cases": [
+          {
+            "ref": "Patient/2ff04f8e-d5c1-43e4-86dc-f991536a8063",
+            "kind": "Person",
+            "onset": "2026-04-30",
+            "label": "Grace Murphy"
+          }
+        ],
+        "interval_days": 14
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.081606+00:00"
+    },
+    {
+      "alert_id": "ALERT-PROP-0015",
+      "kind": "PROPHYLACTIC_HOUSEHOLD",
+      "severity": "watch",
+      "title": "Household exposure: Ehrlichiosis (Johnson)",
+      "summary": "Animal case of Ehrlichiosis diagnosed; 2 household member(s) share environment and may benefit from screening",
+      "rationale": "The Johnson household has a confirmed animal case of Ehrlichiosis. 2 other household member(s) \u2014 including human contacts \u2014 share the same household and likely the same exposure pathway. Recommend Ehrlichiosis-specific screening or prophylaxis per local public-health guidance.",
+      "confidence": 0.82,
+      "geography": {
+        "county_fips": "04021",
+        "county_name": "Pinal",
+        "lat": 32.88,
+        "lon": -111.76
+      },
+      "household_id": "HH-AZ-PINAL-002",
+      "subjects": [
+        "AnimalPatient/13c90547-b7c6-46b1-8a17-dc27cd2fba44",
+        "Patient/fdfd959f-0fe3-4b15-80c3-e81d31d03c08",
+        "Patient/6ebaba57-8b70-42cb-a344-05133f1678bf"
+      ],
+      "disease_snomed": "31996006",
+      "disease_display": "Ehrlichiosis",
+      "evidence": {
+        "diagnosed": [
+          "AnimalPatient/13c90547-b7c6-46b1-8a17-dc27cd2fba44"
+        ],
+        "at_risk": [
+          {
+            "ref": "Patient/fdfd959f-0fe3-4b15-80c3-e81d31d03c08",
+            "kind": "Person",
+            "label": "Tom Johnson"
+          },
+          {
+            "ref": "Patient/6ebaba57-8b70-42cb-a344-05133f1678bf",
+            "kind": "Person",
+            "label": "Rachel Johnson"
+          }
+        ]
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.081744+00:00"
+    },
+    {
+      "alert_id": "ALERT-PROP-0016",
+      "kind": "PROPHYLACTIC_HOUSEHOLD",
+      "severity": "watch",
+      "title": "Household exposure: Leptospirosis (Patel)",
+      "summary": "Animal case of Leptospirosis diagnosed; 3 household member(s) share environment and may benefit from screening",
+      "rationale": "The Patel household has a confirmed animal case of Leptospirosis. 3 other household member(s) \u2014 including human contacts \u2014 share the same household and likely the same exposure pathway. Recommend Leptospirosis-specific screening or prophylaxis per local public-health guidance.",
+      "confidence": 0.82,
+      "geography": {
+        "county_fips": "04027",
+        "county_name": "Yuma",
+        "lat": 32.69,
+        "lon": -114.62
+      },
+      "household_id": "HH-AZ-YUMA-004",
+      "subjects": [
+        "AnimalPatient/d9a789ae-bd12-4536-b8db-566ba8e4b725",
+        "Patient/a6385352-b64e-4c9b-8a13-4dc9d5f65a78",
+        "Patient/78211c92-f4ab-4f50-879d-88e7a3b7c98a",
+        "Patient/c0b362c5-4bec-41aa-955c-4a609990c029"
+      ],
+      "disease_snomed": "47523006",
+      "disease_display": "Leptospirosis",
+      "evidence": {
+        "diagnosed": [
+          "AnimalPatient/d9a789ae-bd12-4536-b8db-566ba8e4b725"
+        ],
+        "at_risk": [
+          {
+            "ref": "Patient/a6385352-b64e-4c9b-8a13-4dc9d5f65a78",
+            "kind": "Person",
+            "label": "Arjun Patel"
+          },
+          {
+            "ref": "Patient/78211c92-f4ab-4f50-879d-88e7a3b7c98a",
+            "kind": "Person",
+            "label": "Priya Patel"
+          },
+          {
+            "ref": "Patient/c0b362c5-4bec-41aa-955c-4a609990c029",
+            "kind": "Person",
+            "label": "Aanya Patel"
+          }
+        ]
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.081812+00:00"
+    },
+    {
+      "alert_id": "ALERT-PROP-0017",
+      "kind": "PROPHYLACTIC_HOUSEHOLD",
+      "severity": "watch",
+      "title": "Household exposure: Plague (Begay)",
+      "summary": "Animal case of Plague diagnosed; 2 household member(s) share environment and may benefit from screening",
+      "rationale": "The Begay household has a confirmed animal case of Plague. 2 other household member(s) \u2014 including human contacts \u2014 share the same household and likely the same exposure pathway. Recommend Plague-specific screening or prophylaxis per local public-health guidance.",
+      "confidence": 0.82,
+      "geography": {
+        "county_fips": "04001",
+        "county_name": "Apache",
+        "lat": 35.39,
+        "lon": -109.49
+      },
+      "household_id": "HH-AZ-APACHE-006",
+      "subjects": [
+        "AnimalPatient/ed5dde89-34c5-47b1-92b5-06ae34b04132",
+        "Patient/dcfa636f-3fc7-411d-8ca5-a2d485799256",
+        "Patient/94dfe9f3-fe07-40eb-9240-81eff64cb12f"
+      ],
+      "disease_snomed": "58750007",
+      "disease_display": "Plague",
+      "evidence": {
+        "diagnosed": [
+          "AnimalPatient/ed5dde89-34c5-47b1-92b5-06ae34b04132"
+        ],
+        "at_risk": [
+          {
+            "ref": "Patient/dcfa636f-3fc7-411d-8ca5-a2d485799256",
+            "kind": "Person",
+            "label": "Sarah Begay"
+          },
+          {
+            "ref": "Patient/94dfe9f3-fe07-40eb-9240-81eff64cb12f",
+            "kind": "Person",
+            "label": "Daniel Begay"
+          }
+        ]
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.081862+00:00"
+    },
+    {
+      "alert_id": "ALERT-PROP-0018",
+      "kind": "PROPHYLACTIC_HOUSEHOLD",
+      "severity": "watch",
+      "title": "Household exposure: West Nile virus infection (Ramirez)",
+      "summary": "Animal case of West Nile virus infection diagnosed; 2 household member(s) share environment and may benefit from screening",
+      "rationale": "The Ramirez household has a confirmed animal case of West Nile virus infection. 2 other household member(s) \u2014 including human contacts \u2014 share the same household and likely the same exposure pathway. Recommend West Nile virus infection-specific screening or prophylaxis per local public-health guidance.",
+      "confidence": 0.82,
+      "geography": {
+        "county_fips": "04003",
+        "county_name": "Cochise",
+        "lat": 31.88,
+        "lon": -109.75
+      },
+      "household_id": "HH-AZ-COCHISE-007",
+      "subjects": [
+        "AnimalPatient/e7521913-0913-4533-b702-7b011b18f883",
+        "Patient/001b4bc4-a7e7-46dc-a1c4-e477a3ae8b43",
+        "Patient/0f3f2869-f765-46fc-9047-d211a11e80b4"
+      ],
+      "disease_snomed": "417093003",
+      "disease_display": "West Nile virus infection",
+      "evidence": {
+        "diagnosed": [
+          "AnimalPatient/e7521913-0913-4533-b702-7b011b18f883"
+        ],
+        "at_risk": [
+          {
+            "ref": "Patient/001b4bc4-a7e7-46dc-a1c4-e477a3ae8b43",
+            "kind": "Person",
+            "label": "Roberto Ramirez"
+          },
+          {
+            "ref": "Patient/0f3f2869-f765-46fc-9047-d211a11e80b4",
+            "kind": "Person",
+            "label": "Elena Ramirez"
+          }
+        ]
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.081900+00:00"
+    },
+    {
+      "alert_id": "ALERT-PROP-0019",
+      "kind": "PROPHYLACTIC_HOUSEHOLD",
+      "severity": "watch",
+      "title": "Household exposure: Q fever (Becker)",
+      "summary": "Animal case of Q fever diagnosed; 3 household member(s) share environment and may benefit from screening",
+      "rationale": "The Becker household has a confirmed animal case of Q fever. 3 other household member(s) \u2014 including human contacts \u2014 share the same household and likely the same exposure pathway. Recommend Q fever-specific screening or prophylaxis per local public-health guidance.",
+      "confidence": 0.82,
+      "geography": {
+        "county_fips": "04023",
+        "county_name": "Santa Cruz",
+        "lat": 31.34,
+        "lon": -110.94
+      },
+      "household_id": "HH-AZ-SANTACRUZ-009",
+      "subjects": [
+        "AnimalPatient/5042d4a8-f4f0-48b5-bacc-fd8a70333d9b",
+        "Patient/73a48bc0-1b23-4af8-b5e8-c2fab07f5b7e",
+        "Patient/01286dbe-5102-49ad-bcb9-58b320d8eb17",
+        "AnimalPatient/eb75ab34-fc8f-4a93-ae6c-6fa34f5466e8"
+      ],
+      "disease_snomed": "75116005",
+      "disease_display": "Q fever",
+      "evidence": {
+        "diagnosed": [
+          "AnimalPatient/5042d4a8-f4f0-48b5-bacc-fd8a70333d9b"
+        ],
+        "at_risk": [
+          {
+            "ref": "Patient/73a48bc0-1b23-4af8-b5e8-c2fab07f5b7e",
+            "kind": "Person",
+            "label": "James Becker"
+          },
+          {
+            "ref": "Patient/01286dbe-5102-49ad-bcb9-58b320d8eb17",
+            "kind": "Person",
+            "label": "Rebecca Becker"
+          },
+          {
+            "ref": "AnimalPatient/eb75ab34-fc8f-4a93-ae6c-6fa34f5466e8",
+            "kind": "Animal",
+            "label": "Bessie (goat)"
+          }
+        ]
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.081961+00:00"
+    },
+    {
+      "alert_id": "ALERT-PROP-0020",
+      "kind": "PROPHYLACTIC_HOUSEHOLD",
+      "severity": "watch",
+      "title": "Household exposure: Psittacosis (Nguyen)",
+      "summary": "Animal case of Psittacosis diagnosed; 2 household member(s) share environment and may benefit from screening",
+      "rationale": "The Nguyen household has a confirmed animal case of Psittacosis. 2 other household member(s) \u2014 including human contacts \u2014 share the same household and likely the same exposure pathway. Recommend Psittacosis-specific screening or prophylaxis per local public-health guidance.",
+      "confidence": 0.82,
+      "geography": {
+        "county_fips": "04013",
+        "county_name": "Maricopa",
+        "lat": 33.45,
+        "lon": -112.07
+      },
+      "household_id": "HH-AZ-MARICOPA-010",
+      "subjects": [
+        "AnimalPatient/5b016824-86b6-4534-bf71-07e8a9b18ea5",
+        "Patient/76205670-edbe-48e2-9915-6d75f5c42d6c",
+        "Patient/0e4a1a52-bc77-474b-a4bf-9b08373866b8"
+      ],
+      "disease_snomed": "240589008",
+      "disease_display": "Psittacosis",
+      "evidence": {
+        "diagnosed": [
+          "AnimalPatient/5b016824-86b6-4534-bf71-07e8a9b18ea5"
+        ],
+        "at_risk": [
+          {
+            "ref": "Patient/76205670-edbe-48e2-9915-6d75f5c42d6c",
+            "kind": "Person",
+            "label": "Lan Nguyen"
+          },
+          {
+            "ref": "Patient/0e4a1a52-bc77-474b-a4bf-9b08373866b8",
+            "kind": "Person",
+            "label": "Minh Nguyen"
+          }
+        ]
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.081999+00:00"
+    },
+    {
+      "alert_id": "ALERT-PROP-0021",
+      "kind": "PROPHYLACTIC_HOUSEHOLD",
+      "severity": "watch",
+      "title": "Household exposure: Leptospirosis (Singh)",
+      "summary": "Animal case of Leptospirosis diagnosed; 3 household member(s) share environment and may benefit from screening",
+      "rationale": "The Singh household has a confirmed animal case of Leptospirosis. 3 other household member(s) \u2014 including human contacts \u2014 share the same household and likely the same exposure pathway. Recommend Leptospirosis-specific screening or prophylaxis per local public-health guidance.",
+      "confidence": 0.82,
+      "geography": {
+        "county_fips": "04013",
+        "county_name": "Maricopa",
+        "lat": 33.45,
+        "lon": -112.07
+      },
+      "household_id": "HH-AZ-MARICOPA-G013",
+      "subjects": [
+        "AnimalPatient/0b9eae6c-2a3b-4a55-ba3c-2faa529fe21a",
+        "Patient/15c091d0-e953-4d42-9a42-ff0860143123",
+        "AnimalPatient/48ca3038-ce16-4387-a7a5-c34463aa5f82",
+        "AnimalPatient/78918012-b66e-4a96-b122-02118bb984bb"
+      ],
+      "disease_snomed": "47523006",
+      "disease_display": "Leptospirosis",
+      "evidence": {
+        "diagnosed": [
+          "AnimalPatient/0b9eae6c-2a3b-4a55-ba3c-2faa529fe21a"
+        ],
+        "at_risk": [
+          {
+            "ref": "Patient/15c091d0-e953-4d42-9a42-ff0860143123",
+            "kind": "Person",
+            "label": "Alexander Singh"
+          },
+          {
+            "ref": "AnimalPatient/48ca3038-ce16-4387-a7a5-c34463aa5f82",
+            "kind": "Animal",
+            "label": "Smudge (rabbit)"
+          },
+          {
+            "ref": "AnimalPatient/78918012-b66e-4a96-b122-02118bb984bb",
+            "kind": "Animal",
+            "label": "Loki (cat)"
+          }
+        ]
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.082260+00:00"
+    },
+    {
+      "alert_id": "ALERT-PROP-0022",
+      "kind": "PROPHYLACTIC_HOUSEHOLD",
+      "severity": "watch",
+      "title": "Household exposure: Rocky Mountain spotted fever (Wright)",
+      "summary": "Animal case of Rocky Mountain spotted fever diagnosed; 5 household member(s) share environment and may benefit from screening",
+      "rationale": "The Wright household has a confirmed animal case of Rocky Mountain spotted fever. 5 other household member(s) \u2014 including human contacts \u2014 share the same household and likely the same exposure pathway. Recommend Rocky Mountain spotted fever-specific screening or prophylaxis per local public-health guidance.",
+      "confidence": 0.82,
+      "geography": {
+        "county_fips": "04021",
+        "county_name": "Pinal",
+        "lat": 32.88,
+        "lon": -111.76
+      },
+      "household_id": "HH-AZ-PINAL-G017",
+      "subjects": [
+        "AnimalPatient/ececdbfe-f36d-4bdb-91a5-f28592511cc6",
+        "Patient/88e67757-bb6d-48a5-9e2d-cd33949f6bd6",
+        "Patient/ad2f40cd-fa16-446c-86ab-440bf5dec36a",
+        "Patient/6c99131f-20c7-47a7-b0a2-e0097dabbf05",
+        "AnimalPatient/22bbb1c3-f69e-4daa-ac2f-872595f36578",
+        "AnimalPatient/e553dbad-40eb-4803-a1df-e40751e8ecc1"
+      ],
+      "disease_snomed": "186772009",
+      "disease_display": "Rocky Mountain spotted fever",
+      "evidence": {
+        "diagnosed": [
+          "AnimalPatient/ececdbfe-f36d-4bdb-91a5-f28592511cc6"
+        ],
+        "at_risk": [
+          {
+            "ref": "Patient/88e67757-bb6d-48a5-9e2d-cd33949f6bd6",
+            "kind": "Person",
+            "label": "Daniel Wright"
+          },
+          {
+            "ref": "Patient/ad2f40cd-fa16-446c-86ab-440bf5dec36a",
+            "kind": "Person",
+            "label": "Harper Wright"
+          },
+          {
+            "ref": "Patient/6c99131f-20c7-47a7-b0a2-e0097dabbf05",
+            "kind": "Person",
+            "label": "Layla Wright"
+          },
+          {
+            "ref": "AnimalPatient/22bbb1c3-f69e-4daa-ac2f-872595f36578",
+            "kind": "Animal",
+            "label": "Poppy (goat)"
+          },
+          {
+            "ref": "AnimalPatient/e553dbad-40eb-4803-a1df-e40751e8ecc1",
+            "kind": "Animal",
+            "label": "Pepper (goat)"
+          }
+        ]
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.082398+00:00"
+    },
+    {
+      "alert_id": "ALERT-PROP-0023",
+      "kind": "PROPHYLACTIC_HOUSEHOLD",
+      "severity": "watch",
+      "title": "Household exposure: Coccidioidomycosis (Rodriguez)",
+      "summary": "Human case of Coccidioidomycosis diagnosed; 2 household member(s) share environment and may benefit from screening",
+      "rationale": "The Rodriguez household has a confirmed human case of Coccidioidomycosis. 2 other household member(s) \u2014 including animal contacts \u2014 share the same household and likely the same exposure pathway. Recommend Coccidioidomycosis-specific screening or prophylaxis per local public-health guidance.",
+      "confidence": 0.82,
+      "geography": {
+        "county_fips": "04013",
+        "county_name": "Maricopa",
+        "lat": 33.45,
+        "lon": -112.07
+      },
+      "household_id": "HH-AZ-MARICOPA-G035",
+      "subjects": [
+        "Patient/ce3bacd2-c63b-46ed-9a46-a7cc6a5421e0",
+        "AnimalPatient/41104173-9d96-4d36-b6be-ef9bccc1b644",
+        "AnimalPatient/129eb291-a6b9-4ee6-a43c-27e6f1832c41"
+      ],
+      "disease_snomed": "5294002",
+      "disease_display": "Coccidioidomycosis",
+      "evidence": {
+        "diagnosed": [
+          "Patient/ce3bacd2-c63b-46ed-9a46-a7cc6a5421e0"
+        ],
+        "at_risk": [
+          {
+            "ref": "AnimalPatient/41104173-9d96-4d36-b6be-ef9bccc1b644",
+            "kind": "Animal",
+            "label": "Boots (cat)"
+          },
+          {
+            "ref": "AnimalPatient/129eb291-a6b9-4ee6-a43c-27e6f1832c41",
+            "kind": "Animal",
+            "label": "Bailey (dog)"
+          }
+        ]
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.082675+00:00"
+    },
+    {
+      "alert_id": "ALERT-PROP-0024",
+      "kind": "PROPHYLACTIC_HOUSEHOLD",
+      "severity": "watch",
+      "title": "Household exposure: Coccidioidomycosis (Singh)",
+      "summary": "Human case of Coccidioidomycosis diagnosed; 1 household member(s) share environment and may benefit from screening",
+      "rationale": "The Singh household has a confirmed human case of Coccidioidomycosis. 1 other household member(s) \u2014 including animal contacts \u2014 share the same household and likely the same exposure pathway. Recommend Coccidioidomycosis-specific screening or prophylaxis per local public-health guidance.",
+      "confidence": 0.82,
+      "geography": {
+        "county_fips": "04013",
+        "county_name": "Maricopa",
+        "lat": 33.45,
+        "lon": -112.07
+      },
+      "household_id": "HH-AZ-MARICOPA-G150",
+      "subjects": [
+        "Patient/5b484763-bdb0-4fb0-b282-1aa15765ca58",
+        "Patient/5afb5d7b-5c9b-42af-a436-e34ce5eb0e64"
+      ],
+      "disease_snomed": "5294002",
+      "disease_display": "Coccidioidomycosis",
+      "evidence": {
+        "diagnosed": [
+          "Patient/5b484763-bdb0-4fb0-b282-1aa15765ca58"
+        ],
+        "at_risk": [
+          {
+            "ref": "Patient/5afb5d7b-5c9b-42af-a436-e34ce5eb0e64",
+            "kind": "Person",
+            "label": "Daniel Singh"
+          }
+        ]
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.084380+00:00"
+    },
+    {
+      "alert_id": "ALERT-PROP-0025",
+      "kind": "PROPHYLACTIC_HOUSEHOLD",
+      "severity": "watch",
+      "title": "Household exposure: Ehrlichiosis (Park)",
+      "summary": "Animal case of Ehrlichiosis diagnosed; 4 household member(s) share environment and may benefit from screening",
+      "rationale": "The Park household has a confirmed animal case of Ehrlichiosis. 4 other household member(s) \u2014 including human contacts \u2014 share the same household and likely the same exposure pathway. Recommend Ehrlichiosis-specific screening or prophylaxis per local public-health guidance.",
+      "confidence": 0.82,
+      "geography": {
+        "county_fips": "04013",
+        "county_name": "Maricopa",
+        "lat": 33.45,
+        "lon": -112.07
+      },
+      "household_id": "HH-AZ-MARICOPA-G159",
+      "subjects": [
+        "AnimalPatient/d20f4496-b515-4ff6-835a-e9f28b7f394f",
+        "Patient/3ea4b6a5-1271-47f2-81e1-e9a72d15ab39",
+        "Patient/76211630-0961-46b7-98d0-1d1bd67a67ff",
+        "AnimalPatient/754c195a-dd9d-45e9-8843-e1b0965a52e1",
+        "AnimalPatient/c79ea304-bed6-4ef4-b037-7666e0621efb"
+      ],
+      "disease_snomed": "31996006",
+      "disease_display": "Ehrlichiosis",
+      "evidence": {
+        "diagnosed": [
+          "AnimalPatient/d20f4496-b515-4ff6-835a-e9f28b7f394f"
+        ],
+        "at_risk": [
+          {
+            "ref": "Patient/3ea4b6a5-1271-47f2-81e1-e9a72d15ab39",
+            "kind": "Person",
+            "label": "Jack Park"
+          },
+          {
+            "ref": "Patient/76211630-0961-46b7-98d0-1d1bd67a67ff",
+            "kind": "Person",
+            "label": "Jackson Park"
+          },
+          {
+            "ref": "AnimalPatient/754c195a-dd9d-45e9-8843-e1b0965a52e1",
+            "kind": "Animal",
+            "label": "Daisy (goat)"
+          },
+          {
+            "ref": "AnimalPatient/c79ea304-bed6-4ef4-b037-7666e0621efb",
+            "kind": "Animal",
+            "label": "Whiskey (horse)"
+          }
+        ]
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.084589+00:00"
+    },
+    {
+      "alert_id": "ALERT-PROP-0026",
+      "kind": "PROPHYLACTIC_HOUSEHOLD",
+      "severity": "watch",
+      "title": "Household exposure: Ehrlichiosis (Nelson)",
+      "summary": "Animal case of Ehrlichiosis diagnosed; 4 household member(s) share environment and may benefit from screening",
+      "rationale": "The Nelson household has a confirmed animal case of Ehrlichiosis. 4 other household member(s) \u2014 including human contacts \u2014 share the same household and likely the same exposure pathway. Recommend Ehrlichiosis-specific screening or prophylaxis per local public-health guidance.",
+      "confidence": 0.82,
+      "geography": {
+        "county_fips": "04019",
+        "county_name": "Pima",
+        "lat": 32.22,
+        "lon": -110.93
+      },
+      "household_id": "HH-AZ-PIMA-G162",
+      "subjects": [
+        "AnimalPatient/8c7a6955-70b8-4099-bb92-1f1851062766",
+        "Patient/104e5ba6-44a4-443e-81af-e3d27fcae387",
+        "Patient/3304bbe6-b1c6-401d-85ba-2f7988ab6c0e",
+        "Patient/00110d2b-00c3-4b93-822a-671f2cd4ae8f",
+        "AnimalPatient/cbbc9501-ecb5-4f74-92cf-4c38dc64a442"
+      ],
+      "disease_snomed": "31996006",
+      "disease_display": "Ehrlichiosis",
+      "evidence": {
+        "diagnosed": [
+          "AnimalPatient/8c7a6955-70b8-4099-bb92-1f1851062766"
+        ],
+        "at_risk": [
+          {
+            "ref": "Patient/104e5ba6-44a4-443e-81af-e3d27fcae387",
+            "kind": "Person",
+            "label": "Wyatt Nelson"
+          },
+          {
+            "ref": "Patient/3304bbe6-b1c6-401d-85ba-2f7988ab6c0e",
+            "kind": "Person",
+            "label": "Yuki Nelson"
+          },
+          {
+            "ref": "Patient/00110d2b-00c3-4b93-822a-671f2cd4ae8f",
+            "kind": "Person",
+            "label": "Wei Nelson"
+          },
+          {
+            "ref": "AnimalPatient/cbbc9501-ecb5-4f74-92cf-4c38dc64a442",
+            "kind": "Animal",
+            "label": "Loki (cat)"
+          }
+        ]
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.084663+00:00"
+    },
+    {
+      "alert_id": "ALERT-PROP-0027",
+      "kind": "PROPHYLACTIC_HOUSEHOLD",
+      "severity": "watch",
+      "title": "Household exposure: Leptospirosis (Mendoza)",
+      "summary": "Animal case of Leptospirosis diagnosed; 3 household member(s) share environment and may benefit from screening",
+      "rationale": "The Mendoza household has a confirmed animal case of Leptospirosis. 3 other household member(s) \u2014 including human contacts \u2014 share the same household and likely the same exposure pathway. Recommend Leptospirosis-specific screening or prophylaxis per local public-health guidance.",
+      "confidence": 0.82,
+      "geography": {
+        "county_fips": "04005",
+        "county_name": "Coconino",
+        "lat": 35.83,
+        "lon": -111.71
+      },
+      "household_id": "HH-AZ-COCONINO-G176",
+      "subjects": [
+        "AnimalPatient/e982c927-03ac-4cee-936e-84157ec48519",
+        "Patient/78baa83d-192d-45c0-aa99-f16727825463",
+        "Patient/6be7e56c-57a5-40ec-a957-0e2497a4d784",
+        "AnimalPatient/11a9941e-e73a-4e92-af4c-c7de7368998a"
+      ],
+      "disease_snomed": "47523006",
+      "disease_display": "Leptospirosis",
+      "evidence": {
+        "diagnosed": [
+          "AnimalPatient/e982c927-03ac-4cee-936e-84157ec48519"
+        ],
+        "at_risk": [
+          {
+            "ref": "Patient/78baa83d-192d-45c0-aa99-f16727825463",
+            "kind": "Person",
+            "label": "Diego Mendoza"
+          },
+          {
+            "ref": "Patient/6be7e56c-57a5-40ec-a957-0e2497a4d784",
+            "kind": "Person",
+            "label": "Sebastian Mendoza"
+          },
+          {
+            "ref": "AnimalPatient/11a9941e-e73a-4e92-af4c-c7de7368998a",
+            "kind": "Animal",
+            "label": "Coco (rabbit)"
+          }
+        ]
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.084948+00:00"
+    },
+    {
+      "alert_id": "ALERT-PROP-0028",
+      "kind": "PROPHYLACTIC_HOUSEHOLD",
+      "severity": "watch",
+      "title": "Household exposure: Rocky Mountain spotted fever (Nelson)",
+      "summary": "Animal case of Rocky Mountain spotted fever diagnosed; 5 household member(s) share environment and may benefit from screening",
+      "rationale": "The Nelson household has a confirmed animal case of Rocky Mountain spotted fever. 5 other household member(s) \u2014 including human contacts \u2014 share the same household and likely the same exposure pathway. Recommend Rocky Mountain spotted fever-specific screening or prophylaxis per local public-health guidance.",
+      "confidence": 0.82,
+      "geography": {
+        "county_fips": "04013",
+        "county_name": "Maricopa",
+        "lat": 33.45,
+        "lon": -112.07
+      },
+      "household_id": "HH-AZ-MARICOPA-G193",
+      "subjects": [
+        "AnimalPatient/50fff211-1100-43a5-a00a-1763cf729e9d",
+        "Patient/b0fe1431-3eb8-489f-9532-06aae5e340ad",
+        "Patient/6f084b58-07ab-441a-a5ed-96faf0d2d91f",
+        "Patient/94c7061c-d1fb-41d1-b3a6-1b0855bcd40e",
+        "AnimalPatient/7f9c55b2-2bd4-4eba-8e09-a2fa3fc9648c",
+        "AnimalPatient/5690cd4b-dcfe-442a-a527-64e0b615b94e"
+      ],
+      "disease_snomed": "186772009",
+      "disease_display": "Rocky Mountain spotted fever",
+      "evidence": {
+        "diagnosed": [
+          "AnimalPatient/50fff211-1100-43a5-a00a-1763cf729e9d"
+        ],
+        "at_risk": [
+          {
+            "ref": "Patient/b0fe1431-3eb8-489f-9532-06aae5e340ad",
+            "kind": "Person",
+            "label": "Amelia Nelson"
+          },
+          {
+            "ref": "Patient/6f084b58-07ab-441a-a5ed-96faf0d2d91f",
+            "kind": "Person",
+            "label": "Scarlett Nelson"
+          },
+          {
+            "ref": "Patient/94c7061c-d1fb-41d1-b3a6-1b0855bcd40e",
+            "kind": "Person",
+            "label": "Leo Nelson"
+          },
+          {
+            "ref": "AnimalPatient/7f9c55b2-2bd4-4eba-8e09-a2fa3fc9648c",
+            "kind": "Animal",
+            "label": "Whiskers (cat)"
+          },
+          {
+            "ref": "AnimalPatient/5690cd4b-dcfe-442a-a527-64e0b615b94e",
+            "kind": "Animal",
+            "label": "Pumpkin (cat)"
+          }
+        ]
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.085288+00:00"
+    },
+    {
+      "alert_id": "ALERT-PROP-0029",
+      "kind": "PROPHYLACTIC_HOUSEHOLD",
+      "severity": "watch",
+      "title": "Household exposure: West Nile virus infection (Rodriguez)",
+      "summary": "Animal case of West Nile virus infection diagnosed; 2 household member(s) share environment and may benefit from screening",
+      "rationale": "The Rodriguez household has a confirmed animal case of West Nile virus infection. 2 other household member(s) \u2014 including human contacts \u2014 share the same household and likely the same exposure pathway. Recommend West Nile virus infection-specific screening or prophylaxis per local public-health guidance.",
+      "confidence": 0.82,
+      "geography": {
+        "county_fips": "04013",
+        "county_name": "Maricopa",
+        "lat": 33.45,
+        "lon": -112.07
+      },
+      "household_id": "HH-AZ-MARICOPA-G241",
+      "subjects": [
+        "AnimalPatient/c4c48716-1989-4454-aa45-2e1fc642dcf2",
+        "Patient/dcfcdce2-c808-4e4f-a4f8-ed35d70dc43a",
+        "Patient/61ec7b70-2e6c-435d-8460-d8096e80e4cc"
+      ],
+      "disease_snomed": "417093003",
+      "disease_display": "West Nile virus infection",
+      "evidence": {
+        "diagnosed": [
+          "AnimalPatient/c4c48716-1989-4454-aa45-2e1fc642dcf2"
+        ],
+        "at_risk": [
+          {
+            "ref": "Patient/dcfcdce2-c808-4e4f-a4f8-ed35d70dc43a",
+            "kind": "Person",
+            "label": "Layla Rodriguez"
+          },
+          {
+            "ref": "Patient/61ec7b70-2e6c-435d-8460-d8096e80e4cc",
+            "kind": "Person",
+            "label": "Amelia Rodriguez"
+          }
+        ]
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.086060+00:00"
+    },
+    {
+      "alert_id": "ALERT-PROP-0030",
+      "kind": "PROPHYLACTIC_HOUSEHOLD",
+      "severity": "watch",
+      "title": "Household exposure: West Nile virus infection (Park)",
+      "summary": "Animal case of West Nile virus infection diagnosed; 4 household member(s) share environment and may benefit from screening",
+      "rationale": "The Park household has a confirmed animal case of West Nile virus infection. 4 other household member(s) \u2014 including human contacts \u2014 share the same household and likely the same exposure pathway. Recommend West Nile virus infection-specific screening or prophylaxis per local public-health guidance.",
+      "confidence": 0.82,
+      "geography": {
+        "county_fips": "04025",
+        "county_name": "Yavapai",
+        "lat": 34.54,
+        "lon": -112.47
+      },
+      "household_id": "HH-AZ-YAVAPAI-G262",
+      "subjects": [
+        "AnimalPatient/852e6d08-1191-4a20-b160-9ed2734381ce",
+        "Patient/2d389ff1-80b4-455a-9955-49f603214732",
+        "Patient/6fc2c5f6-c503-4440-920c-743d81828af7",
+        "Patient/06ea03dc-d2d2-4eea-a5a9-03e42561c494",
+        "AnimalPatient/af3f35aa-0d84-49ed-a6c6-976e15e49ca0"
+      ],
+      "disease_snomed": "417093003",
+      "disease_display": "West Nile virus infection",
+      "evidence": {
+        "diagnosed": [
+          "AnimalPatient/852e6d08-1191-4a20-b160-9ed2734381ce"
+        ],
+        "at_risk": [
+          {
+            "ref": "Patient/2d389ff1-80b4-455a-9955-49f603214732",
+            "kind": "Person",
+            "label": "Ella Park"
+          },
+          {
+            "ref": "Patient/6fc2c5f6-c503-4440-920c-743d81828af7",
+            "kind": "Person",
+            "label": "Henry Park"
+          },
+          {
+            "ref": "Patient/06ea03dc-d2d2-4eea-a5a9-03e42561c494",
+            "kind": "Person",
+            "label": "Susan Park"
+          },
+          {
+            "ref": "AnimalPatient/af3f35aa-0d84-49ed-a6c6-976e15e49ca0",
+            "kind": "Animal",
+            "label": "Duke (dog)"
+          }
+        ]
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.086468+00:00"
+    },
+    {
+      "alert_id": "ALERT-PROP-0031",
+      "kind": "PROPHYLACTIC_HOUSEHOLD",
+      "severity": "watch",
+      "title": "Household exposure: Ehrlichiosis (Kim)",
+      "summary": "Animal case of Ehrlichiosis diagnosed; 4 household member(s) share environment and may benefit from screening",
+      "rationale": "The Kim household has a confirmed animal case of Ehrlichiosis. 4 other household member(s) \u2014 including human contacts \u2014 share the same household and likely the same exposure pathway. Recommend Ehrlichiosis-specific screening or prophylaxis per local public-health guidance.",
+      "confidence": 0.82,
+      "geography": {
+        "county_fips": "04013",
+        "county_name": "Maricopa",
+        "lat": 33.45,
+        "lon": -112.07
+      },
+      "household_id": "HH-AZ-MARICOPA-G271",
+      "subjects": [
+        "AnimalPatient/8068bb8d-8459-4cd3-9fd1-9436d46ab9e2",
+        "Patient/b9bbebda-11b4-4cfa-ae8a-25d09cdcfed6",
+        "Patient/6d7c8b78-1058-4e30-a12f-9736a2bdd5bc",
+        "Patient/c8d1892b-a0cb-41a9-a409-c665d2251a36",
+        "AnimalPatient/1aa34af7-dc9f-476c-ab31-a36f5b781ee2"
+      ],
+      "disease_snomed": "31996006",
+      "disease_display": "Ehrlichiosis",
+      "evidence": {
+        "diagnosed": [
+          "AnimalPatient/8068bb8d-8459-4cd3-9fd1-9436d46ab9e2"
+        ],
+        "at_risk": [
+          {
+            "ref": "Patient/b9bbebda-11b4-4cfa-ae8a-25d09cdcfed6",
+            "kind": "Person",
+            "label": "Amelia Kim"
+          },
+          {
+            "ref": "Patient/6d7c8b78-1058-4e30-a12f-9736a2bdd5bc",
+            "kind": "Person",
+            "label": "Wei Kim"
+          },
+          {
+            "ref": "Patient/c8d1892b-a0cb-41a9-a409-c665d2251a36",
+            "kind": "Person",
+            "label": "Harper Kim"
+          },
+          {
+            "ref": "AnimalPatient/1aa34af7-dc9f-476c-ab31-a36f5b781ee2",
+            "kind": "Animal",
+            "label": "Shadow (cat)"
+          }
+        ]
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.086661+00:00"
+    },
+    {
+      "alert_id": "ALERT-PROP-0032",
+      "kind": "PROPHYLACTIC_HOUSEHOLD",
+      "severity": "watch",
+      "title": "Household exposure: West Nile virus infection (Phillips)",
+      "summary": "Animal case of West Nile virus infection diagnosed; 3 household member(s) share environment and may benefit from screening",
+      "rationale": "The Phillips household has a confirmed animal case of West Nile virus infection. 3 other household member(s) \u2014 including human contacts \u2014 share the same household and likely the same exposure pathway. Recommend West Nile virus infection-specific screening or prophylaxis per local public-health guidance.",
+      "confidence": 0.82,
+      "geography": {
+        "county_fips": "04013",
+        "county_name": "Maricopa",
+        "lat": 33.45,
+        "lon": -112.07
+      },
+      "household_id": "HH-AZ-MARICOPA-G275",
+      "subjects": [
+        "AnimalPatient/f0521d91-1fd6-40ce-9982-cdf1eb91fd56",
+        "Patient/2c1f198a-f0ae-42db-b2d3-6b41da040a12",
+        "Patient/b8c8b1c2-8cd5-41b8-808e-6f442eb5d045",
+        "Patient/e2b2fe9b-5f3e-456d-b5e9-2c16a37a4360"
+      ],
+      "disease_snomed": "417093003",
+      "disease_display": "West Nile virus infection",
+      "evidence": {
+        "diagnosed": [
+          "AnimalPatient/f0521d91-1fd6-40ce-9982-cdf1eb91fd56"
+        ],
+        "at_risk": [
+          {
+            "ref": "Patient/2c1f198a-f0ae-42db-b2d3-6b41da040a12",
+            "kind": "Person",
+            "label": "Anthony Phillips"
+          },
+          {
+            "ref": "Patient/b8c8b1c2-8cd5-41b8-808e-6f442eb5d045",
+            "kind": "Person",
+            "label": "Dylan Phillips"
+          },
+          {
+            "ref": "Patient/e2b2fe9b-5f3e-456d-b5e9-2c16a37a4360",
+            "kind": "Person",
+            "label": "Aria Phillips"
+          }
+        ]
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.086752+00:00"
+    },
+    {
+      "alert_id": "ALERT-PROP-0033",
+      "kind": "PROPHYLACTIC_HOUSEHOLD",
+      "severity": "watch",
+      "title": "Household exposure: Leptospirosis (Reyes)",
+      "summary": "Animal case of Leptospirosis diagnosed; 2 household member(s) share environment and may benefit from screening",
+      "rationale": "The Reyes household has a confirmed animal case of Leptospirosis. 2 other household member(s) \u2014 including human contacts \u2014 share the same household and likely the same exposure pathway. Recommend Leptospirosis-specific screening or prophylaxis per local public-health guidance.",
+      "confidence": 0.82,
+      "geography": {
+        "county_fips": "04027",
+        "county_name": "Yuma",
+        "lat": 32.69,
+        "lon": -114.62
+      },
+      "household_id": "HH-AZ-YUMA-G295",
+      "subjects": [
+        "AnimalPatient/1bbc00e8-efae-40a4-b9d7-1331486bc195",
+        "Patient/5beeeca4-91f5-4a95-9378-02bd8d1cb882",
+        "Patient/197d2c72-d7d5-4873-ab03-16e6d28896a5"
+      ],
+      "disease_snomed": "47523006",
+      "disease_display": "Leptospirosis",
+      "evidence": {
+        "diagnosed": [
+          "AnimalPatient/1bbc00e8-efae-40a4-b9d7-1331486bc195"
+        ],
+        "at_risk": [
+          {
+            "ref": "Patient/5beeeca4-91f5-4a95-9378-02bd8d1cb882",
+            "kind": "Person",
+            "label": "Sebastian Reyes"
+          },
+          {
+            "ref": "Patient/197d2c72-d7d5-4873-ab03-16e6d28896a5",
+            "kind": "Person",
+            "label": "Harper Reyes"
+          }
+        ]
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.087140+00:00"
+    },
+    {
+      "alert_id": "ALERT-PROP-0034",
+      "kind": "PROPHYLACTIC_HOUSEHOLD",
+      "severity": "watch",
+      "title": "Household exposure: Rocky Mountain spotted fever (Romero)",
+      "summary": "Animal case of Rocky Mountain spotted fever diagnosed; 5 household member(s) share environment and may benefit from screening",
+      "rationale": "The Romero household has a confirmed animal case of Rocky Mountain spotted fever. 5 other household member(s) \u2014 including human contacts \u2014 share the same household and likely the same exposure pathway. Recommend Rocky Mountain spotted fever-specific screening or prophylaxis per local public-health guidance.",
+      "confidence": 0.82,
+      "geography": {
+        "county_fips": "04021",
+        "county_name": "Pinal",
+        "lat": 32.88,
+        "lon": -111.76
+      },
+      "household_id": "HH-AZ-PINAL-G306",
+      "subjects": [
+        "AnimalPatient/1a61caac-6304-4d3c-bb01-176ebbe02e0a",
+        "Patient/d222b351-c994-48df-98a7-bb1068cc53e7",
+        "Patient/1dbbc30f-1973-403e-817b-4ddea4860365",
+        "Patient/79db18db-aceb-4f92-95de-5e9d16e14a40",
+        "AnimalPatient/c4baa310-e494-4524-b4bd-8916903bd605",
+        "AnimalPatient/bcb85d28-c48c-4c32-a5fb-b8f29921ed39"
+      ],
+      "disease_snomed": "186772009",
+      "disease_display": "Rocky Mountain spotted fever",
+      "evidence": {
+        "diagnosed": [
+          "AnimalPatient/1a61caac-6304-4d3c-bb01-176ebbe02e0a"
+        ],
+        "at_risk": [
+          {
+            "ref": "Patient/d222b351-c994-48df-98a7-bb1068cc53e7",
+            "kind": "Person",
+            "label": "Jackson Romero"
+          },
+          {
+            "ref": "Patient/1dbbc30f-1973-403e-817b-4ddea4860365",
+            "kind": "Person",
+            "label": "Diego Romero"
+          },
+          {
+            "ref": "Patient/79db18db-aceb-4f92-95de-5e9d16e14a40",
+            "kind": "Person",
+            "label": "Mason Romero"
+          },
+          {
+            "ref": "AnimalPatient/c4baa310-e494-4524-b4bd-8916903bd605",
+            "kind": "Animal",
+            "label": "Simba (cat)"
+          },
+          {
+            "ref": "AnimalPatient/bcb85d28-c48c-4c32-a5fb-b8f29921ed39",
+            "kind": "Animal",
+            "label": "Smokey (cat)"
+          }
+        ]
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.087353+00:00"
+    },
+    {
+      "alert_id": "ALERT-PROP-0035",
+      "kind": "PROPHYLACTIC_HOUSEHOLD",
+      "severity": "watch",
+      "title": "Household exposure: Coccidioidomycosis (Diaz)",
+      "summary": "Human case of Coccidioidomycosis diagnosed; 1 household member(s) share environment and may benefit from screening",
+      "rationale": "The Diaz household has a confirmed human case of Coccidioidomycosis. 1 other household member(s) \u2014 including animal contacts \u2014 share the same household and likely the same exposure pathway. Recommend Coccidioidomycosis-specific screening or prophylaxis per local public-health guidance.",
+      "confidence": 0.82,
+      "geography": {
+        "county_fips": "04015",
+        "county_name": "Mohave",
+        "lat": 35.19,
+        "lon": -114.05
+      },
+      "household_id": "HH-AZ-MOHAVE-G307",
+      "subjects": [
+        "Patient/31387dde-adae-44ac-863e-8e39ee39e611",
+        "Patient/b8cad45a-50c6-4720-9ec5-438ec0d331cd"
+      ],
+      "disease_snomed": "5294002",
+      "disease_display": "Coccidioidomycosis",
+      "evidence": {
+        "diagnosed": [
+          "Patient/31387dde-adae-44ac-863e-8e39ee39e611"
+        ],
+        "at_risk": [
+          {
+            "ref": "Patient/b8cad45a-50c6-4720-9ec5-438ec0d331cd",
+            "kind": "Person",
+            "label": "Mason Diaz"
+          }
+        ]
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.087391+00:00"
+    },
+    {
+      "alert_id": "ALERT-PROP-0036",
+      "kind": "PROPHYLACTIC_HOUSEHOLD",
+      "severity": "watch",
+      "title": "Household exposure: Leptospirosis (Allen)",
+      "summary": "Animal case of Leptospirosis diagnosed; 4 household member(s) share environment and may benefit from screening",
+      "rationale": "The Allen household has a confirmed animal case of Leptospirosis. 4 other household member(s) \u2014 including human contacts \u2014 share the same household and likely the same exposure pathway. Recommend Leptospirosis-specific screening or prophylaxis per local public-health guidance.",
+      "confidence": 0.82,
+      "geography": {
+        "county_fips": "04013",
+        "county_name": "Maricopa",
+        "lat": 33.45,
+        "lon": -112.07
+      },
+      "household_id": "HH-AZ-MARICOPA-G331",
+      "subjects": [
+        "AnimalPatient/865ebc3d-546a-4a17-8ad4-626a2ba221fc",
+        "Patient/b5fdfeb9-9143-4c21-9acb-86a69a18e753",
+        "Patient/9ebf0c80-268a-45a4-813a-e79d71cfb5d8",
+        "Patient/dd2969ff-dd2a-4f2f-a1ce-f8b9f1c25be8",
+        "Patient/f776e358-4733-44cd-9e46-3e7fd5e6ea16"
+      ],
+      "disease_snomed": "47523006",
+      "disease_display": "Leptospirosis",
+      "evidence": {
+        "diagnosed": [
+          "AnimalPatient/865ebc3d-546a-4a17-8ad4-626a2ba221fc"
+        ],
+        "at_risk": [
+          {
+            "ref": "Patient/b5fdfeb9-9143-4c21-9acb-86a69a18e753",
+            "kind": "Person",
+            "label": "Evelyn Allen"
+          },
+          {
+            "ref": "Patient/9ebf0c80-268a-45a4-813a-e79d71cfb5d8",
+            "kind": "Person",
+            "label": "Jack Allen"
+          },
+          {
+            "ref": "Patient/dd2969ff-dd2a-4f2f-a1ce-f8b9f1c25be8",
+            "kind": "Person",
+            "label": "Ella Allen"
+          },
+          {
+            "ref": "Patient/f776e358-4733-44cd-9e46-3e7fd5e6ea16",
+            "kind": "Person",
+            "label": "Harper Allen"
+          }
+        ]
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.087839+00:00"
+    },
+    {
+      "alert_id": "ALERT-PROP-0037",
+      "kind": "PROPHYLACTIC_HOUSEHOLD",
+      "severity": "watch",
+      "title": "Household exposure: Rabies (Castillo)",
+      "summary": "Animal case of Rabies diagnosed; 4 household member(s) share environment and may benefit from screening",
+      "rationale": "The Castillo household has a confirmed animal case of Rabies. 4 other household member(s) \u2014 including human contacts \u2014 share the same household and likely the same exposure pathway. Recommend Rabies-specific screening or prophylaxis per local public-health guidance.",
+      "confidence": 0.82,
+      "geography": {
+        "county_fips": "04019",
+        "county_name": "Pima",
+        "lat": 32.22,
+        "lon": -110.93
+      },
+      "household_id": "HH-AZ-PIMA-G344",
+      "subjects": [
+        "AnimalPatient/8d5b8963-3346-4683-90ea-23b048e75fec",
+        "Patient/40eef147-912b-4b3a-9461-b7cb488f7955",
+        "Patient/38dcabc4-a877-406c-987f-67f78a721d24",
+        "Patient/595312b2-48b3-4a4b-9d32-aea0d064e2c4",
+        "Patient/b045470a-6f67-4e6e-aa5a-0360ba6abe53"
+      ],
+      "disease_snomed": "14168008",
+      "disease_display": "Rabies",
+      "evidence": {
+        "diagnosed": [
+          "AnimalPatient/8d5b8963-3346-4683-90ea-23b048e75fec"
+        ],
+        "at_risk": [
+          {
+            "ref": "Patient/40eef147-912b-4b3a-9461-b7cb488f7955",
+            "kind": "Person",
+            "label": "Charlotte Castillo"
+          },
+          {
+            "ref": "Patient/38dcabc4-a877-406c-987f-67f78a721d24",
+            "kind": "Person",
+            "label": "Jack Castillo"
+          },
+          {
+            "ref": "Patient/595312b2-48b3-4a4b-9d32-aea0d064e2c4",
+            "kind": "Person",
+            "label": "Madison Castillo"
+          },
+          {
+            "ref": "Patient/b045470a-6f67-4e6e-aa5a-0360ba6abe53",
+            "kind": "Person",
+            "label": "Mason Castillo"
+          }
+        ]
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.088037+00:00"
+    },
+    {
+      "alert_id": "ALERT-VECT-0038",
+      "kind": "VECTOR_ANOMALY",
+      "severity": "watch",
+      "title": "Vector anomaly \u2014 Gila County tick burden",
+      "summary": "Tick collection counts 2.7\u03c3 above baseline in Gila Co. (last 4 weeks vs. trailing 22)",
+      "rationale": "Mean tick count in Gila County over the past 4 weeks (119/trap) is 2.7 standard deviations above the trailing-22-week baseline (69\u00b119). Predominant species: Dermacentor variabilis. Elevated risk for tick-borne diseases including ehrlichiosis and RMSF \u2014 consider clinician advisory for the county.",
+      "confidence": 0.7339298600703179,
+      "geography": {
+        "county_fips": "04007",
+        "county_name": "Gila"
+      },
+      "household_id": null,
+      "subjects": [],
+      "disease_snomed": null,
+      "disease_display": null,
+      "evidence": {
+        "z_score": 2.68,
+        "recent_mean": 119,
+        "baseline_mean": 68.8,
+        "baseline_sd": 18.8,
+        "recent_4wk_total": 476,
+        "predominant_species": "Dermacentor variabilis"
+      },
+      "dp_noised_count": 476,
+      "generated_at": "2026-05-04T17:07:57.088642+00:00"
+    },
+    {
+      "alert_id": "ALERT-ENV_-0040",
+      "kind": "ENV_AMPLIFIED_RISK",
+      "severity": "info",
+      "title": "Endemicity-amplified diagnosis: Coccidioidomycosis (Valley Fever)",
+      "summary": "Maria Hernandez diagnosed with Coccidioidomycosis (Valley Fever) in Pima Co. (endemicity: high)",
+      "rationale": "This Coccidioidomycosis (Valley Fever) case is geographically consistent with county-level endemicity (high). EPA Environmental Quality Index for Pima Co. = -0.16. The presentation is epidemiologically expected; record contributes to local surveillance baseline rather than triggering an outbreak signal.",
+      "confidence": 0.78,
+      "geography": {
+        "county_fips": "04019",
+        "county_name": "Pima",
+        "lat": 32.22,
+        "lon": -110.93
+      },
+      "household_id": "HH-AZ-PIMA-001",
+      "subjects": [
+        "Patient/5987f320-d799-446b-821b-29ef986c37f3"
+      ],
+      "disease_snomed": "5294002",
+      "disease_display": "Coccidioidomycosis (Valley Fever)",
+      "evidence": {
+        "endemicity": "high",
+        "epa_eqi": -0.156
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.089382+00:00"
+    },
+    {
+      "alert_id": "ALERT-ENV_-0041",
+      "kind": "ENV_AMPLIFIED_RISK",
+      "severity": "info",
+      "title": "Endemicity-amplified diagnosis: Coccidioidomycosis",
+      "summary": "Rocco (dog) diagnosed with Coccidioidomycosis in Pima Co. (endemicity: high)",
+      "rationale": "This Coccidioidomycosis case is geographically consistent with county-level endemicity (high). EPA Environmental Quality Index for Pima Co. = -0.16. The presentation is epidemiologically expected; record contributes to local surveillance baseline rather than triggering an outbreak signal.",
+      "confidence": 0.78,
+      "geography": {
+        "county_fips": "04019",
+        "county_name": "Pima",
+        "lat": 32.22,
+        "lon": -110.93
+      },
+      "household_id": "HH-AZ-PIMA-001",
+      "subjects": [
+        "AnimalPatient/4e8cc2f4-bd2f-46ce-82a8-2c3421ad13ab"
+      ],
+      "disease_snomed": "5294002",
+      "disease_display": "Coccidioidomycosis",
+      "evidence": {
+        "endemicity": "high",
+        "epa_eqi": -0.156
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.089411+00:00"
+    },
+    {
+      "alert_id": "ALERT-ENV_-0042",
+      "kind": "ENV_AMPLIFIED_RISK",
+      "severity": "info",
+      "title": "Endemicity-amplified diagnosis: Plague",
+      "summary": "Shadow (cat) diagnosed with Plague in Apache Co. (endemicity: low)",
+      "rationale": "This Plague case is geographically consistent with county-level endemicity (low). EPA Environmental Quality Index for Apache Co. = +0.41. The presentation is epidemiologically expected; record contributes to local surveillance baseline rather than triggering an outbreak signal.",
+      "confidence": 0.78,
+      "geography": {
+        "county_fips": "04001",
+        "county_name": "Apache",
+        "lat": 35.39,
+        "lon": -109.49
+      },
+      "household_id": "HH-AZ-APACHE-006",
+      "subjects": [
+        "AnimalPatient/ed5dde89-34c5-47b1-92b5-06ae34b04132"
+      ],
+      "disease_snomed": "58750007",
+      "disease_display": "Plague",
+      "evidence": {
+        "endemicity": "low",
+        "epa_eqi": 0.412
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.089442+00:00"
+    },
+    {
+      "alert_id": "ALERT-ENV_-0043",
+      "kind": "ENV_AMPLIFIED_RISK",
+      "severity": "info",
+      "title": "Endemicity-amplified diagnosis: Rocky Mountain Spotted Fever (canine)",
+      "summary": "Luna (dog) diagnosed with Rocky Mountain Spotted Fever (canine) in Pinal Co. (endemicity: high)",
+      "rationale": "This Rocky Mountain Spotted Fever (canine) case is geographically consistent with county-level endemicity (high). EPA Environmental Quality Index for Pinal Co. = +1.00. The presentation is epidemiologically expected; record contributes to local surveillance baseline rather than triggering an outbreak signal.",
+      "confidence": 0.78,
+      "geography": {
+        "county_fips": "04021",
+        "county_name": "Pinal",
+        "lat": 32.88,
+        "lon": -111.76
+      },
+      "household_id": "HH-AZ-PINAL-G017",
+      "subjects": [
+        "AnimalPatient/ececdbfe-f36d-4bdb-91a5-f28592511cc6"
+      ],
+      "disease_snomed": "186772009",
+      "disease_display": "Rocky Mountain Spotted Fever (canine)",
+      "evidence": {
+        "endemicity": "high",
+        "epa_eqi": 1.003
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.089488+00:00"
+    },
+    {
+      "alert_id": "ALERT-ENV_-0044",
+      "kind": "ENV_AMPLIFIED_RISK",
+      "severity": "info",
+      "title": "Endemicity-amplified diagnosis: Coccidioidomycosis (Valley Fever)",
+      "summary": "Henry Rodriguez diagnosed with Coccidioidomycosis (Valley Fever) in Maricopa Co. (endemicity: high)",
+      "rationale": "This Coccidioidomycosis (Valley Fever) case is geographically consistent with county-level endemicity (high). EPA Environmental Quality Index for Maricopa Co. = -0.42. The presentation is epidemiologically expected; record contributes to local surveillance baseline rather than triggering an outbreak signal.",
+      "confidence": 0.78,
+      "geography": {
+        "county_fips": "04013",
+        "county_name": "Maricopa",
+        "lat": 33.45,
+        "lon": -112.07
+      },
+      "household_id": "HH-AZ-MARICOPA-G035",
+      "subjects": [
+        "Patient/ce3bacd2-c63b-46ed-9a46-a7cc6a5421e0"
+      ],
+      "disease_snomed": "5294002",
+      "disease_display": "Coccidioidomycosis (Valley Fever)",
+      "evidence": {
+        "endemicity": "high",
+        "epa_eqi": -0.421
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.089516+00:00"
+    },
+    {
+      "alert_id": "ALERT-ENV_-0045",
+      "kind": "ENV_AMPLIFIED_RISK",
+      "severity": "info",
+      "title": "Endemicity-amplified diagnosis: Rocky Mountain Spotted Fever (canine)",
+      "summary": "Tucker (dog) diagnosed with Rocky Mountain Spotted Fever (canine) in Maricopa Co. (endemicity: high)",
+      "rationale": "This Rocky Mountain Spotted Fever (canine) case is geographically consistent with county-level endemicity (high). EPA Environmental Quality Index for Maricopa Co. = -0.42. The presentation is epidemiologically expected; record contributes to local surveillance baseline rather than triggering an outbreak signal.",
+      "confidence": 0.78,
+      "geography": {
+        "county_fips": "04013",
+        "county_name": "Maricopa",
+        "lat": 33.45,
+        "lon": -112.07
+      },
+      "household_id": "HH-AZ-MARICOPA-G050",
+      "subjects": [
+        "AnimalPatient/e830a329-6d9a-4255-abc6-a633f583c2f4"
+      ],
+      "disease_snomed": "186772009",
+      "disease_display": "Rocky Mountain Spotted Fever (canine)",
+      "evidence": {
+        "endemicity": "high",
+        "epa_eqi": -0.421
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.089542+00:00"
+    },
+    {
+      "alert_id": "ALERT-ENV_-0046",
+      "kind": "ENV_AMPLIFIED_RISK",
+      "severity": "info",
+      "title": "Endemicity-amplified diagnosis: Rocky Mountain Spotted Fever",
+      "summary": "Dylan Martinez diagnosed with Rocky Mountain Spotted Fever in Maricopa Co. (endemicity: high)",
+      "rationale": "This Rocky Mountain Spotted Fever case is geographically consistent with county-level endemicity (high). EPA Environmental Quality Index for Maricopa Co. = -0.42. The presentation is epidemiologically expected; record contributes to local surveillance baseline rather than triggering an outbreak signal.",
+      "confidence": 0.78,
+      "geography": {
+        "county_fips": "04013",
+        "county_name": "Maricopa",
+        "lat": 33.45,
+        "lon": -112.07
+      },
+      "household_id": "HH-AZ-MARICOPA-G050",
+      "subjects": [
+        "Patient/36a7cc49-16e2-428a-bb77-2ca6a83f16d6"
+      ],
+      "disease_snomed": "186772009",
+      "disease_display": "Rocky Mountain Spotted Fever",
+      "evidence": {
+        "endemicity": "high",
+        "epa_eqi": -0.421
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.089559+00:00"
+    },
+    {
+      "alert_id": "ALERT-ENV_-0047",
+      "kind": "ENV_AMPLIFIED_RISK",
+      "severity": "info",
+      "title": "Endemicity-amplified diagnosis: Coccidioidomycosis (Valley Fever)",
+      "summary": "Elijah Mitchell diagnosed with Coccidioidomycosis (Valley Fever) in Maricopa Co. (endemicity: high)",
+      "rationale": "This Coccidioidomycosis (Valley Fever) case is geographically consistent with county-level endemicity (high). EPA Environmental Quality Index for Maricopa Co. = -0.42. The presentation is epidemiologically expected; record contributes to local surveillance baseline rather than triggering an outbreak signal.",
+      "confidence": 0.78,
+      "geography": {
+        "county_fips": "04013",
+        "county_name": "Maricopa",
+        "lat": 33.45,
+        "lon": -112.07
+      },
+      "household_id": "HH-AZ-MARICOPA-G088",
+      "subjects": [
+        "Patient/820e8b78-01ec-4b35-a790-d0b1a4cce305"
+      ],
+      "disease_snomed": "5294002",
+      "disease_display": "Coccidioidomycosis (Valley Fever)",
+      "evidence": {
+        "endemicity": "high",
+        "epa_eqi": -0.421
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.089603+00:00"
+    },
+    {
+      "alert_id": "ALERT-ENV_-0048",
+      "kind": "ENV_AMPLIFIED_RISK",
+      "severity": "info",
+      "title": "Endemicity-amplified diagnosis: Coccidioidomycosis (canine/feline)",
+      "summary": "Chloe (dog) diagnosed with Coccidioidomycosis (canine/feline) in Maricopa Co. (endemicity: high)",
+      "rationale": "This Coccidioidomycosis (canine/feline) case is geographically consistent with county-level endemicity (high). EPA Environmental Quality Index for Maricopa Co. = -0.42. The presentation is epidemiologically expected; record contributes to local surveillance baseline rather than triggering an outbreak signal.",
+      "confidence": 0.78,
+      "geography": {
+        "county_fips": "04013",
+        "county_name": "Maricopa",
+        "lat": 33.45,
+        "lon": -112.07
+      },
+      "household_id": "HH-AZ-MARICOPA-G088",
+      "subjects": [
+        "AnimalPatient/89615c62-b0fd-48bb-9467-2e19af8edfec"
+      ],
+      "disease_snomed": "5294002",
+      "disease_display": "Coccidioidomycosis (canine/feline)",
+      "evidence": {
+        "endemicity": "high",
+        "epa_eqi": -0.421
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.089617+00:00"
+    },
+    {
+      "alert_id": "ALERT-ENV_-0049",
+      "kind": "ENV_AMPLIFIED_RISK",
+      "severity": "info",
+      "title": "Endemicity-amplified diagnosis: Coccidioidomycosis (Valley Fever)",
+      "summary": "Wyatt Singh diagnosed with Coccidioidomycosis (Valley Fever) in Maricopa Co. (endemicity: high)",
+      "rationale": "This Coccidioidomycosis (Valley Fever) case is geographically consistent with county-level endemicity (high). EPA Environmental Quality Index for Maricopa Co. = -0.42. The presentation is epidemiologically expected; record contributes to local surveillance baseline rather than triggering an outbreak signal.",
+      "confidence": 0.78,
+      "geography": {
+        "county_fips": "04013",
+        "county_name": "Maricopa",
+        "lat": 33.45,
+        "lon": -112.07
+      },
+      "household_id": "HH-AZ-MARICOPA-G150",
+      "subjects": [
+        "Patient/5b484763-bdb0-4fb0-b282-1aa15765ca58"
+      ],
+      "disease_snomed": "5294002",
+      "disease_display": "Coccidioidomycosis (Valley Fever)",
+      "evidence": {
+        "endemicity": "high",
+        "epa_eqi": -0.421
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.089676+00:00"
+    },
+    {
+      "alert_id": "ALERT-ENV_-0050",
+      "kind": "ENV_AMPLIFIED_RISK",
+      "severity": "info",
+      "title": "Endemicity-amplified diagnosis: Coccidioidomycosis (Valley Fever)",
+      "summary": "Jackson Baker diagnosed with Coccidioidomycosis (Valley Fever) in Pinal Co. (endemicity: high)",
+      "rationale": "This Coccidioidomycosis (Valley Fever) case is geographically consistent with county-level endemicity (high). EPA Environmental Quality Index for Pinal Co. = +1.00. The presentation is epidemiologically expected; record contributes to local surveillance baseline rather than triggering an outbreak signal.",
+      "confidence": 0.78,
+      "geography": {
+        "county_fips": "04021",
+        "county_name": "Pinal",
+        "lat": 32.88,
+        "lon": -111.76
+      },
+      "household_id": "HH-AZ-PINAL-G190",
+      "subjects": [
+        "Patient/e1cc6fc8-9921-4a72-a0e3-1bd5f53b8f7b"
+      ],
+      "disease_snomed": "5294002",
+      "disease_display": "Coccidioidomycosis (Valley Fever)",
+      "evidence": {
+        "endemicity": "high",
+        "epa_eqi": 1.003
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.089744+00:00"
+    },
+    {
+      "alert_id": "ALERT-ENV_-0051",
+      "kind": "ENV_AMPLIFIED_RISK",
+      "severity": "info",
+      "title": "Endemicity-amplified diagnosis: Coccidioidomycosis (canine/feline)",
+      "summary": "Bailey (dog) diagnosed with Coccidioidomycosis (canine/feline) in Pinal Co. (endemicity: high)",
+      "rationale": "This Coccidioidomycosis (canine/feline) case is geographically consistent with county-level endemicity (high). EPA Environmental Quality Index for Pinal Co. = +1.00. The presentation is epidemiologically expected; record contributes to local surveillance baseline rather than triggering an outbreak signal.",
+      "confidence": 0.78,
+      "geography": {
+        "county_fips": "04021",
+        "county_name": "Pinal",
+        "lat": 32.88,
+        "lon": -111.76
+      },
+      "household_id": "HH-AZ-PINAL-G190",
+      "subjects": [
+        "AnimalPatient/96febeab-d9da-4083-8655-7783c8a5422d"
+      ],
+      "disease_snomed": "5294002",
+      "disease_display": "Coccidioidomycosis (canine/feline)",
+      "evidence": {
+        "endemicity": "high",
+        "epa_eqi": 1.003
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.089758+00:00"
+    },
+    {
+      "alert_id": "ALERT-ENV_-0052",
+      "kind": "ENV_AMPLIFIED_RISK",
+      "severity": "info",
+      "title": "Endemicity-amplified diagnosis: Rocky Mountain Spotted Fever (canine)",
+      "summary": "Bailey (dog) diagnosed with Rocky Mountain Spotted Fever (canine) in Maricopa Co. (endemicity: high)",
+      "rationale": "This Rocky Mountain Spotted Fever (canine) case is geographically consistent with county-level endemicity (high). EPA Environmental Quality Index for Maricopa Co. = -0.42. The presentation is epidemiologically expected; record contributes to local surveillance baseline rather than triggering an outbreak signal.",
+      "confidence": 0.78,
+      "geography": {
+        "county_fips": "04013",
+        "county_name": "Maricopa",
+        "lat": 33.45,
+        "lon": -112.07
+      },
+      "household_id": "HH-AZ-MARICOPA-G193",
+      "subjects": [
+        "AnimalPatient/50fff211-1100-43a5-a00a-1763cf729e9d"
+      ],
+      "disease_snomed": "186772009",
+      "disease_display": "Rocky Mountain Spotted Fever (canine)",
+      "evidence": {
+        "endemicity": "high",
+        "epa_eqi": -0.421
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.089776+00:00"
+    },
+    {
+      "alert_id": "ALERT-ENV_-0053",
+      "kind": "ENV_AMPLIFIED_RISK",
+      "severity": "info",
+      "title": "Endemicity-amplified diagnosis: West Nile Virus infection (equine / avian)",
+      "summary": "Thunder (horse) diagnosed with West Nile Virus infection (equine / avian) in Maricopa Co. (endemicity: high)",
+      "rationale": "This West Nile Virus infection (equine / avian) case is geographically consistent with county-level endemicity (high). EPA Environmental Quality Index for Maricopa Co. = -0.42. The presentation is epidemiologically expected; record contributes to local surveillance baseline rather than triggering an outbreak signal.",
+      "confidence": 0.78,
+      "geography": {
+        "county_fips": "04013",
+        "county_name": "Maricopa",
+        "lat": 33.45,
+        "lon": -112.07
+      },
+      "household_id": "HH-AZ-MARICOPA-G241",
+      "subjects": [
+        "AnimalPatient/c4c48716-1989-4454-aa45-2e1fc642dcf2"
+      ],
+      "disease_snomed": "417093003",
+      "disease_display": "West Nile Virus infection (equine / avian)",
+      "evidence": {
+        "endemicity": "high",
+        "epa_eqi": -0.421
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.089830+00:00"
+    },
+    {
+      "alert_id": "ALERT-ENV_-0054",
+      "kind": "ENV_AMPLIFIED_RISK",
+      "severity": "info",
+      "title": "Endemicity-amplified diagnosis: West Nile Virus infection (equine / avian)",
+      "summary": "Sky (bird) diagnosed with West Nile Virus infection (equine / avian) in Maricopa Co. (endemicity: high)",
+      "rationale": "This West Nile Virus infection (equine / avian) case is geographically consistent with county-level endemicity (high). EPA Environmental Quality Index for Maricopa Co. = -0.42. The presentation is epidemiologically expected; record contributes to local surveillance baseline rather than triggering an outbreak signal.",
+      "confidence": 0.78,
+      "geography": {
+        "county_fips": "04013",
+        "county_name": "Maricopa",
+        "lat": 33.45,
+        "lon": -112.07
+      },
+      "household_id": "HH-AZ-MARICOPA-G275",
+      "subjects": [
+        "AnimalPatient/f0521d91-1fd6-40ce-9982-cdf1eb91fd56"
+      ],
+      "disease_snomed": "417093003",
+      "disease_display": "West Nile Virus infection (equine / avian)",
+      "evidence": {
+        "endemicity": "high",
+        "epa_eqi": -0.421
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.089882+00:00"
+    },
+    {
+      "alert_id": "ALERT-ENV_-0055",
+      "kind": "ENV_AMPLIFIED_RISK",
+      "severity": "info",
+      "title": "Endemicity-amplified diagnosis: Rocky Mountain Spotted Fever (canine)",
+      "summary": "Rocky (dog) diagnosed with Rocky Mountain Spotted Fever (canine) in Pinal Co. (endemicity: high)",
+      "rationale": "This Rocky Mountain Spotted Fever (canine) case is geographically consistent with county-level endemicity (high). EPA Environmental Quality Index for Pinal Co. = +1.00. The presentation is epidemiologically expected; record contributes to local surveillance baseline rather than triggering an outbreak signal.",
+      "confidence": 0.78,
+      "geography": {
+        "county_fips": "04021",
+        "county_name": "Pinal",
+        "lat": 32.88,
+        "lon": -111.76
+      },
+      "household_id": "HH-AZ-PINAL-G283",
+      "subjects": [
+        "AnimalPatient/a4f4cea4-cf2e-4a2c-bf4f-7015d136b21a"
+      ],
+      "disease_snomed": "186772009",
+      "disease_display": "Rocky Mountain Spotted Fever (canine)",
+      "evidence": {
+        "endemicity": "high",
+        "epa_eqi": 1.003
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.089905+00:00"
+    },
+    {
+      "alert_id": "ALERT-ENV_-0056",
+      "kind": "ENV_AMPLIFIED_RISK",
+      "severity": "info",
+      "title": "Endemicity-amplified diagnosis: Rocky Mountain Spotted Fever",
+      "summary": "Grace Baker diagnosed with Rocky Mountain Spotted Fever in Pinal Co. (endemicity: high)",
+      "rationale": "This Rocky Mountain Spotted Fever case is geographically consistent with county-level endemicity (high). EPA Environmental Quality Index for Pinal Co. = +1.00. The presentation is epidemiologically expected; record contributes to local surveillance baseline rather than triggering an outbreak signal.",
+      "confidence": 0.78,
+      "geography": {
+        "county_fips": "04021",
+        "county_name": "Pinal",
+        "lat": 32.88,
+        "lon": -111.76
+      },
+      "household_id": "HH-AZ-PINAL-G283",
+      "subjects": [
+        "Patient/c3515bef-5184-40d2-8f57-5b2cd80b5c54"
+      ],
+      "disease_snomed": "186772009",
+      "disease_display": "Rocky Mountain Spotted Fever",
+      "evidence": {
+        "endemicity": "high",
+        "epa_eqi": 1.003
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.089936+00:00"
+    },
+    {
+      "alert_id": "ALERT-ENV_-0057",
+      "kind": "ENV_AMPLIFIED_RISK",
+      "severity": "info",
+      "title": "Endemicity-amplified diagnosis: Rocky Mountain Spotted Fever (canine)",
+      "summary": "Tucker (dog) diagnosed with Rocky Mountain Spotted Fever (canine) in Pinal Co. (endemicity: high)",
+      "rationale": "This Rocky Mountain Spotted Fever (canine) case is geographically consistent with county-level endemicity (high). EPA Environmental Quality Index for Pinal Co. = +1.00. The presentation is epidemiologically expected; record contributes to local surveillance baseline rather than triggering an outbreak signal.",
+      "confidence": 0.78,
+      "geography": {
+        "county_fips": "04021",
+        "county_name": "Pinal",
+        "lat": 32.88,
+        "lon": -111.76
+      },
+      "household_id": "HH-AZ-PINAL-G306",
+      "subjects": [
+        "AnimalPatient/1a61caac-6304-4d3c-bb01-176ebbe02e0a"
+      ],
+      "disease_snomed": "186772009",
+      "disease_display": "Rocky Mountain Spotted Fever (canine)",
+      "evidence": {
+        "endemicity": "high",
+        "epa_eqi": 1.003
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.089969+00:00"
+    },
+    {
+      "alert_id": "ALERT-ENV_-0058",
+      "kind": "ENV_AMPLIFIED_RISK",
+      "severity": "info",
+      "title": "Endemicity-amplified diagnosis: Rocky Mountain Spotted Fever (canine)",
+      "summary": "Tucker (dog) diagnosed with Rocky Mountain Spotted Fever (canine) in Maricopa Co. (endemicity: high)",
+      "rationale": "This Rocky Mountain Spotted Fever (canine) case is geographically consistent with county-level endemicity (high). EPA Environmental Quality Index for Maricopa Co. = -0.42. The presentation is epidemiologically expected; record contributes to local surveillance baseline rather than triggering an outbreak signal.",
+      "confidence": 0.78,
+      "geography": {
+        "county_fips": "04013",
+        "county_name": "Maricopa",
+        "lat": 33.45,
+        "lon": -112.07
+      },
+      "household_id": "HH-AZ-MARICOPA-G341",
+      "subjects": [
+        "AnimalPatient/f9bfb16f-becb-42ff-971b-015993c1101e"
+      ],
+      "disease_snomed": "186772009",
+      "disease_display": "Rocky Mountain Spotted Fever (canine)",
+      "evidence": {
+        "endemicity": "high",
+        "epa_eqi": -0.421
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.090017+00:00"
+    },
+    {
+      "alert_id": "ALERT-ENV_-0059",
+      "kind": "ENV_AMPLIFIED_RISK",
+      "severity": "info",
+      "title": "Endemicity-amplified diagnosis: Rocky Mountain Spotted Fever",
+      "summary": "Grace Murphy diagnosed with Rocky Mountain Spotted Fever in Maricopa Co. (endemicity: high)",
+      "rationale": "This Rocky Mountain Spotted Fever case is geographically consistent with county-level endemicity (high). EPA Environmental Quality Index for Maricopa Co. = -0.42. The presentation is epidemiologically expected; record contributes to local surveillance baseline rather than triggering an outbreak signal.",
+      "confidence": 0.78,
+      "geography": {
+        "county_fips": "04013",
+        "county_name": "Maricopa",
+        "lat": 33.45,
+        "lon": -112.07
+      },
+      "household_id": "HH-AZ-MARICOPA-G341",
+      "subjects": [
+        "Patient/2ff04f8e-d5c1-43e4-86dc-f991536a8063"
+      ],
+      "disease_snomed": "186772009",
+      "disease_display": "Rocky Mountain Spotted Fever",
+      "evidence": {
+        "endemicity": "high",
+        "epa_eqi": -0.421
+      },
+      "dp_noised_count": null,
+      "generated_at": "2026-05-04T17:07:57.090031+00:00"
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "_metadata": {
+    "schema_version": "0.1.0",
+    "approach": "FedAvg simulation across 6 simulated partner sites; logistic regression head; 10 rounds; held-out 25% eval set; documents the privacy architecture without requiring real cross-organization deployment.",
+    "production_path": "1) HPE Swarm Learning for peer-to-peer topology (no central aggregator); 2) Bonawitz CCS'17 secure aggregation on weight exchange; 3) Opacus DP-SGD inside each local training step (\u03b5 \u2264 8.0, \u03b4 = 1e-5); 4) Permissioned blockchain coordination ledger.",
+    "n_sites": 6,
+    "n_rounds": 10,
+    "seed": 42
+  },
+  "summary": {
+    "n_sites": 6,
+    "n_rounds": 10,
+    "centralized_auc": 0.8255364806866953,
+    "centralized_pr_auc": 0.2949178190030749,
+    "federated_auc": 0.8995708154506438,
+    "federated_pr_auc": 0.4069311021588679,
+    "auc_gap": 0.0740343347639485,
+    "n_train_total": 3507,
+    "n_eval": 1169
+  },
+  "per_site": [
+    {
+      "site_id": "S1",
+      "site_type": "hospital",
+      "site_name": "Tucson Medical Center",
+      "n_train": 966,
+      "n_pos": 2,
+      "local_auc": 0.8418454935622317,
+      "federated_auc": 0.8995708154506438
+    },
+    {
+      "site_id": "S2",
+      "site_type": "hospital",
+      "site_name": "Banner Health Phoenix",
+      "n_train": 759,
+      "n_pos": 0,
+      "local_auc": 0.5,
+      "federated_auc": 0.8995708154506438
+    },
+    {
+      "site_id": "S3",
+      "site_type": "hospital",
+      "site_name": "Northern AZ Healthcare",
+      "n_train": 941,
+      "n_pos": 4,
+      "local_auc": 0.884549356223176,
+      "federated_auc": 0.8995708154506438
+    },
+    {
+      "site_id": "S4",
+      "site_type": "vet_clinic",
+      "site_name": "Pinal Mixed-Practice Vet",
+      "n_train": 383,
+      "n_pos": 5,
+      "local_auc": 0.900214592274678,
+      "federated_auc": 0.8995708154506438
+    },
+    {
+      "site_id": "S5",
+      "site_type": "vet_clinic",
+      "site_name": "Tucson Companion-Animal Vet",
+      "n_train": 458,
+      "n_pos": 3,
+      "local_auc": 0.9418454935622319,
+      "federated_auc": 0.8995708154506438
+    },
+    {
+      "site_id": "S6",
+      "site_type": "public_health",
+      "site_name": "ADHS Public Health Office",
+      "n_train": 452,
+      "n_pos": 5,
+      "local_auc": 0.8459227467811159,
+      "federated_auc": 0.8995708154506438
+    }
+  ],
+  "rounds": [
+    {
+      "round": 1,
+      "fed_auc": 0.8995708154506438,
+      "fed_pr_auc": 0.4069311021588679,
+      "n_participating_sites": 5
+    },
+    {
+      "round": 2,
+      "fed_auc": 0.8995708154506438,
+      "fed_pr_auc": 0.4069311021588679,
+      "n_participating_sites": 5
+    },
+    {
+      "round": 3,
+      "fed_auc": 0.8995708154506438,
+      "fed_pr_auc": 0.4069311021588679,
+      "n_participating_sites": 5
+    },
+    {
+      "round": 4,
+      "fed_auc": 0.8995708154506438,
+      "fed_pr_auc": 0.4069311021588679,
+      "n_participating_sites": 5
+    },
+    {
+      "round": 5,
+      "fed_auc": 0.8995708154506438,
+      "fed_pr_auc": 0.4069311021588679,
+      "n_participating_sites": 5
+    },
+    {
+      "round": 6,
+      "fed_auc": 0.8995708154506438,
+      "fed_pr_auc": 0.4069311021588679,
+      "n_participating_sites": 5
+    },
+    {
+      "round": 7,
+      "fed_auc": 0.8995708154506438,
+      "fed_pr_auc": 0.4069311021588679,
+      "n_participating_sites": 5
+    },
+    {
+      "round": 8,
+      "fed_auc": 0.8995708154506438,
+      "fed_pr_auc": 0.4069311021588679,
+      "n_participating_sites": 5
+    },
+    {
+      "round": 9,
+      "fed_auc": 0.8995708154506438,
+      "fed_pr_auc": 0.4069311021588679,
+      "n_participating_sites": 5
+    },
+    {
+      "round": 10,
+      "fed_auc": 0.8995708154506438,
+      "fed_pr_auc": 0.4069311021588679,
+      "n_participating_sites": 5
+    }
+  ]
+}

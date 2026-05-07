@@ -1,0 +1,26 @@
+{
+  "_metadata": {
+    "site_id": "usda_aphis",
+    "facility": "USDA APHIS Region 7",
+    "kind": "public_health",
+    "vendor": "USDA-VSPS",
+    "fhir_version": "R4-vet-PH-profile",
+    "endpoint": "https://vsps.aphis.usda.example/r4",
+    "lat": 38.0,
+    "lon": -100.0,
+    "n_patients": 0,
+    "n_animal_patients": 0,
+    "n_encounters": 0,
+    "n_conditions": 0,
+    "_role": "surveillance_sink",
+    "_caveat": "Public-health authorities receive aggregate surveillance feeds and reportable-disease ELRs only. They do not hold primary clinical records."
+  },
+  "patients": [],
+  "animal_patients": [],
+  "encounters": [],
+  "conditions": [],
+  "household_refs": [],
+  "surveillance_feeds": [
+    "USDA VSPS Reportable Animal Disease feed"
+  ]
+}

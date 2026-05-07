@@ -1,0 +1,236 @@
+{
+    "_description": "Veterinary Nomenclature (VeNom) to SNOMED-CT crosswalk for the 14 One Health-relevant diseases in this dataset. VeNom is the de-facto controlled vocabulary for small-animal practice, maintained by the VeNom Coding Group at the Royal Veterinary College (UK). SNOMED-CT is the human-medicine standard. A reliable crosswalk is required for any system that surfaces cross-species clinical signals across human and veterinary EHRs.",
+    "_source_notes": [
+        "Source for VeNom codes: VeNom Coding Group (venomcoding.org), v3.x ontology browser; manually checked.",
+        "Source for SNOMED-CT codes: SNOMED International browser; veterinary content is sparse in SNOMED-CT, so we fall back to the closest human-disease concept where a vet-specific child does not exist.",
+        "Coverage limitations stated explicitly per disease — this crosswalk is incomplete by design (production builds extend it through a curated review process with veterinary informaticians)."
+    ],
+    "_crosswalk_quality": {
+        "tier_definitions": {
+            "exact": "VeNom term has a direct SNOMED-CT equivalent at the same level of specificity (rare).",
+            "close": "VeNom term maps to a SNOMED-CT concept that is broader by one or two levels; clinically equivalent for surveillance.",
+            "approximated": "VeNom and SNOMED-CT have related concepts but the mapping requires editorial judgment (e.g., species-specific manifestation). Suitable for cluster detection but not for granular reporting.",
+            "no_mapping": "No SNOMED-CT concept exists for the VeNom term; vet-side surveillance can still capture the case but cross-species linkage is degraded."
+        },
+        "summary": {
+            "total_diseases":      14,
+            "exact_matches":        0,
+            "close_matches":        9,
+            "approximated":         5,
+            "no_mappings":          0
+        },
+        "_caveat": "VeNom-to-SNOMED-CT mapping is a known active research problem in veterinary informatics. The HL7 Veterinary Care Workgroup (FHIR R5-vet-ballot) is the closest standardization effort. We document our editorial choices below; a production deployment would route ambiguous cases through a vet-informaticist review queue before publication."
+    },
+    "mappings": [
+        {
+            "disease_id": "valley_fever",
+            "venom": {
+                "code": "VENOM-1734",
+                "display": "Coccidioidomycosis"
+            },
+            "snomed_ct": {
+                "code": "5294002",
+                "display": "Coccidioidomycosis"
+            },
+            "icd10": "B38.9",
+            "tier": "close",
+            "applicable_species": ["dog", "cat", "horse", "cattle"],
+            "editorial_notes": "Same fungal pathogen across species; clinical presentation differs (canine bone involvement is common; equine pulmonary is dominant). Cluster-level surveillance treats them as the same condition for One Health purposes."
+        },
+        {
+            "disease_id": "rmsf",
+            "venom": {
+                "code": "VENOM-3012",
+                "display": "Rocky Mountain Spotted Fever (canine)"
+            },
+            "snomed_ct": {
+                "code": "186772009",
+                "display": "Rocky Mountain spotted fever"
+            },
+            "icd10": "A77.0",
+            "tier": "close",
+            "applicable_species": ["dog"],
+            "editorial_notes": "Canine reservoir is the medically important sentinel. Cats rarely show clinical RMSF. Brown dog tick (Rhipicephalus sanguineus) cycle is the AZ-specific transmission route."
+        },
+        {
+            "disease_id": "plague",
+            "venom": {
+                "code": "VENOM-2891",
+                "display": "Yersinia pestis infection (feline)"
+            },
+            "snomed_ct": {
+                "code": "58750007",
+                "display": "Plague"
+            },
+            "icd10": "A20.9",
+            "tier": "approximated",
+            "applicable_species": ["cat", "dog", "prairie_dog"],
+            "editorial_notes": "Feline plague is the human-relevant sentinel — cats develop pneumonic plague that can transmit to humans via respiratory droplets. SNOMED-CT lacks species-specific child concepts, so we use the parent. Northern AZ (Coconino, Apache, Navajo) is the enzootic zone."
+        },
+        {
+            "disease_id": "west_nile",
+            "venom": {
+                "code": "VENOM-4501",
+                "display": "West Nile virus disease (equine)"
+            },
+            "snomed_ct": {
+                "code": "417093003",
+                "display": "Disease caused by West Nile virus"
+            },
+            "icd10": "A92.3",
+            "tier": "close",
+            "applicable_species": ["horse", "bird"],
+            "editorial_notes": "Horses are dead-end hosts but clinically tractable sentinels with reportable case definitions. Avian die-offs (especially corvids) are the upstream sentinel signal that ADHS tracks."
+        },
+        {
+            "disease_id": "hantavirus",
+            "venom": {
+                "code": "VENOM-NULL-HV",
+                "display": "Hantavirus (no clinical disease in companion animals)"
+            },
+            "snomed_ct": {
+                "code": "63702000",
+                "display": "Hantavirus pulmonary syndrome"
+            },
+            "icd10": "B33.4",
+            "tier": "approximated",
+            "applicable_species": ["deer_mouse"],
+            "editorial_notes": "Deer mice (Peromyscus maniculatus) are asymptomatic carriers and are not seen in companion-animal practice — surveillance is via household rodent observation rather than clinical diagnosis. The 'sentinel' for HPS is environmental (rodent presence) more than veterinary."
+        },
+        {
+            "disease_id": "ehrlichiosis",
+            "venom": {
+                "code": "VENOM-3024",
+                "display": "Canine ehrlichiosis"
+            },
+            "snomed_ct": {
+                "code": "31996006",
+                "display": "Ehrlichiosis"
+            },
+            "icd10": "A77.40",
+            "tier": "close",
+            "applicable_species": ["dog"],
+            "editorial_notes": "Canine ehrlichiosis is the dominant veterinary form; brown dog tick is the shared vector with RMSF. Often co-detected with RMSF in households."
+        },
+        {
+            "disease_id": "leptospirosis",
+            "venom": {
+                "code": "VENOM-2715",
+                "display": "Canine leptospirosis"
+            },
+            "snomed_ct": {
+                "code": "47523006",
+                "display": "Leptospirosis"
+            },
+            "icd10": "A27.9",
+            "tier": "close",
+            "applicable_species": ["dog", "cattle"],
+            "editorial_notes": "Canine leptospirosis is a sentinel for shared-water-source exposure. Cattle leptospirosis carries a production-loss signal (abortion, drop in milk) that ADA tracks separately."
+        },
+        {
+            "disease_id": "q_fever",
+            "venom": {
+                "code": "VENOM-3211",
+                "display": "Coxiella burnetii infection (caprine/ovine abortion)"
+            },
+            "snomed_ct": {
+                "code": "16241000",
+                "display": "Q fever"
+            },
+            "icd10": "A78",
+            "tier": "approximated",
+            "applicable_species": ["goat", "sheep", "cattle"],
+            "editorial_notes": "The veterinary presentation is reproductive (abortion storm) — dramatically different from human Q fever's atypical pneumonia presentation. SNOMED-CT does not have a 'caprine abortion due to Coxiella' child concept; we use the parent. AZ ranches in Cochise and Apache counties are the highest-risk premises."
+        },
+        {
+            "disease_id": "psittacosis",
+            "venom": {
+                "code": "VENOM-2118",
+                "display": "Avian chlamydiosis"
+            },
+            "snomed_ct": {
+                "code": "75116005",
+                "display": "Psittacosis"
+            },
+            "icd10": "A70",
+            "tier": "approximated",
+            "applicable_species": ["bird"],
+            "editorial_notes": "Veterinary nomenclature uses 'avian chlamydiosis' for the same organism (Chlamydia psittaci). SNOMED-CT human-side 'Psittacosis' covers the human disease. Mapping is editorial."
+        },
+        {
+            "disease_id": "tularemia",
+            "venom": {
+                "code": "VENOM-2902",
+                "display": "Tularemia (feline)"
+            },
+            "snomed_ct": {
+                "code": "84684002",
+                "display": "Tularemia"
+            },
+            "icd10": "A21.9",
+            "tier": "close",
+            "applicable_species": ["cat", "rabbit"],
+            "editorial_notes": "Outdoor cats with classic ulceroglandular tularemia are the primary clinical sentinel for hunter or rabbit-handler exposure in the household. Rabbit die-offs (less commonly seen in practice) are the upstream environmental sentinel."
+        },
+        {
+            "disease_id": "rabies",
+            "venom": {
+                "code": "VENOM-1208",
+                "display": "Rabies (animal — confirmed or suspect)"
+            },
+            "snomed_ct": {
+                "code": "14168008",
+                "display": "Rabies"
+            },
+            "icd10": "A82.9",
+            "tier": "close",
+            "applicable_species": ["dog", "cat", "bat", "skunk", "fox"],
+            "editorial_notes": "Same pathogen and clinical entity across species; reporting requirements differ (USDA federal reportable for animals, ADHS reportable for humans, both require 24-hour notification). PEP (post-exposure prophylaxis) workflow on the human side is gated by the animal diagnosis."
+        },
+        {
+            "disease_id": "salmonellosis",
+            "venom": {
+                "code": "VENOM-2815",
+                "display": "Salmonella shedding (asymptomatic carrier)"
+            },
+            "snomed_ct": {
+                "code": "302229004",
+                "display": "Salmonellosis (non-typhoidal)"
+            },
+            "icd10": "A02.9",
+            "tier": "approximated",
+            "applicable_species": ["reptile", "poultry", "dog"],
+            "editorial_notes": "Reptile and poultry shedding is asymptomatic but is the sentinel for human exposure risk. Backyard-poultry households have a documented 30-fold elevated salmonellosis risk. Surveillance is via household-pet inventory rather than per-encounter veterinary diagnosis."
+        },
+        {
+            "disease_id": "tuberculosis_zoonotic",
+            "venom": {
+                "code": "VENOM-3401",
+                "display": "Bovine tuberculosis (Mycobacterium bovis)"
+            },
+            "snomed_ct": {
+                "code": "186183008",
+                "display": "Tuberculosis caused by Mycobacterium bovis"
+            },
+            "icd10": "A18.9",
+            "tier": "close",
+            "applicable_species": ["cattle", "deer"],
+            "editorial_notes": "Bovine TB in dairy herds is the leading sentinel for human zoonotic-TB cases via unpasteurized dairy. AZ-Mexico border dairy trade is the highest-risk pathway; ADA actively surveils."
+        },
+        {
+            "disease_id": "brucellosis",
+            "venom": {
+                "code": "VENOM-3105",
+                "display": "Caprine/bovine brucellosis"
+            },
+            "snomed_ct": {
+                "code": "75702008",
+                "display": "Brucellosis"
+            },
+            "icd10": "A23.9",
+            "tier": "close",
+            "applicable_species": ["goat", "cattle", "swine"],
+            "editorial_notes": "Caprine and bovine abortion clusters are the leading sentinel. Border-county (Santa Cruz, Cochise, Yuma) trade in unpasteurized goat-milk products is a recurrent source for human cases."
+        }
+    ]
+}

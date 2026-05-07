@@ -1,0 +1,1423 @@
+{
+    "_metadata": {
+        "version": "1.0.0",
+        "compiled": "2026-05-05",
+        "title": "U.S. Reportable Diseases Database — Arizona-First with Federal Cross-Reference",
+        "scope": "Every disease on the ADHS R9-6-202 list, cross-referenced against CDC NNDSS, USDA APHIS NLRAD, AZ Department of Agriculture, and AZ Game and Fish where applicable.",
+        "sources": [
+            {"agency": "ADHS", "doc": "Arizona Administrative Code R9-6-202 — Reportable Diseases List", "url": "https://www.azdhs.gov/documents/preparedness/epidemiology-disease-control/communicable-disease-reporting/reportable-diseases-list.pdf", "effective": "2025-06-02"},
+            {"agency": "CDC", "doc": "National Notifiable Diseases Surveillance System (NNDSS) Conditions", "url": "https://wwwn.cdc.gov/nndss/conditions/"},
+            {"agency": "USDA APHIS", "doc": "National List of Reportable Animal Diseases (NLRAD) / NAHRS Reportable Disease List", "url": "https://www.aphis.usda.gov/livestock-poultry-disease/surveillance/reportable-diseases"},
+            {"agency": "AZ ADA", "doc": "Arizona Administrative Code R3-2-402 — Mandatory Disease Reporting by Veterinarians and Veterinary Laboratories", "url": "https://agriculture.az.gov/animals/state-veterinarians-office/reportable-diseases"},
+            {"agency": "ADHS+ADA+AGFD", "doc": "Veterinarian Reporting Requirements — Required & Recommended Reportable Zoonotic Diseases in Arizona", "url": "https://www.azdhs.gov/documents/preparedness/epidemiology-disease-control/communicable-disease-reporting/veterinarian-reporting-requirements.pdf"}
+        ],
+        "_caveat": "Compiled from public sources; intended for the ONE-HealthRecord MVP. Production deployment must keep this database in sync with the live ADHS / CDC / APHIS lists, which update annually. Consider sourcing via API rather than static file in production.",
+        "timeline_legend": {
+            "immediate":     "Submit through electronic reporting system or by telephone within 24 hours after a case or suspect case is diagnosed, treated, or detected (ADHS lightning bolt symbol)",
+            "one_working_day": "Submit within one working day through electronic reporting system or by telephone after a case or suspect case is diagnosed, treated, or detected (ADHS exclamation mark symbol)",
+            "five_working_days": "Submit within five working days after a case or suspect case is diagnosed, treated, or detected (ADHS computer/monitor symbol)",
+            "outbreak_24h":  "Submit within 24 hours after detecting an outbreak (ADHS circle symbol)",
+            "monitored_30d": "Monitored disease — report within 30 days (USDA NLRAD)",
+            "notifiable_24h": "Notifiable disease — report within 24 hours (USDA NLRAD)"
+        }
+    },
+    "diseases": [
+        {
+            "disease_id": "anthrax",
+            "common_name": "Anthrax",
+            "icd10": "A22.9",
+            "snomed_ct": "21927003",
+            "applies_to": ["human", "animal"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "immediate",
+                "adhs_timeline": "immediate",
+                "nndss_condition_code": "10240",
+                "destinations": ["adhs", "cdc_nndss", "tribal_if_applicable", "local_health_dept"]
+            },
+            "animal_reporting": {
+                "is_reportable": true,
+                "ada_required": true,
+                "aphis_notifiable": true,
+                "woah_code": "B051",
+                "destinations": ["ada", "aphis", "adhs_cross_species"]
+            },
+            "applicable_species": ["human", "cattle", "sheep", "goat", "horse"],
+            "is_zoonotic": true,
+            "is_select_agent": true,
+            "az_relevance_score": 1
+        },
+        {
+            "disease_id": "botulism",
+            "common_name": "Botulism",
+            "icd10": "A05.1",
+            "snomed_ct": "414488002",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "immediate",
+                "adhs_timeline": "immediate",
+                "nndss_condition_code": "10530",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": false,
+            "is_select_agent": true,
+            "az_relevance_score": 2
+        },
+        {
+            "disease_id": "brucellosis",
+            "common_name": "Brucellosis",
+            "icd10": "A23.9",
+            "snomed_ct": "75702008",
+            "applies_to": ["human", "animal"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "one_working_day",
+                "adhs_timeline": "one_working_day",
+                "nndss_condition_code": "10020",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {
+                "is_reportable": true,
+                "ada_required": true,
+                "aphis_notifiable": true,
+                "woah_code": "B103",
+                "destinations": ["ada", "aphis", "adhs_cross_species"]
+            },
+            "applicable_species": ["human", "cattle", "swine", "goat", "dog"],
+            "is_zoonotic": true,
+            "is_select_agent": true,
+            "az_relevance_score": 4
+        },
+        {
+            "disease_id": "candida_auris",
+            "common_name": "Candida auris",
+            "icd10": "B37.9",
+            "snomed_ct": "770528003",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "one_working_day",
+                "adhs_timeline": "one_working_day",
+                "nndss_condition_code": "11724",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": false,
+            "az_relevance_score": 4
+        },
+        {
+            "disease_id": "chancroid",
+            "common_name": "Chancroid",
+            "icd10": "A57",
+            "snomed_ct": "266143009",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "five_working_days",
+                "adhs_timeline": "five_working_days",
+                "nndss_condition_code": "10270",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": false,
+            "az_relevance_score": 1
+        },
+        {
+            "disease_id": "chikungunya",
+            "common_name": "Chikungunya",
+            "icd10": "A92.0",
+            "snomed_ct": "111875006",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "one_working_day",
+                "adhs_timeline": "one_working_day",
+                "nndss_condition_code": "10750",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": true,
+            "az_relevance_score": 2
+        },
+        {
+            "disease_id": "cholera",
+            "common_name": "Cholera",
+            "icd10": "A00.9",
+            "snomed_ct": "63650001",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "immediate",
+                "adhs_timeline": "immediate",
+                "nndss_condition_code": "10470",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": false,
+            "az_relevance_score": 1
+        },
+        {
+            "disease_id": "creutzfeldt_jakob",
+            "common_name": "Creutzfeldt-Jakob disease",
+            "icd10": "A81.0",
+            "snomed_ct": "792004",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "five_working_days",
+                "adhs_timeline": "five_working_days",
+                "nndss_condition_code": "11000",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": false,
+            "az_relevance_score": 1
+        },
+        {
+            "disease_id": "cronobacter_infant",
+            "common_name": "Cronobacter infection in an infant",
+            "icd10": "A04.9",
+            "snomed_ct": "78648007",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "immediate",
+                "adhs_timeline": "immediate",
+                "nndss_condition_code": null,
+                "destinations": ["adhs", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": false,
+            "az_relevance_score": 1
+        },
+        {
+            "disease_id": "cysticercosis",
+            "common_name": "Cysticercosis",
+            "icd10": "B69.9",
+            "snomed_ct": "37532008",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "five_working_days",
+                "adhs_timeline": "five_working_days",
+                "nndss_condition_code": "11050",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": true,
+            "az_relevance_score": 3
+        },
+        {
+            "disease_id": "dengue",
+            "common_name": "Dengue",
+            "icd10": "A90",
+            "snomed_ct": "38362002",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "one_working_day",
+                "adhs_timeline": "one_working_day",
+                "nndss_condition_code": "10680",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": true,
+            "az_relevance_score": 4
+        },
+        {
+            "disease_id": "diarrhea_outbreak",
+            "common_name": "Diarrhea, nausea, or vomiting (outbreak)",
+            "icd10": "A09",
+            "snomed_ct": "62315008",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "outbreak_24h",
+                "adhs_timeline": "outbreak_24h",
+                "nndss_condition_code": null,
+                "destinations": ["adhs", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": false,
+            "az_relevance_score": 5,
+            "_note": "Reportable as an outbreak signal; individual sporadic cases are not."
+        },
+        {
+            "disease_id": "diphtheria",
+            "common_name": "Diphtheria",
+            "icd10": "A36.9",
+            "snomed_ct": "397428000",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "immediate",
+                "adhs_timeline": "immediate",
+                "nndss_condition_code": "10050",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": false,
+            "az_relevance_score": 1
+        },
+        {
+            "disease_id": "emerging_or_exotic",
+            "common_name": "Emerging or exotic disease",
+            "icd10": "U07.9",
+            "snomed_ct": null,
+            "applies_to": ["human", "animal"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "immediate",
+                "adhs_timeline": "immediate",
+                "nndss_condition_code": null,
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {
+                "is_reportable": true,
+                "ada_required": true,
+                "aphis_notifiable": true,
+                "destinations": ["ada", "aphis"]
+            },
+            "applicable_species": ["human", "animal"],
+            "is_zoonotic": true,
+            "az_relevance_score": 2
+        },
+        {
+            "disease_id": "encephalitis_parasitic",
+            "common_name": "Encephalitis, parasitic (e.g., Naegleria fowleri)",
+            "icd10": "B83.2",
+            "snomed_ct": "111950002",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "immediate",
+                "adhs_timeline": "immediate",
+                "nndss_condition_code": null,
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": false,
+            "az_relevance_score": 2
+        },
+        {
+            "disease_id": "encephalitis_viral",
+            "common_name": "Encephalitis, viral",
+            "icd10": "A86",
+            "snomed_ct": "16956007",
+            "applies_to": ["human", "animal"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "one_working_day",
+                "adhs_timeline": "one_working_day",
+                "nndss_condition_code": null,
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {
+                "is_reportable": true,
+                "ada_required": true,
+                "destinations": ["ada", "aphis"],
+                "_note": "Eastern, Western, Venezuelan equine encephalomyelitis is required-reportable for veterinarians (ADA)."
+            },
+            "applicable_species": ["human", "horse"],
+            "is_zoonotic": true,
+            "az_relevance_score": 3
+        },
+        {
+            "disease_id": "glanders",
+            "common_name": "Glanders",
+            "icd10": "A24.0",
+            "snomed_ct": "73542009",
+            "applies_to": ["human", "animal"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "immediate",
+                "adhs_timeline": "immediate",
+                "nndss_condition_code": null,
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {
+                "is_reportable": true,
+                "ada_required": true,
+                "aphis_notifiable": true,
+                "woah_code": "B153",
+                "destinations": ["ada", "aphis", "adhs_cross_species"]
+            },
+            "applicable_species": ["human", "horse"],
+            "is_zoonotic": true,
+            "is_select_agent": true,
+            "az_relevance_score": 1
+        },
+        {
+            "disease_id": "gonorrhea",
+            "common_name": "Gonorrhea",
+            "icd10": "A54.9",
+            "snomed_ct": "15628003",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "five_working_days",
+                "adhs_timeline": "five_working_days",
+                "nndss_condition_code": "10280",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": false,
+            "az_relevance_score": 5
+        },
+        {
+            "disease_id": "haemophilus_invasive",
+            "common_name": "Haemophilus influenzae, invasive disease",
+            "icd10": "A41.3",
+            "snomed_ct": "127336009",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "one_working_day",
+                "adhs_timeline": "one_working_day",
+                "nndss_condition_code": "10590",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": false,
+            "az_relevance_score": 4
+        },
+        {
+            "disease_id": "hansens",
+            "common_name": "Hansen's disease (Leprosy)",
+            "icd10": "A30.9",
+            "snomed_ct": "81004002",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "five_working_days",
+                "adhs_timeline": "five_working_days",
+                "nndss_condition_code": "10380",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human", "armadillo"],
+            "is_zoonotic": true,
+            "az_relevance_score": 1
+        },
+        {
+            "disease_id": "hantavirus",
+            "common_name": "Hantavirus infection",
+            "icd10": "B33.4",
+            "snomed_ct": "63702000",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "immediate",
+                "adhs_timeline": "immediate",
+                "nndss_condition_code": "11590",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human", "deer_mouse"],
+            "is_zoonotic": true,
+            "az_relevance_score": 4
+        },
+        {
+            "disease_id": "hus",
+            "common_name": "Hemolytic uremic syndrome",
+            "icd10": "D59.3",
+            "snomed_ct": "111407006",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "immediate",
+                "adhs_timeline": "immediate",
+                "nndss_condition_code": "11550",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": true,
+            "az_relevance_score": 2
+        },
+        {
+            "disease_id": "hiv_infant",
+            "common_name": "HIV infection and related disease in an infant",
+            "icd10": "B20",
+            "snomed_ct": "86406008",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "five_working_days",
+                "adhs_timeline": "five_working_days",
+                "nndss_condition_code": "10720",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": false,
+            "az_relevance_score": 2
+        },
+        {
+            "disease_id": "influenza_pediatric_mortality",
+            "common_name": "Influenza-associated mortality in a child",
+            "icd10": "J11.0",
+            "snomed_ct": "16310003",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "one_working_day",
+                "adhs_timeline": "one_working_day",
+                "nndss_condition_code": "11023",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": false,
+            "az_relevance_score": 3
+        },
+        {
+            "disease_id": "leptospirosis",
+            "common_name": "Leptospirosis",
+            "icd10": "A27.9",
+            "snomed_ct": "47523006",
+            "applies_to": ["human", "animal"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "one_working_day",
+                "adhs_timeline": "one_working_day",
+                "nndss_condition_code": "10090",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {
+                "is_reportable": true,
+                "ada_required": true,
+                "destinations": ["ada", "adhs_cross_species"],
+                "_note": "ADA + ADHS dual reporting required for veterinary cases."
+            },
+            "applicable_species": ["human", "dog", "cattle", "horse", "swine", "goat"],
+            "is_zoonotic": true,
+            "az_relevance_score": 3
+        },
+        {
+            "disease_id": "listeriosis",
+            "common_name": "Listeriosis",
+            "icd10": "A32.9",
+            "snomed_ct": "4241002",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "one_working_day",
+                "adhs_timeline": "one_working_day",
+                "nndss_condition_code": "10630",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": true,
+            "az_relevance_score": 3
+        },
+        {
+            "disease_id": "lcm",
+            "common_name": "Lymphocytic choriomeningitis",
+            "icd10": "A87.2",
+            "snomed_ct": "26726000",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "one_working_day",
+                "adhs_timeline": "one_working_day",
+                "nndss_condition_code": null,
+                "destinations": ["adhs", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": true,
+            "az_relevance_score": 1
+        },
+        {
+            "disease_id": "measles",
+            "common_name": "Measles (rubeola)",
+            "icd10": "B05.9",
+            "snomed_ct": "14189004",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "immediate",
+                "adhs_timeline": "immediate",
+                "nndss_condition_code": "10140",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": false,
+            "az_relevance_score": 4
+        },
+        {
+            "disease_id": "melioidosis",
+            "common_name": "Melioidosis",
+            "icd10": "A24.4",
+            "snomed_ct": "55735004",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "one_working_day",
+                "adhs_timeline": "one_working_day",
+                "nndss_condition_code": null,
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": true,
+            "is_select_agent": true,
+            "az_relevance_score": 1
+        },
+        {
+            "disease_id": "meningococcal",
+            "common_name": "Meningococcal invasive disease",
+            "icd10": "A39.9",
+            "snomed_ct": "23511006",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "immediate",
+                "adhs_timeline": "immediate",
+                "nndss_condition_code": "10590",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": false,
+            "az_relevance_score": 3
+        },
+        {
+            "disease_id": "mers",
+            "common_name": "Middle East respiratory syndrome (MERS)",
+            "icd10": "B34.2",
+            "snomed_ct": "713084008",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "immediate",
+                "adhs_timeline": "immediate",
+                "nndss_condition_code": "11066",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human", "camel"],
+            "is_zoonotic": true,
+            "az_relevance_score": 1
+        },
+        {
+            "disease_id": "mpox",
+            "common_name": "Mpox",
+            "icd10": "B04",
+            "snomed_ct": "414015000",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "five_working_days",
+                "adhs_timeline": "five_working_days",
+                "nndss_condition_code": "11944",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": true,
+            "az_relevance_score": 3
+        },
+        {
+            "disease_id": "mumps",
+            "common_name": "Mumps",
+            "icd10": "B26.9",
+            "snomed_ct": "36989005",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "one_working_day",
+                "adhs_timeline": "one_working_day",
+                "nndss_condition_code": "10180",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": false,
+            "az_relevance_score": 2
+        },
+        {
+            "disease_id": "novel_coronavirus",
+            "common_name": "Novel coronavirus infection",
+            "icd10": "U07.1",
+            "snomed_ct": "840539006",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "immediate",
+                "adhs_timeline": "immediate",
+                "nndss_condition_code": "11065",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": true,
+            "az_relevance_score": 5
+        },
+        {
+            "disease_id": "pertussis",
+            "common_name": "Pertussis (whooping cough)",
+            "icd10": "A37.9",
+            "snomed_ct": "27836007",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "one_working_day",
+                "adhs_timeline": "one_working_day",
+                "nndss_condition_code": "10190",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": false,
+            "az_relevance_score": 4
+        },
+        {
+            "disease_id": "plague",
+            "common_name": "Plague",
+            "icd10": "A20.9",
+            "snomed_ct": "58750007",
+            "applies_to": ["human", "animal"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "immediate",
+                "adhs_timeline": "immediate",
+                "nndss_condition_code": "10080",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {
+                "is_reportable": true,
+                "agfd_recommended": true,
+                "destinations": ["agfd", "adhs_cross_species"],
+                "_note": "AGFD/ADHS recommended for animal cases (especially feline plague — cats can transmit to humans)."
+            },
+            "applicable_species": ["human", "cat", "prairie_dog", "ground_squirrel", "rodent"],
+            "is_zoonotic": true,
+            "is_select_agent": true,
+            "az_relevance_score": 4
+        },
+        {
+            "disease_id": "polio",
+            "common_name": "Poliomyelitis (paralytic or non-paralytic)",
+            "icd10": "A80.9",
+            "snomed_ct": "398102009",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "immediate",
+                "adhs_timeline": "immediate",
+                "nndss_condition_code": "10410",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": false,
+            "az_relevance_score": 1
+        },
+        {
+            "disease_id": "q_fever",
+            "common_name": "Q fever",
+            "icd10": "A78",
+            "snomed_ct": "16241000",
+            "applies_to": ["human", "animal"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "one_working_day",
+                "adhs_timeline": "one_working_day",
+                "nndss_condition_code": "10260",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {
+                "is_reportable": true,
+                "ada_required": true,
+                "aphis_notifiable": true,
+                "woah_code": "B106",
+                "destinations": ["ada", "aphis", "adhs_cross_species"]
+            },
+            "applicable_species": ["human", "goat", "sheep", "cattle"],
+            "is_zoonotic": true,
+            "is_select_agent": true,
+            "az_relevance_score": 3
+        },
+        {
+            "disease_id": "rabies_human",
+            "common_name": "Rabies in a human",
+            "icd10": "A82.9",
+            "snomed_ct": "14168008",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "immediate",
+                "adhs_timeline": "immediate",
+                "nndss_condition_code": "10460",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": true,
+            "az_relevance_score": 2
+        },
+        {
+            "disease_id": "rabies_animal",
+            "common_name": "Rabies in an animal (confirmed or suspect)",
+            "icd10": "A82.9",
+            "snomed_ct": "14168008",
+            "applies_to": ["animal"],
+            "human_reporting": {"is_reportable": false},
+            "animal_reporting": {
+                "is_reportable": true,
+                "ada_required": true,
+                "agfd_recommended": true,
+                "aphis_notifiable": true,
+                "woah_code": "B058",
+                "destinations": ["ada", "agfd", "aphis", "adhs_cross_species"]
+            },
+            "applicable_species": ["dog", "cat", "bat", "skunk", "fox", "coyote"],
+            "is_zoonotic": true,
+            "az_relevance_score": 4
+        },
+        {
+            "disease_id": "relapsing_fever",
+            "common_name": "Relapsing fever (borreliosis)",
+            "icd10": "A68.9",
+            "snomed_ct": "27553009",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "one_working_day",
+                "adhs_timeline": "one_working_day",
+                "nndss_condition_code": "10490",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": true,
+            "az_relevance_score": 2
+        },
+        {
+            "disease_id": "respiratory_outbreak",
+            "common_name": "Respiratory disease (outbreak)",
+            "icd10": "J22",
+            "snomed_ct": "50417007",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "outbreak_24h",
+                "adhs_timeline": "outbreak_24h",
+                "nndss_condition_code": null,
+                "destinations": ["adhs", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": false,
+            "az_relevance_score": 4,
+            "_note": "Outbreak-only reportable; sporadic cases not reportable."
+        },
+        {
+            "disease_id": "rubella",
+            "common_name": "Rubella (German measles)",
+            "icd10": "B06.9",
+            "snomed_ct": "36653000",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "one_working_day",
+                "adhs_timeline": "one_working_day",
+                "nndss_condition_code": "10200",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": false,
+            "az_relevance_score": 1
+        },
+        {
+            "disease_id": "rubella_congenital",
+            "common_name": "Rubella syndrome, congenital",
+            "icd10": "P35.0",
+            "snomed_ct": "1857005",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "one_working_day",
+                "adhs_timeline": "one_working_day",
+                "nndss_condition_code": "10210",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": false,
+            "az_relevance_score": 1
+        },
+        {
+            "disease_id": "sars",
+            "common_name": "Severe acute respiratory syndrome (SARS)",
+            "icd10": "U04.9",
+            "snomed_ct": "398447004",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "immediate",
+                "adhs_timeline": "immediate",
+                "nndss_condition_code": "11070",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": true,
+            "az_relevance_score": 1
+        },
+        {
+            "disease_id": "smallpox",
+            "common_name": "Smallpox",
+            "icd10": "B03",
+            "snomed_ct": "67924001",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "immediate",
+                "adhs_timeline": "immediate",
+                "nndss_condition_code": "10250",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": false,
+            "is_select_agent": true,
+            "az_relevance_score": 1
+        },
+        {
+            "disease_id": "rmsf",
+            "common_name": "Spotted fever rickettsiosis (e.g., Rocky Mountain spotted fever)",
+            "icd10": "A77.0",
+            "snomed_ct": "186772009",
+            "applies_to": ["human", "animal"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "one_working_day",
+                "adhs_timeline": "one_working_day",
+                "nndss_condition_code": "10250",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {
+                "is_reportable": true,
+                "adhs_recommended": true,
+                "destinations": ["adhs_cross_species"]
+            },
+            "applicable_species": ["human", "dog"],
+            "is_zoonotic": true,
+            "az_relevance_score": 5
+        },
+        {
+            "disease_id": "syphilis",
+            "common_name": "Syphilis",
+            "icd10": "A53.9",
+            "snomed_ct": "76272004",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "five_working_days",
+                "adhs_timeline": "five_working_days",
+                "nndss_condition_code": "10311",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": false,
+            "az_relevance_score": 5,
+            "_note": "Submit within one working day if pregnant (ADHS R9-6-202)."
+        },
+        {
+            "disease_id": "taeniasis",
+            "common_name": "Taeniasis",
+            "icd10": "B68.9",
+            "snomed_ct": "33839006",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "five_working_days",
+                "adhs_timeline": "five_working_days",
+                "nndss_condition_code": null,
+                "destinations": ["adhs", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": true,
+            "az_relevance_score": 2
+        },
+        {
+            "disease_id": "tetanus",
+            "common_name": "Tetanus",
+            "icd10": "A35",
+            "snomed_ct": "76902006",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "five_working_days",
+                "adhs_timeline": "five_working_days",
+                "nndss_condition_code": "10350",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": false,
+            "az_relevance_score": 1
+        },
+        {
+            "disease_id": "tss",
+            "common_name": "Toxic shock syndrome",
+            "icd10": "A48.3",
+            "snomed_ct": "18504008",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "five_working_days",
+                "adhs_timeline": "five_working_days",
+                "nndss_condition_code": "10360",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": false,
+            "az_relevance_score": 2
+        },
+        {
+            "disease_id": "trichinosis",
+            "common_name": "Trichinosis",
+            "icd10": "B75",
+            "snomed_ct": "31014002",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "one_working_day",
+                "adhs_timeline": "one_working_day",
+                "nndss_condition_code": "10370",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": true,
+            "az_relevance_score": 1
+        },
+        {
+            "disease_id": "tb_active",
+            "common_name": "Tuberculosis, active disease",
+            "icd10": "A15.9",
+            "snomed_ct": "56717001",
+            "applies_to": ["human", "animal"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "one_working_day",
+                "adhs_timeline": "one_working_day",
+                "nndss_condition_code": "10211",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {
+                "is_reportable": true,
+                "ada_required": true,
+                "aphis_notifiable": true,
+                "woah_code": "B105",
+                "destinations": ["ada", "aphis", "adhs_cross_species"],
+                "_note": "Bovine TB (M. bovis) only; ADA leads on cattle/dairy surveillance."
+            },
+            "applicable_species": ["human", "cattle", "deer"],
+            "is_zoonotic": true,
+            "az_relevance_score": 4
+        },
+        {
+            "disease_id": "tb_latent_child",
+            "common_name": "Tuberculosis latent infection in a child 5 years of age or younger",
+            "icd10": "Z22.7",
+            "snomed_ct": "11999007",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "one_working_day",
+                "adhs_timeline": "one_working_day",
+                "nndss_condition_code": null,
+                "destinations": ["adhs", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": false,
+            "az_relevance_score": 3
+        },
+        {
+            "disease_id": "tularemia",
+            "common_name": "Tularemia",
+            "icd10": "A21.9",
+            "snomed_ct": "84684002",
+            "applies_to": ["human", "animal"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "immediate",
+                "adhs_timeline": "immediate",
+                "nndss_condition_code": "10300",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {
+                "is_reportable": true,
+                "ada_required": true,
+                "agfd_recommended": true,
+                "aphis_notifiable": true,
+                "woah_code": "B258",
+                "destinations": ["ada", "agfd", "aphis", "adhs_cross_species"]
+            },
+            "applicable_species": ["human", "cat", "rabbit", "rodent"],
+            "is_zoonotic": true,
+            "is_select_agent": true,
+            "az_relevance_score": 2
+        },
+        {
+            "disease_id": "typhoid",
+            "common_name": "Typhoid fever",
+            "icd10": "A01.0",
+            "snomed_ct": "4834000",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "one_working_day",
+                "adhs_timeline": "one_working_day",
+                "nndss_condition_code": "10220",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": false,
+            "az_relevance_score": 2
+        },
+        {
+            "disease_id": "typhus",
+            "common_name": "Typhus fever",
+            "icd10": "A75.9",
+            "snomed_ct": "186776007",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "one_working_day",
+                "adhs_timeline": "one_working_day",
+                "nndss_condition_code": null,
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": true,
+            "az_relevance_score": 2
+        },
+        {
+            "disease_id": "vaccinia",
+            "common_name": "Vaccinia-related adverse event",
+            "icd10": "T88.1",
+            "snomed_ct": "111911001",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "one_working_day",
+                "adhs_timeline": "one_working_day",
+                "nndss_condition_code": null,
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": false,
+            "az_relevance_score": 1
+        },
+        {
+            "disease_id": "varicella",
+            "common_name": "Varicella (chickenpox)",
+            "icd10": "B01.9",
+            "snomed_ct": "38907003",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "five_working_days",
+                "adhs_timeline": "five_working_days",
+                "nndss_condition_code": "10030",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": false,
+            "az_relevance_score": 4
+        },
+        {
+            "disease_id": "vhf",
+            "common_name": "Viral hemorrhagic fever (Ebola, Marburg, Lassa, etc.)",
+            "icd10": "A99",
+            "snomed_ct": "37109004",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "immediate",
+                "adhs_timeline": "immediate",
+                "nndss_condition_code": "11631",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": true,
+            "is_select_agent": true,
+            "az_relevance_score": 1
+        },
+        {
+            "disease_id": "yellow_fever",
+            "common_name": "Yellow fever",
+            "icd10": "A95.9",
+            "snomed_ct": "16541001",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "immediate",
+                "adhs_timeline": "immediate",
+                "nndss_condition_code": "10610",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": true,
+            "az_relevance_score": 1
+        },
+        {
+            "disease_id": "zika",
+            "common_name": "Zika virus infection",
+            "icd10": "A92.5",
+            "snomed_ct": "3928002",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "one_working_day",
+                "adhs_timeline": "one_working_day",
+                "nndss_condition_code": "50223",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": true,
+            "az_relevance_score": 2
+        },
+        {
+            "disease_id": "valley_fever",
+            "common_name": "Coccidioidomycosis (Valley Fever)",
+            "icd10": "B38.9",
+            "snomed_ct": "5294002",
+            "applies_to": ["human", "animal"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "one_working_day",
+                "adhs_timeline": "one_working_day",
+                "nndss_condition_code": "11020",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {
+                "is_reportable": false,
+                "_note": "Not formally reportable for animals, but ADHS encourages cross-species sentinel notification given AZ endemicity."
+            },
+            "applicable_species": ["human", "dog", "cat", "horse"],
+            "is_zoonotic": false,
+            "az_relevance_score": 5,
+            "_note": "Although technically not on the AZ R9-6-202 explicit list, valley fever is reportable per separate provider obligation under R9-6-201; included for comprehensive AZ One Health coverage."
+        },
+        {
+            "disease_id": "salmonellosis",
+            "common_name": "Salmonellosis",
+            "icd10": "A02.9",
+            "snomed_ct": "302229004",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "five_working_days",
+                "adhs_timeline": "five_working_days",
+                "nndss_condition_code": "10240",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human", "reptile", "poultry"],
+            "is_zoonotic": true,
+            "az_relevance_score": 5
+        },
+        {
+            "disease_id": "campylobacteriosis",
+            "common_name": "Campylobacteriosis",
+            "icd10": "A04.5",
+            "snomed_ct": "70241007",
+            "applies_to": ["human"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "five_working_days",
+                "adhs_timeline": "five_working_days",
+                "nndss_condition_code": "11020",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {"is_reportable": false},
+            "applicable_species": ["human"],
+            "is_zoonotic": true,
+            "az_relevance_score": 5
+        },
+        {
+            "disease_id": "ehrlichiosis",
+            "common_name": "Ehrlichiosis or Anaplasmosis",
+            "icd10": "A77.40",
+            "snomed_ct": "31996006",
+            "applies_to": ["human", "animal"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "five_working_days",
+                "adhs_timeline": "five_working_days",
+                "nndss_condition_code": "10075",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {
+                "is_reportable": true,
+                "adhs_recommended": true,
+                "destinations": ["adhs_cross_species"]
+            },
+            "applicable_species": ["human", "dog"],
+            "is_zoonotic": true,
+            "az_relevance_score": 4
+        },
+        {
+            "disease_id": "west_nile",
+            "common_name": "West Nile virus disease",
+            "icd10": "A92.3",
+            "snomed_ct": "417093003",
+            "applies_to": ["human", "animal"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "one_working_day",
+                "adhs_timeline": "one_working_day",
+                "nndss_condition_code": "10056",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {
+                "is_reportable": true,
+                "ada_required": true,
+                "aphis_notifiable": true,
+                "destinations": ["ada", "aphis", "adhs_cross_species"]
+            },
+            "applicable_species": ["human", "horse", "bird"],
+            "is_zoonotic": true,
+            "az_relevance_score": 4
+        },
+        {
+            "disease_id": "psittacosis",
+            "common_name": "Psittacosis (Avian chlamydiosis)",
+            "icd10": "A70",
+            "snomed_ct": "75116005",
+            "applies_to": ["human", "animal"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "five_working_days",
+                "adhs_timeline": "five_working_days",
+                "nndss_condition_code": "10220",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {
+                "is_reportable": true,
+                "ada_required": true,
+                "agfd_recommended": true,
+                "destinations": ["ada", "agfd", "adhs_cross_species"]
+            },
+            "applicable_species": ["human", "bird"],
+            "is_zoonotic": true,
+            "az_relevance_score": 2
+        },
+        {
+            "disease_id": "lyme",
+            "common_name": "Lyme disease",
+            "icd10": "A69.20",
+            "snomed_ct": "23502006",
+            "applies_to": ["human", "animal"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "five_working_days",
+                "adhs_timeline": "five_working_days",
+                "nndss_condition_code": "11080",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {
+                "is_reportable": true,
+                "adhs_recommended": true,
+                "destinations": ["adhs_cross_species"]
+            },
+            "applicable_species": ["human", "dog"],
+            "is_zoonotic": true,
+            "az_relevance_score": 1
+        },
+        {
+            "disease_id": "avian_influenza",
+            "common_name": "Avian influenza (highly pathogenic)",
+            "icd10": "J09.X1",
+            "snomed_ct": "442438000",
+            "applies_to": ["human", "animal"],
+            "human_reporting": {
+                "is_reportable": true,
+                "adhs_class": "immediate",
+                "adhs_timeline": "immediate",
+                "nndss_condition_code": "11066",
+                "destinations": ["adhs", "cdc_nndss", "local_health_dept"]
+            },
+            "animal_reporting": {
+                "is_reportable": true,
+                "ada_required": true,
+                "aphis_notifiable": true,
+                "destinations": ["ada", "aphis", "adhs_cross_species"]
+            },
+            "applicable_species": ["human", "bird", "poultry"],
+            "is_zoonotic": true,
+            "is_select_agent": false,
+            "az_relevance_score": 3
+        },
+        {
+            "disease_id": "vesicular_stomatitis",
+            "common_name": "Vesicular stomatitis",
+            "icd10": "A93.8",
+            "snomed_ct": "1431002",
+            "applies_to": ["animal"],
+            "human_reporting": {"is_reportable": false},
+            "animal_reporting": {
+                "is_reportable": true,
+                "ada_required": true,
+                "aphis_notifiable": true,
+                "destinations": ["ada", "aphis"]
+            },
+            "applicable_species": ["horse", "cattle", "swine"],
+            "is_zoonotic": false,
+            "az_relevance_score": 2
+        },
+        {
+            "disease_id": "onchocerca_lupi",
+            "common_name": "Onchocerca lupi",
+            "icd10": "B73",
+            "snomed_ct": null,
+            "applies_to": ["human", "animal"],
+            "human_reporting": {"is_reportable": false},
+            "animal_reporting": {
+                "is_reportable": true,
+                "adhs_recommended": true,
+                "destinations": ["adhs_cross_species"]
+            },
+            "applicable_species": ["human", "dog"],
+            "is_zoonotic": true,
+            "az_relevance_score": 1
+        }
+    ]
+}

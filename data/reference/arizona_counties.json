@@ -1,0 +1,26 @@
+{
+  "_description": "Arizona county reference data. FIPS codes are real (US Census). EPA EQI values are approximated from Lobdell et al. 2014 county-level composites (negative = better quality, positive = worse). Coccidioides endemicity ratings are derived from CDC/ADHS surveillance data.",
+  "_source_notes": {
+    "fips": "US Census Bureau TIGER/Line",
+    "epa_eqi": "Approximated from EPA EQI 2006-2010 county dataset",
+    "cocci_endemicity": "CDC/ADHS Valley Fever surveillance reports",
+    "population": "US Census 2020 (rounded)"
+  },
+  "counties": [
+    {"fips": "04001", "name": "Apache",     "seat": "St. Johns",   "lat": 35.39, "lon": -109.49, "population":   66021, "epa_eqi":  0.412, "cocci_endemic": "low"},
+    {"fips": "04003", "name": "Cochise",    "seat": "Bisbee",      "lat": 31.88, "lon": -109.75, "population":  125447, "epa_eqi":  0.156, "cocci_endemic": "moderate"},
+    {"fips": "04005", "name": "Coconino",   "seat": "Flagstaff",   "lat": 35.83, "lon": -111.71, "population":  145101, "epa_eqi": -0.221, "cocci_endemic": "low"},
+    {"fips": "04007", "name": "Gila",       "seat": "Globe",       "lat": 33.79, "lon": -110.81, "population":   53272, "epa_eqi":  0.301, "cocci_endemic": "moderate"},
+    {"fips": "04009", "name": "Graham",     "seat": "Safford",     "lat": 32.93, "lon": -109.89, "population":   38533, "epa_eqi":  0.198, "cocci_endemic": "low"},
+    {"fips": "04011", "name": "Greenlee",   "seat": "Clifton",     "lat": 33.21, "lon": -109.24, "population":    9563, "epa_eqi":  0.087, "cocci_endemic": "low"},
+    {"fips": "04012", "name": "La Paz",     "seat": "Parker",      "lat": 33.73, "lon": -113.99, "population":   16557, "epa_eqi":  0.512, "cocci_endemic": "moderate"},
+    {"fips": "04013", "name": "Maricopa",   "seat": "Phoenix",     "lat": 33.45, "lon": -112.07, "population": 4485414, "epa_eqi": -0.421, "cocci_endemic": "high"},
+    {"fips": "04015", "name": "Mohave",     "seat": "Kingman",     "lat": 35.19, "lon": -114.05, "population":  213267, "epa_eqi":  0.276, "cocci_endemic": "moderate"},
+    {"fips": "04017", "name": "Navajo",     "seat": "Holbrook",    "lat": 34.90, "lon": -110.16, "population":  106717, "epa_eqi":  0.341, "cocci_endemic": "low"},
+    {"fips": "04019", "name": "Pima",       "seat": "Tucson",      "lat": 32.22, "lon": -110.93, "population": 1043433, "epa_eqi": -0.156, "cocci_endemic": "high"},
+    {"fips": "04021", "name": "Pinal",      "seat": "Florence",    "lat": 32.88, "lon": -111.76, "population":  425264, "epa_eqi":  1.003, "cocci_endemic": "high"},
+    {"fips": "04023", "name": "Santa Cruz", "seat": "Nogales",     "lat": 31.34, "lon": -110.94, "population":   47669, "epa_eqi":  0.221, "cocci_endemic": "moderate"},
+    {"fips": "04025", "name": "Yavapai",    "seat": "Prescott",    "lat": 34.54, "lon": -112.47, "population":  236209, "epa_eqi": -0.087, "cocci_endemic": "moderate"},
+    {"fips": "04027", "name": "Yuma",       "seat": "Yuma",        "lat": 32.69, "lon": -114.62, "population":  203881, "epa_eqi":  0.687, "cocci_endemic": "high"}
+  ]
+}

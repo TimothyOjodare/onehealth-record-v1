@@ -1,0 +1,1721 @@
+{
+  "_metadata": {
+    "n_dictations": 25,
+    "n_entities": 138,
+    "schema_version": "0.1.0"
+  },
+  "dictations": [
+    {
+      "id": "GOLD-000",
+      "text": "Sixty-one-year-old female from Tucson, Pima County, with a six-week dry cough and progressive fatigue. Husband reports their dog Rex was diagnosed with valley fever last month. Temp 100.2 F, BP 122/78, HR 90, RR 18, SpO2 96%. Mild crackles right base. No skin rash. Plan: Coccidioides serology and start fluconazole 200 mg twice daily.",
+      "entities": [
+        {
+          "char_start": 68,
+          "char_end": 77,
+          "kind": "symptom",
+          "text": "dry cough",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "49727002"
+          }
+        },
+        {
+          "char_start": 94,
+          "char_end": 101,
+          "kind": "symptom",
+          "text": "fatigue",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "84229001",
+            "loinc": "LA15171-9"
+          }
+        },
+        {
+          "char_start": 152,
+          "char_end": 164,
+          "kind": "condition_human",
+          "text": "valley fever",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "5294002"
+          }
+        },
+        {
+          "char_start": 177,
+          "char_end": 189,
+          "kind": "vital_temp",
+          "text": "Temp 100.2 F",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "8310-5"
+          }
+        },
+        {
+          "char_start": 191,
+          "char_end": 200,
+          "kind": "vital_bp",
+          "text": "BP 122/78",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "85354-9"
+          }
+        },
+        {
+          "char_start": 202,
+          "char_end": 207,
+          "kind": "vital_hr",
+          "text": "HR 90",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "8867-4"
+          }
+        },
+        {
+          "char_start": 209,
+          "char_end": 214,
+          "kind": "vital_rr",
+          "text": "RR 18",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "9279-1"
+          }
+        },
+        {
+          "char_start": 216,
+          "char_end": 223,
+          "kind": "vital_spo2",
+          "text": "SpO2 96",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "59408-5"
+          }
+        },
+        {
+          "char_start": 255,
+          "char_end": 264,
+          "kind": "symptom",
+          "text": "skin rash",
+          "negated": true,
+          "uncertain": false,
+          "codes": {
+            "snomed": "271807003",
+            "loinc": "LA17119-6"
+          }
+        },
+        {
+          "char_start": 272,
+          "char_end": 284,
+          "kind": "condition_human",
+          "text": "Coccidioides",
+          "negated": true,
+          "uncertain": false,
+          "codes": {
+            "snomed": "5294002"
+          }
+        },
+        {
+          "char_start": 304,
+          "char_end": 315,
+          "kind": "medication",
+          "text": "fluconazole",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "rxnorm": "2592"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GOLD-001",
+      "text": "Fifty-year-old male, lives in Phoenix, presents with two weeks of fever and chest pain. He works in construction and has frequent dust exposure. On exam Temp 101.0 F, HR 102, RR 20, SpO2 95%. Right middle lobe consolidation on chest X-ray. Working diagnosis coccidioidomycosis. Plan: itraconazole 100 mg orally twice daily, follow up in two weeks.",
+      "entities": [
+        {
+          "char_start": 66,
+          "char_end": 71,
+          "kind": "symptom",
+          "text": "fever",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "386661006",
+            "loinc": "LA15173-5"
+          }
+        },
+        {
+          "char_start": 76,
+          "char_end": 86,
+          "kind": "symptom",
+          "text": "chest pain",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "29857009",
+            "loinc": "LA17128-7"
+          }
+        },
+        {
+          "char_start": 153,
+          "char_end": 165,
+          "kind": "vital_temp",
+          "text": "Temp 101.0 F",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "8310-5"
+          }
+        },
+        {
+          "char_start": 167,
+          "char_end": 173,
+          "kind": "vital_hr",
+          "text": "HR 102",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "8867-4"
+          }
+        },
+        {
+          "char_start": 175,
+          "char_end": 180,
+          "kind": "vital_rr",
+          "text": "RR 20",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "9279-1"
+          }
+        },
+        {
+          "char_start": 182,
+          "char_end": 189,
+          "kind": "vital_spo2",
+          "text": "SpO2 95",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "59408-5"
+          }
+        },
+        {
+          "char_start": 258,
+          "char_end": 276,
+          "kind": "condition_human",
+          "text": "coccidioidomycosis",
+          "negated": false,
+          "uncertain": true,
+          "codes": {
+            "snomed": "5294002",
+            "icd10": "B38.9"
+          }
+        },
+        {
+          "char_start": 284,
+          "char_end": 296,
+          "kind": "medication",
+          "text": "itraconazole",
+          "negated": false,
+          "uncertain": true,
+          "codes": {
+            "rxnorm": "10395"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GOLD-002",
+      "text": "Forty-five-year-old male, lives in rural Pinal County, presents with fever, headache, and a maculopapular rash that started on his wrists. Tick exposure two weeks ago. Family dog was recently diagnosed with ehrlichiosis. Temp 102.6 F, BP 118/72, HR 110. Plan: empiric doxycycline 100 mg twice daily, draw RMSF serology.",
+      "entities": [
+        {
+          "char_start": 69,
+          "char_end": 74,
+          "kind": "symptom",
+          "text": "fever",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "386661006",
+            "loinc": "LA15173-5"
+          }
+        },
+        {
+          "char_start": 76,
+          "char_end": 84,
+          "kind": "symptom",
+          "text": "headache",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "25064002",
+            "loinc": "LA17118-8"
+          }
+        },
+        {
+          "char_start": 92,
+          "char_end": 110,
+          "kind": "symptom",
+          "text": "maculopapular rash",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "271807003"
+          }
+        },
+        {
+          "char_start": 207,
+          "char_end": 219,
+          "kind": "condition_human",
+          "text": "ehrlichiosis",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "31996006",
+            "icd10": "A77.40"
+          }
+        },
+        {
+          "char_start": 221,
+          "char_end": 233,
+          "kind": "vital_temp",
+          "text": "Temp 102.6 F",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "8310-5"
+          }
+        },
+        {
+          "char_start": 235,
+          "char_end": 244,
+          "kind": "vital_bp",
+          "text": "BP 118/72",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "85354-9"
+          }
+        },
+        {
+          "char_start": 246,
+          "char_end": 252,
+          "kind": "vital_hr",
+          "text": "HR 110",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "8867-4"
+          }
+        },
+        {
+          "char_start": 268,
+          "char_end": 279,
+          "kind": "medication",
+          "text": "doxycycline",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "rxnorm": "82122"
+          }
+        },
+        {
+          "char_start": 305,
+          "char_end": 309,
+          "kind": "condition_human",
+          "text": "RMSF",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "186772009"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GOLD-003",
+      "text": "Fifty-two-year-old female, hiking enthusiast, presents with abrupt fever and severe headache. She removed an attached tick five days ago. No skin rash on initial exam. Temp 103.4 F, HR 118. Plan: empiric doxycycline, monitor for rash development.",
+      "entities": [
+        {
+          "char_start": 67,
+          "char_end": 72,
+          "kind": "symptom",
+          "text": "fever",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "386661006",
+            "loinc": "LA15173-5"
+          }
+        },
+        {
+          "char_start": 84,
+          "char_end": 92,
+          "kind": "symptom",
+          "text": "headache",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "25064002",
+            "loinc": "LA17118-8"
+          }
+        },
+        {
+          "char_start": 141,
+          "char_end": 150,
+          "kind": "symptom",
+          "text": "skin rash",
+          "negated": true,
+          "uncertain": false,
+          "codes": {
+            "snomed": "271807003",
+            "loinc": "LA17119-6"
+          }
+        },
+        {
+          "char_start": 168,
+          "char_end": 180,
+          "kind": "vital_temp",
+          "text": "Temp 103.4 F",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "8310-5"
+          }
+        },
+        {
+          "char_start": 182,
+          "char_end": 188,
+          "kind": "vital_hr",
+          "text": "HR 118",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "8867-4"
+          }
+        },
+        {
+          "char_start": 204,
+          "char_end": 215,
+          "kind": "medication",
+          "text": "doxycycline",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "rxnorm": "82122"
+          }
+        },
+        {
+          "char_start": 229,
+          "char_end": 233,
+          "kind": "symptom",
+          "text": "rash",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "271807003"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GOLD-004",
+      "text": "Sixty-five-year-old female, lives in rural Maricopa County, presents with fever, severe myalgia, and dyspnea. Cleaned out a rodent-infested shed without respiratory protection one week ago. Temp 102.0 F, BP 92/56, HR 122, RR 28, SpO2 86%. Bilateral diffuse crackles. Suspect hantavirus pulmonary syndrome. Plan: ICU admission and supportive care.",
+      "entities": [
+        {
+          "char_start": 74,
+          "char_end": 79,
+          "kind": "symptom",
+          "text": "fever",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "386661006",
+            "loinc": "LA15173-5"
+          }
+        },
+        {
+          "char_start": 88,
+          "char_end": 95,
+          "kind": "symptom",
+          "text": "myalgia",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "68962001",
+            "loinc": "LA17125-3"
+          }
+        },
+        {
+          "char_start": 101,
+          "char_end": 108,
+          "kind": "symptom",
+          "text": "dyspnea",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "267036007",
+            "loinc": "LA17112-1"
+          }
+        },
+        {
+          "char_start": 190,
+          "char_end": 202,
+          "kind": "vital_temp",
+          "text": "Temp 102.0 F",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "8310-5"
+          }
+        },
+        {
+          "char_start": 204,
+          "char_end": 212,
+          "kind": "vital_bp",
+          "text": "BP 92/56",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "85354-9"
+          }
+        },
+        {
+          "char_start": 214,
+          "char_end": 220,
+          "kind": "vital_hr",
+          "text": "HR 122",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "8867-4"
+          }
+        },
+        {
+          "char_start": 222,
+          "char_end": 227,
+          "kind": "vital_rr",
+          "text": "RR 28",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "9279-1"
+          }
+        },
+        {
+          "char_start": 229,
+          "char_end": 236,
+          "kind": "vital_spo2",
+          "text": "SpO2 86",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "59408-5"
+          }
+        },
+        {
+          "char_start": 275,
+          "char_end": 304,
+          "kind": "condition_human",
+          "text": "hantavirus pulmonary syndrome",
+          "negated": false,
+          "uncertain": true,
+          "codes": {
+            "snomed": "26726000",
+            "icd10": "B33.4"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GOLD-005",
+      "text": "Thirty-eight-year-old male, lives in Yuma, presents with fever, severe muscle pain, and yellowing of the eyes. He swims weekly in an irrigation canal where his dog (recently diagnosed with leptospirosis) also swims. Temp 101.6 F, HR 102. Plan: empiric doxycycline, draw leptospirosis serology.",
+      "entities": [
+        {
+          "char_start": 57,
+          "char_end": 62,
+          "kind": "symptom",
+          "text": "fever",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "386661006",
+            "loinc": "LA15173-5"
+          }
+        },
+        {
+          "char_start": 71,
+          "char_end": 82,
+          "kind": "symptom",
+          "text": "muscle pain",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "68962001"
+          }
+        },
+        {
+          "char_start": 189,
+          "char_end": 202,
+          "kind": "condition_human",
+          "text": "leptospirosis",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "47523006",
+            "icd10": "A27.9"
+          }
+        },
+        {
+          "char_start": 216,
+          "char_end": 228,
+          "kind": "vital_temp",
+          "text": "Temp 101.6 F",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "8310-5"
+          }
+        },
+        {
+          "char_start": 230,
+          "char_end": 236,
+          "kind": "vital_hr",
+          "text": "HR 102",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "8867-4"
+          }
+        },
+        {
+          "char_start": 252,
+          "char_end": 263,
+          "kind": "medication",
+          "text": "doxycycline",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "rxnorm": "82122"
+          }
+        },
+        {
+          "char_start": 270,
+          "char_end": 283,
+          "kind": "condition_human",
+          "text": "leptospirosis",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "47523006",
+            "icd10": "A27.9"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GOLD-006",
+      "text": "Forty-year-old female, lives near St. Johns in Apache County, presents with abrupt fever and a tender lump in the right groin. Outdoor cat was diagnosed with plague three days ago. Temp 103.8 F, BP 100/62, HR 124. Painful right inguinal bubo. Plan: streptomycin 1 g IM twice daily, isolate, notify ADHS and CDC.",
+      "entities": [
+        {
+          "char_start": 83,
+          "char_end": 88,
+          "kind": "symptom",
+          "text": "fever",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "386661006",
+            "loinc": "LA15173-5"
+          }
+        },
+        {
+          "char_start": 158,
+          "char_end": 164,
+          "kind": "condition_human",
+          "text": "plague",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "58750007",
+            "icd10": "A20.9"
+          }
+        },
+        {
+          "char_start": 181,
+          "char_end": 193,
+          "kind": "vital_temp",
+          "text": "Temp 103.8 F",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "8310-5"
+          }
+        },
+        {
+          "char_start": 195,
+          "char_end": 204,
+          "kind": "vital_bp",
+          "text": "BP 100/62",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "85354-9"
+          }
+        },
+        {
+          "char_start": 206,
+          "char_end": 212,
+          "kind": "vital_hr",
+          "text": "HR 124",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "8867-4"
+          }
+        },
+        {
+          "char_start": 228,
+          "char_end": 241,
+          "kind": "symptom",
+          "text": "inguinal bubo",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "271782001"
+          }
+        },
+        {
+          "char_start": 249,
+          "char_end": 261,
+          "kind": "medication",
+          "text": "streptomycin",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "rxnorm": "2670"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GOLD-007",
+      "text": "Sixty-two-year-old male, lives in Cochise County, presents with severe headache, fever, and confusion times three days. Family horse was recently diagnosed with West Nile virus. Temp 102.0 F, BP 152/90, HR 96. Mild neck stiffness. Plan: lumbar puncture, West Nile IgM serology, supportive care.",
+      "entities": [
+        {
+          "char_start": 71,
+          "char_end": 79,
+          "kind": "symptom",
+          "text": "headache",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "25064002",
+            "loinc": "LA17118-8"
+          }
+        },
+        {
+          "char_start": 81,
+          "char_end": 86,
+          "kind": "symptom",
+          "text": "fever",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "386661006",
+            "loinc": "LA15173-5"
+          }
+        },
+        {
+          "char_start": 92,
+          "char_end": 101,
+          "kind": "symptom",
+          "text": "confusion",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "271680005"
+          }
+        },
+        {
+          "char_start": 161,
+          "char_end": 176,
+          "kind": "condition_human",
+          "text": "West Nile virus",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "417093003"
+          }
+        },
+        {
+          "char_start": 178,
+          "char_end": 190,
+          "kind": "vital_temp",
+          "text": "Temp 102.0 F",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "8310-5"
+          }
+        },
+        {
+          "char_start": 192,
+          "char_end": 201,
+          "kind": "vital_bp",
+          "text": "BP 152/90",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "85354-9"
+          }
+        },
+        {
+          "char_start": 203,
+          "char_end": 208,
+          "kind": "vital_hr",
+          "text": "HR 96",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "8867-4"
+          }
+        },
+        {
+          "char_start": 254,
+          "char_end": 263,
+          "kind": "condition_human",
+          "text": "West Nile",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "417093003"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GOLD-008",
+      "text": "Eight-year-old male, presents with a small puncture wound on the left hand sustained when he broke up an attack between his dog and a wild skunk three days ago. The skunk later tested positive for rabies. Temp 98.6 F, HR 90. Wound clean, no signs of infection. Plan: rabies post-exposure prophylaxis with HRIG and rabies vaccine series.",
+      "entities": [
+        {
+          "char_start": 197,
+          "char_end": 203,
+          "kind": "condition_human",
+          "text": "rabies",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "14168008",
+            "icd10": "A82.9"
+          }
+        },
+        {
+          "char_start": 205,
+          "char_end": 216,
+          "kind": "vital_temp",
+          "text": "Temp 98.6 F",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "8310-5"
+          }
+        },
+        {
+          "char_start": 218,
+          "char_end": 223,
+          "kind": "vital_hr",
+          "text": "HR 90",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "8867-4"
+          }
+        },
+        {
+          "char_start": 267,
+          "char_end": 273,
+          "kind": "condition_human",
+          "text": "rabies",
+          "negated": true,
+          "uncertain": false,
+          "codes": {
+            "snomed": "14168008",
+            "icd10": "A82.9"
+          }
+        },
+        {
+          "char_start": 314,
+          "char_end": 320,
+          "kind": "condition_human",
+          "text": "rabies",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "14168008",
+            "icd10": "A82.9"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GOLD-009",
+      "text": "Forty-three-year-old male, runs a goat dairy in Santa Cruz County, presents with three weeks of dry cough, low-grade fever, and fatigue. Three goats had recent abortions, placentas tested positive for Coxiella burnetii. He assisted without PPE. Temp 100.8 F, HR 88. Plan: empiric doxycycline 100 mg twice daily for two weeks, draw Q fever phase I and phase II antibodies.",
+      "entities": [
+        {
+          "char_start": 96,
+          "char_end": 105,
+          "kind": "symptom",
+          "text": "dry cough",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "49727002"
+          }
+        },
+        {
+          "char_start": 107,
+          "char_end": 122,
+          "kind": "symptom",
+          "text": "low-grade fever",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "386661006"
+          }
+        },
+        {
+          "char_start": 128,
+          "char_end": 135,
+          "kind": "symptom",
+          "text": "fatigue",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "84229001",
+            "loinc": "LA15171-9"
+          }
+        },
+        {
+          "char_start": 245,
+          "char_end": 257,
+          "kind": "vital_temp",
+          "text": "Temp 100.8 F",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "8310-5"
+          }
+        },
+        {
+          "char_start": 259,
+          "char_end": 264,
+          "kind": "vital_hr",
+          "text": "HR 88",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "8867-4"
+          }
+        },
+        {
+          "char_start": 280,
+          "char_end": 291,
+          "kind": "medication",
+          "text": "doxycycline",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "rxnorm": "82122"
+          }
+        },
+        {
+          "char_start": 331,
+          "char_end": 338,
+          "kind": "condition_human",
+          "text": "Q fever",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "75116005",
+            "icd10": "A78"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GOLD-010",
+      "text": "Twenty-nine-year-old female, lives in Phoenix, presents with five days of high fever, dry cough, and severe headache. Pet parrot Mango was recently diagnosed with Chlamydia psittaci. Temp 103.0 F, HR 108, SpO2 93%. Right basilar crackles. Plan: empiric doxycycline 100 mg twice daily for ten days, chest X-ray.",
+      "entities": [
+        {
+          "char_start": 74,
+          "char_end": 84,
+          "kind": "symptom",
+          "text": "high fever",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "386661006"
+          }
+        },
+        {
+          "char_start": 86,
+          "char_end": 95,
+          "kind": "symptom",
+          "text": "dry cough",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "49727002"
+          }
+        },
+        {
+          "char_start": 108,
+          "char_end": 116,
+          "kind": "symptom",
+          "text": "headache",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "25064002",
+            "loinc": "LA17118-8"
+          }
+        },
+        {
+          "char_start": 183,
+          "char_end": 195,
+          "kind": "vital_temp",
+          "text": "Temp 103.0 F",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "8310-5"
+          }
+        },
+        {
+          "char_start": 197,
+          "char_end": 203,
+          "kind": "vital_hr",
+          "text": "HR 108",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "8867-4"
+          }
+        },
+        {
+          "char_start": 205,
+          "char_end": 212,
+          "kind": "vital_spo2",
+          "text": "SpO2 93",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "59408-5"
+          }
+        },
+        {
+          "char_start": 253,
+          "char_end": 264,
+          "kind": "medication",
+          "text": "doxycycline",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "rxnorm": "82122"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GOLD-011",
+      "text": "Fifty-five-year-old male, hunter, presents with fever and a painful axillary lymph node. He field-dressed a sick wild rabbit ten days ago without gloves. He has a non-healing ulcer on his right index finger. Temp 102.2 F, HR 110. Plan: empiric streptomycin, draw Francisella tularensis serology, public health notification.",
+      "entities": [
+        {
+          "char_start": 48,
+          "char_end": 53,
+          "kind": "symptom",
+          "text": "fever",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "386661006",
+            "loinc": "LA15173-5"
+          }
+        },
+        {
+          "char_start": 208,
+          "char_end": 220,
+          "kind": "vital_temp",
+          "text": "Temp 102.2 F",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "8310-5"
+          }
+        },
+        {
+          "char_start": 222,
+          "char_end": 228,
+          "kind": "vital_hr",
+          "text": "HR 110",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "8867-4"
+          }
+        },
+        {
+          "char_start": 244,
+          "char_end": 256,
+          "kind": "medication",
+          "text": "streptomycin",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "rxnorm": "2670"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GOLD-012",
+      "text": "Five-year-old female with three days of severe diarrhea, fever, and dehydration. Family has a pet bearded dragon and the child handles the reptile daily. Temp 102.4 F, HR 130, RR 28. Salmonella isolated from stool. Plan: rehydration, supportive care, public health notification.",
+      "entities": [
+        {
+          "char_start": 47,
+          "char_end": 55,
+          "kind": "symptom",
+          "text": "diarrhea",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "62315008",
+            "loinc": "LA17122-0"
+          }
+        },
+        {
+          "char_start": 57,
+          "char_end": 62,
+          "kind": "symptom",
+          "text": "fever",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "386661006",
+            "loinc": "LA15173-5"
+          }
+        },
+        {
+          "char_start": 154,
+          "char_end": 166,
+          "kind": "vital_temp",
+          "text": "Temp 102.4 F",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "8310-5"
+          }
+        },
+        {
+          "char_start": 168,
+          "char_end": 174,
+          "kind": "vital_hr",
+          "text": "HR 130",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "8867-4"
+          }
+        },
+        {
+          "char_start": 176,
+          "char_end": 181,
+          "kind": "vital_rr",
+          "text": "RR 28",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "9279-1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GOLD-013",
+      "text": "Thirty-year-old female annual physical. No fever, no cough, no chest pain. Denies headache or rash. BP 118/74, HR 72. Vitals normal. Plan: routine labs.",
+      "entities": [
+        {
+          "char_start": 43,
+          "char_end": 48,
+          "kind": "symptom",
+          "text": "fever",
+          "negated": true,
+          "uncertain": false,
+          "codes": {
+            "snomed": "386661006",
+            "loinc": "LA15173-5"
+          }
+        },
+        {
+          "char_start": 53,
+          "char_end": 58,
+          "kind": "symptom",
+          "text": "cough",
+          "negated": true,
+          "uncertain": false,
+          "codes": {
+            "snomed": "49727002",
+            "loinc": "LA15172-7"
+          }
+        },
+        {
+          "char_start": 63,
+          "char_end": 73,
+          "kind": "symptom",
+          "text": "chest pain",
+          "negated": true,
+          "uncertain": false,
+          "codes": {
+            "snomed": "29857009",
+            "loinc": "LA17128-7"
+          }
+        },
+        {
+          "char_start": 82,
+          "char_end": 90,
+          "kind": "symptom",
+          "text": "headache",
+          "negated": true,
+          "uncertain": false,
+          "codes": {
+            "snomed": "25064002",
+            "loinc": "LA17118-8"
+          }
+        },
+        {
+          "char_start": 94,
+          "char_end": 98,
+          "kind": "symptom",
+          "text": "rash",
+          "negated": true,
+          "uncertain": false,
+          "codes": {
+            "snomed": "271807003"
+          }
+        },
+        {
+          "char_start": 100,
+          "char_end": 109,
+          "kind": "vital_bp",
+          "text": "BP 118/74",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "85354-9"
+          }
+        },
+        {
+          "char_start": 111,
+          "char_end": 116,
+          "kind": "vital_hr",
+          "text": "HR 72",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "8867-4"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GOLD-014",
+      "text": "Sixty-year-old male follow-up for hypertension. No new symptoms. Denies dyspnea or syncope. BP 138/86, HR 78. Continue lisinopril 10 mg daily.",
+      "entities": [
+        {
+          "char_start": 72,
+          "char_end": 79,
+          "kind": "symptom",
+          "text": "dyspnea",
+          "negated": true,
+          "uncertain": false,
+          "codes": {
+            "snomed": "267036007",
+            "loinc": "LA17112-1"
+          }
+        },
+        {
+          "char_start": 83,
+          "char_end": 90,
+          "kind": "symptom",
+          "text": "syncope",
+          "negated": true,
+          "uncertain": false,
+          "codes": {
+            "snomed": "271594007",
+            "loinc": "LA17117-0"
+          }
+        },
+        {
+          "char_start": 92,
+          "char_end": 101,
+          "kind": "vital_bp",
+          "text": "BP 138/86",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "85354-9"
+          }
+        },
+        {
+          "char_start": 103,
+          "char_end": 108,
+          "kind": "vital_hr",
+          "text": "HR 78",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "8867-4"
+          }
+        },
+        {
+          "char_start": 119,
+          "char_end": 129,
+          "kind": "medication",
+          "text": "lisinopril",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "rxnorm": "29046"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GOLD-015",
+      "text": "Forty-five-year-old male with two weeks of cough. Possibly community-acquired pneumonia. Temp 100.4 F. BP 124/80, HR 88. Right base crackles. Plan: chest X-ray, may consider empiric amoxicillin.",
+      "entities": [
+        {
+          "char_start": 43,
+          "char_end": 48,
+          "kind": "symptom",
+          "text": "cough",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "49727002",
+            "loinc": "LA15172-7"
+          }
+        },
+        {
+          "char_start": 78,
+          "char_end": 87,
+          "kind": "condition_human",
+          "text": "pneumonia",
+          "negated": false,
+          "uncertain": true,
+          "codes": {
+            "snomed": "233604007",
+            "icd10": "J18.9"
+          }
+        },
+        {
+          "char_start": 89,
+          "char_end": 101,
+          "kind": "vital_temp",
+          "text": "Temp 100.4 F",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "8310-5"
+          }
+        },
+        {
+          "char_start": 103,
+          "char_end": 112,
+          "kind": "vital_bp",
+          "text": "BP 124/80",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "85354-9"
+          }
+        },
+        {
+          "char_start": 114,
+          "char_end": 119,
+          "kind": "vital_hr",
+          "text": "HR 88",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "8867-4"
+          }
+        },
+        {
+          "char_start": 182,
+          "char_end": 193,
+          "kind": "medication",
+          "text": "amoxicillin",
+          "negated": false,
+          "uncertain": true,
+          "codes": {
+            "rxnorm": "723"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GOLD-016",
+      "text": "Twenty-five-year-old female. Likely viral URI versus seasonal allergies. Subjective fever. No measured fever in clinic. Plan: supportive care, return precautions reviewed.",
+      "entities": [
+        {
+          "char_start": 84,
+          "char_end": 89,
+          "kind": "symptom",
+          "text": "fever",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "386661006",
+            "loinc": "LA15173-5"
+          }
+        },
+        {
+          "char_start": 103,
+          "char_end": 108,
+          "kind": "symptom",
+          "text": "fever",
+          "negated": true,
+          "uncertain": false,
+          "codes": {
+            "snomed": "386661006",
+            "loinc": "LA15173-5"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GOLD-017",
+      "text": "Fifty-eight-year-old male with end-stage renal disease, hypertension, and type 2 diabetes. Missed two dialysis sessions. Presents with shortness of breath and bilateral leg swelling. BP 168/96, HR 100, RR 22, SpO2 91%. Plan: emergent dialysis, admit, continue lisinopril and metformin.",
+      "entities": [
+        {
+          "char_start": 31,
+          "char_end": 54,
+          "kind": "condition_human",
+          "text": "end-stage renal disease",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "46177005",
+            "icd10": "N18.6"
+          }
+        },
+        {
+          "char_start": 135,
+          "char_end": 154,
+          "kind": "symptom",
+          "text": "shortness of breath",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "267036007"
+          }
+        },
+        {
+          "char_start": 183,
+          "char_end": 192,
+          "kind": "vital_bp",
+          "text": "BP 168/96",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "85354-9"
+          }
+        },
+        {
+          "char_start": 194,
+          "char_end": 200,
+          "kind": "vital_hr",
+          "text": "HR 100",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "8867-4"
+          }
+        },
+        {
+          "char_start": 202,
+          "char_end": 207,
+          "kind": "vital_rr",
+          "text": "RR 22",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "9279-1"
+          }
+        },
+        {
+          "char_start": 209,
+          "char_end": 216,
+          "kind": "vital_spo2",
+          "text": "SpO2 91",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "59408-5"
+          }
+        },
+        {
+          "char_start": 260,
+          "char_end": 270,
+          "kind": "medication",
+          "text": "lisinopril",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "rxnorm": "29046"
+          }
+        },
+        {
+          "char_start": 275,
+          "char_end": 284,
+          "kind": "medication",
+          "text": "metformin",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "rxnorm": "6809"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GOLD-018",
+      "text": "Patient Charlie, three-year-old male neutered Beagle, presented for two weeks of cough and lethargy. Owner reports dog frequently digs in dirt around the property in Maricopa. Temperature 102.4 F, Heart rate 118, Respiratory rate 30. Right lung field crackles. Plan: Coccidioides serology and fluconazole 5 mg per kilogram twice daily.",
+      "entities": [
+        {
+          "char_start": 81,
+          "char_end": 86,
+          "kind": "symptom",
+          "text": "cough",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "49727002",
+            "loinc": "LA15172-7"
+          }
+        },
+        {
+          "char_start": 176,
+          "char_end": 195,
+          "kind": "vital_temp",
+          "text": "Temperature 102.4 F",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "8310-5"
+          }
+        },
+        {
+          "char_start": 267,
+          "char_end": 279,
+          "kind": "condition_human",
+          "text": "Coccidioides",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "5294002"
+          }
+        },
+        {
+          "char_start": 293,
+          "char_end": 304,
+          "kind": "medication",
+          "text": "fluconazole",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "rxnorm": "2592"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GOLD-019",
+      "text": "Patient Daisy, six-year-old female spayed Labrador Retriever, presented for three days of lethargy and limping. Multiple ticks removed last week. Temperature 103.6 F, Heart rate 124. Mild lameness right forelimb. Plan: empiric doxycycline 5 mg per kilogram twice daily, draw 4Dx panel.",
+      "entities": [
+        {
+          "char_start": 146,
+          "char_end": 165,
+          "kind": "vital_temp",
+          "text": "Temperature 103.6 F",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "8310-5"
+          }
+        },
+        {
+          "char_start": 227,
+          "char_end": 238,
+          "kind": "medication",
+          "text": "doxycycline",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "rxnorm": "82122"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GOLD-020",
+      "text": "Patient Buddy, four-year-old male intact Mixed Breed, presented for vomiting and yellow gums. Frequent swimmer in canals. Temperature 103.0 F. Plan: leptospirosis PCR and serology, IV fluids and ampicillin.",
+      "entities": [
+        {
+          "char_start": 122,
+          "char_end": 141,
+          "kind": "vital_temp",
+          "text": "Temperature 103.0 F",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "8310-5"
+          }
+        },
+        {
+          "char_start": 149,
+          "char_end": 162,
+          "kind": "condition_human",
+          "text": "leptospirosis",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "47523006",
+            "icd10": "A27.9"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GOLD-021",
+      "text": "Patient Star, ten-year-old gelding Quarter Horse, presented for two days of progressive ataxia and muscle tremors. Standing water on property. Temperature 102.0 F. Marked hindlimb weakness. Plan: West Nile IgM ELISA and supportive care.",
+      "entities": [
+        {
+          "char_start": 143,
+          "char_end": 162,
+          "kind": "vital_temp",
+          "text": "Temperature 102.0 F",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "8310-5"
+          }
+        },
+        {
+          "char_start": 196,
+          "char_end": 205,
+          "kind": "condition_human",
+          "text": "West Nile",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "417093003"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GOLD-022",
+      "text": "Patient Whiskers, three-year-old female spayed Domestic Shorthair, presented for high fever and a large submandibular lymph node. Cat is outdoor-access in Apache County and hunts ground squirrels. Temperature 105.0 F, Heart rate 220. Plan: bubo aspirate Gram stain, gentamicin 5 mg per kilogram daily, isolate.",
+      "entities": [
+        {
+          "char_start": 81,
+          "char_end": 91,
+          "kind": "symptom",
+          "text": "high fever",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "386661006"
+          }
+        },
+        {
+          "char_start": 197,
+          "char_end": 216,
+          "kind": "vital_temp",
+          "text": "Temperature 105.0 F",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "8310-5"
+          }
+        },
+        {
+          "char_start": 240,
+          "char_end": 244,
+          "kind": "symptom",
+          "text": "bubo",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "snomed": "271782001"
+          }
+        },
+        {
+          "char_start": 266,
+          "char_end": 276,
+          "kind": "medication",
+          "text": "gentamicin",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "rxnorm": "11253"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GOLD-023",
+      "text": "Patient Pepper, four-year-old female Nubian goat, presented for recent late-term abortion. Two other goats in the herd also aborted. Temperature 102.8 F. Plan: Coxiella burnetii PCR on placental tissue, herd-level oxytetracycline.",
+      "entities": [
+        {
+          "char_start": 133,
+          "char_end": 152,
+          "kind": "vital_temp",
+          "text": "Temperature 102.8 F",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "loinc": "8310-5"
+          }
+        }
+      ]
+    },
+    {
+      "id": "GOLD-024",
+      "text": "Patient Sunny, six-year-old male African Grey, presented for two weeks of lethargy, ruffled feathers, and watery droppings. Owner handles bird daily. Weight 380 grams. Plan: Chlamydia psittaci PCR, doxycycline 25 mg per kilogram orally daily, isolate.",
+      "entities": [
+        {
+          "char_start": 198,
+          "char_end": 209,
+          "kind": "medication",
+          "text": "doxycycline",
+          "negated": false,
+          "uncertain": false,
+          "codes": {
+            "rxnorm": "82122"
+          }
+        }
+      ]
+    }
+  ]
+}

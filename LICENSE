@@ -1,0 +1,27 @@
+ONE-HealthRecord — Capstone Project
+Copyright (c) 2026 [Your Name]
+
+All rights reserved.
+
+This repository is shared privately with the certification panel for the
+University of Arizona Digital Public Health capstone for review and
+assessment purposes only.
+
+Permission is NOT granted to:
+  - Copy, modify, redistribute, or sublicense this code or its derivatives
+  - Use the code or any artifact in this repository in any production setting
+  - Use the code or any artifact for commercial purposes
+  - Train any machine-learning model on this code or its data
+
+Permission IS granted to:
+  - Read, review, and evaluate the contents for academic assessment
+  - Run the application locally for the purpose of evaluation
+  - Cite specific artifacts in academic feedback or grading documentation
+
+For any other use, including post-graduation open-source release or
+production deployment, please contact the project author.
+
+The data in this repository is entirely synthetic, generated from a fixed
+random seed (seed=42) for reproducibility. No real protected health
+information is contained in this repository. See SYNTHETIC_DATA_NOTICE.md
+for full caveats on the synthetic dataset.

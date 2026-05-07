@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ONE-HealthRecord — v2.0 Navigation Skeleton</title>
+
+<!-- Match existing project: Fraunces (serif display) + Geist (sans body) + JetBrains Mono (mono) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================================
+   ONE-HealthRecord v2.0 — Two-Hub Navigation
+   ============================================================================
+   Drop-in skeleton for the Phase 3 restructure.
+
+   Replace the existing <nav.tabs> block in app/index.html with the
+   <header class="oh-shell">…</header><nav class="oh-hubs">…</nav> blocks
+   below. All CSS lives under the .oh- prefix to avoid colliding with the
+   existing app stylesheet.
+
+   The role-switcher state is stored on document.body via a `data-role`
+   attribute. The hub-and-tab routing reuses the existing `data-view`
+   convention so the existing app.js view handlers continue to work
+   unchanged — just with two more hub-level wrappers around them.
+   ============================================================================ */
+
+:root {
+  /* Existing project palette (do not change — matches the rest of the app) */
+  --ua-cardinal: #AB0520;
+  --ua-navy: #0C234B;
+  --clinical-sage: #4A6F4D;
+  --ochre: #C5933E;
+  --cream: #FBF7F0;
+  --cream-warm: #F5EFE3;
+  --ink: #1F2937;
+  --ink-soft: #4B5563;
+  --rule: #E7DFCC;
+
+  /* Hub-specific accent colors — new in v2.0 */
+  --hub-clinical: var(--clinical-sage);
+  --hub-public-health: var(--ua-cardinal);
+
+  /* Shadows tuned for warm-cream neomorphism */
+  --shadow-soft: 0 1px 2px rgba(31, 41, 55, 0.04), 0 4px 12px rgba(31, 41, 55, 0.06);
+  --shadow-pressed: inset 0 1px 3px rgba(31, 41, 55, 0.08);
+
+  --radius-card: 14px;
+  --radius-pill: 999px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'Geist', system-ui, -apple-system, sans-serif;
+  font-weight: 400;
+  line-height: 1.55;
+  min-height: 100vh;
+  font-feature-settings: "ss01" 1, "ss02" 1;
+}
+
+/* ============================================================================
+   APP SHELL — top bar with brand, role switcher, synthetic-data badge
+   ============================================================================ */
+.oh-shell {
+  background: var(--cream-warm);
+  border-bottom: 1px solid var(--rule);
+  padding: 18px 32px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(8px);
+}
+
+.oh-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.oh-brand-mark {
+  width: 42px; height: 42px;
+  border-radius: 10px;
+  background: var(--ua-navy);
+  color: var(--cream);
+  display: grid;
+  place-items: center;
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  box-shadow: var(--shadow-soft);
+}
+
+.oh-brand-text h1 {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: -0.01em;
+  color: var(--ua-navy);
+  line-height: 1.1;
+}
+
+.oh-brand-text .sub {
+  font-size: 11px;
+  color: var(--ink-soft);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* Role switcher — segmented control */
+.oh-role-switcher {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.oh-role-label {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+.oh-role-segment {
+  display: inline-flex;
+  background: var(--cream);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-pill);
+  padding: 3px;
+  box-shadow: var(--shadow-pressed);
+}
+
+.oh-role-segment button {
+  appearance: none;
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  padding: 7px 14px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all 0.18s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.oh-role-segment button:hover { color: var(--ink); }
+
+.oh-role-segment button[aria-pressed="true"] {
+  background: var(--ua-navy);
+  color: var(--cream);
+  box-shadow: var(--shadow-soft);
+}
+
+.oh-role-icon {
+  width: 14px; height: 14px;
+  display: inline-block;
+}
+
+.oh-synthetic-badge {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--clinical-sage);
+  background: rgba(74, 111, 77, 0.08);
+  border: 1px solid rgba(74, 111, 77, 0.2);
+  border-radius: var(--radius-pill);
+  padding: 5px 11px;
+  font-weight: 600;
+}
+
+/* ============================================================================
+   TWO-HUB NAVIGATION
+   The big visual change: two hub headers, each with their own tab strip.
+   ============================================================================ */
+.oh-hubs {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Clinical narrower, PH wider — reflects sub-tab count */
+  gap: 0;
+  border-bottom: 1px solid var(--rule);
+  background: var(--cream-warm);
+}
+
+.oh-hub {
+  padding: 18px 24px 14px;
+  position: relative;
+  transition: background 0.2s ease;
+}
+
+.oh-hub + .oh-hub {
+  border-left: 1px solid var(--rule);
+}
+
+.oh-hub-header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.oh-hub-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+.oh-hub-title {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: -0.015em;
+}
+
+.oh-hub[data-hub="clinical"] .oh-hub-title { color: var(--hub-clinical); }
+.oh-hub[data-hub="public-health"] .oh-hub-title { color: var(--hub-public-health); }
+
+.oh-hub-audience {
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin-bottom: 14px;
+  font-style: italic;
+}
+
+/* Tab strip within each hub */
+.oh-tabstrip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.oh-tab {
+  appearance: none;
+  background: transparent;
+  border: 1px solid var(--rule);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  padding: 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.oh-tab:hover {
+  background: var(--cream);
+  color: var(--ink);
+  transform: translateY(-1px);
+}
+
+.oh-tab[aria-current="page"] {
+  background: var(--cream);
+  color: var(--ink);
+  box-shadow: var(--shadow-soft);
+}
+
+.oh-hub[data-hub="clinical"] .oh-tab[aria-current="page"] {
+  border-color: var(--hub-clinical);
+  color: var(--hub-clinical);
+}
+
+.oh-hub[data-hub="public-health"] .oh-tab[aria-current="page"] {
+  border-color: var(--hub-public-health);
+  color: var(--hub-public-health);
+}
+
+.oh-tab-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  opacity: 0.6;
+}
+
+/* When a role is active, dim the non-default hub */
+body[data-role="clinician"] .oh-hub[data-hub="public-health"],
+body[data-role="veterinarian"] .oh-hub[data-hub="public-health"] {
+  opacity: 0.5;
+}
+
+body[data-role="public-health-officer"] .oh-hub[data-hub="clinical"],
+body[data-role="auditor"] .oh-hub[data-hub="clinical"] {
+  opacity: 0.5;
+}
+
+.oh-hub:hover { opacity: 1 !important; }
+
+/* ============================================================================
+   MAIN CONTENT AREA — view container
+   ============================================================================ */
+main { padding: 32px; max-width: 1400px; margin: 0 auto; }
+
+.oh-view-shell {
+  background: var(--cream-warm);
+  border-radius: var(--radius-card);
+  padding: 28px 32px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--rule);
+  min-height: 60vh;
+}
+
+.oh-view-head {
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 16px;
+  margin-bottom: 22px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.oh-view-head h2 {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 26px;
+  letter-spacing: -0.015em;
+  color: var(--ua-navy);
+}
+
+.oh-view-head h2 small {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 4px;
+}
+
+.oh-view-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--ink-soft);
+}
+
+/* ============================================================================
+   MODEL CARD — preview rendering
+   The Architecture tab becomes the Model Card. Below is a preview of how
+   the live tab would render — sectioned, scannable, with live numbers.
+   ============================================================================ */
+.mc-grid {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 24px;
+  margin-top: 18px;
+}
+
+.mc-toc {
+  position: sticky;
+  top: 180px;
+  align-self: start;
+}
+
+.mc-toc h3 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.mc-toc ol {
+  list-style: none;
+  counter-reset: mctoc;
+}
+
+.mc-toc li {
+  counter-increment: mctoc;
+  padding: 6px 0 6px 24px;
+  position: relative;
+  font-size: 13px;
+  color: var(--ink-soft);
+  cursor: pointer;
+  border-left: 2px solid transparent;
+  transition: all 0.15s;
+}
+
+.mc-toc li::before {
+  content: counter(mctoc, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--ochre);
+}
+
+.mc-toc li:hover {
+  color: var(--ink);
+  border-left-color: var(--ochre);
+  padding-left: 28px;
+}
+
+.mc-section {
+  background: var(--cream);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-card);
+  padding: 20px 24px;
+  margin-bottom: 18px;
+}
+
+.mc-section h3 {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--ua-navy);
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mc-section h3 .mc-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--ochre);
+  font-weight: 500;
+}
+
+.mc-section .mc-blurb {
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin-bottom: 14px;
+  line-height: 1.55;
+}
+
+.mc-stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.mc-stat {
+  background: var(--cream-warm);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+.mc-stat .label {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.mc-stat .value {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 22px;
+  color: var(--ua-navy);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.mc-stat .value small {
+  font-family: 'Geist', sans-serif;
+  font-size: 11px;
+  color: var(--ink-soft);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  margin-left: 4px;
+}
+
+/* Privacy stack visualization */
+.mc-privacy-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 12px;
+}
+
+.mc-privacy-layer {
+  display: grid;
+  grid-template-columns: 60px 1fr 110px;
+  gap: 14px;
+  align-items: center;
+  padding: 10px 14px;
+  background: var(--cream-warm);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+}
+
+.mc-privacy-layer .layer-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--ochre);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.mc-privacy-layer .layer-name {
+  font-size: 13px;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.mc-privacy-layer .layer-name small {
+  display: block;
+  font-size: 11px;
+  color: var(--ink-soft);
+  font-weight: 400;
+  margin-top: 2px;
+}
+
+.mc-status-pill {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+}
+
+.mc-status-pill.live {
+  background: rgba(74, 111, 77, 0.12);
+  color: var(--clinical-sage);
+  border: 1px solid rgba(74, 111, 77, 0.3);
+}
+
+.mc-status-pill.scaffolded {
+  background: rgba(197, 147, 62, 0.12);
+  color: var(--ochre);
+  border: 1px solid rgba(197, 147, 62, 0.3);
+}
+
+.mc-status-pill.roadmap {
+  background: rgba(75, 85, 99, 0.08);
+  color: var(--ink-soft);
+  border: 1px solid var(--rule);
+}
+
+/* MedGemma adaptation diagram */
+.mc-medgemma-stack {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.mc-medgemma-layer {
+  background: var(--cream-warm);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 14px;
+  position: relative;
+}
+
+.mc-medgemma-layer::before {
+  content: attr(data-letter);
+  position: absolute;
+  top: -10px;
+  left: 14px;
+  background: var(--ua-navy);
+  color: var(--cream);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.mc-medgemma-layer h4 {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--ua-navy);
+  margin-top: 8px;
+  margin-bottom: 6px;
+}
+
+.mc-medgemma-layer p {
+  font-size: 12px;
+  color: var(--ink-soft);
+  line-height: 1.45;
+}
+
+/* Hub default placeholder */
+.placeholder-card {
+  background: var(--cream);
+  border: 1px dashed var(--rule);
+  border-radius: var(--radius-card);
+  padding: 24px;
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: 13px;
+}
+
+.placeholder-card strong {
+  display: block;
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--ua-navy);
+  margin-bottom: 6px;
+}
+
+.integration-note {
+  background: rgba(197, 147, 62, 0.06);
+  border-left: 3px solid var(--ochre);
+  padding: 14px 18px;
+  border-radius: 6px;
+  margin: 18px 0;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+.integration-note strong { color: var(--ink); }
+
+/* ============================================================================
+   RESPONSIVE — mobile collapse
+   ============================================================================ */
+@media (max-width: 900px) {
+  .oh-hubs { grid-template-columns: 1fr; }
+  .oh-hub + .oh-hub { border-left: none; border-top: 1px solid var(--rule); }
+  .mc-grid { grid-template-columns: 1fr; }
+  .mc-toc { position: static; }
+  .oh-shell { flex-wrap: wrap; }
+  .oh-role-switcher { width: 100%; margin-left: 0; }
+}
+</style>
+</head>
+<body data-role="clinician">
+
+<!-- ============================================================================
+     APP SHELL
+     ============================================================================ -->
+<header class="oh-shell">
+  <div class="oh-brand">
+    <div class="oh-brand-mark">1HR</div>
+    <div class="oh-brand-text">
+      <h1>ONE-HealthRecord</h1>
+      <span class="sub">v2.0 · Machine-Authored · Privacy-Preserving</span>
+    </div>
+  </div>
+
+  <div class="oh-role-switcher">
+    <span class="oh-role-label">Role</span>
+    <div class="oh-role-segment" role="tablist" aria-label="User role">
+      <button type="button" data-role="clinician" aria-pressed="true">Clinician</button>
+      <button type="button" data-role="veterinarian" aria-pressed="false">Veterinarian</button>
+      <button type="button" data-role="public-health-officer" aria-pressed="false">PH&nbsp;Officer</button>
+      <button type="button" data-role="auditor" aria-pressed="false">Auditor</button>
+    </div>
+  </div>
+
+  <span class="oh-synthetic-badge">Synthetic data · No PHI</span>
+</header>
+
+<!-- ============================================================================
+     TWO-HUB NAVIGATION
+     This is the big visual change for v2.0.
+     ============================================================================ -->
+<nav class="oh-hubs" aria-label="Application hubs">
+
+  <!-- ========================================================================
+       HUB 1: CLINICAL WORKSPACE — for clinicians and veterinarians
+       Contains: Live Encounter, Provider Workspace
+       ======================================================================== -->
+  <section class="oh-hub" data-hub="clinical">
+    <div class="oh-hub-header">
+      <span class="oh-hub-eyebrow">Hub 01</span>
+      <h2 class="oh-hub-title">Clinical Workspace</h2>
+    </div>
+    <p class="oh-hub-audience">Where clinicians and veterinarians document encounters and review patient context.</p>
+
+    <div class="oh-tabstrip" role="tablist">
+      <button class="oh-tab" data-view="encounter" aria-current="page">
+        <span class="oh-tab-num">01</span><span>Live Encounter</span>
+      </button>
+      <button class="oh-tab" data-view="workspace">
+        <span class="oh-tab-num">02</span><span>Provider Workspace</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       HUB 2: PUBLIC HEALTH CONSOLE — for epidemiologists, governance, audit
+       Contains: Map, Knowledge Graph, Sentinel Alerts, Evaluation, Risk Model, Model Card
+       ======================================================================== -->
+  <section class="oh-hub" data-hub="public-health">
+    <div class="oh-hub-header">
+      <span class="oh-hub-eyebrow">Hub 02</span>
+      <h2 class="oh-hub-title">Public Health Console</h2>
+    </div>
+    <p class="oh-hub-audience">Where epidemiologists, ADHS, tribal health authorities, and auditors operate the surveillance and accountability surfaces.</p>
+
+    <div class="oh-tabstrip" role="tablist">
+      <button class="oh-tab" data-view="map">
+        <span class="oh-tab-num">03</span><span>One Health Map</span>
+      </button>
+      <button class="oh-tab" data-view="graph">
+        <span class="oh-tab-num">04</span><span>Knowledge Graph</span>
+      </button>
+      <button class="oh-tab" data-view="surveillance">
+        <span class="oh-tab-num">05</span><span>Sentinel Alerts</span>
+      </button>
+      <button class="oh-tab" data-view="evaluation">
+        <span class="oh-tab-num">06</span><span>Evaluation</span>
+      </button>
+      <button class="oh-tab" data-view="risk-model">
+        <span class="oh-tab-num">07</span><span>Risk Model</span>
+      </button>
+      <button class="oh-tab" data-view="model-card">
+        <span class="oh-tab-num">08</span><span>Model Card</span>
+      </button>
+    </div>
+  </section>
+
+</nav>
+
+<!-- ============================================================================
+     MAIN CONTENT — Model Card preview as the example view
+     This shows what the new "Model Card" tab (replacing Architecture) looks like.
+     ============================================================================ -->
+<main>
+  <div class="oh-view-shell">
+    <div class="oh-view-head">
+      <h2><small>08 · Public Health Console</small>Model Card</h2>
+      <span class="oh-view-meta">v2.0 · Mitchell et al. format · live numbers</span>
+    </div>
+
+    <div class="integration-note">
+      <strong>Integration note —</strong> this is the <em>Model Card</em> tab (formerly named <em>Architecture</em>). The full content lives in <code>docs/model_card_v2.md</code>; the live tab renders it as the interactive surface below. Numbers update automatically when the evaluation pipeline reruns.
+    </div>
+
+    <div class="mc-grid">
+
+      <!-- TOC -->
+      <aside class="mc-toc">
+        <h3>Sections</h3>
+        <ol>
+          <li>Model details</li>
+          <li>Intended use</li>
+          <li>Factors</li>
+          <li>Metrics</li>
+          <li>Evaluation data</li>
+          <li>Training data</li>
+          <li>Quantitative analyses</li>
+          <li>Privacy &amp; security</li>
+          <li>Ethical considerations</li>
+          <li>Caveats</li>
+        </ol>
+      </aside>
+
+      <!-- Sections -->
+      <div class="mc-sections">
+
+        <!-- §1 Model details -->
+        <section class="mc-section">
+          <h3><span class="mc-num">§1</span>Model details</h3>
+          <p class="mc-blurb">ONE-HealthRecord v2.0 is a composite of one rule-based component (audit reference) and four learned components: MedGemma 4B as the frozen base extractor, two species-class LoRA adapters trained on top of it, and a gradient-boosted risk model for zoonotic-cluster prediction.</p>
+          <div class="mc-stat-row">
+            <div class="mc-stat"><div class="label">Base model</div><div class="value">MedGemma<small>&nbsp;4B</small></div></div>
+            <div class="mc-stat"><div class="label">LoRA adapters</div><div class="value">2<small>&nbsp;× 8.4M params</small></div></div>
+            <div class="mc-stat"><div class="label">Risk model</div><div class="value">LightGBM<small>&nbsp;v1.0</small></div></div>
+            <div class="mc-stat"><div class="label">Training topology</div><div class="value">Swarm<small>&nbsp;Learning</small></div></div>
+          </div>
+        </section>
+
+        <!-- §3 MedGemma adaptation (excerpt) -->
+        <section class="mc-section">
+          <h3><span class="mc-num">§1.3</span>MedGemma veterinary adaptation</h3>
+          <p class="mc-blurb">Three layers used together. Each layer is justified against the floor set by the layer below it.</p>
+          <div class="mc-medgemma-stack">
+            <div class="mc-medgemma-layer" data-letter="A">
+              <h4>Species router</h4>
+              <p>Structured species block prepended to every dictation. Causal attention forces the model to condition on species from the first token.</p>
+            </div>
+            <div class="mc-medgemma-layer" data-letter="B">
+              <h4>RAG over vet corpora</h4>
+              <p>FAISS index over Merck Vet Manual, FDA Green Book, USDA APHIS, VeNom-SNOMED crosswalk. Top-k=5 retrieval per dictation.</p>
+            </div>
+            <div class="mc-medgemma-layer" data-letter="C">
+              <h4>Species-class LoRA</h4>
+              <p>Two ~8.4M-param adapters (companion / production) trained on synthetic vet notes via DP-SGD. Selected at inference by species class.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- §4 Headline metrics -->
+        <section class="mc-section">
+          <h3><span class="mc-num">§4</span>Headline metrics</h3>
+          <p class="mc-blurb">All numbers with 95% bootstrap CIs. Equity disaggregation in §4.4 of the full card. <em>MedGemma rows pending the integration measurement run.</em></p>
+          <div class="mc-stat-row">
+            <div class="mc-stat"><div class="label">NER F1 (rule baseline)</div><div class="value">0.894</div></div>
+            <div class="mc-stat"><div class="label">Risk ROC-AUC</div><div class="value">0.870</div></div>
+            <div class="mc-stat"><div class="label">Brier score</div><div class="value">0.005</div></div>
+            <div class="mc-stat"><div class="label">Lead time (median)</div><div class="value">8<small>&nbsp;days</small></div></div>
+          </div>
+        </section>
+
+        <!-- §8 Privacy stack -->
+        <section class="mc-section">
+          <h3><span class="mc-num">§8</span>Privacy &amp; security architecture</h3>
+          <p class="mc-blurb">Four layers, stacked. Each addresses a different attack surface.</p>
+          <div class="mc-privacy-stack">
+            <div class="mc-privacy-layer">
+              <span class="layer-num">L4</span>
+              <span class="layer-name">Laplace on aggregate counts<small>ε = 1.0 · sensitivity 1 · protects published surveillance feed</small></span>
+              <span class="mc-status-pill live">Live</span>
+            </div>
+            <div class="mc-privacy-layer">
+              <span class="layer-num">L3</span>
+              <span class="layer-name">Secure aggregation on weight exchange<small>Bonawitz CCS '17 · pairwise additive masking · drop-out tolerant</small></span>
+              <span class="mc-status-pill scaffolded">Scaffolded</span>
+            </div>
+            <div class="mc-privacy-layer">
+              <span class="layer-num">L2</span>
+              <span class="layer-name">DP-SGD inside each site's training step<small>Opacus · clip 1.0 · σ 1.1 · ε ≤ 8.0 (LoRA), ε ≤ 4.0 (risk)</small></span>
+              <span class="mc-status-pill scaffolded">Scaffolded</span>
+            </div>
+            <div class="mc-privacy-layer">
+              <span class="layer-num">L1</span>
+              <span class="layer-name">Swarm Learning topology<small>HPE SL · permissioned blockchain coordination · no central aggregator</small></span>
+              <span class="mc-status-pill scaffolded">Scaffolded</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- §10 Caveats -->
+        <section class="mc-section">
+          <h3><span class="mc-num">§10</span>Caveats &amp; recommendations</h3>
+          <p class="mc-blurb">An accountability surface only works if it is honest about limits. The full card lists ten in §10; three of the most important are below.</p>
+          <div class="placeholder-card" style="text-align: left;">
+            <strong>1.</strong> The 8.6 percentage-point AUC gap on tribal-land data is a deployment blocker for that population until closed.<br>
+            <strong>2.</strong> DP-SGD at ε=8.0 is a training-run guarantee, not a per-prediction guarantee. Production deployment requires a query budget on top.<br>
+            <strong>3.</strong> All evaluation is on synthetic data. Production deployment requires re-validation on real records under IRB protocol.
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+</main>
+
+<script>
+/* ============================================================================
+   ROLE SWITCHER — toggles document.body[data-role]; downstream views can
+   read this to filter what the role can see.
+   ============================================================================ */
+document.querySelectorAll('.oh-role-segment button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const role = btn.dataset.role;
+    document.body.dataset.role = role;
+    document.querySelectorAll('.oh-role-segment button').forEach(b => {
+      b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
+    });
+  });
+});
+
+/* ============================================================================
+   TAB SWITCHER — single source of truth for [aria-current]; existing
+   app.js handlers can hook into the same `data-view` attribute.
+   ============================================================================ */
+document.querySelectorAll('.oh-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.oh-tab').forEach(t => t.removeAttribute('aria-current'));
+    tab.setAttribute('aria-current', 'page');
+    /* In the integrated app: dispatch a 'view-change' event the existing
+       app.js can listen to, OR call the existing showView(tab.dataset.view) */
+    const event = new CustomEvent('view-change', { detail: { view: tab.dataset.view }});
+    document.dispatchEvent(event);
+  });
+});
+</script>
+
+</body>
+</html>

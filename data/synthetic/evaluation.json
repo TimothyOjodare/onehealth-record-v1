@@ -1,0 +1,213 @@
+{
+  "_metadata": {
+    "n_dictations": 25,
+    "engine": "rule-based-v0.1",
+    "schema_version": "0.1.0"
+  },
+  "results": {
+    "overall": {
+      "precision": 0.9037037037037037,
+      "recall": 0.8840579710144928,
+      "f1": 0.8937728937728937,
+      "n_gold": 138,
+      "n_predicted": 135,
+      "tp": 122,
+      "fp": 13,
+      "fn": 16
+    },
+    "per_kind": [
+      {
+        "kind": "condition",
+        "support": 20,
+        "tp": 15,
+        "fp": 3,
+        "fn": 5,
+        "precision": 0.8333333333333334,
+        "recall": 0.75,
+        "f1": 0.7894736842105262
+      },
+      {
+        "kind": "symptom",
+        "support": 45,
+        "tp": 34,
+        "fp": 10,
+        "fn": 11,
+        "precision": 0.7727272727272727,
+        "recall": 0.7555555555555555,
+        "f1": 0.7640449438202247
+      },
+      {
+        "kind": "medication",
+        "support": 17,
+        "tp": 17,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      {
+        "kind": "vital",
+        "support": 56,
+        "tp": 56,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    ],
+    "calibration": [
+      {
+        "bin_lo": 0.0,
+        "bin_hi": 0.5,
+        "bin_mid": 0.25,
+        "n": 0,
+        "n_correct": 0,
+        "observed_accuracy": 0.0
+      },
+      {
+        "bin_lo": 0.5,
+        "bin_hi": 0.6,
+        "bin_mid": 0.55,
+        "n": 0,
+        "n_correct": 0,
+        "observed_accuracy": 0.0
+      },
+      {
+        "bin_lo": 0.6,
+        "bin_hi": 0.7,
+        "bin_mid": 0.6499999999999999,
+        "n": 0,
+        "n_correct": 0,
+        "observed_accuracy": 0.0
+      },
+      {
+        "bin_lo": 0.7,
+        "bin_hi": 0.8,
+        "bin_mid": 0.75,
+        "n": 31,
+        "n_correct": 22,
+        "observed_accuracy": 0.7096774193548387
+      },
+      {
+        "bin_lo": 0.8,
+        "bin_hi": 0.9,
+        "bin_mid": 0.8500000000000001,
+        "n": 48,
+        "n_correct": 44,
+        "observed_accuracy": 0.9166666666666666
+      },
+      {
+        "bin_lo": 0.9,
+        "bin_hi": 1.01,
+        "bin_mid": 0.9550000000000001,
+        "n": 56,
+        "n_correct": 56,
+        "observed_accuracy": 1.0
+      }
+    ],
+    "runtime": [
+      {
+        "stage": "parse",
+        "median_ms": 0.13217800005804747,
+        "p95_ms": 0.17915000012180826,
+        "n": 25
+      },
+      {
+        "stage": "extract",
+        "median_ms": 0.8976520000487653,
+        "p95_ms": 1.0739289998582535,
+        "n": 25
+      },
+      {
+        "stage": "fhir",
+        "median_ms": 0.18142499993700767,
+        "p95_ms": 0.2937010001460294,
+        "n": 25
+      },
+      {
+        "stage": "total",
+        "median_ms": 1.2352169999303442,
+        "p95_ms": 1.4239280001220322,
+        "n": 25
+      }
+    ],
+    "errors": {
+      "top_fp": [
+        {
+          "kind": "symptom",
+          "text": "fever",
+          "n": 5
+        },
+        {
+          "kind": "symptom",
+          "text": "cough",
+          "n": 3
+        },
+        {
+          "kind": "condition",
+          "text": "hypertension",
+          "n": 2
+        },
+        {
+          "kind": "symptom",
+          "text": "rash",
+          "n": 1
+        },
+        {
+          "kind": "condition",
+          "text": "type 2 diabetes",
+          "n": 1
+        },
+        {
+          "kind": "symptom",
+          "text": "leg swelling",
+          "n": 1
+        }
+      ],
+      "top_fn": [
+        {
+          "kind": "symptom",
+          "text": "dry cough",
+          "n": 3
+        },
+        {
+          "kind": "condition",
+          "text": "coccidioides",
+          "n": 2
+        },
+        {
+          "kind": "condition",
+          "text": "west nile",
+          "n": 2
+        },
+        {
+          "kind": "symptom",
+          "text": "high fever",
+          "n": 2
+        },
+        {
+          "kind": "symptom",
+          "text": "maculopapular rash",
+          "n": 1
+        },
+        {
+          "kind": "symptom",
+          "text": "muscle pain",
+          "n": 1
+        },
+        {
+          "kind": "symptom",
+          "text": "inguinal bubo",
+          "n": 1
+        },
+        {
+          "kind": "symptom",
+          "text": "confusion",
+          "n": 1
+        }
+      ]
+    }
+  }
+}

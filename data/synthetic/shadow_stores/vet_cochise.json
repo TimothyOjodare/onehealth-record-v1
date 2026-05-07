@@ -1,0 +1,2557 @@
+{
+  "_metadata": {
+    "site_id": "vet_cochise",
+    "facility": "Cochise Large-Animal Vet",
+    "kind": "vet_clinic",
+    "vendor": "AVImark+VetFHIR-shim",
+    "fhir_version": "R5-vet-ballot",
+    "endpoint": "https://fhir.cochise-vet.example/r5",
+    "lat": 31.554,
+    "lon": -110.3,
+    "n_patients": 0,
+    "n_animal_patients": 22,
+    "n_encounters": 59,
+    "n_conditions": 4,
+    "n_households_participating": 14,
+    "_caveat": "Synthetic shadow store. Production: each site runs a real FHIR server (AVImark+VetFHIR-shim R5-vet-ballot) populated from its native EHR. Authentication via SMART-on-FHIR; cross-site queries enforced at the API layer."
+  },
+  "patients": [],
+  "animal_patients": [
+    {
+      "resourceType": "AnimalPatient",
+      "id": "ed5dde89-34c5-47b1-92b5-06ae34b04132",
+      "meta": {
+        "profile": [
+          "http://onehealthrecord.org/StructureDefinition/AnimalPatient"
+        ]
+      },
+      "household_id": "HH-AZ-APACHE-006",
+      "name": "Shadow",
+      "species": {
+        "system": "http://onehealthrecord.org/species",
+        "code": "cat",
+        "display": "Felis catus"
+      },
+      "breed": "Domestic Shorthair",
+      "sex": "FS",
+      "birthDate": "2021-04-10",
+      "address": {
+        "city": "St. Johns",
+        "state": "AZ",
+        "country": "US",
+        "geolocation": {
+          "lat": 35.39,
+          "lon": -109.49
+        },
+        "county_fips": "04001"
+      },
+      "_provenance": {
+        "site": "vet_cochise",
+        "site_facility": "Cochise Large-Animal Vet",
+        "vendor": "AVImark+VetFHIR-shim",
+        "fhir_version": "R5-vet-ballot",
+        "endpoint": "https://fhir.cochise-vet.example/r5",
+        "primary_provider_id": "vet-becker"
+      }
+    },
+    {
+      "resourceType": "AnimalPatient",
+      "id": "e7521913-0913-4533-b702-7b011b18f883",
+      "meta": {
+        "profile": [
+          "http://onehealthrecord.org/StructureDefinition/AnimalPatient"
+        ]
+      },
+      "household_id": "HH-AZ-COCHISE-007",
+      "name": "Trigger",
+      "species": {
+        "system": "http://onehealthrecord.org/species",
+        "code": "horse",
+        "display": "Equus caballus"
+      },
+      "breed": "Quarter Horse",
+      "sex": "MN",
+      "birthDate": "2014-05-18",
+      "address": {
+        "city": "Bisbee",
+        "state": "AZ",
+        "country": "US",
+        "geolocation": {
+          "lat": 31.88,
+          "lon": -109.75
+        },
+        "county_fips": "04003"
+      },
+      "_provenance": {
+        "site": "vet_cochise",
+        "site_facility": "Cochise Large-Animal Vet",
+        "vendor": "AVImark+VetFHIR-shim",
+        "fhir_version": "R5-vet-ballot",
+        "endpoint": "https://fhir.cochise-vet.example/r5",
+        "primary_provider_id": "vet-becker"
+      }
+    },
+    {
+      "resourceType": "AnimalPatient",
+      "id": "8e554d4d-da88-4566-a5af-4eb2642c3623",
+      "meta": {
+        "profile": [
+          "http://onehealthrecord.org/StructureDefinition/AnimalPatient"
+        ]
+      },
+      "household_id": "HH-AZ-NAVAJO-012",
+      "name": "Spike",
+      "species": {
+        "system": "http://onehealthrecord.org/species",
+        "code": "reptile",
+        "display": "Reptilia spp."
+      },
+      "breed": "Bearded Dragon",
+      "sex": "M",
+      "birthDate": "2019-10-04",
+      "address": {
+        "city": "Holbrook",
+        "state": "AZ",
+        "country": "US",
+        "geolocation": {
+          "lat": 34.9,
+          "lon": -110.16
+        },
+        "county_fips": "04017"
+      },
+      "_provenance": {
+        "site": "vet_cochise",
+        "site_facility": "Cochise Large-Animal Vet",
+        "vendor": "AVImark+VetFHIR-shim",
+        "fhir_version": "R5-vet-ballot",
+        "endpoint": "https://fhir.cochise-vet.example/r5",
+        "primary_provider_id": "vet-becker"
+      }
+    },
+    {
+      "resourceType": "AnimalPatient",
+      "id": "efbd2a82-868e-4263-b761-d30df777d095",
+      "meta": {
+        "profile": [
+          "http://onehealthrecord.org/StructureDefinition/AnimalPatient"
+        ]
+      },
+      "household_id": "HH-AZ-GRAHAM-G001",
+      "name": "Tango",
+      "species": {
+        "system": "http://onehealthrecord.org/species",
+        "code": "bird",
+        "display": "Aves spp."
+      },
+      "breed": "Macaw",
+      "sex": "MN",
+      "birthDate": "2016-12-07",
+      "address": {
+        "city": "Safford",
+        "state": "AZ",
+        "country": "US",
+        "geolocation": {
+          "lat": 32.93,
+          "lon": -109.89
+        },
+        "county_fips": "04009"
+      },
+      "_provenance": {
+        "site": "vet_cochise",
+        "site_facility": "Cochise Large-Animal Vet",
+        "vendor": "AVImark+VetFHIR-shim",
+        "fhir_version": "R5-vet-ballot",
+        "endpoint": "https://fhir.cochise-vet.example/r5",
+        "primary_provider_id": "vet-becker"
+      }
+    },
+    {
+      "resourceType": "AnimalPatient",
+      "id": "8afc29cb-ce00-43cf-8caf-33a2cbc9f0cb",
+      "meta": {
+        "profile": [
+          "http://onehealthrecord.org/StructureDefinition/AnimalPatient"
+        ]
+      },
+      "household_id": "HH-AZ-GREENLEE-G002",
+      "name": "Max",
+      "species": {
+        "system": "http://onehealthrecord.org/species",
+        "code": "dog",
+        "display": "Canis lupus familiaris"
+      },
+      "breed": "Boxer",
+      "sex": "FS",
+      "birthDate": "2014-11-22",
+      "address": {
+        "city": "Clifton",
+        "state": "AZ",
+        "country": "US",
+        "geolocation": {
+          "lat": 33.21,
+          "lon": -109.24
+        },
+        "county_fips": "04011"
+      },
+      "_provenance": {
+        "site": "vet_cochise",
+        "site_facility": "Cochise Large-Animal Vet",
+        "vendor": "AVImark+VetFHIR-shim",
+        "fhir_version": "R5-vet-ballot",
+        "endpoint": "https://fhir.cochise-vet.example/r5",
+        "primary_provider_id": "vet-becker"
+      }
+    },
+    {
+      "resourceType": "AnimalPatient",
+      "id": "12b488f4-1888-4996-a957-464ddca4943b",
+      "meta": {
+        "profile": [
+          "http://onehealthrecord.org/StructureDefinition/AnimalPatient"
+        ]
+      },
+      "household_id": "HH-AZ-GREENLEE-G002",
+      "name": "Luna",
+      "species": {
+        "system": "http://onehealthrecord.org/species",
+        "code": "dog",
+        "display": "Canis lupus familiaris"
+      },
+      "breed": "Labrador Retriever",
+      "sex": "M",
+      "birthDate": "2018-12-20",
+      "address": {
+        "city": "Clifton",
+        "state": "AZ",
+        "country": "US",
+        "geolocation": {
+          "lat": 33.21,
+          "lon": -109.24
+        },
+        "county_fips": "04011"
+      },
+      "_provenance": {
+        "site": "vet_cochise",
+        "site_facility": "Cochise Large-Animal Vet",
+        "vendor": "AVImark+VetFHIR-shim",
+        "fhir_version": "R5-vet-ballot",
+        "endpoint": "https://fhir.cochise-vet.example/r5",
+        "primary_provider_id": "vet-becker"
+      }
+    },
+    {
+      "resourceType": "AnimalPatient",
+      "id": "52f1dcef-fa04-47ac-acfc-2ecd02b43b54",
+      "meta": {
+        "profile": [
+          "http://onehealthrecord.org/StructureDefinition/AnimalPatient"
+        ]
+      },
+      "household_id": "HH-AZ-COCHISE-G063",
+      "name": "Boots",
+      "species": {
+        "system": "http://onehealthrecord.org/species",
+        "code": "cat",
+        "display": "Felis catus"
+      },
+      "breed": "Maine Coon",
+      "sex": "M",
+      "birthDate": "2022-09-12",
+      "address": {
+        "city": "Bisbee",
+        "state": "AZ",
+        "country": "US",
+        "geolocation": {
+          "lat": 31.88,
+          "lon": -109.75
+        },
+        "county_fips": "04003"
+      },
+      "_provenance": {
+        "site": "vet_cochise",
+        "site_facility": "Cochise Large-Animal Vet",
+        "vendor": "AVImark+VetFHIR-shim",
+        "fhir_version": "R5-vet-ballot",
+        "endpoint": "https://fhir.cochise-vet.example/r5",
+        "primary_provider_id": "vet-becker"
+      }
+    },
+    {
+      "resourceType": "AnimalPatient",
+      "id": "7fa9260b-1f61-4d0a-9f28-36b268e39831",
+      "meta": {
+        "profile": [
+          "http://onehealthrecord.org/StructureDefinition/AnimalPatient"
+        ]
+      },
+      "household_id": "HH-AZ-COCHISE-G063",
+      "name": "Sunny",
+      "species": {
+        "system": "http://onehealthrecord.org/species",
+        "code": "bird",
+        "display": "Aves spp."
+      },
+      "breed": "African Grey",
+      "sex": "M",
+      "birthDate": "2015-09-02",
+      "address": {
+        "city": "Bisbee",
+        "state": "AZ",
+        "country": "US",
+        "geolocation": {
+          "lat": 31.88,
+          "lon": -109.75
+        },
+        "county_fips": "04003"
+      },
+      "_provenance": {
+        "site": "vet_cochise",
+        "site_facility": "Cochise Large-Animal Vet",
+        "vendor": "AVImark+VetFHIR-shim",
+        "fhir_version": "R5-vet-ballot",
+        "endpoint": "https://fhir.cochise-vet.example/r5",
+        "primary_provider_id": "vet-becker"
+      }
+    },
+    {
+      "resourceType": "AnimalPatient",
+      "id": "a7d07a4e-e38e-4c8f-94b7-59ca6af89113",
+      "meta": {
+        "profile": [
+          "http://onehealthrecord.org/StructureDefinition/AnimalPatient"
+        ]
+      },
+      "household_id": "HH-AZ-COCHISE-G109",
+      "name": "Coco",
+      "species": {
+        "system": "http://onehealthrecord.org/species",
+        "code": "rabbit",
+        "display": "Oryctolagus cuniculus"
+      },
+      "breed": "Holland Lop",
+      "sex": "FS",
+      "birthDate": "2015-09-27",
+      "address": {
+        "city": "Bisbee",
+        "state": "AZ",
+        "country": "US",
+        "geolocation": {
+          "lat": 31.88,
+          "lon": -109.75
+        },
+        "county_fips": "04003"
+      },
+      "_provenance": {
+        "site": "vet_cochise",
+        "site_facility": "Cochise Large-Animal Vet",
+        "vendor": "AVImark+VetFHIR-shim",
+        "fhir_version": "R5-vet-ballot",
+        "endpoint": "https://fhir.cochise-vet.example/r5",
+        "primary_provider_id": "vet-becker"
+      }
+    },
+    {
+      "resourceType": "AnimalPatient",
+      "id": "5ae6ae13-d923-446e-8e0d-a26e6855a475",
+      "meta": {
+        "profile": [
+          "http://onehealthrecord.org/StructureDefinition/AnimalPatient"
+        ]
+      },
+      "household_id": "HH-AZ-NAVAJO-G127",
+      "name": "Daisy",
+      "species": {
+        "system": "http://onehealthrecord.org/species",
+        "code": "goat",
+        "display": "Capra aegagrus hircus"
+      },
+      "breed": "Boer",
+      "sex": "FS",
+      "birthDate": "2014-03-03",
+      "address": {
+        "city": "Holbrook",
+        "state": "AZ",
+        "country": "US",
+        "geolocation": {
+          "lat": 34.9,
+          "lon": -110.16
+        },
+        "county_fips": "04017"
+      },
+      "_provenance": {
+        "site": "vet_cochise",
+        "site_facility": "Cochise Large-Animal Vet",
+        "vendor": "AVImark+VetFHIR-shim",
+        "fhir_version": "R5-vet-ballot",
+        "endpoint": "https://fhir.cochise-vet.example/r5",
+        "primary_provider_id": "vet-becker"
+      }
+    },
+    {
+      "resourceType": "AnimalPatient",
+      "id": "d889d4bd-4736-4be0-bc5c-5d344300f278",
+      "meta": {
+        "profile": [
+          "http://onehealthrecord.org/StructureDefinition/AnimalPatient"
+        ]
+      },
+      "household_id": "HH-AZ-NAVAJO-G127",
+      "name": "Tigger",
+      "species": {
+        "system": "http://onehealthrecord.org/species",
+        "code": "cat",
+        "display": "Felis catus"
+      },
+      "breed": "Tabby",
+      "sex": "M",
+      "birthDate": "2016-10-22",
+      "address": {
+        "city": "Holbrook",
+        "state": "AZ",
+        "country": "US",
+        "geolocation": {
+          "lat": 34.9,
+          "lon": -110.16
+        },
+        "county_fips": "04017"
+      },
+      "_provenance": {
+        "site": "vet_cochise",
+        "site_facility": "Cochise Large-Animal Vet",
+        "vendor": "AVImark+VetFHIR-shim",
+        "fhir_version": "R5-vet-ballot",
+        "endpoint": "https://fhir.cochise-vet.example/r5",
+        "primary_provider_id": "vet-becker"
+      }
+    },
+    {
+      "resourceType": "AnimalPatient",
+      "id": "e3fa82cf-fc49-4a91-ba2e-d255f7a3a514",
+      "meta": {
+        "profile": [
+          "http://onehealthrecord.org/StructureDefinition/AnimalPatient"
+        ]
+      },
+      "household_id": "HH-AZ-NAVAJO-G127",
+      "name": "Clover",
+      "species": {
+        "system": "http://onehealthrecord.org/species",
+        "code": "swine",
+        "display": "swine"
+      },
+      "breed": "Mixed",
+      "sex": "M",
+      "birthDate": "2018-11-12",
+      "address": {
+        "city": "Holbrook",
+        "state": "AZ",
+        "country": "US",
+        "geolocation": {
+          "lat": 34.9,
+          "lon": -110.16
+        },
+        "county_fips": "04017"
+      },
+      "_provenance": {
+        "site": "vet_cochise",
+        "site_facility": "Cochise Large-Animal Vet",
+        "vendor": "AVImark+VetFHIR-shim",
+        "fhir_version": "R5-vet-ballot",
+        "endpoint": "https://fhir.cochise-vet.example/r5",
+        "primary_provider_id": "vet-becker"
+      }
+    },
+    {
+      "resourceType": "AnimalPatient",
+      "id": "880eebef-acca-44b0-a409-7d6442eedf4a",
+      "meta": {
+        "profile": [
+          "http://onehealthrecord.org/StructureDefinition/AnimalPatient"
+        ]
+      },
+      "household_id": "HH-AZ-NAVAJO-G189",
+      "name": "Milo",
+      "species": {
+        "system": "http://onehealthrecord.org/species",
+        "code": "dog",
+        "display": "Canis lupus familiaris"
+      },
+      "breed": "Dachshund",
+      "sex": "MN",
+      "birthDate": "2015-08-25",
+      "address": {
+        "city": "Holbrook",
+        "state": "AZ",
+        "country": "US",
+        "geolocation": {
+          "lat": 34.9,
+          "lon": -110.16
+        },
+        "county_fips": "04017"
+      },
+      "_provenance": {
+        "site": "vet_cochise",
+        "site_facility": "Cochise Large-Animal Vet",
+        "vendor": "AVImark+VetFHIR-shim",
+        "fhir_version": "R5-vet-ballot",
+        "endpoint": "https://fhir.cochise-vet.example/r5",
+        "primary_provider_id": "vet-becker"
+      }
+    },
+    {
+      "resourceType": "AnimalPatient",
+      "id": "0a337af4-6c94-4417-8e08-ed114af5d169",
+      "meta": {
+        "profile": [
+          "http://onehealthrecord.org/StructureDefinition/AnimalPatient"
+        ]
+      },
+      "household_id": "HH-AZ-NAVAJO-G189",
+      "name": "Smudge",
+      "species": {
+        "system": "http://onehealthrecord.org/species",
+        "code": "rabbit",
+        "display": "Oryctolagus cuniculus"
+      },
+      "breed": "Holland Lop",
+      "sex": "F",
+      "birthDate": "2016-07-15",
+      "address": {
+        "city": "Holbrook",
+        "state": "AZ",
+        "country": "US",
+        "geolocation": {
+          "lat": 34.9,
+          "lon": -110.16
+        },
+        "county_fips": "04017"
+      },
+      "_provenance": {
+        "site": "vet_cochise",
+        "site_facility": "Cochise Large-Animal Vet",
+        "vendor": "AVImark+VetFHIR-shim",
+        "fhir_version": "R5-vet-ballot",
+        "endpoint": "https://fhir.cochise-vet.example/r5",
+        "primary_provider_id": "vet-becker"
+      }
+    },
+    {
+      "resourceType": "AnimalPatient",
+      "id": "b3c5a428-eb3d-48bb-bf68-4434fa243cfb",
+      "meta": {
+        "profile": [
+          "http://onehealthrecord.org/StructureDefinition/AnimalPatient"
+        ]
+      },
+      "household_id": "HH-AZ-NAVAJO-G189",
+      "name": "Charlie",
+      "species": {
+        "system": "http://onehealthrecord.org/species",
+        "code": "dog",
+        "display": "Canis lupus familiaris"
+      },
+      "breed": "Labrador Retriever",
+      "sex": "F",
+      "birthDate": "2013-10-31",
+      "address": {
+        "city": "Holbrook",
+        "state": "AZ",
+        "country": "US",
+        "geolocation": {
+          "lat": 34.9,
+          "lon": -110.16
+        },
+        "county_fips": "04017"
+      },
+      "_provenance": {
+        "site": "vet_cochise",
+        "site_facility": "Cochise Large-Animal Vet",
+        "vendor": "AVImark+VetFHIR-shim",
+        "fhir_version": "R5-vet-ballot",
+        "endpoint": "https://fhir.cochise-vet.example/r5",
+        "primary_provider_id": "vet-becker"
+      }
+    },
+    {
+      "resourceType": "AnimalPatient",
+      "id": "cec345d0-ed57-46aa-a258-d583343d3c4a",
+      "meta": {
+        "profile": [
+          "http://onehealthrecord.org/StructureDefinition/AnimalPatient"
+        ]
+      },
+      "household_id": "HH-AZ-APACHE-G196",
+      "name": "Simba",
+      "species": {
+        "system": "http://onehealthrecord.org/species",
+        "code": "cat",
+        "display": "Felis catus"
+      },
+      "breed": "Siamese Mix",
+      "sex": "MN",
+      "birthDate": "2011-09-15",
+      "address": {
+        "city": "St. Johns",
+        "state": "AZ",
+        "country": "US",
+        "geolocation": {
+          "lat": 35.39,
+          "lon": -109.49
+        },
+        "county_fips": "04001"
+      },
+      "_provenance": {
+        "site": "vet_cochise",
+        "site_facility": "Cochise Large-Animal Vet",
+        "vendor": "AVImark+VetFHIR-shim",
+        "fhir_version": "R5-vet-ballot",
+        "endpoint": "https://fhir.cochise-vet.example/r5",
+        "primary_provider_id": "vet-becker"
+      }
+    },
+    {
+      "resourceType": "AnimalPatient",
+      "id": "21abab4f-4ae1-4397-a0a3-7c6bbcd3e135",
+      "meta": {
+        "profile": [
+          "http://onehealthrecord.org/StructureDefinition/AnimalPatient"
+        ]
+      },
+      "household_id": "HH-AZ-NAVAJO-G270",
+      "name": "Salem",
+      "species": {
+        "system": "http://onehealthrecord.org/species",
+        "code": "cat",
+        "display": "Felis catus"
+      },
+      "breed": "Tabby",
+      "sex": "MN",
+      "birthDate": "2020-02-24",
+      "address": {
+        "city": "Holbrook",
+        "state": "AZ",
+        "country": "US",
+        "geolocation": {
+          "lat": 34.9,
+          "lon": -110.16
+        },
+        "county_fips": "04017"
+      },
+      "_provenance": {
+        "site": "vet_cochise",
+        "site_facility": "Cochise Large-Animal Vet",
+        "vendor": "AVImark+VetFHIR-shim",
+        "fhir_version": "R5-vet-ballot",
+        "endpoint": "https://fhir.cochise-vet.example/r5",
+        "primary_provider_id": "vet-becker"
+      }
+    },
+    {
+      "resourceType": "AnimalPatient",
+      "id": "ea1de30b-9548-4067-97ad-de0fffdbfd60",
+      "meta": {
+        "profile": [
+          "http://onehealthrecord.org/StructureDefinition/AnimalPatient"
+        ]
+      },
+      "household_id": "HH-AZ-GRAHAM-G272",
+      "name": "Chloe",
+      "species": {
+        "system": "http://onehealthrecord.org/species",
+        "code": "dog",
+        "display": "Canis lupus familiaris"
+      },
+      "breed": "Husky",
+      "sex": "F",
+      "birthDate": "2022-06-30",
+      "address": {
+        "city": "Safford",
+        "state": "AZ",
+        "country": "US",
+        "geolocation": {
+          "lat": 32.93,
+          "lon": -109.89
+        },
+        "county_fips": "04009"
+      },
+      "_provenance": {
+        "site": "vet_cochise",
+        "site_facility": "Cochise Large-Animal Vet",
+        "vendor": "AVImark+VetFHIR-shim",
+        "fhir_version": "R5-vet-ballot",
+        "endpoint": "https://fhir.cochise-vet.example/r5",
+        "primary_provider_id": "vet-becker"
+      }
+    },
+    {
+      "resourceType": "AnimalPatient",
+      "id": "8733a836-0468-4f5b-9d02-c1fef3c714ec",
+      "meta": {
+        "profile": [
+          "http://onehealthrecord.org/StructureDefinition/AnimalPatient"
+        ]
+      },
+      "household_id": "HH-AZ-GRAHAM-G272",
+      "name": "Daisy",
+      "species": {
+        "system": "http://onehealthrecord.org/species",
+        "code": "cattle",
+        "display": "cattle"
+      },
+      "breed": "Mixed",
+      "sex": "F",
+      "birthDate": "2021-01-22",
+      "address": {
+        "city": "Safford",
+        "state": "AZ",
+        "country": "US",
+        "geolocation": {
+          "lat": 32.93,
+          "lon": -109.89
+        },
+        "county_fips": "04009"
+      },
+      "_provenance": {
+        "site": "vet_cochise",
+        "site_facility": "Cochise Large-Animal Vet",
+        "vendor": "AVImark+VetFHIR-shim",
+        "fhir_version": "R5-vet-ballot",
+        "endpoint": "https://fhir.cochise-vet.example/r5",
+        "primary_provider_id": "vet-becker"
+      }
+    },
+    {
+      "resourceType": "AnimalPatient",
+      "id": "c9a0263f-ec01-47e6-9912-10fd5fba55be",
+      "meta": {
+        "profile": [
+          "http://onehealthrecord.org/StructureDefinition/AnimalPatient"
+        ]
+      },
+      "household_id": "HH-AZ-COCHISE-G285",
+      "name": "Thunder",
+      "species": {
+        "system": "http://onehealthrecord.org/species",
+        "code": "horse",
+        "display": "Equus caballus"
+      },
+      "breed": "Thoroughbred",
+      "sex": "MN",
+      "birthDate": "2019-11-18",
+      "address": {
+        "city": "Bisbee",
+        "state": "AZ",
+        "country": "US",
+        "geolocation": {
+          "lat": 31.88,
+          "lon": -109.75
+        },
+        "county_fips": "04003"
+      },
+      "_provenance": {
+        "site": "vet_cochise",
+        "site_facility": "Cochise Large-Animal Vet",
+        "vendor": "AVImark+VetFHIR-shim",
+        "fhir_version": "R5-vet-ballot",
+        "endpoint": "https://fhir.cochise-vet.example/r5",
+        "primary_provider_id": "vet-becker"
+      }
+    },
+    {
+      "resourceType": "AnimalPatient",
+      "id": "116db04e-5cba-494c-b8c7-9795070da6dc",
+      "meta": {
+        "profile": [
+          "http://onehealthrecord.org/StructureDefinition/AnimalPatient"
+        ]
+      },
+      "household_id": "HH-AZ-COCHISE-G285",
+      "name": "Buddy",
+      "species": {
+        "system": "http://onehealthrecord.org/species",
+        "code": "dog",
+        "display": "Canis lupus familiaris"
+      },
+      "breed": "Husky",
+      "sex": "F",
+      "birthDate": "2014-02-25",
+      "address": {
+        "city": "Bisbee",
+        "state": "AZ",
+        "country": "US",
+        "geolocation": {
+          "lat": 31.88,
+          "lon": -109.75
+        },
+        "county_fips": "04003"
+      },
+      "_provenance": {
+        "site": "vet_cochise",
+        "site_facility": "Cochise Large-Animal Vet",
+        "vendor": "AVImark+VetFHIR-shim",
+        "fhir_version": "R5-vet-ballot",
+        "endpoint": "https://fhir.cochise-vet.example/r5",
+        "primary_provider_id": "vet-becker"
+      }
+    },
+    {
+      "resourceType": "AnimalPatient",
+      "id": "e3ad6f9d-46bc-444a-b4f2-027a96132296",
+      "meta": {
+        "profile": [
+          "http://onehealthrecord.org/StructureDefinition/AnimalPatient"
+        ]
+      },
+      "household_id": "HH-AZ-NAVAJO-G308",
+      "name": "Sunny",
+      "species": {
+        "system": "http://onehealthrecord.org/species",
+        "code": "bird",
+        "display": "Aves spp."
+      },
+      "breed": "Macaw",
+      "sex": "FS",
+      "birthDate": "2019-12-20",
+      "address": {
+        "city": "Holbrook",
+        "state": "AZ",
+        "country": "US",
+        "geolocation": {
+          "lat": 34.9,
+          "lon": -110.16
+        },
+        "county_fips": "04017"
+      },
+      "_provenance": {
+        "site": "vet_cochise",
+        "site_facility": "Cochise Large-Animal Vet",
+        "vendor": "AVImark+VetFHIR-shim",
+        "fhir_version": "R5-vet-ballot",
+        "endpoint": "https://fhir.cochise-vet.example/r5",
+        "primary_provider_id": "vet-becker"
+      }
+    }
+  ],
+  "encounters": [
+    {
+      "resourceType": "Encounter",
+      "id": "02f1e6c3-2417-4da0-ae34-f8ad299e4cab",
+      "subject": {
+        "reference": "AnimalPatient/ed5dde89-34c5-47b1-92b5-06ae34b04132",
+        "label": "Shadow (cat)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-APACHE-006",
+      "period": {
+        "start": "2025-09-08"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Annual wellness exam + vaccinations",
+      "vitals": {
+        "hr": 179,
+        "rr": 29,
+        "temp_f": 101.6,
+        "weight_kg": 6.3
+      },
+      "narrative": "Annual wellness exam for Shadow, a 5-year-old Domestic Shorthair cat. Bright, alert, responsive. Vaccines updated. Discussed parasite prevention and dental care. Recommend recheck in 12 months.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "b32ac3eb-5ed0-4175-b3d1-6b827f25b4ba",
+      "subject": {
+        "reference": "AnimalPatient/ed5dde89-34c5-47b1-92b5-06ae34b04132",
+        "label": "Shadow (cat)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-APACHE-006",
+      "period": {
+        "start": "2026-04-30"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Plague workup and dx",
+      "vitals": {
+        "hr": 153,
+        "rr": 33,
+        "temp_f": 102.2,
+        "weight_kg": 5.4
+      },
+      "narrative": "Shadow presented with symptoms diagnosed as Plague. Diagnostic workup complete; treatment initiated. Owner counseled re: zoonotic implications and household exposure.",
+      "conditions_recorded": [
+        "58750007"
+      ],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "d8e99749-b0dc-4ea0-859d-4a19397f79e1",
+      "subject": {
+        "reference": "AnimalPatient/e7521913-0913-4533-b702-7b011b18f883",
+        "label": "Trigger (horse)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-COCHISE-007",
+      "period": {
+        "start": "2024-08-29"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Upper respiratory signs",
+      "vitals": {
+        "hr": 28,
+        "rr": 14,
+        "temp_f": 100.2,
+        "weight_kg": 470
+      },
+      "narrative": "Trigger presents for upper respiratory signs. Treated symptomatically. Recheck PRN.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "c5747c24-40f6-490e-8bb8-cae4a58833b5",
+      "subject": {
+        "reference": "AnimalPatient/e7521913-0913-4533-b702-7b011b18f883",
+        "label": "Trigger (horse)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-COCHISE-007",
+      "period": {
+        "start": "2025-07-29"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Annual wellness exam + vaccinations",
+      "vitals": {
+        "hr": 30,
+        "rr": 14,
+        "temp_f": 100.1,
+        "weight_kg": 518
+      },
+      "narrative": "Annual wellness exam for Trigger, a 12-year-old Quarter Horse horse. Bright, alert, responsive. Vaccines updated. Discussed parasite prevention and dental care. Recommend recheck in 12 months.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "c50c6e1c-7041-4385-ac18-95b0e876fa95",
+      "subject": {
+        "reference": "AnimalPatient/e7521913-0913-4533-b702-7b011b18f883",
+        "label": "Trigger (horse)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-COCHISE-007",
+      "period": {
+        "start": "2025-09-30"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Annual wellness exam + vaccinations",
+      "vitals": {
+        "hr": 42,
+        "rr": 14,
+        "temp_f": 99.6,
+        "weight_kg": 593
+      },
+      "narrative": "Annual wellness exam for Trigger, a 12-year-old Quarter Horse horse. Bright, alert, responsive. Vaccines updated. Discussed parasite prevention and dental care. Recommend recheck in 12 months.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "fc67b287-0cc4-4f26-9dff-a8286b360852",
+      "subject": {
+        "reference": "AnimalPatient/e7521913-0913-4533-b702-7b011b18f883",
+        "label": "Trigger (horse)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-COCHISE-007",
+      "period": {
+        "start": "2026-04-22"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "West Nile virus infection workup and dx",
+      "vitals": {
+        "hr": 37,
+        "rr": 14,
+        "temp_f": 100.8,
+        "weight_kg": 593
+      },
+      "narrative": "Trigger presented with symptoms diagnosed as West Nile virus infection. Diagnostic workup complete; treatment initiated. Owner counseled re: zoonotic implications and household exposure.",
+      "conditions_recorded": [
+        "417093003"
+      ],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "55dd5723-f5a9-4c10-bd88-ae157b5d2689",
+      "subject": {
+        "reference": "AnimalPatient/8e554d4d-da88-4566-a5af-4eb2642c3623",
+        "label": "Spike (reptile)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-NAVAJO-012",
+      "period": {
+        "start": "2024-12-09"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Acute vomiting / diarrhea",
+      "vitals": {},
+      "narrative": "Spike presents for acute vomiting / diarrhea. Treated symptomatically. Recheck PRN.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "98fd5058-7137-4c20-82c9-b34190aab2f4",
+      "subject": {
+        "reference": "AnimalPatient/8e554d4d-da88-4566-a5af-4eb2642c3623",
+        "label": "Spike (reptile)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-NAVAJO-012",
+      "period": {
+        "start": "2024-12-12"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Annual wellness exam + vaccinations",
+      "vitals": {},
+      "narrative": "Annual wellness exam for Spike, a 7-year-old Bearded Dragon reptile. Bright, alert, responsive. Vaccines updated. Discussed parasite prevention and dental care. Recommend recheck in 12 months.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "f1c29aab-99da-4714-a86a-1373644bab2b",
+      "subject": {
+        "reference": "AnimalPatient/8e554d4d-da88-4566-a5af-4eb2642c3623",
+        "label": "Spike (reptile)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-NAVAJO-012",
+      "period": {
+        "start": "2025-05-15"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Annual wellness exam + vaccinations",
+      "vitals": {},
+      "narrative": "Annual wellness exam for Spike, a 7-year-old Bearded Dragon reptile. Bright, alert, responsive. Vaccines updated. Discussed parasite prevention and dental care. Recommend recheck in 12 months.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "1bfc725b-dfe3-48c2-8b4c-ff8ae1c29d04",
+      "subject": {
+        "reference": "AnimalPatient/8e554d4d-da88-4566-a5af-4eb2642c3623",
+        "label": "Spike (reptile)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-NAVAJO-012",
+      "period": {
+        "start": "2026-03-21"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Upper respiratory signs",
+      "vitals": {},
+      "narrative": "Spike presents for upper respiratory signs. Treated symptomatically. Recheck PRN.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "cd3ec3ad-1f3e-40fa-947b-5d1efa7abad0",
+      "subject": {
+        "reference": "AnimalPatient/efbd2a82-868e-4263-b761-d30df777d095",
+        "label": "Tango (bird)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-GRAHAM-G001",
+      "period": {
+        "start": "2024-10-27"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Annual wellness exam + vaccinations",
+      "vitals": {
+        "hr": 321,
+        "rr": 32,
+        "weight_g": 815
+      },
+      "narrative": "Annual wellness exam for Tango, a 10-year-old Macaw bird. Bright, alert, responsive. Vaccines updated. Discussed parasite prevention and dental care. Recommend recheck in 12 months.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "9bc9f45b-bde7-4b66-a42c-d20a610ec88a",
+      "subject": {
+        "reference": "AnimalPatient/efbd2a82-868e-4263-b761-d30df777d095",
+        "label": "Tango (bird)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-GRAHAM-G001",
+      "period": {
+        "start": "2025-11-16"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Annual wellness exam + vaccinations",
+      "vitals": {
+        "hr": 494,
+        "rr": 29,
+        "weight_g": 684
+      },
+      "narrative": "Annual wellness exam for Tango, a 10-year-old Macaw bird. Bright, alert, responsive. Vaccines updated. Discussed parasite prevention and dental care. Recommend recheck in 12 months.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "064a8fe6-e08c-419b-a7b4-512c8fd81bbb",
+      "subject": {
+        "reference": "AnimalPatient/8afc29cb-ce00-43cf-8caf-33a2cbc9f0cb",
+        "label": "Max (dog)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-GREENLEE-G002",
+      "period": {
+        "start": "2024-08-25"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Annual wellness exam + vaccinations",
+      "vitals": {
+        "hr": 111,
+        "rr": 26,
+        "temp_f": 101.1,
+        "weight_kg": 15.4
+      },
+      "narrative": "Annual wellness exam for Max, a 12-year-old Boxer dog. Bright, alert, responsive. Vaccines updated. Discussed parasite prevention and dental care. Recommend recheck in 12 months.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "dd2cf1b4-b872-420e-ad27-9ce205893876",
+      "subject": {
+        "reference": "AnimalPatient/8afc29cb-ce00-43cf-8caf-33a2cbc9f0cb",
+        "label": "Max (dog)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-GREENLEE-G002",
+      "period": {
+        "start": "2025-02-22"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Annual wellness exam + vaccinations",
+      "vitals": {
+        "hr": 77,
+        "rr": 29,
+        "temp_f": 101.1,
+        "weight_kg": 13.7
+      },
+      "narrative": "Annual wellness exam for Max, a 12-year-old Boxer dog. Bright, alert, responsive. Vaccines updated. Discussed parasite prevention and dental care. Recommend recheck in 12 months.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "e05cd225-2b4e-43af-820d-6fda16c5d1a0",
+      "subject": {
+        "reference": "AnimalPatient/8afc29cb-ce00-43cf-8caf-33a2cbc9f0cb",
+        "label": "Max (dog)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-GREENLEE-G002",
+      "period": {
+        "start": "2026-03-29"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Acute vomiting / diarrhea",
+      "vitals": {
+        "hr": 120,
+        "rr": 25,
+        "temp_f": 101.4,
+        "weight_kg": 11.4
+      },
+      "narrative": "Max presents for acute vomiting / diarrhea. Treated symptomatically. Recheck PRN.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "1deb84bd-e9ee-4f5b-890b-79974511e1da",
+      "subject": {
+        "reference": "AnimalPatient/12b488f4-1888-4996-a957-464ddca4943b",
+        "label": "Luna (dog)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-GREENLEE-G002",
+      "period": {
+        "start": "2024-08-15"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Annual wellness exam + vaccinations",
+      "vitals": {
+        "hr": 83,
+        "rr": 21,
+        "temp_f": 102.2,
+        "weight_kg": 14.3
+      },
+      "narrative": "Annual wellness exam for Luna, a 8-year-old Labrador Retriever dog. Bright, alert, responsive. Vaccines updated. Discussed parasite prevention and dental care. Recommend recheck in 12 months.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "3da81660-4a62-4ba4-8c40-e457694f7922",
+      "subject": {
+        "reference": "AnimalPatient/12b488f4-1888-4996-a957-464ddca4943b",
+        "label": "Luna (dog)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-GREENLEE-G002",
+      "period": {
+        "start": "2025-12-25"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Annual wellness exam + vaccinations",
+      "vitals": {
+        "hr": 119,
+        "rr": 19,
+        "temp_f": 102.2,
+        "weight_kg": 24.1
+      },
+      "narrative": "Annual wellness exam for Luna, a 8-year-old Labrador Retriever dog. Bright, alert, responsive. Vaccines updated. Discussed parasite prevention and dental care. Recommend recheck in 12 months.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "70f42df5-cf5b-4e10-8944-b3e81ea263d9",
+      "subject": {
+        "reference": "AnimalPatient/52f1dcef-fa04-47ac-acfc-2ecd02b43b54",
+        "label": "Boots (cat)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-COCHISE-G063",
+      "period": {
+        "start": "2025-03-10"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Annual wellness exam + vaccinations",
+      "vitals": {
+        "hr": 140,
+        "rr": 24,
+        "temp_f": 101.8,
+        "weight_kg": 4.5
+      },
+      "narrative": "Annual wellness exam for Boots, a 4-year-old Maine Coon cat. Bright, alert, responsive. Vaccines updated. Discussed parasite prevention and dental care. Recommend recheck in 12 months.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "6e0a056e-9cd6-4cfe-b7c6-b83f71cf59fa",
+      "subject": {
+        "reference": "AnimalPatient/52f1dcef-fa04-47ac-acfc-2ecd02b43b54",
+        "label": "Boots (cat)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-COCHISE-G063",
+      "period": {
+        "start": "2025-10-09"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Annual wellness exam + vaccinations",
+      "vitals": {
+        "hr": 171,
+        "rr": 33,
+        "temp_f": 101.5,
+        "weight_kg": 6.6
+      },
+      "narrative": "Annual wellness exam for Boots, a 4-year-old Maine Coon cat. Bright, alert, responsive. Vaccines updated. Discussed parasite prevention and dental care. Recommend recheck in 12 months.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "39aa2993-ece9-4ccf-af66-fd3f0e47e47c",
+      "subject": {
+        "reference": "AnimalPatient/7fa9260b-1f61-4d0a-9f28-36b268e39831",
+        "label": "Sunny (bird)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-COCHISE-G063",
+      "period": {
+        "start": "2025-07-22"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Annual wellness exam + vaccinations",
+      "vitals": {
+        "hr": 486,
+        "rr": 39,
+        "weight_g": 1156
+      },
+      "narrative": "Annual wellness exam for Sunny, a 11-year-old African Grey bird. Bright, alert, responsive. Vaccines updated. Discussed parasite prevention and dental care. Recommend recheck in 12 months.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "6b13fc24-57e4-4264-9cdd-fe9df4e04420",
+      "subject": {
+        "reference": "AnimalPatient/7fa9260b-1f61-4d0a-9f28-36b268e39831",
+        "label": "Sunny (bird)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-COCHISE-G063",
+      "period": {
+        "start": "2025-08-25"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Annual wellness exam + vaccinations",
+      "vitals": {
+        "hr": 472,
+        "rr": 37,
+        "weight_g": 313
+      },
+      "narrative": "Annual wellness exam for Sunny, a 11-year-old African Grey bird. Bright, alert, responsive. Vaccines updated. Discussed parasite prevention and dental care. Recommend recheck in 12 months.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "68cd53d1-b1f5-4d24-8cde-9a4c3558e390",
+      "subject": {
+        "reference": "AnimalPatient/7fa9260b-1f61-4d0a-9f28-36b268e39831",
+        "label": "Sunny (bird)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-COCHISE-G063",
+      "period": {
+        "start": "2026-01-31"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Acute vomiting / diarrhea",
+      "vitals": {
+        "hr": 267,
+        "rr": 20,
+        "weight_g": 1062
+      },
+      "narrative": "Sunny presents for acute vomiting / diarrhea. Treated symptomatically. Recheck PRN.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "56f39a46-808d-431d-80a1-4d218339dc58",
+      "subject": {
+        "reference": "AnimalPatient/a7d07a4e-e38e-4c8f-94b7-59ca6af89113",
+        "label": "Coco (rabbit)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-COCHISE-G109",
+      "period": {
+        "start": "2024-06-08"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Pruritus / skin lesion",
+      "vitals": {},
+      "narrative": "Coco presents for pruritus / skin lesion. Treated symptomatically. Recheck PRN.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "da79d1e2-3dd1-4510-96e3-8ab9720d2f63",
+      "subject": {
+        "reference": "AnimalPatient/a7d07a4e-e38e-4c8f-94b7-59ca6af89113",
+        "label": "Coco (rabbit)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-COCHISE-G109",
+      "period": {
+        "start": "2024-07-20"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Otitis externa",
+      "vitals": {},
+      "narrative": "Coco presents for otitis externa. Treated symptomatically. Recheck PRN.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "e91a08be-7784-4478-b785-daa925282184",
+      "subject": {
+        "reference": "AnimalPatient/a7d07a4e-e38e-4c8f-94b7-59ca6af89113",
+        "label": "Coco (rabbit)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-COCHISE-G109",
+      "period": {
+        "start": "2024-09-16"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Annual wellness exam + vaccinations",
+      "vitals": {},
+      "narrative": "Annual wellness exam for Coco, a 11-year-old Holland Lop rabbit. Bright, alert, responsive. Vaccines updated. Discussed parasite prevention and dental care. Recommend recheck in 12 months.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "0d98da87-35f3-4eaa-89d3-9b362f87b92e",
+      "subject": {
+        "reference": "AnimalPatient/a7d07a4e-e38e-4c8f-94b7-59ca6af89113",
+        "label": "Coco (rabbit)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-COCHISE-G109",
+      "period": {
+        "start": "2025-06-13"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Dental cleaning",
+      "vitals": {},
+      "narrative": "Coco presents for dental cleaning. Treated symptomatically. Recheck PRN.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "6e5f4b1d-f54d-4803-a554-40ad93655a19",
+      "subject": {
+        "reference": "AnimalPatient/5ae6ae13-d923-446e-8e0d-a26e6855a475",
+        "label": "Daisy (goat)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-NAVAJO-G127",
+      "period": {
+        "start": "2024-11-18"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Annual wellness exam + vaccinations",
+      "vitals": {
+        "hr": 77,
+        "rr": 29,
+        "temp_f": 103.5,
+        "weight_kg": 46
+      },
+      "narrative": "Annual wellness exam for Daisy, a 12-year-old Boer goat. Bright, alert, responsive. Vaccines updated. Discussed parasite prevention and dental care. Recommend recheck in 12 months.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "2c7b9ba0-37a5-4a6e-adc9-8bebdc709ed8",
+      "subject": {
+        "reference": "AnimalPatient/5ae6ae13-d923-446e-8e0d-a26e6855a475",
+        "label": "Daisy (goat)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-NAVAJO-G127",
+      "period": {
+        "start": "2024-11-20"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Annual wellness exam + vaccinations",
+      "vitals": {
+        "hr": 84,
+        "rr": 18,
+        "temp_f": 103.2,
+        "weight_kg": 56
+      },
+      "narrative": "Annual wellness exam for Daisy, a 12-year-old Boer goat. Bright, alert, responsive. Vaccines updated. Discussed parasite prevention and dental care. Recommend recheck in 12 months.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "eae06402-489b-43ba-bdc0-ee7b1163a65b",
+      "subject": {
+        "reference": "AnimalPatient/5ae6ae13-d923-446e-8e0d-a26e6855a475",
+        "label": "Daisy (goat)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-NAVAJO-G127",
+      "period": {
+        "start": "2025-02-27"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Otitis externa",
+      "vitals": {
+        "hr": 85,
+        "rr": 27,
+        "temp_f": 102.1,
+        "weight_kg": 61
+      },
+      "narrative": "Daisy presents for otitis externa. Treated symptomatically. Recheck PRN.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "43376954-38bd-4408-a2fb-2d5dae90f224",
+      "subject": {
+        "reference": "AnimalPatient/5ae6ae13-d923-446e-8e0d-a26e6855a475",
+        "label": "Daisy (goat)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-NAVAJO-G127",
+      "period": {
+        "start": "2025-11-07"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Pruritus / skin lesion",
+      "vitals": {
+        "hr": 84,
+        "rr": 17,
+        "temp_f": 102.0,
+        "weight_kg": 37
+      },
+      "narrative": "Daisy presents for pruritus / skin lesion. Treated symptomatically. Recheck PRN.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "f582b3f6-c6f9-457f-b5e0-8d3505d83f1e",
+      "subject": {
+        "reference": "AnimalPatient/d889d4bd-4736-4be0-bc5c-5d344300f278",
+        "label": "Tigger (cat)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-NAVAJO-G127",
+      "period": {
+        "start": "2024-09-01"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Annual wellness exam + vaccinations",
+      "vitals": {
+        "hr": 147,
+        "rr": 20,
+        "temp_f": 101.7,
+        "weight_kg": 6.3
+      },
+      "narrative": "Annual wellness exam for Tigger, a 10-year-old Tabby cat. Bright, alert, responsive. Vaccines updated. Discussed parasite prevention and dental care. Recommend recheck in 12 months.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "56201842-105c-49ca-a57d-d28e0c66f04d",
+      "subject": {
+        "reference": "AnimalPatient/e3fa82cf-fc49-4a91-ba2e-d255f7a3a514",
+        "label": "Clover (swine)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-NAVAJO-G127",
+      "period": {
+        "start": "2024-11-12"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Upper respiratory signs",
+      "vitals": {},
+      "narrative": "Clover presents for upper respiratory signs. Treated symptomatically. Recheck PRN.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "b89b28bd-8e5e-4785-b181-e45357579b5b",
+      "subject": {
+        "reference": "AnimalPatient/e3fa82cf-fc49-4a91-ba2e-d255f7a3a514",
+        "label": "Clover (swine)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-NAVAJO-G127",
+      "period": {
+        "start": "2026-01-24"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Annual wellness exam + vaccinations",
+      "vitals": {},
+      "narrative": "Annual wellness exam for Clover, a 8-year-old Mixed swine. Bright, alert, responsive. Vaccines updated. Discussed parasite prevention and dental care. Recommend recheck in 12 months.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "b1e7e642-52d2-47a4-a930-452af1b764e6",
+      "subject": {
+        "reference": "AnimalPatient/880eebef-acca-44b0-a409-7d6442eedf4a",
+        "label": "Milo (dog)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-NAVAJO-G189",
+      "period": {
+        "start": "2024-12-02"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Upper respiratory signs",
+      "vitals": {
+        "hr": 109,
+        "rr": 17,
+        "temp_f": 101.7,
+        "weight_kg": 32.3
+      },
+      "narrative": "Milo presents for upper respiratory signs. Treated symptomatically. Recheck PRN.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "302f5c37-5a57-4b30-a6c7-c76ae5dc92d8",
+      "subject": {
+        "reference": "AnimalPatient/880eebef-acca-44b0-a409-7d6442eedf4a",
+        "label": "Milo (dog)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-NAVAJO-G189",
+      "period": {
+        "start": "2025-03-08"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Pruritus / skin lesion",
+      "vitals": {
+        "hr": 85,
+        "rr": 24,
+        "temp_f": 102.0,
+        "weight_kg": 26.3
+      },
+      "narrative": "Milo presents for pruritus / skin lesion. Treated symptomatically. Recheck PRN.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "193d3b33-0f22-4aea-b419-25414d6eee4c",
+      "subject": {
+        "reference": "AnimalPatient/880eebef-acca-44b0-a409-7d6442eedf4a",
+        "label": "Milo (dog)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-NAVAJO-G189",
+      "period": {
+        "start": "2025-08-16"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Annual wellness exam + vaccinations",
+      "vitals": {
+        "hr": 74,
+        "rr": 18,
+        "temp_f": 101.2,
+        "weight_kg": 13.2
+      },
+      "narrative": "Annual wellness exam for Milo, a 11-year-old Dachshund dog. Bright, alert, responsive. Vaccines updated. Discussed parasite prevention and dental care. Recommend recheck in 12 months.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "22e7ca62-a6d4-49b4-b17c-96963005c3be",
+      "subject": {
+        "reference": "AnimalPatient/880eebef-acca-44b0-a409-7d6442eedf4a",
+        "label": "Milo (dog)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-NAVAJO-G189",
+      "period": {
+        "start": "2025-10-07"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Annual wellness exam + vaccinations",
+      "vitals": {
+        "hr": 115,
+        "rr": 29,
+        "temp_f": 101.4,
+        "weight_kg": 22.5
+      },
+      "narrative": "Annual wellness exam for Milo, a 11-year-old Dachshund dog. Bright, alert, responsive. Vaccines updated. Discussed parasite prevention and dental care. Recommend recheck in 12 months.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "7aef2238-faa1-42cc-bd1b-4f3b2981a669",
+      "subject": {
+        "reference": "AnimalPatient/0a337af4-6c94-4417-8e08-ed114af5d169",
+        "label": "Smudge (rabbit)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-NAVAJO-G189",
+      "period": {
+        "start": "2025-09-13"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Annual wellness exam + vaccinations",
+      "vitals": {},
+      "narrative": "Annual wellness exam for Smudge, a 10-year-old Holland Lop rabbit. Bright, alert, responsive. Vaccines updated. Discussed parasite prevention and dental care. Recommend recheck in 12 months.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "6cb2555b-1e1f-4cba-94e9-a399d94cfa21",
+      "subject": {
+        "reference": "AnimalPatient/0a337af4-6c94-4417-8e08-ed114af5d169",
+        "label": "Smudge (rabbit)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-NAVAJO-G189",
+      "period": {
+        "start": "2026-02-02"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Annual wellness exam + vaccinations",
+      "vitals": {},
+      "narrative": "Annual wellness exam for Smudge, a 10-year-old Holland Lop rabbit. Bright, alert, responsive. Vaccines updated. Discussed parasite prevention and dental care. Recommend recheck in 12 months.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "aeca8b6c-2549-490c-bd56-08d4e610731c",
+      "subject": {
+        "reference": "AnimalPatient/b3c5a428-eb3d-48bb-bf68-4434fa243cfb",
+        "label": "Charlie (dog)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-NAVAJO-G189",
+      "period": {
+        "start": "2024-08-31"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Annual wellness exam + vaccinations",
+      "vitals": {
+        "hr": 94,
+        "rr": 20,
+        "temp_f": 102.2,
+        "weight_kg": 32.2
+      },
+      "narrative": "Annual wellness exam for Charlie, a 13-year-old Labrador Retriever dog. Bright, alert, responsive. Vaccines updated. Discussed parasite prevention and dental care. Recommend recheck in 12 months.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "8f8c32b8-78d8-43ae-b6ae-3108e52c650a",
+      "subject": {
+        "reference": "AnimalPatient/b3c5a428-eb3d-48bb-bf68-4434fa243cfb",
+        "label": "Charlie (dog)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-NAVAJO-G189",
+      "period": {
+        "start": "2026-04-07"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Upper respiratory signs",
+      "vitals": {
+        "hr": 104,
+        "rr": 16,
+        "temp_f": 102.2,
+        "weight_kg": 9.8
+      },
+      "narrative": "Charlie presents for upper respiratory signs. Treated symptomatically. Recheck PRN.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "f54183ac-d142-4827-aba2-1ca689f01261",
+      "subject": {
+        "reference": "AnimalPatient/cec345d0-ed57-46aa-a258-d583343d3c4a",
+        "label": "Simba (cat)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-APACHE-G196",
+      "period": {
+        "start": "2024-10-10"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Dental cleaning",
+      "vitals": {
+        "hr": 160,
+        "rr": 25,
+        "temp_f": 101.1,
+        "weight_kg": 5.4
+      },
+      "narrative": "Simba presents for dental cleaning. Treated symptomatically. Recheck PRN.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "c1527ab3-d3fc-4bbb-8a9d-2b28cdefe9ef",
+      "subject": {
+        "reference": "AnimalPatient/cec345d0-ed57-46aa-a258-d583343d3c4a",
+        "label": "Simba (cat)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-APACHE-G196",
+      "period": {
+        "start": "2025-05-21"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Annual wellness exam + vaccinations",
+      "vitals": {
+        "hr": 197,
+        "rr": 30,
+        "temp_f": 102.4,
+        "weight_kg": 6.7
+      },
+      "narrative": "Annual wellness exam for Simba, a 15-year-old Siamese Mix cat. Bright, alert, responsive. Vaccines updated. Discussed parasite prevention and dental care. Recommend recheck in 12 months.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "d0bf7940-7364-4639-ad85-8249d61b65ac",
+      "subject": {
+        "reference": "AnimalPatient/cec345d0-ed57-46aa-a258-d583343d3c4a",
+        "label": "Simba (cat)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-APACHE-G196",
+      "period": {
+        "start": "2026-02-27"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Annual wellness exam + vaccinations",
+      "vitals": {
+        "hr": 169,
+        "rr": 30,
+        "temp_f": 102.1,
+        "weight_kg": 7.0
+      },
+      "narrative": "Annual wellness exam for Simba, a 15-year-old Siamese Mix cat. Bright, alert, responsive. Vaccines updated. Discussed parasite prevention and dental care. Recommend recheck in 12 months.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "60afc49e-6ff4-431e-a764-c6a78116d12f",
+      "subject": {
+        "reference": "AnimalPatient/21abab4f-4ae1-4397-a0a3-7c6bbcd3e135",
+        "label": "Salem (cat)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-NAVAJO-G270",
+      "period": {
+        "start": "2024-07-19"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Acute vomiting / diarrhea",
+      "vitals": {
+        "hr": 149,
+        "rr": 24,
+        "temp_f": 101.4,
+        "weight_kg": 5.7
+      },
+      "narrative": "Salem presents for acute vomiting / diarrhea. Treated symptomatically. Recheck PRN.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "4ba706ef-beaf-41e8-9f1e-34575a55dd65",
+      "subject": {
+        "reference": "AnimalPatient/21abab4f-4ae1-4397-a0a3-7c6bbcd3e135",
+        "label": "Salem (cat)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-NAVAJO-G270",
+      "period": {
+        "start": "2025-01-01"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Annual wellness exam + vaccinations",
+      "vitals": {
+        "hr": 148,
+        "rr": 20,
+        "temp_f": 102.2,
+        "weight_kg": 3.6
+      },
+      "narrative": "Annual wellness exam for Salem, a 6-year-old Tabby cat. Bright, alert, responsive. Vaccines updated. Discussed parasite prevention and dental care. Recommend recheck in 12 months.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "c9dde2c9-a5fb-4802-bab0-b51d40b4348a",
+      "subject": {
+        "reference": "AnimalPatient/21abab4f-4ae1-4397-a0a3-7c6bbcd3e135",
+        "label": "Salem (cat)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-NAVAJO-G270",
+      "period": {
+        "start": "2025-12-27"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Annual wellness exam + vaccinations",
+      "vitals": {
+        "hr": 145,
+        "rr": 30,
+        "temp_f": 101.7,
+        "weight_kg": 3.2
+      },
+      "narrative": "Annual wellness exam for Salem, a 6-year-old Tabby cat. Bright, alert, responsive. Vaccines updated. Discussed parasite prevention and dental care. Recommend recheck in 12 months.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "2138526e-a5f4-4ffa-87ee-436d62932156",
+      "subject": {
+        "reference": "AnimalPatient/ea1de30b-9548-4067-97ad-de0fffdbfd60",
+        "label": "Chloe (dog)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-GRAHAM-G272",
+      "period": {
+        "start": "2025-10-19"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Annual wellness exam + vaccinations",
+      "vitals": {
+        "hr": 75,
+        "rr": 24,
+        "temp_f": 101.7,
+        "weight_kg": 26.4
+      },
+      "narrative": "Annual wellness exam for Chloe, a 4-year-old Husky dog. Bright, alert, responsive. Vaccines updated. Discussed parasite prevention and dental care. Recommend recheck in 12 months.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "d6e55d9e-946d-486e-80e0-6859a71e5a63",
+      "subject": {
+        "reference": "AnimalPatient/ea1de30b-9548-4067-97ad-de0fffdbfd60",
+        "label": "Chloe (dog)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-GRAHAM-G272",
+      "period": {
+        "start": "2025-11-23"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Pruritus / skin lesion",
+      "vitals": {
+        "hr": 82,
+        "rr": 29,
+        "temp_f": 102.0,
+        "weight_kg": 31.8
+      },
+      "narrative": "Chloe presents for pruritus / skin lesion. Treated symptomatically. Recheck PRN.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "d0d3e00a-677d-4be5-867f-67e677755b84",
+      "subject": {
+        "reference": "AnimalPatient/ea1de30b-9548-4067-97ad-de0fffdbfd60",
+        "label": "Chloe (dog)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-GRAHAM-G272",
+      "period": {
+        "start": "2026-02-21"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Otitis externa",
+      "vitals": {
+        "hr": 114,
+        "rr": 23,
+        "temp_f": 101.5,
+        "weight_kg": 27.4
+      },
+      "narrative": "Chloe presents for otitis externa. Treated symptomatically. Recheck PRN.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "fe0b740c-05ee-438d-bf16-a2007cb6c4e7",
+      "subject": {
+        "reference": "AnimalPatient/8733a836-0468-4f5b-9d02-c1fef3c714ec",
+        "label": "Daisy (cattle)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-GRAHAM-G272",
+      "period": {
+        "start": "2024-12-05"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Annual wellness exam + vaccinations",
+      "vitals": {},
+      "narrative": "Annual wellness exam for Daisy, a 5-year-old Mixed cattle. Bright, alert, responsive. Vaccines updated. Discussed parasite prevention and dental care. Recommend recheck in 12 months.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "1087fd35-b6b8-4af5-80c5-21180e65f399",
+      "subject": {
+        "reference": "AnimalPatient/8733a836-0468-4f5b-9d02-c1fef3c714ec",
+        "label": "Daisy (cattle)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-GRAHAM-G272",
+      "period": {
+        "start": "2025-01-20"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Annual wellness exam + vaccinations",
+      "vitals": {},
+      "narrative": "Annual wellness exam for Daisy, a 5-year-old Mixed cattle. Bright, alert, responsive. Vaccines updated. Discussed parasite prevention and dental care. Recommend recheck in 12 months.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "8a7d5b92-638d-47c3-b08a-145b2d3eb2be",
+      "subject": {
+        "reference": "AnimalPatient/c9a0263f-ec01-47e6-9912-10fd5fba55be",
+        "label": "Thunder (horse)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-COCHISE-G285",
+      "period": {
+        "start": "2024-08-24"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Annual wellness exam + vaccinations",
+      "vitals": {
+        "hr": 33,
+        "rr": 10,
+        "temp_f": 99.5,
+        "weight_kg": 440
+      },
+      "narrative": "Annual wellness exam for Thunder, a 7-year-old Thoroughbred horse. Bright, alert, responsive. Vaccines updated. Discussed parasite prevention and dental care. Recommend recheck in 12 months.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "d04dc84f-5466-43a3-82b4-7a51611ea38b",
+      "subject": {
+        "reference": "AnimalPatient/c9a0263f-ec01-47e6-9912-10fd5fba55be",
+        "label": "Thunder (horse)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-COCHISE-G285",
+      "period": {
+        "start": "2025-04-22"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Annual wellness exam + vaccinations",
+      "vitals": {
+        "hr": 33,
+        "rr": 13,
+        "temp_f": 100.7,
+        "weight_kg": 424
+      },
+      "narrative": "Annual wellness exam for Thunder, a 7-year-old Thoroughbred horse. Bright, alert, responsive. Vaccines updated. Discussed parasite prevention and dental care. Recommend recheck in 12 months.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "adf450e1-10b1-40b4-850b-49b761695229",
+      "subject": {
+        "reference": "AnimalPatient/116db04e-5cba-494c-b8c7-9795070da6dc",
+        "label": "Buddy (dog)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-COCHISE-G285",
+      "period": {
+        "start": "2025-08-16"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Annual wellness exam + vaccinations",
+      "vitals": {
+        "hr": 118,
+        "rr": 27,
+        "temp_f": 101.8,
+        "weight_kg": 27.5
+      },
+      "narrative": "Annual wellness exam for Buddy, a 12-year-old Husky dog. Bright, alert, responsive. Vaccines updated. Discussed parasite prevention and dental care. Recommend recheck in 12 months.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "0818ca6c-77e4-4f38-a2df-7f20df4ff242",
+      "subject": {
+        "reference": "AnimalPatient/116db04e-5cba-494c-b8c7-9795070da6dc",
+        "label": "Buddy (dog)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-COCHISE-G285",
+      "period": {
+        "start": "2025-12-17"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Annual wellness exam + vaccinations",
+      "vitals": {
+        "hr": 110,
+        "rr": 28,
+        "temp_f": 101.3,
+        "weight_kg": 30.7
+      },
+      "narrative": "Annual wellness exam for Buddy, a 12-year-old Husky dog. Bright, alert, responsive. Vaccines updated. Discussed parasite prevention and dental care. Recommend recheck in 12 months.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "d0c00617-4579-4af8-ba7a-54823e1acb8a",
+      "subject": {
+        "reference": "AnimalPatient/e3ad6f9d-46bc-444a-b4f2-027a96132296",
+        "label": "Sunny (bird)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-NAVAJO-G308",
+      "period": {
+        "start": "2024-09-05"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Annual wellness exam + vaccinations",
+      "vitals": {
+        "hr": 500,
+        "rr": 29,
+        "weight_g": 978
+      },
+      "narrative": "Annual wellness exam for Sunny, a 7-year-old Macaw bird. Bright, alert, responsive. Vaccines updated. Discussed parasite prevention and dental care. Recommend recheck in 12 months.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "6314b35e-7299-4c72-b945-ca7cff5ba044",
+      "subject": {
+        "reference": "AnimalPatient/e3ad6f9d-46bc-444a-b4f2-027a96132296",
+        "label": "Sunny (bird)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-NAVAJO-G308",
+      "period": {
+        "start": "2025-05-02"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Dental cleaning",
+      "vitals": {
+        "hr": 210,
+        "rr": 30,
+        "weight_g": 672
+      },
+      "narrative": "Sunny presents for dental cleaning. Treated symptomatically. Recheck PRN.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "c0d21358-b430-440e-8921-ad3455cf639d",
+      "subject": {
+        "reference": "AnimalPatient/e3ad6f9d-46bc-444a-b4f2-027a96132296",
+        "label": "Sunny (bird)",
+        "kind": "Animal"
+      },
+      "household_id": "HH-AZ-NAVAJO-G308",
+      "period": {
+        "start": "2026-01-20"
+      },
+      "provider": "Veterinarian",
+      "chief_complaint": "Annual wellness exam + vaccinations",
+      "vitals": {
+        "hr": 571,
+        "rr": 26,
+        "weight_g": 319
+      },
+      "narrative": "Annual wellness exam for Sunny, a 7-year-old Macaw bird. Bright, alert, responsive. Vaccines updated. Discussed parasite prevention and dental care. Recommend recheck in 12 months.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "vet_cochise"
+    }
+  ],
+  "conditions": [
+    {
+      "resourceType": "Condition",
+      "id": "725a1d12-76b8-46f9-85d3-8db759977d12",
+      "subject": {
+        "reference": "AnimalPatient/ed5dde89-34c5-47b1-92b5-06ae34b04132"
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct-vet",
+            "code": "58750007",
+            "display": "Plague"
+          }
+        ],
+        "text": "Plague"
+      },
+      "onsetDateTime": "2026-04-30",
+      "recordedDate": "2026-04-30",
+      "clinicalStatus": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+            "code": "active"
+          }
+        ]
+      },
+      "extension": [
+        {
+          "url": "http://onehealthrecord.org/one-health-relevant",
+          "valueBoolean": true
+        },
+        {
+          "url": "http://onehealthrecord.org/authorship",
+          "valueString": "machine-authored"
+        },
+        {
+          "url": "http://onehealthrecord.org/confidence",
+          "valueDecimal": 0.95
+        }
+      ],
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Condition",
+      "id": "3673a2da-f84d-4929-83fc-29d6e6fb59a2",
+      "subject": {
+        "reference": "AnimalPatient/e7521913-0913-4533-b702-7b011b18f883"
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct-vet",
+            "code": "417093003",
+            "display": "West Nile virus infection"
+          }
+        ],
+        "text": "West Nile virus infection"
+      },
+      "onsetDateTime": "2026-04-22",
+      "recordedDate": "2026-04-22",
+      "clinicalStatus": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+            "code": "active"
+          }
+        ]
+      },
+      "extension": [
+        {
+          "url": "http://onehealthrecord.org/one-health-relevant",
+          "valueBoolean": true
+        },
+        {
+          "url": "http://onehealthrecord.org/authorship",
+          "valueString": "machine-authored"
+        },
+        {
+          "url": "http://onehealthrecord.org/confidence",
+          "valueDecimal": 0.91
+        }
+      ],
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Condition",
+      "id": "reportable-vesicular_stomatitis-e7521913-0230",
+      "clinicalStatus": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+            "code": "active"
+          }
+        ]
+      },
+      "verificationStatus": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+            "code": "confirmed"
+          }
+        ]
+      },
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+              "code": "encounter-diagnosis"
+            }
+          ]
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "1431002",
+            "display": "Vesicular stomatitis"
+          },
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "A93.8",
+            "display": "Vesicular stomatitis"
+          }
+        ],
+        "text": "Vesicular stomatitis"
+      },
+      "subject": {
+        "reference": "AnimalPatient/e7521913-0913-4533-b702-7b011b18f883"
+      },
+      "encounter": {
+        "reference": "Encounter/fc67b287-0cc4-4f26-9dff-a8286b360852"
+      },
+      "onsetDateTime": "2025-07-23",
+      "recordedDate": "2025-07-23",
+      "_reportable": {
+        "disease_id": "vesicular_stomatitis",
+        "common_name": "Vesicular stomatitis",
+        "is_reportable": true,
+        "human_reporting": {
+          "is_reportable": false
+        },
+        "animal_reporting": {
+          "is_reportable": true,
+          "ada_required": true,
+          "aphis_notifiable": true,
+          "destinations": [
+            "ada",
+            "aphis"
+          ]
+        },
+        "is_zoonotic": false,
+        "is_select_agent": false,
+        "applies_to_subject_kind": "animal",
+        "report_status": "unreported"
+      },
+      "_household_id": "HH-AZ-COCHISE-007",
+      "_site": "vet_cochise"
+    },
+    {
+      "resourceType": "Condition",
+      "id": "reportable-ehrlichiosis-880eebef-0115",
+      "clinicalStatus": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+            "code": "active"
+          }
+        ]
+      },
+      "verificationStatus": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+            "code": "confirmed"
+          }
+        ]
+      },
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+              "code": "encounter-diagnosis"
+            }
+          ]
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "31996006",
+            "display": "Ehrlichiosis or Anaplasmosis"
+          },
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "A77.40",
+            "display": "Ehrlichiosis or Anaplasmosis"
+          }
+        ],
+        "text": "Ehrlichiosis or Anaplasmosis"
+      },
+      "subject": {
+        "reference": "AnimalPatient/880eebef-acca-44b0-a409-7d6442eedf4a"
+      },
+      "encounter": {
+        "reference": "Encounter/302f5c37-5a57-4b30-a6c7-c76ae5dc92d8"
+      },
+      "onsetDateTime": "2026-01-03",
+      "recordedDate": "2026-01-03",
+      "_reportable": {
+        "disease_id": "ehrlichiosis",
+        "common_name": "Ehrlichiosis or Anaplasmosis",
+        "is_reportable": true,
+        "human_reporting": {
+          "is_reportable": true,
+          "adhs_class": "five_working_days",
+          "adhs_timeline": "five_working_days",
+          "nndss_condition_code": "10075",
+          "destinations": [
+            "adhs",
+            "cdc_nndss",
+            "local_health_dept"
+          ]
+        },
+        "animal_reporting": {
+          "is_reportable": true,
+          "adhs_recommended": true,
+          "destinations": [
+            "adhs_cross_species"
+          ]
+        },
+        "is_zoonotic": true,
+        "is_select_agent": false,
+        "applies_to_subject_kind": "animal",
+        "report_status": "unreported"
+      },
+      "_household_id": "HH-AZ-NAVAJO-G189",
+      "_site": "vet_cochise"
+    }
+  ],
+  "household_refs": [
+    "HH-AZ-APACHE-006",
+    "HH-AZ-APACHE-G196",
+    "HH-AZ-COCHISE-007",
+    "HH-AZ-COCHISE-G063",
+    "HH-AZ-COCHISE-G109",
+    "HH-AZ-COCHISE-G285",
+    "HH-AZ-GRAHAM-G001",
+    "HH-AZ-GRAHAM-G272",
+    "HH-AZ-GREENLEE-G002",
+    "HH-AZ-NAVAJO-012",
+    "HH-AZ-NAVAJO-G127",
+    "HH-AZ-NAVAJO-G189",
+    "HH-AZ-NAVAJO-G270",
+    "HH-AZ-NAVAJO-G308"
+  ]
+}

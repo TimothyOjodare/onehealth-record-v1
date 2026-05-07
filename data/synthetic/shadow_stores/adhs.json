@@ -1,0 +1,27 @@
+{
+  "_metadata": {
+    "site_id": "adhs",
+    "facility": "Arizona Department of Health Services",
+    "kind": "public_health",
+    "vendor": "ADHS-MEDSIS",
+    "fhir_version": "R4-PH-profile",
+    "endpoint": "https://surveillance.adhs.az.example/r4",
+    "lat": 33.448,
+    "lon": -112.077,
+    "n_patients": 0,
+    "n_animal_patients": 0,
+    "n_encounters": 0,
+    "n_conditions": 0,
+    "_role": "surveillance_sink",
+    "_caveat": "Public-health authorities receive aggregate surveillance feeds and reportable-disease ELRs only. They do not hold primary clinical records."
+  },
+  "patients": [],
+  "animal_patients": [],
+  "encounters": [],
+  "conditions": [],
+  "household_refs": [],
+  "surveillance_feeds": [
+    "ADHS Reportable Disease ELR (NNDSS HL7 v2.5.1)",
+    "ADHS Vector Surveillance Feed (CDC ArboNET-equivalent)"
+  ]
+}

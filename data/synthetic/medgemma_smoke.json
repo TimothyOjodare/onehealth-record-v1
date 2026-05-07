@@ -1,0 +1,61 @@
+{
+  "cases": [
+    {
+      "label": "human_cocci",
+      "text": "Maria Hernandez, 38F, Tucson. Presents with 6-week dry cough, fatigue, low-grade fever 100.8F. Reports recent home garden soil disturbance. Family dog Rocco recently dx'd with valley fever by primary vet.",
+      "result": {
+        "entities": [],
+        "model_metadata": {
+          "primary_engine": "rule_fallback",
+          "species": "homo_sapiens",
+          "species_class": "human",
+          "lora_adapter_used": null,
+          "rag_passages_retrieved": 0,
+          "model_version": "medgemma-4b-it",
+          "latency_ms": 0.44157900003938266,
+          "is_simulated": true,
+          "prompt_chars": 317
+        }
+      }
+    },
+    {
+      "label": "vet_cocci_dog",
+      "text": "Rocco, 4yo MN Lab mix, 32kg. Lethargy 3 weeks, weight loss, intermittent lameness LH limb. Temp 39.6C, HR 110, RR 28. Started fluconazole 5mg/kg PO q24h pending serology.",
+      "result": {
+        "entities": [],
+        "model_metadata": {
+          "primary_engine": "rule_fallback",
+          "species": "canis_lupus_familiaris",
+          "species_class": "companion_animal",
+          "lora_adapter_used": "companion-animal-v1.0",
+          "rag_passages_retrieved": 0,
+          "model_version": "medgemma-4b-it",
+          "latency_ms": 0.4399430000603388,
+          "is_simulated": true,
+          "prompt_chars": 388
+        }
+      }
+    },
+    {
+      "label": "vet_q_fever_goat",
+      "text": "Doe goat, recent stillbirth. Presented for retained placenta. Started oxytetracycline. Owner Becker household \u2014 son James presented to PCP with pneumonia three days ago.",
+      "result": {
+        "entities": [],
+        "model_metadata": {
+          "primary_engine": "rule_fallback",
+          "species": "capra_aegagrus_hircus",
+          "species_class": "production_animal",
+          "lora_adapter_used": "production-animal-v1.0",
+          "rag_passages_retrieved": 0,
+          "model_version": "medgemma-4b-it",
+          "latency_ms": 0.39133099994614895,
+          "is_simulated": true,
+          "prompt_chars": 388
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "is_live": false
+  }
+}

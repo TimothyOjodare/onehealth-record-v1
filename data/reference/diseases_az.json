@@ -1,0 +1,386 @@
+{
+    "_description": "One Health-relevant diseases endemic or reportable in Arizona. Each entry encodes the disease's transmission routes, host species (human + animals), reservoir hosts, vector species, environmental drivers, and the sentinel pathway between species — i.e. when an animal case predicts human risk and vice versa. All values reflect published epidemiology; no PHI.",
+    "_source_notes": [
+        "Disease list aligned with: ADHS reportable disease list, USDA APHIS reportable list, Arizona Department of Agriculture animal-disease list.",
+        "Transmission-route taxonomy: direct_contact, environmental_exposure, vector_borne, foodborne, waterborne, aerosol, fomite.",
+        "Sentinel direction: 'animal_to_human' = animal case is leading indicator for human risk; 'human_to_animal' = reverse; 'shared_environmental' = both species exposed to same source.",
+        "Incubation periods stated as median (range), in days, where applicable.",
+        "ICD-10 and SNOMED codes provided where one canonical code exists; otherwise null."
+    ],
+    "diseases": [
+        {
+            "id": "valley_fever",
+            "display": "Coccidioidomycosis (Valley Fever)",
+            "icd10": "B38.9",
+            "snomed": "5294002",
+            "category": "fungal",
+            "az_status": "highly endemic; reportable",
+            "transmission_routes": [
+                {"route": "environmental_exposure", "vehicle": "soil dust (Coccidioides spp. arthroconidia)", "primary": true},
+                {"route": "aerosol",                "vehicle": "wind-blown dust during soil disturbance", "primary": true}
+            ],
+            "host_species": {
+                "human":           {"susceptible": true, "severity_pct_severe": 5,  "incubation_days": [21, 7, 28]},
+                "dog":             {"susceptible": true, "severity_pct_severe": 8,  "incubation_days": [21, 7, 60]},
+                "cat":             {"susceptible": true, "severity_pct_severe": 3,  "incubation_days": [21, 14, 60]},
+                "horse":           {"susceptible": true, "severity_pct_severe": 5,  "incubation_days": [30, 14, 90]},
+                "cattle":          {"susceptible": true, "severity_pct_severe": 1,  "incubation_days": [30, 14, 90]}
+            },
+            "reservoir":  "soil (saprophyte)",
+            "vectors":    [],
+            "environmental_drivers": ["soil_disturbance", "drought_then_rain", "construction", "windstorm"],
+            "sentinel": {
+                "direction": "shared_environmental",
+                "rationale": "Both species inhale arthroconidia from the same soil-dust event. A clustered animal case in a household elevates prior on the human's environmental exposure. A spike in animal cases in a county is a near-real-time proxy for human community risk; the canine seroprevalence map historically leads the human-incidence map by 2–6 weeks because dogs sniff the ground."
+            },
+            "az_geography": ["Pima", "Pinal", "Maricopa", "Yuma"],
+            "person_to_person": false
+        },
+        {
+            "id": "rmsf",
+            "display": "Rocky Mountain Spotted Fever",
+            "icd10": "A77.0",
+            "snomed": "186772009",
+            "category": "rickettsial",
+            "az_status": "endemic outbreak (Rickettsia rickettsii); high tribal-land prevalence; reportable",
+            "transmission_routes": [
+                {"route": "vector_borne", "vehicle": "Rhipicephalus sanguineus (brown dog tick) bite", "primary": true},
+                {"route": "direct_contact","vehicle": "crushing engorged tick releases organisms onto skin", "primary": false}
+            ],
+            "host_species": {
+                "human":  {"susceptible": true, "severity_pct_severe": 30, "incubation_days": [5, 2, 14], "fatal_pct_untreated": 30},
+                "dog":    {"susceptible": true, "severity_pct_severe": 25, "incubation_days": [5, 2, 14]}
+            },
+            "reservoir":  "domestic dogs (peridomestic cycle in AZ)",
+            "vectors":    ["Rhipicephalus sanguineus"],
+            "environmental_drivers": ["dog_population_density", "outdoor_dog_housing", "tick_burden_index"],
+            "sentinel": {
+                "direction": "animal_to_human",
+                "rationale": "In Arizona's brown-dog-tick cycle, human cases occur AFTER weeks of unrecognized canine RMSF in the same household or community. A rising community-level dog-RMSF rate is the strongest near-term predictor of human cases. ADHS mandates community-level acaricide treatment of dog populations during outbreaks specifically because dogs are the sentinels."
+            },
+            "az_geography": ["Pinal", "Maricopa", "Pima", "Apache", "Navajo", "Cochise"],
+            "person_to_person": false
+        },
+        {
+            "id": "plague",
+            "display": "Plague (Yersinia pestis)",
+            "icd10": "A20.9",
+            "snomed": "58750007",
+            "category": "bacterial; zoonotic",
+            "az_status": "enzootic in northern AZ; reportable; nationally notifiable",
+            "transmission_routes": [
+                {"route": "vector_borne",   "vehicle": "rodent flea (Oropsylla montana) bite",             "primary": true},
+                {"route": "direct_contact", "vehicle": "handling infected rodent carcasses or sick cats", "primary": true},
+                {"route": "aerosol",        "vehicle": "respiratory droplets from pneumonic plague (cat→human, human→human)", "primary": false}
+            ],
+            "host_species": {
+                "human":     {"susceptible": true,  "severity_pct_severe": 60, "incubation_days": [3, 1, 7], "fatal_pct_untreated": 50},
+                "cat":       {"susceptible": true,  "severity_pct_severe": 40, "incubation_days": [3, 1, 7]},
+                "dog":       {"susceptible": true,  "severity_pct_severe": 5,  "incubation_days": [3, 1, 7]},
+                "prairie_dog": {"susceptible": true, "severity_pct_severe": 95, "die_offs_observable": true}
+            },
+            "reservoir":  "Cynomys (prairie dog) colonies; rock squirrels; deer mice",
+            "vectors":    ["Oropsylla montana", "Xenopsylla cheopis"],
+            "environmental_drivers": ["prairie_dog_die_off", "rodent_burrow_proximity", "elevation_5000_8000_ft"],
+            "sentinel": {
+                "direction": "animal_to_human",
+                "rationale": "Prairie-dog die-offs are the canonical sentinel — the colonies collapse 2–4 weeks before human cases appear in adjacent communities. Sick or dead cats in northern AZ are an even stronger personal-exposure signal: feline plague has a 50% case-fatality-rate untreated, and approximately one-third of cat-associated human cases occur in veterinarians and household members of the cat."
+            },
+            "az_geography": ["Coconino", "Apache", "Navajo"],
+            "person_to_person": "pneumonic only"
+        },
+        {
+            "id": "west_nile",
+            "display": "West Nile Virus",
+            "icd10": "A92.3",
+            "snomed": "417093003",
+            "category": "viral; arbovirus",
+            "az_status": "endemic; reportable; nationally notifiable",
+            "transmission_routes": [
+                {"route": "vector_borne", "vehicle": "Culex mosquito bite", "primary": true}
+            ],
+            "host_species": {
+                "human":  {"susceptible": true, "severity_pct_severe": 1,  "incubation_days": [5, 2, 14]},
+                "horse":  {"susceptible": true, "severity_pct_severe": 30, "incubation_days": [7, 3, 14], "fatal_pct_untreated": 33},
+                "bird":   {"susceptible": true, "severity_pct_severe": 80, "die_offs_observable": true}
+            },
+            "reservoir":  "passerine birds (corvids, sparrows)",
+            "vectors":    ["Culex tarsalis", "Culex quinquefasciatus"],
+            "environmental_drivers": ["standing_water", "monsoon_late_summer", "irrigation_canals"],
+            "sentinel": {
+                "direction": "animal_to_human",
+                "rationale": "Dead corvids are the earliest sentinel — bird die-offs precede human cases by 2–4 weeks. Equine WNV cases are the second sentinel; horses are dead-end hosts but they're aggressively monitored and reported to USDA APHIS. A rising sentinel-mosquito-pool positivity rate is the third sentinel and the one that triggers ADHS public alerts."
+            },
+            "az_geography": ["Maricopa", "Pinal", "Pima", "Yuma", "Mohave"],
+            "person_to_person": false
+        },
+        {
+            "id": "hantavirus",
+            "display": "Hantavirus Pulmonary Syndrome",
+            "icd10": "B33.4",
+            "snomed": "63702000",
+            "category": "viral; zoonotic",
+            "az_status": "Sin Nombre virus enzootic; reportable; high case-fatality",
+            "transmission_routes": [
+                {"route": "aerosol",        "vehicle": "aerosolized rodent excreta in enclosed spaces", "primary": true},
+                {"route": "direct_contact", "vehicle": "contact with rodent excreta or contaminated surfaces", "primary": true}
+            ],
+            "host_species": {
+                "human":     {"susceptible": true, "severity_pct_severe": 95, "incubation_days": [14, 7, 42], "fatal_pct_untreated": 38},
+                "deer_mouse": {"susceptible": true, "asymptomatic_carrier": true, "shedding_in_urine_feces": true}
+            },
+            "reservoir":  "Peromyscus maniculatus (deer mouse)",
+            "vectors":    [],
+            "environmental_drivers": ["mouse_population_irruption", "rural_storage_areas", "spring_following_wet_winter"],
+            "sentinel": {
+                "direction": "shared_environmental",
+                "rationale": "Mouse-population irruptions following wet winters drive both human exposure and dog/cat exposure. While cats and dogs are not susceptible to clinical disease, their flea burdens and rodent-killing behavior are markers of household rodent infestation. Veterinary reports of household rodent problems (and flea-burden increases on pets) precede human HPS cases in the same household by weeks."
+            },
+            "az_geography": ["Apache", "Navajo", "Coconino"],
+            "person_to_person": false
+        },
+        {
+            "id": "ehrlichiosis",
+            "display": "Ehrlichiosis",
+            "icd10": "A77.40",
+            "snomed": "31996006",
+            "category": "rickettsial",
+            "az_status": "reportable; chronic underdiagnosis in dogs",
+            "transmission_routes": [
+                {"route": "vector_borne", "vehicle": "Rhipicephalus sanguineus or Amblyomma americanum bite", "primary": true}
+            ],
+            "host_species": {
+                "human": {"susceptible": true, "severity_pct_severe": 20, "incubation_days": [9, 5, 14]},
+                "dog":   {"susceptible": true, "severity_pct_severe": 25, "incubation_days": [10, 8, 21]}
+            },
+            "reservoir":  "white-tailed deer; reservoir dogs",
+            "vectors":    ["Rhipicephalus sanguineus", "Amblyomma americanum"],
+            "environmental_drivers": ["dog_population_density", "tick_burden_index"],
+            "sentinel": {
+                "direction": "animal_to_human",
+                "rationale": "Canine ehrlichiosis often precedes human ehrlichiosis in the same household — both share the brown dog tick. A dog with chronic ehrlichiosis is a sentinel for ongoing tick exposure in its household."
+            },
+            "az_geography": ["Pinal", "Maricopa", "Cochise", "Pima"],
+            "person_to_person": false
+        },
+        {
+            "id": "leptospirosis",
+            "display": "Leptospirosis",
+            "icd10": "A27.9",
+            "snomed": "47523006",
+            "category": "bacterial; zoonotic",
+            "az_status": "reportable; underdiagnosed",
+            "transmission_routes": [
+                {"route": "waterborne",        "vehicle": "contaminated water (urine of infected mammals)", "primary": true},
+                {"route": "direct_contact",    "vehicle": "contact with infected animal urine",            "primary": true},
+                {"route": "environmental_exposure","vehicle": "moist soil contaminated with rodent urine", "primary": false}
+            ],
+            "host_species": {
+                "human":  {"susceptible": true, "severity_pct_severe": 10, "incubation_days": [10, 5, 21]},
+                "dog":    {"susceptible": true, "severity_pct_severe": 30, "incubation_days": [7, 4, 14]},
+                "cattle": {"susceptible": true, "severity_pct_severe": 20, "incubation_days": [7, 4, 14], "production_loss_signal": true}
+            },
+            "reservoir":  "rodents; cattle; dogs",
+            "vectors":    [],
+            "environmental_drivers": ["standing_water_post_monsoon", "rodent_population", "cattle_density"],
+            "sentinel": {
+                "direction": "animal_to_human",
+                "rationale": "Canine leptospirosis cases are a leading indicator for human exposure in shared households (water bowl, yard puddles) and shared environments (irrigation canals)."
+            },
+            "az_geography": ["Yuma", "Maricopa", "Pinal"],
+            "person_to_person": "rare; nosocomial only"
+        },
+        {
+            "id": "q_fever",
+            "display": "Q Fever (Coxiella burnetii)",
+            "icd10": "A78",
+            "snomed": "16241000",
+            "category": "bacterial; zoonotic",
+            "az_status": "reportable; bioterrorism agent",
+            "transmission_routes": [
+                {"route": "aerosol",            "vehicle": "inhalation of aerosolized birth fluids/placenta from infected ruminants", "primary": true},
+                {"route": "environmental_exposure","vehicle": "contaminated dust on farms", "primary": true},
+                {"route": "direct_contact",     "vehicle": "contact with parturient livestock", "primary": false}
+            ],
+            "host_species": {
+                "human":  {"susceptible": true, "severity_pct_severe": 5,  "incubation_days": [20, 9, 39]},
+                "goat":   {"susceptible": true, "severity_pct_severe": 1,  "incubation_days": [21, 14, 30], "abortion_signal": true},
+                "sheep":  {"susceptible": true, "severity_pct_severe": 1,  "incubation_days": [21, 14, 30], "abortion_signal": true},
+                "cattle": {"susceptible": true, "severity_pct_severe": 1,  "incubation_days": [21, 14, 30]}
+            },
+            "reservoir":  "domestic ruminants (goats, sheep, cattle)",
+            "vectors":    [],
+            "environmental_drivers": ["livestock_parturition_season", "windstorm", "dry_conditions"],
+            "sentinel": {
+                "direction": "animal_to_human",
+                "rationale": "Caprine and ovine abortion clusters are the textbook sentinel for Q fever. Veterinary reports of abortion storms in goat or sheep herds precede human Q-fever cases by weeks. ADHS coordinates with the Arizona Department of Agriculture specifically on this signal."
+            },
+            "az_geography": ["Cochise", "Graham", "Apache", "Navajo", "Pinal"],
+            "person_to_person": false
+        },
+        {
+            "id": "psittacosis",
+            "display": "Psittacosis (Chlamydophila psittaci)",
+            "icd10": "A70",
+            "snomed": "75116005",
+            "category": "bacterial; zoonotic",
+            "az_status": "reportable",
+            "transmission_routes": [
+                {"route": "aerosol",        "vehicle": "inhalation of dried bird-dropping particles", "primary": true},
+                {"route": "direct_contact", "vehicle": "handling sick parrots or pigeons",            "primary": true}
+            ],
+            "host_species": {
+                "human":   {"susceptible": true, "severity_pct_severe": 5,  "incubation_days": [10, 5, 21]},
+                "parrot":  {"susceptible": true, "severity_pct_severe": 30, "incubation_days": [14, 3, 60]},
+                "poultry": {"susceptible": true, "severity_pct_severe": 5,  "incubation_days": [14, 3, 60]}
+            },
+            "reservoir":  "psittacines; poultry; pigeons",
+            "vectors":    [],
+            "environmental_drivers": ["bird_density_indoor", "pet_bird_imports"],
+            "sentinel": {
+                "direction": "animal_to_human",
+                "rationale": "Sick pet birds in a household predict human respiratory cases days to weeks ahead. Veterinary diagnosis triggers public-health investigation under ADHS protocol."
+            },
+            "az_geography": ["Maricopa", "Pima", "Pinal"],
+            "person_to_person": "rare"
+        },
+        {
+            "id": "tularemia",
+            "display": "Tularemia",
+            "icd10": "A21.9",
+            "snomed": "84684002",
+            "category": "bacterial; zoonotic",
+            "az_status": "reportable; bioterrorism agent",
+            "transmission_routes": [
+                {"route": "vector_borne",   "vehicle": "tick bite (Dermacentor) or deer-fly bite", "primary": true},
+                {"route": "direct_contact", "vehicle": "skinning infected rabbits or rodents",     "primary": true},
+                {"route": "waterborne",     "vehicle": "contaminated water",                       "primary": false},
+                {"route": "aerosol",        "vehicle": "aerosolized animal-derived particles",     "primary": false}
+            ],
+            "host_species": {
+                "human":  {"susceptible": true, "severity_pct_severe": 10, "incubation_days": [4, 1, 14]},
+                "rabbit": {"susceptible": true, "severity_pct_severe": 95, "die_offs_observable": true},
+                "cat":    {"susceptible": true, "severity_pct_severe": 60, "incubation_days": [3, 1, 7]}
+            },
+            "reservoir":  "lagomorphs (rabbits, hares); rodents",
+            "vectors":    ["Dermacentor variabilis", "Chrysops discalis (deer fly)"],
+            "environmental_drivers": ["rabbit_die_off", "outdoor_cat_exposure", "summer_tick_activity"],
+            "sentinel": {
+                "direction": "animal_to_human",
+                "rationale": "Rabbit die-offs are the most specific sentinel. Outdoor cats with classic ulceroglandular tularemia presentation are an immediate signal for hunter-exposure or rabbit-handling exposure in the household."
+            },
+            "az_geography": ["Coconino", "Yavapai", "Apache"],
+            "person_to_person": false
+        },
+        {
+            "id": "rabies",
+            "display": "Rabies",
+            "icd10": "A82.9",
+            "snomed": "14168008",
+            "category": "viral; zoonotic",
+            "az_status": "enzootic in wildlife; reportable; nationally notifiable",
+            "transmission_routes": [
+                {"route": "direct_contact", "vehicle": "bite or scratch from infected animal (transdermal saliva exposure)", "primary": true}
+            ],
+            "host_species": {
+                "human":     {"susceptible": true, "severity_pct_severe": 100, "incubation_days": [60, 20, 365], "fatal_pct_untreated": 100, "post_exposure_prophylaxis": true},
+                "dog":       {"susceptible": true, "severity_pct_severe": 100, "incubation_days": [30, 10, 90]},
+                "cat":       {"susceptible": true, "severity_pct_severe": 100, "incubation_days": [30, 10, 90]},
+                "bat":       {"susceptible": true, "asymptomatic_carrier_partial": true},
+                "skunk":     {"susceptible": true, "severity_pct_severe": 100},
+                "fox":       {"susceptible": true, "severity_pct_severe": 100}
+            },
+            "reservoir":  "bats (lyssavirus reservoir); skunks; foxes",
+            "vectors":    [],
+            "environmental_drivers": ["wildlife_urban_interface"],
+            "sentinel": {
+                "direction": "animal_to_human",
+                "rationale": "Rabies in domestic animals is the classic sentinel for human exposure risk. Every confirmed animal rabies case triggers ADHS post-exposure-prophylaxis protocol for any household contacts. Bat exposures are a major focus in AZ."
+            },
+            "az_geography": ["Coconino", "Pima", "Maricopa", "Yavapai", "Mohave"],
+            "person_to_person": "rare; transplant only"
+        },
+        {
+            "id": "salmonellosis",
+            "display": "Salmonellosis",
+            "icd10": "A02.9",
+            "snomed": "302229004",
+            "category": "bacterial; enteric",
+            "az_status": "reportable",
+            "transmission_routes": [
+                {"route": "foodborne",      "vehicle": "contaminated food (eggs, poultry, produce)", "primary": true},
+                {"route": "direct_contact", "vehicle": "contact with reptiles or backyard poultry",  "primary": true},
+                {"route": "fomite",         "vehicle": "contaminated surfaces",                       "primary": false}
+            ],
+            "host_species": {
+                "human":   {"susceptible": true, "severity_pct_severe": 5, "incubation_days": [1, 0.5, 3]},
+                "reptile": {"susceptible": true, "asymptomatic_carrier": true, "shedding_in_feces": true},
+                "poultry": {"susceptible": true, "asymptomatic_carrier": true, "shedding_in_feces": true},
+                "dog":     {"susceptible": true, "asymptomatic_carrier_partial": true}
+            },
+            "reservoir":  "reptiles; poultry; cattle",
+            "vectors":    [],
+            "environmental_drivers": ["backyard_poultry", "pet_reptile_ownership"],
+            "sentinel": {
+                "direction": "shared_environmental",
+                "rationale": "Backyard-poultry households have a 30-fold elevated risk for human salmonellosis. The presence of a reptile or backyard chicken in a household is a household-level risk amplifier; PH outbreaks routinely trace to specific pet-bird vendors or reptile distributors."
+            },
+            "az_geography": ["Maricopa", "Pinal", "Pima", "Yuma"],
+            "person_to_person": "occasional"
+        },
+        {
+            "id": "tuberculosis_zoonotic",
+            "display": "Zoonotic Tuberculosis (Mycobacterium bovis)",
+            "icd10": "A18.9",
+            "snomed": "186183008",
+            "category": "bacterial; mycobacterial",
+            "az_status": "rare but reportable; cattle/dairy connection",
+            "transmission_routes": [
+                {"route": "foodborne",      "vehicle": "unpasteurized dairy",         "primary": true},
+                {"route": "aerosol",        "vehicle": "close contact with cattle",  "primary": false},
+                {"route": "direct_contact", "vehicle": "occupational livestock work","primary": false}
+            ],
+            "host_species": {
+                "human":  {"susceptible": true, "severity_pct_severe": 30, "incubation_days": [60, 14, 365]},
+                "cattle": {"susceptible": true, "severity_pct_severe": 5,  "production_loss_signal": true}
+            },
+            "reservoir":  "cattle; deer",
+            "vectors":    [],
+            "environmental_drivers": ["dairy_unpasteurized", "border_dairy_trade"],
+            "sentinel": {
+                "direction": "animal_to_human",
+                "rationale": "Bovine TB in dairy herds is the leading indicator for human zoonotic-TB cases. AZ-Mexico border dairy trade is the highest-risk pathway."
+            },
+            "az_geography": ["Cochise", "Santa Cruz", "Yuma"],
+            "person_to_person": false
+        },
+        {
+            "id": "brucellosis",
+            "display": "Brucellosis",
+            "icd10": "A23.9",
+            "snomed": "75702008",
+            "category": "bacterial; zoonotic",
+            "az_status": "reportable; rare due to USDA eradication program",
+            "transmission_routes": [
+                {"route": "foodborne",      "vehicle": "unpasteurized dairy", "primary": true},
+                {"route": "direct_contact", "vehicle": "contact with infected animal birth fluids", "primary": true},
+                {"route": "aerosol",        "vehicle": "laboratory or slaughterhouse aerosol",     "primary": false}
+            ],
+            "host_species": {
+                "human":  {"susceptible": true, "severity_pct_severe": 5,  "incubation_days": [21, 7, 60]},
+                "goat":   {"susceptible": true, "abortion_signal": true,   "production_loss_signal": true},
+                "cattle": {"susceptible": true, "abortion_signal": true,   "production_loss_signal": true},
+                "swine":  {"susceptible": true, "production_loss_signal": true}
+            },
+            "reservoir":  "goats; cattle; swine; wildlife (elk, bison)",
+            "vectors":    [],
+            "environmental_drivers": ["unpasteurized_dairy", "border_livestock_trade", "occupational_livestock"],
+            "sentinel": {
+                "direction": "animal_to_human",
+                "rationale": "Caprine and bovine abortion clusters are the leading indicator. AZ-Mexico border trade in unpasteurized goat-milk products is a recurrent source for human cases in border counties."
+            },
+            "az_geography": ["Santa Cruz", "Cochise", "Yuma"],
+            "person_to_person": "rare"
+        }
+    ]
+}

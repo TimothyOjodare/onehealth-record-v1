@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ONE-HealthRecord · Machine-Authored One Health EHR</title>
+
+<!-- Distinctive editorial typography: Fraunces (variable serif) + Geist (sans + mono) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Leaflet basemap -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+<!-- D3 v7 for force graph + charts -->
+<script src="https://cdn.jsdelivr.net/npm/d3@7.8.5/dist/d3.min.js"></script>
+
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ===================================================================
+     LOGIN OVERLAY (Phase 4 — role-based access control)
+     Shown until a role is selected; persists in localStorage.
+     =================================================================== -->
+<!-- ===================================================================
+     LOGIN OVERLAY (Phase 8 — three-domain architecture)
+     Multi-stage flow: domain → institution → role → staff
+     =================================================================== -->
+<div id="login-overlay" class="login-overlay">
+    <!-- Stage 1: Domain selection -->
+    <div id="login-stage-domain" class="login-stage active">
+        <div class="login-card login-card-wide">
+            <div class="login-brand">
+                <div class="brand-mark">1HR</div>
+                <div>
+                    <h1>ONE-HealthRecord</h1>
+                    <span class="sub">A One Health Electronic Health Record · Arizona</span>
+                </div>
+            </div>
+            <p class="login-disclaimer"><strong>Demo authentication only.</strong> Production deployment uses SMART-on-FHIR + agency SSO + tribal-IRB-issued credentials with patient-level access controls enforced at the API layer. No real authentication is performed here.</p>
+            <h2 class="login-section-h">Select a One Health domain</h2>
+            <div class="domain-grid">
+                <button class="domain-card" data-domain="healthcare">
+                    <div class="domain-icon">🏥</div>
+                    <h3>Healthcare Institutions</h3>
+                    <p>Hospitals, clinics, and veterinary practices where care is delivered. Sign in as a clinician, registrar, triage nurse, or other staff role.</p>
+                    <div class="domain-stats">10 partner institutions · 38 staff roles · 6 hospitals · 4 vet practices</div>
+                </button>
+                <button class="domain-card" data-domain="public_health">
+                    <div class="domain-icon">🏛️</div>
+                    <h3>Public Health &amp; Government</h3>
+                    <p>Surveillance and policy authorities. ADHS, tribal health, USDA APHIS, and CDC NNDSS partners with audit-accountable access.</p>
+                    <div class="domain-stats">4 agencies · aggregate &amp; household signals · audit log · cluster detection</div>
+                </button>
+                <button class="domain-card" data-domain="environmental">
+                    <div class="domain-icon">🌎</div>
+                    <h3>Environmental Surveillance</h3>
+                    <p>Live data feeds from EPA, NWS, ArboNET, USGS, and AGFD. Air quality, weather advisories, vector counts, plague-rodent surveillance, wildlife mortality. <em>No login required.</em></p>
+                    <div class="domain-stats">5 data sources · public feeds · open access</div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stage 2: Healthcare institution selection -->
+    <div id="login-stage-healthcare" class="login-stage">
+        <div class="login-card login-card-wide">
+            <div class="login-back-row">
+                <button class="login-back" data-back="domain">← Domains</button>
+                <h2 class="login-section-h">Healthcare Institutions</h2>
+            </div>
+            <div class="login-subdomain-tabs">
+                <button class="login-subtab active" data-subdomain="human">Human Health <span class="login-count">6</span></button>
+                <button class="login-subtab" data-subdomain="animal">Animal Health <span class="login-count">4</span></button>
+            </div>
+            <div id="login-institutions" class="institution-grid"></div>
+        </div>
+    </div>
+
+    <!-- Stage 3: Public health agency selection -->
+    <div id="login-stage-public_health" class="login-stage">
+        <div class="login-card login-card-wide">
+            <div class="login-back-row">
+                <button class="login-back" data-back="domain">← Domains</button>
+                <h2 class="login-section-h">Public Health &amp; Government</h2>
+            </div>
+            <div id="login-agencies" class="institution-grid"></div>
+        </div>
+    </div>
+
+    <!-- Stage 4: Institutional login (branded, role buttons) -->
+    <div id="login-stage-institution" class="login-stage">
+        <div class="login-card login-card-institution" id="login-institution-card">
+            <!-- Populated by JS -->
+        </div>
+    </div>
+</div>
+
+<div class="app" id="app-root" hidden>
+
+    <!-- ===================================================================
+         HEADER (now with active session strip)
+         =================================================================== -->
+    <header class="app-header">
+        <div class="brand">
+            <div class="brand-mark">1HR</div>
+            <div class="brand-text">
+                <h1>ONE-HealthRecord</h1>
+                <span class="sub">Machine-Authored · FAIR-by-Construction · One Health</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="session-info" id="session-info">
+                <span class="session-role" id="session-role"></span>
+                <span class="session-name" id="session-name"></span>
+                <span class="session-fac" id="session-fac"></span>
+                <button class="signout-btn" id="signout-btn" type="button">Sign out</button>
+            </div>
+            <div class="synthetic-badge">Synthetic data · No PHI</div>
+        </div>
+    </header>
+
+    <!-- ===================================================================
+         HUB SWITCHER + TABS  (Phase 3 — role-based restructure)
+         =================================================================== -->
+    <nav class="oh-hubs" role="navigation" aria-label="Application hubs">
+        <button class="oh-hub-btn" data-hub="intake">
+            <span class="oh-hub-icon" aria-hidden="true">📋</span>
+            <span class="oh-hub-label">
+                <span class="oh-hub-name">Patient Intake</span>
+                <span class="oh-hub-aud">Registrars · Triage · Vet Techs</span>
+            </span>
+        </button>
+        <button class="oh-hub-btn active" data-hub="clinical">
+            <span class="oh-hub-icon" aria-hidden="true">⚕</span>
+            <span class="oh-hub-label">
+                <span class="oh-hub-name">Clinical Workspace</span>
+                <span class="oh-hub-aud">Clinicians · Veterinarians</span>
+            </span>
+        </button>
+        <button class="oh-hub-btn" data-hub="public-health">
+            <span class="oh-hub-icon" aria-hidden="true">⌬</span>
+            <span class="oh-hub-label">
+                <span class="oh-hub-name">Public Health Console</span>
+                <span class="oh-hub-aud">ADHS · Tribal Health · Audit</span>
+            </span>
+        </button>
+        <button class="oh-hub-btn" data-hub="envsurv">
+            <span class="oh-hub-icon" aria-hidden="true">🌎</span>
+            <span class="oh-hub-label">
+                <span class="oh-hub-name">Environmental Surveillance</span>
+                <span class="oh-hub-aud">EPA · NWS · ArboNET · USGS · AGFD</span>
+            </span>
+        </button>
+    </nav>
+
+    <nav class="tabs tabs-intake" role="tablist" data-hub-tabs="intake">
+        <button class="tab active" data-view="register" role="tab">
+            <span class="num">01</span><span>New Patient Registration</span>
+        </button>
+        <button class="tab" data-view="trackboard" role="tab">
+            <span class="num">02</span><span>Triage Track Board</span>
+        </button>
+    </nav>
+
+    <nav class="tabs tabs-clinical active" role="tablist" data-hub-tabs="clinical">
+        <button class="tab active" data-view="encounter" role="tab">
+            <span class="num">01</span><span>Live Encounter</span>
+        </button>
+        <button class="tab" data-view="workspace" role="tab">
+            <span class="num">02</span><span>Provider Workspace</span>
+        </button>
+    </nav>
+
+    <nav class="tabs tabs-public-health" role="tablist" data-hub-tabs="public-health">
+        <button class="tab" data-view="map" role="tab">
+            <span class="num">01</span><span>One Health Map</span>
+        </button>
+        <button class="tab" data-view="graph" role="tab">
+            <span class="num">02</span><span>Knowledge Graph</span>
+        </button>
+        <button class="tab" data-view="surveillance" role="tab">
+            <span class="num">03</span><span>Sentinel Alerts</span>
+        </button>
+        <button class="tab" data-view="evaluation" role="tab">
+            <span class="num">04</span><span>Evaluation</span>
+        </button>
+        <button class="tab" data-view="risk" role="tab">
+            <span class="num">05</span><span>Risk Model</span>
+        </button>
+        <button class="tab" data-view="modelcard" role="tab">
+            <span class="num">06</span><span>Model Card</span>
+        </button>
+    </nav>
+
+    <nav class="tabs tabs-envsurv" role="tablist" data-hub-tabs="envsurv">
+        <button class="tab active" data-view="envsurv" role="tab">
+            <span class="num">01</span><span>Live Environmental Feeds</span>
+        </button>
+    </nav>
+
+    <!-- ===================================================================
+         VIEW — INTAKE: New Patient Registration  (Phase 8)
+         =================================================================== -->
+    <section id="view-register" class="view">
+        <div class="panel">
+            <div class="panel-head">
+                <h2><small>Patient Intake · Front desk</small>Register a new patient</h2>
+                <small class="mono">Captures demographics + household assignment · runs eMPI duplicate detection on submit</small>
+            </div>
+            <div id="register-host"></div>
+        </div>
+    </section>
+
+    <!-- ===================================================================
+         VIEW — INTAKE: Triage Track Board (Phase 8)
+         =================================================================== -->
+    <section id="view-trackboard" class="view">
+        <div class="panel">
+            <div class="panel-head">
+                <h2><small>Patient Intake · Triage</small>Triage track board</h2>
+                <small class="mono">Waiting room · in-triage · ready for clinician · with clinician · discharged</small>
+            </div>
+            <div id="trackboard-host"></div>
+        </div>
+    </section>
+
+    <!-- ===================================================================
+         VIEW — ENV SURVEILLANCE (Phase 8 — public access)
+         =================================================================== -->
+    <section id="view-envsurv" class="view">
+        <div class="panel">
+            <div class="panel-head">
+                <h2><small>Environmental Surveillance · public feeds</small>Live AZ environmental health</h2>
+                <small class="mono">EPA AirNow · NWS · ArboNET · USGS plague-rodent · AGFD wildlife · no login required</small>
+            </div>
+            <div id="envsurv-host"></div>
+        </div>
+    </section>
+
+    <!-- ===================================================================
+         VIEW 1 — LIVE ENCOUNTER (dictation → FHIR)
+         =================================================================== -->
+    <section id="view-encounter" class="view active">
+        <div class="panel">
+            <div class="panel-head">
+                <h2><small>The Machine Authorship Engine</small>Live dictation → structured FHIR</h2>
+                <small class="mono">scispaCy-equivalent rule layer · runs in your browser</small>
+            </div>
+
+            <div class="dictation-toolbar" data-scenarios-for="clinician">
+                <strong style="margin-right:6px; color:var(--ink-3); font-size:0.75rem; text-transform:uppercase; letter-spacing:0.12em; align-self:center;">Clinician scenarios:</strong>
+                <button class="scenario-btn primary" data-scenario="hernandez">Hernandez (Valley Fever)</button>
+                <button class="scenario-btn" data-scenario="johnson">Johnson (RMSF)</button>
+                <button class="scenario-btn" data-scenario="williams">Williams (Hantavirus)</button>
+                <button class="scenario-btn" data-scenario="begay">Begay (Plague)</button>
+                <button class="scenario-btn" data-scenario="ramirez">Ramirez (West Nile)</button>
+                <button class="scenario-btn" data-scenario="becker">Becker (Q fever)</button>
+                <button class="scenario-btn" data-scenario="nguyen">Nguyen (Psittacosis)</button>
+                <button class="scenario-btn" data-scenario="sanchez">Sanchez (Tularemia)</button>
+                <button class="scenario-btn" data-scenario="esrd">ESRD volume overload</button>
+            </div>
+            <div class="dictation-toolbar" style="margin-top: 6px;" data-scenarios-for="veterinarian">
+                <strong style="margin-right:6px; color:var(--ink-3); font-size:0.75rem; text-transform:uppercase; letter-spacing:0.12em; align-self:center;">Veterinarian scenarios:</strong>
+                <button class="scenario-btn" data-scenario="vet_rocco">Rocco (Cocci, dog)</button>
+                <button class="scenario-btn" data-scenario="vet_bella">Bella (Ehrlichia, dog)</button>
+                <button class="scenario-btn" data-scenario="vet_shadow">Shadow (Plague, cat)</button>
+                <button class="scenario-btn" data-scenario="vet_trigger">Trigger (WNV, horse)</button>
+                <button class="scenario-btn" data-scenario="vet_mango">Mango (Psittacosis, parrot)</button>
+                <button class="scenario-btn" data-scenario="vet_buddy">Buddy (Rabies obs., dog)</button>
+                <button class="scenario-btn" data-scenario="clear">Clear</button>
+            </div>
+
+            <div class="encounter-grid">
+                <!-- LEFT: dictation input + highlighted output -->
+                <div>
+                    <h4 style="margin-bottom:8px;">Clinician dictation</h4>
+
+                    <!-- Phase 8 — three input modes: voice / keyboard / template -->
+                    <div id="encounter-input-host"></div>
+
+                    <textarea id="dictation" class="dictation-input"
+                        placeholder="Type or paste clinical dictation. Try a demo scenario above. Or use Voice / Template above."></textarea>
+
+                    <h4 style="margin-top:18px; margin-bottom:8px;">Phrase-level extraction</h4>
+                    <div id="highlighted" class="highlighted-output"></div>
+
+                    <div class="entity-legend">
+                        <span><i style="border-color:var(--ink-3); background:rgba(110,105,96,0.10)"></i>Demographic</span>
+                        <span><i style="border-color:var(--ua-cardinal); background:rgba(171,5,32,0.08)"></i>Condition</span>
+                        <span><i style="border-color:var(--clinical-blue); background:rgba(31,77,122,0.08)"></i>Symptom</span>
+                        <span><i style="border-color:var(--one-health-grn); background:rgba(63,107,71,0.10)"></i>Vital</span>
+                        <span><i style="border-color:var(--amber); background:rgba(216,159,46,0.12)"></i>Medication</span>
+                        <span><i style="border-color:#8B6F47; background:rgba(139,111,71,0.10)"></i>Exposure</span>
+                        <span><i style="border-color:var(--sage); background:rgba(168,181,168,0.20)"></i>Duration</span>
+                    </div>
+                </div>
+
+                <!-- RIGHT: FHIR bundle preview -->
+                <div>
+                    <h4 style="margin-bottom:8px;">Generated FHIR R4 bundle</h4>
+                    <div class="fhir-meta">
+                        <div class="fhir-stat"><div class="v" id="m-resources">0</div><div class="l">resources</div></div>
+                        <div class="fhir-stat"><div class="v" id="m-conditions">0</div><div class="l">conditions</div></div>
+                        <div class="fhir-stat"><div class="v" id="m-observations">0</div><div class="l">observations</div></div>
+                        <div class="fhir-stat"><div class="v" id="m-confidence">—</div><div class="l">avg confidence</div></div>
+                    </div>
+                    <div id="fhir-list" class="fhir-resources"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================
+         VIEW 2 — MAP
+         =================================================================== -->
+    <section id="view-map" class="view">
+        <div class="panel">
+            <div class="panel-head">
+                <h2><small>Geospatial Layer</small>Households, alerts & environmental quality across Arizona</h2>
+                <small class="mono">Leaflet + custom tile-free overlays</small>
+            </div>
+            <div id="map"></div>
+            <div class="map-legend">
+                <span><i class="swatch" style="background:var(--ua-cardinal)"></i>Action alert</span>
+                <span><i class="swatch" style="background:var(--terracotta)"></i>Watch alert</span>
+                <span><i class="swatch" style="background:var(--clinical-blue)"></i>Information</span>
+                <span><i class="swatch" style="background:var(--one-health-grn)"></i>Healthy household</span>
+                <span style="margin-left:auto;color:var(--ink-3); font-size:0.72rem;">County circles sized by EPA EQI · color tinted by Coccidioides endemicity</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================
+         VIEW 3 — KNOWLEDGE GRAPH
+         =================================================================== -->
+    <section id="view-graph" class="view">
+        <div class="panel">
+            <div class="panel-head">
+                <h2><small>Cross-Species Linkage</small>One-Health knowledge graph</h2>
+                <small class="mono">D3 force-directed · drag, zoom, hover</small>
+            </div>
+            <div class="graph-controls">
+                <div class="graph-search">
+                    <strong class="graph-search-title">Patient identity search:</strong>
+                    <input type="text" id="kg-search-name" placeholder="Last, First (or part)" class="kg-search-input">
+                    <input type="date" id="kg-search-dob" class="kg-search-input">
+                    <input type="text" id="kg-search-address" placeholder="Street address (or city)" class="kg-search-input">
+                    <button id="kg-search-btn" class="kg-search-btn">Find patient</button>
+                    <button id="kg-search-clear" class="kg-search-clear">Clear</button>
+                </div>
+                <div id="kg-search-result" class="kg-search-result" hidden></div>
+                <div class="graph-legend">
+                    <span><i class="dot" style="background:var(--ua-navy)"></i>Person</span>
+                    <span><i class="dot" style="background:var(--one-health-grn)"></i>Animal</span>
+                    <span><i class="dot" style="background:var(--terracotta)"></i>Household</span>
+                    <span><i class="dot" style="background:var(--sage)"></i>County</span>
+                    <span><i class="dot" style="background:var(--ua-cardinal)"></i>Disease</span>
+                    <span><i class="dot" style="background:var(--clinical-blue)"></i>Condition</span>
+                    <span><i class="dot" style="background:#8B6F47"></i>Environment</span>
+                </div>
+            </div>
+            <svg id="graph-svg"></svg>
+        </div>
+    </section>
+
+    <!-- ===================================================================
+         VIEW 4 — SURVEILLANCE
+         =================================================================== -->
+    <section id="view-surveillance" class="view">
+        <div class="panel">
+            <div class="panel-head">
+                <h2><small>Sentinel Surveillance</small>Active public-health alerts</h2>
+                <small class="mono">5 detector classes · Laplace-noised aggregate counts</small>
+            </div>
+            <div class="surv-grid">
+                <div id="alert-list" class="alert-list"></div>
+                <div id="alert-detail" class="alert-detail panel-inset"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================
+         VIEW — PROVIDER WORKSPACE
+         =================================================================== -->
+    <section id="view-workspace" class="view">
+        <div class="panel">
+            <div class="panel-head">
+                <h2><small>Real-time One Health Context</small>Provider workspace</h2>
+                <small class="mono">clinician + veterinarian view · all patients across the household</small>
+            </div>
+
+            <div class="ws-toolbar">
+                <input id="ws-search" type="text" placeholder="🔍 Search patient name, household, or condition…" />
+                <select id="ws-role">
+                    <option value="all">View as: All providers</option>
+                    <option value="clinician">View as: Clinician (humans)</option>
+                    <option value="vet">View as: Veterinarian (animals)</option>
+                </select>
+            </div>
+
+            <div class="ws-grid">
+                <aside class="ws-sidebar">
+                    <h4 style="margin-bottom:10px;">Patients</h4>
+                    <div id="ws-patient-list"></div>
+                </aside>
+                <main class="ws-main">
+                    <div id="ws-detail"><div class="empty-state">Select a patient from the list to view their chart.</div></div>
+                </main>
+                <aside class="ws-context">
+                    <div id="ws-context"></div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================
+         VIEW — EVALUATION
+         =================================================================== -->
+    <section id="view-evaluation" class="view">
+        <div class="panel">
+            <div class="panel-head">
+                <h2><small>Pipeline Evaluation</small>Precision, recall, and runtime benchmarks</h2>
+                <small class="mono">measured against synthetic gold-standard annotations</small>
+            </div>
+
+            <div id="eval-summary" class="eval-summary"></div>
+
+            <h3 style="margin: 22px 0 10px;">Per-entity-kind metrics</h3>
+            <div id="eval-table" class="eval-table-wrap"></div>
+
+            <h3 style="margin: 22px 0 10px;">Confidence calibration</h3>
+            <p style="font-size: 0.85rem; color: var(--ink-3); max-width: 680px;">
+                Reliability diagram: are 0.80-confidence extractions correct ~80% of the time?
+                The diagonal is perfect calibration.
+            </p>
+            <svg id="eval-calibration" width="100%" height="240"></svg>
+
+            <h3 style="margin: 22px 0 10px;">Runtime by stage</h3>
+            <div id="eval-runtime" class="runtime-grid"></div>
+
+            <h3 style="margin: 22px 0 10px;">Confusion summary</h3>
+            <div id="eval-confusion" class="confusion-grid"></div>
+        </div>
+    </section>
+
+    <!-- ===================================================================
+         VIEW — RISK MODEL (predictive ML, XAI, contact tracing, LLM benchmark)
+         =================================================================== -->
+    <section id="view-risk" class="view">
+        <div class="panel">
+            <div class="panel-head">
+                <h2><small>Predictive risk &amp; explainability</small>Zoonotic-cluster prediction, SHAP, contact tracing, LLM benchmark</h2>
+                <small class="mono">5-fold stratified CV · n=1,366 encounters · prevalence 1.1%</small>
+            </div>
+
+            <nav class="sub-tabs" role="tablist">
+                <button class="sub-tab active" data-rsub="models" role="tab">AI metrics</button>
+                <button class="sub-tab" data-rsub="xai" role="tab">Explainability</button>
+                <button class="sub-tab" data-rsub="ph" role="tab">Public-health metrics</button>
+                <button class="sub-tab" data-rsub="llm" role="tab">LLM vs. rules</button>
+            </nav>
+
+            <!-- Sub-view: Models -->
+            <div id="rsub-models" class="rsub active">
+                <h3 style="margin: 22px 0 10px;">Three-model bake-off</h3>
+                <p style="font-size: 0.85rem; color: var(--ink-3); max-width: 720px;">
+                    Predicts probability that an encounter is part of a zoonotic cluster
+                    requiring public-health follow-up within 14 days. Out-of-fold predictions
+                    from 5-fold stratified cross-validation.
+                </p>
+                <div id="risk-model-summary" class="eval-summary"></div>
+                <div id="risk-model-table" class="eval-table-wrap" style="margin-top: 14px;"></div>
+
+                <h3 style="margin: 22px 0 10px;">ROC curves &mdash; three models</h3>
+                <svg id="risk-roc-curves" width="100%" height="320"></svg>
+
+                <h3 style="margin: 22px 0 10px;">Calibration &mdash; gradient boosting</h3>
+                <p style="font-size: 0.85rem; color: var(--ink-3); max-width: 680px;">
+                    Are the model's 70%-confidence predictions correct ~70% of the time?
+                </p>
+                <svg id="risk-calibration" width="100%" height="240"></svg>
+            </div>
+
+            <!-- Sub-view: Explainability -->
+            <div id="rsub-xai" class="rsub">
+                <h3 style="margin: 22px 0 10px;">Global feature importance &mdash; SHAP</h3>
+                <p style="font-size: 0.85rem; color: var(--ink-3); max-width: 720px;">
+                    Mean absolute SHAP value per feature, computed on the gradient boosting model
+                    using TreeExplainer (exact attribution).
+                </p>
+                <div id="risk-shap-global"></div>
+
+                <h3 style="margin: 22px 0 10px;">Per-patient explanation</h3>
+                <p style="font-size: 0.85rem; color: var(--ink-3); max-width: 680px;">
+                    Pick a household to see the top SHAP contributions for the highest-risk encounter.
+                </p>
+                <div class="dictation-toolbar" id="risk-shap-household-toolbar"></div>
+                <div id="risk-shap-patient" class="shap-patient-wrap"></div>
+
+                <h3 style="margin: 22px 0 10px;">Permutation importance &mdash; sanity check</h3>
+                <p style="font-size: 0.85rem; color: var(--ink-3); max-width: 720px;">
+                    Loss in ROC-AUC when each feature is randomly permuted. Cross-validates SHAP from a different angle.
+                </p>
+                <div id="risk-perm-importance"></div>
+
+                <h3 style="margin: 22px 0 10px;">Interpretability baseline &mdash; decision tree</h3>
+                <pre id="risk-tree-rules" class="tree-rules"></pre>
+            </div>
+
+            <!-- Sub-view: Public Health -->
+            <div id="rsub-ph" class="rsub">
+                <h3 style="margin: 22px 0 10px;">Contact tracing &mdash; three-tier strategy</h3>
+                <p style="font-size: 0.85rem; color: var(--ink-3); max-width: 720px;">
+                    For each confirmed index case, contacts are surfaced from three tiers:
+                    Tier&nbsp;1 (household), Tier&nbsp;2 (shared exposure), Tier&nbsp;3 (vector / spatial).
+                    Each contact is risk-scored by the gradient boosting model.
+                </p>
+                <div id="risk-ct-summary" class="eval-summary"></div>
+                <h4 style="margin: 18px 0 8px;">Sensitivity / precision at risk threshold</h4>
+                <div id="risk-ct-threshold-table" class="eval-table-wrap"></div>
+                <h4 style="margin: 18px 0 8px;">Per-index breakdown (threshold = 0.20)</h4>
+                <div id="risk-ct-per-index" class="eval-table-wrap"></div>
+
+                <h3 style="margin: 22px 0 10px;">Lead-time analysis</h3>
+                <p style="font-size: 0.85rem; color: var(--ink-3); max-width: 720px;">
+                    Days between traditional confirmation and the system's earliest detection
+                    signal &mdash; the public-health value of cross-species and environmental linkage.
+                    Baseline (ArboNET-equivalent post-confirmation reporting): 0 days by definition.
+                </p>
+                <div id="risk-leadtime-summary" class="eval-summary"></div>
+                <div id="risk-leadtime-table" class="eval-table-wrap" style="margin-top: 12px;"></div>
+
+                <h3 style="margin: 22px 0 10px;">Equity disaggregation</h3>
+                <p style="font-size: 0.85rem; color: var(--ink-3); max-width: 720px;">
+                    Model performance stratified by rural / urban, tribal-land status, species,
+                    and metro size. Surfaces disparities that uniform metrics hide.
+                </p>
+                <div id="risk-equity"></div>
+            </div>
+
+            <!-- Sub-view: LLM benchmark -->
+            <div id="rsub-llm" class="rsub">
+                <h3 style="margin: 22px 0 10px;">Rule-based extractor vs. Claude Haiku 4.5</h3>
+                <div id="risk-llm-headline"></div>
+                <p style="font-size: 0.85rem; color: var(--ink-3); max-width: 720px; margin-top: 12px;">
+                    Same 25 gold-standard dictations through both engines. The point is not that
+                    one is better &mdash; the point is to measure the deterministic-vs-statistical
+                    tradeoff with real numbers.
+                </p>
+                <h4 style="margin: 18px 0 8px;">Per entity kind</h4>
+                <div id="risk-llm-perkind" class="eval-table-wrap"></div>
+                <h4 style="margin: 18px 0 8px;">Operating characteristics</h4>
+                <div id="risk-llm-tradeoff" class="confusion-grid"></div>
+                <div id="risk-llm-caveat" style="margin-top: 16px;"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===================================================================
+         VIEW — MODEL CARD  (Phase 3 — replaces Architecture, Mitchell et al. format)
+         =================================================================== -->
+    <section id="view-modelcard" class="view">
+        <div class="panel">
+            <div class="panel-head">
+                <h2><small>Accountability surface</small>Model Card · Mitchell et al. (2019) format</h2>
+                <small class="mono">v2.0 · Phase 3 · MedGemma + Species LoRA + Swarm Learning</small>
+            </div>
+
+            <nav class="sub-tabs" role="tablist">
+                <button class="sub-tab active" data-mcsub="overview" role="tab">Overview</button>
+                <button class="sub-tab" data-mcsub="components" role="tab">Components &amp; versions</button>
+                <button class="sub-tab" data-mcsub="metrics" role="tab">Metrics</button>
+                <button class="sub-tab" data-mcsub="privacy" role="tab">Privacy &amp; security</button>
+                <button class="sub-tab" data-mcsub="ethics" role="tab">Ethical considerations</button>
+                <button class="sub-tab" data-mcsub="caveats" role="tab">Caveats</button>
+                <button class="sub-tab" data-mcsub="federation" role="tab">Federation</button>
+                <button class="sub-tab" data-mcsub="audit" role="tab">Audit log</button>
+            </nav>
+
+            <!-- Overview / model details / intended use -->
+            <div id="mcsub-overview" class="mcsub active">
+                <div class="mc-grid">
+                    <div class="card mc-card">
+                        <h3>1 · Model details</h3>
+                        <p>ONE-HealthRecord is a composite One Health EHR system with five components: a deterministic rule extractor (audit reference), MedGemma 4B (primary clinical extractor), companion-animal and production-animal LoRA adapters, and a gradient-boosted Risk Model. The pipeline emits FHIR R4 with full <code>Provenance</code> on every machine-authored field.</p>
+                        <p class="mc-meta"><strong>Card author:</strong> ONE-HealthRecord project team · <strong>License:</strong> Apache 2.0 (project code); MedGemma weights under HAI Developer Foundations terms.</p>
+                    </div>
+                    <div class="card mc-card">
+                        <h3>2 · Intended use</h3>
+                        <p><strong>Primary uses:</strong> structured FHIR generation from clinical &amp; veterinary dictation; cross-species cluster surfacing for public-health surveillance; risk-triaged contact tracing; equity-aware analytics.</p>
+                        <p><strong>Primary users:</strong> clinicians, veterinarians (Clinical Workspace); state and tribal public-health authorities, ADHS, USDA APHIS (Public Health Console).</p>
+                        <p><strong>Out of scope:</strong> direct-to-consumer triage; insurance-denial decisions; replacement of clinical or veterinary judgment; individual-level public-health enforcement; military or law-enforcement use.</p>
+                    </div>
+                    <div class="card mc-card">
+                        <h3>3 · Factors</h3>
+                        <p>Performance is evaluated against: <strong>species</strong> (human vs animal, then per species class), <strong>county type</strong> (urban / rural / tribal), <strong>language</strong> (English at MVP; Spanish / Diné planned), <strong>age band</strong>, <strong>household size</strong>, <strong>sex</strong>, <strong>care setting</strong> (primary care / urgent care / vet GP / vet emergency).</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Components & versions -->
+            <div id="mcsub-components" class="mcsub">
+                <h3 style="margin: 22px 0 10px;">Component versions</h3>
+                <div class="eval-table-wrap">
+                    <table class="eval-table">
+                        <thead><tr><th>Component</th><th>Type</th><th>Version</th><th>Trainable params</th><th>Role</th></tr></thead>
+                        <tbody>
+                            <tr><td>Rule extractor + scispaCy NER</td><td>Deterministic + spaCy 3.7</td><td>v1.4</td><td>n/a</td><td>Audit reference; fallback when MedGemma confidence &lt; 0.5</td></tr>
+                            <tr><td>MedGemma 4B (frozen)</td><td>Decoder-only transformer</td><td><code>medgemma-4b-it</code></td><td>0 (frozen)</td><td>Primary clinical entity extractor</td></tr>
+                            <tr><td>Companion-animal LoRA</td><td>Low-rank adapter</td><td>v1.0 (scaffolded)</td><td>~8.4M</td><td>Dog · cat · horse · rabbit · ferret</td></tr>
+                            <tr><td>Production-animal LoRA</td><td>Low-rank adapter</td><td>v1.0 (scaffolded)</td><td>~8.4M</td><td>Cattle · swine · poultry · small ruminants</td></tr>
+                            <tr><td>Zoonotic-cluster Risk Model</td><td>Gradient-Boosted Trees</td><td>v1.0</td><td>~12K leaves</td><td>P(zoonotic etiology) per encounter</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 style="margin: 22px 0 10px;">Inputs &amp; outputs</h3>
+                <div class="mc-grid">
+                    <div class="card mc-card">
+                        <h4 style="margin-bottom: 8px;">Inputs</h4>
+                        <ul class="mc-list">
+                            <li>Free-text dictation (≤ 4096 tokens)</li>
+                            <li>Structured species block (mandatory for all encounters)</li>
+                            <li>Optional prior FHIR bundle (longitudinal context)</li>
+                            <li>Optional county FIPS code (environmental context)</li>
+                        </ul>
+                    </div>
+                    <div class="card mc-card">
+                        <h4 style="margin-bottom: 8px;">Outputs</h4>
+                        <ul class="mc-list">
+                            <li>FHIR R4 Bundle: <code>Patient</code>, <code>Encounter</code>, <code>Condition</code>, <code>Observation</code>, <code>MedicationStatement</code>, <code>Provenance</code></li>
+                            <li>Per-extraction confidence (calibrated ∈ [0,1])</li>
+                            <li>Per-extraction source-text span (char offsets)</li>
+                            <li>Per-extraction model-version stamp</li>
+                            <li>Risk Model: P(cluster) + SHAP attribution</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Metrics — pulls live numbers from ml_evaluation -->
+            <div id="mcsub-metrics" class="mcsub">
+                <h3 style="margin: 22px 0 10px;">4 · Metrics (pulled live from <code>data/synthetic/ml_evaluation.json</code>)</h3>
+                <div id="mc-metrics-headline" class="eval-summary"></div>
+                <div id="mc-metrics-table" class="eval-table-wrap" style="margin-top:12px;"></div>
+
+                <h3 style="margin: 22px 0 10px;">7 · Quantitative analyses — equity disaggregation</h3>
+                <div id="mc-equity-table" class="eval-table-wrap"></div>
+            </div>
+
+            <!-- Privacy & security -->
+            <div id="mcsub-privacy" class="mcsub">
+                <h3 style="margin: 22px 0 10px;">8 · Privacy &amp; security architecture</h3>
+                <p style="font-size: 0.85rem; color: var(--ink-3); max-width: 760px;">
+                    Four-layer privacy stack. Each layer addresses a distinct attack surface; the layers are stacked, not chosen.
+                </p>
+                <div class="privacy-stack">
+                    <div class="privacy-layer privacy-layer-4">
+                        <div class="privacy-layer-no">L4</div>
+                        <div class="privacy-layer-body">
+                            <h4>Output privacy — Laplace mechanism on aggregate counts</h4>
+                            <p>ε = 1.0, sensitivity 1. <strong>Already shipped.</strong> Active on the public-facing surveillance feed (Sentinel Alerts tab). Defends against re-identification via published counts.</p>
+                        </div>
+                    </div>
+                    <div class="privacy-layer privacy-layer-3">
+                        <div class="privacy-layer-no">L3</div>
+                        <div class="privacy-layer-body">
+                            <h4>Secure aggregation — Bonawitz et al. (CCS 2017)</h4>
+                            <p>Additive secret-sharing on weight exchange. Only the sum of all sites' updates is reconstructible, and only after a quorum contributes. Defends against reconstruction of any individual site's update.</p>
+                        </div>
+                    </div>
+                    <div class="privacy-layer privacy-layer-2">
+                        <div class="privacy-layer-no">L2</div>
+                        <div class="privacy-layer-body">
+                            <h4>DP-SGD inside each site's local training step — Opacus</h4>
+                            <p>Per-example gradient clipping (clip = 1.0) + Gaussian noise (σ = 1.1) on each minibatch. Target privacy budget (ε ≤ 8.0, δ = 1e-5). Defends against training-data extraction via model inversion.</p>
+                        </div>
+                    </div>
+                    <div class="privacy-layer privacy-layer-1">
+                        <div class="privacy-layer-no">L1</div>
+                        <div class="privacy-layer-body">
+                            <h4>Swarm learning topology — no central aggregator</h4>
+                            <p>Peer-to-peer training across hospital, vet, ADHS, tribal-health, and APHIS sites. Coordinated by a permissioned blockchain ledger. Defends against aggregator compromise and aggregator coercion. Federated learning is documented as fallback.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="margin: 22px 0 10px;">Federated-learning simulation results</h3>
+                <p style="font-size: 0.85rem; color: var(--ink-3); max-width: 720px;">
+                    Six simulated sites, FedAvg aggregation, 10 rounds, real metrics. Comparable AUC to centralized training validates the approach.
+                </p>
+                <div id="mc-fl-summary" class="eval-summary"></div>
+                <div id="mc-fl-table" class="eval-table-wrap" style="margin-top:12px;"></div>
+            </div>
+
+            <!-- Ethics -->
+            <div id="mcsub-ethics" class="mcsub">
+                <h3 style="margin: 22px 0 10px;">9 · Ethical considerations</h3>
+                <div class="mc-grid">
+                    <div class="card mc-card">
+                        <h4>Dual-use risk: biosurveillance overreach</h4>
+                        <p>A One Health surveillance system could be misused to surveil rather than serve. Mitigation: role-based access, audit logs in <code>Provenance.entity</code>, <strong>action-severity alerts require human review</strong> before any non-medical action; published counts are Laplace-noised so individual-level inference is bounded.</p>
+                    </div>
+                    <div class="card mc-card">
+                        <h4>Tribal data sovereignty (CARE principles)</h4>
+                        <p>Apache and Navajo households appear in this dataset. <strong>The 8.6-pp tribal-land AUC gap is documented as the headline equity finding.</strong> Production deployment requires consultation with tribal IRBs and adherence to the CARE Principles for Indigenous Data Governance (Collective benefit, Authority to control, Responsibility, Ethics).</p>
+                    </div>
+                    <div class="card mc-card">
+                        <h4>Equity in alerting</h4>
+                        <p>Per the disaggregation in the Risk Model tab, alert sensitivity differs across rural / urban / tribal slices. <strong>Action items:</strong> stratified resampling in the next training round; explicit reporting of per-stratum recall in production dashboards; community advisory board for alert thresholds.</p>
+                    </div>
+                    <div class="card mc-card">
+                        <h4>Veterinary client confidentiality</h4>
+                        <p>Vet records are property of the veterinary client, not the animal. Cross-species linkage requires <strong>dual consent</strong> — patient and animal-owner — at intake. Workflow design in <code>docs/medgemma_integration.md §6</code>.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Caveats -->
+            <div id="mcsub-caveats" class="mcsub">
+                <h3 style="margin: 22px 0 10px;">10 · Caveats &amp; recommendations</h3>
+                <div class="caveat-banner" style="margin: 8px 0 14px;">
+                    <strong>Honest scope:</strong> The MVP is a synthetic-data demonstration. The privacy architecture is implemented and verifiable on a single laptop (federated-simulation runs end-to-end); the production deployment topology is documented and ready but requires partner organizations and partner data.
+                </div>
+                <div class="mc-grid">
+                    <div class="card mc-card">
+                        <h4>What we cannot do today</h4>
+                        <ul class="mc-list">
+                            <li>Real-data evaluation (i2b2, n2c2, MIMIC-IV, VetCompass) — needs credentialed access</li>
+                            <li>Production-scale swarm learning across organizations — needs partner sites</li>
+                            <li>Live MedGemma inference on vet dictations — needs API key &amp; species LoRA training</li>
+                            <li>Spanish or Diné language extraction — needs corpus &amp; community review</li>
+                            <li>Audio (Whisper ASR) — text dictation only at MVP</li>
+                        </ul>
+                    </div>
+                    <div class="card mc-card">
+                        <h4>What downstream users should NOT infer</h4>
+                        <ul class="mc-list">
+                            <li>The risk score is a <em>decision-support</em> probability, not a clinical diagnosis</li>
+                            <li>An alert firing is not by itself sufficient for any non-medical action</li>
+                            <li>Synthetic-data F1 does <em>not</em> predict performance on real clinical text</li>
+                            <li>DP-SGD ε ≤ 8.0 is a training-run guarantee, not a per-prediction guarantee</li>
+                            <li>The blockchain ledger reveals participation timing (side channel)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3 style="margin: 22px 0 10px;">Versioning</h3>
+                <div class="eval-table-wrap">
+                    <table class="eval-table">
+                        <thead><tr><th>Version</th><th>Date</th><th>Notes</th></tr></thead>
+                        <tbody>
+                            <tr><td>0.1.0</td><td>2026-04</td><td>Initial MVP — rule-based NER, 25-dictation eval, 12 zoonotic scenarios, 120 households, 1,366 encounters, 12 alerts</td></tr>
+                            <tr><td>0.2.0</td><td>2026-04-29</td><td>Phase 2 — predictive risk model (LR/RF/GBM), SHAP + permutation + decision tree, 3-tier contact tracing, equity disaggregation (8.6-pp tribal-land AUC gap), lead-time analysis, projected LLM benchmark</td></tr>
+                            <tr><td>2.0.0</td><td>2026-05-02</td><td>Phase 3 — role-based two-hub UI, MedGemma 4B + species LoRA + RAG integration scaffold, swarm-learning architecture with federated-learning simulation, Model Card replaces Architecture tab</td></tr>
+                            <tr><td>2.1.0</td><td>2026-05-02</td><td>Phase 4 — Login parameter + role-based access control. Physician sees only their human panel; veterinarian sees only their animal panel; public-health user sees aggregates only. Cross-species data redaction with 3-tier model pointer. Visible audit log of all login/navigation events.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Federation -->
+            <div id="mcsub-federation" class="mcsub">
+                <h3 style="margin: 22px 0 10px;">Federation <small style="font-weight:400; color:var(--ink-3);">· per-site FHIR shadow stores · live wire log</small></h3>
+                <p style="font-size: 0.85rem; color: var(--ink-3); max-width: 880px; line-height:1.6;">
+                    ONE-HealthRecord is <strong>not the system of record</strong>. Each partner site runs its own FHIR server populated from its native EHR (Epic, Cerner, IDEXX VetFHIR, Covetrus). The application acts as a <em>federated consumer</em> — every patient view fans out as cross-site FHIR queries that you can watch fire in the wire log below. <strong>No primary clinical record is held centrally.</strong>
+                </p>
+                <div id="mc-fed-counters" class="eval-summary" style="margin-top:14px;"></div>
+                <h4 style="margin: 22px 0 8px; font-family: Georgia, serif; font-weight: 700;">Partner sites</h4>
+                <div id="mc-fed-sites" class="eval-table-wrap"></div>
+                <h4 style="margin: 22px 0 8px; font-family: Georgia, serif; font-weight: 700;">Wire log <small style="font-weight:400; color:var(--ink-3);">· live cross-site fetches (most recent first)</small></h4>
+                <div style="display:flex; gap:10px; margin-bottom:10px; align-items:center;">
+                    <button id="mc-fed-trigger" type="button" class="signout-btn" style="font-size:0.78rem;">Trigger sample federation query</button>
+                    <button id="mc-fed-clear" type="button" class="signout-btn" style="font-size:0.78rem;">Clear wire log</button>
+                    <span id="mc-fed-pulse" style="font-size:0.78rem; color:var(--ink-3); font-style:italic;"></span>
+                </div>
+                <div id="mc-fed-wirelog" class="eval-table-wrap"></div>
+            </div>
+
+            <!-- Audit log -->
+            <div id="mcsub-audit" class="mcsub">
+                <h3 style="margin: 22px 0 10px;">Audit log <small style="font-weight:400; color:var(--ink-3);">· session events for the current browser</small></h3>
+                <p style="font-size: 0.85rem; color: var(--ink-3); max-width: 760px;">
+                    Every login, sign-out, hub change, tab navigation, and access-denial event is recorded in <code>localStorage</code> with timestamp, user_id, role, action, and target. In production this stream feeds the FHIR <code>Provenance.entity</code> resource and the SOC audit pipeline. <strong>Showing the audit surface to the user is itself an accountability control</strong> — they can see what the system has recorded about their own session.
+                </p>
+                <div id="mc-audit-summary" class="eval-summary"></div>
+                <div style="margin-top: 14px;">
+                    <button id="mc-audit-clear" type="button" class="signout-btn" style="font-size:0.78rem;">Clear audit log</button>
+                </div>
+                <div id="mc-audit-table" class="eval-table-wrap" style="margin-top:14px;"></div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<!-- Embedded data first, then logic. -->
+<script src="data.js"></script>
+<script src="federation.js"></script>
+<script src="cds.js"></script>
+<script src="reportable.js"></script>
+<script src="intake.js"></script>
+<script src="envsurv.js"></script>
+<script src="extractor.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>

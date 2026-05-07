@@ -1,0 +1,26 @@
+{
+  "_metadata": {
+    "site_id": "apache_tribal",
+    "facility": "Apache Tribal Health Authority",
+    "kind": "public_health",
+    "vendor": "RPMS+FHIR-shim",
+    "fhir_version": "R4",
+    "endpoint": "https://fhir.apache-tribal.example/r4",
+    "lat": 33.84,
+    "lon": -109.969,
+    "n_patients": 0,
+    "n_animal_patients": 0,
+    "n_encounters": 0,
+    "n_conditions": 0,
+    "_role": "surveillance_sink",
+    "_caveat": "Public-health authorities receive aggregate surveillance feeds and reportable-disease ELRs only. They do not hold primary clinical records."
+  },
+  "patients": [],
+  "animal_patients": [],
+  "encounters": [],
+  "conditions": [],
+  "household_refs": [],
+  "surveillance_feeds": [
+    "Apache Tribal Health surveillance feed"
+  ]
+}

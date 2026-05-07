@@ -1,0 +1,3988 @@
+{
+  "_metadata": {
+    "site_id": "ihs_whiteriver",
+    "facility": "IHS Whiteriver Service Unit",
+    "kind": "hospital_system",
+    "vendor": "Cerner-IHS",
+    "fhir_version": "R4",
+    "endpoint": "https://fhir.whiteriver.ihs.example/r4",
+    "lat": 33.84,
+    "lon": -109.969,
+    "n_patients": 23,
+    "n_animal_patients": 0,
+    "n_encounters": 80,
+    "n_conditions": 4,
+    "n_households_participating": 8,
+    "_caveat": "Synthetic shadow store. Production: each site runs a real FHIR server (Cerner-IHS R4) populated from its native EHR. Authentication via SMART-on-FHIR; cross-site queries enforced at the API layer."
+  },
+  "patients": [
+    {
+      "resourceType": "Patient",
+      "id": "dcfa636f-3fc7-411d-8ca5-a2d485799256",
+      "meta": {
+        "profile": [
+          "http://onehealthrecord.org/StructureDefinition/HumanPatient"
+        ]
+      },
+      "extension": [
+        {
+          "url": "http://onehealthrecord.org/household-id",
+          "valueString": "HH-AZ-APACHE-006"
+        }
+      ],
+      "name": [
+        {
+          "family": "Begay",
+          "given": [
+            "Sarah"
+          ]
+        }
+      ],
+      "gender": "female",
+      "birthDate": "1987-03-14",
+      "address": [
+        {
+          "city": "St. Johns",
+          "state": "AZ",
+          "country": "US",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/geolocation",
+              "extension": [
+                {
+                  "url": "latitude",
+                  "valueDecimal": 35.39
+                },
+                {
+                  "url": "longitude",
+                  "valueDecimal": -109.49
+                }
+              ]
+            },
+            {
+              "url": "http://onehealthrecord.org/county-fips",
+              "valueString": "04001"
+            }
+          ]
+        }
+      ],
+      "_provenance": {
+        "site": "ihs_whiteriver",
+        "site_facility": "IHS Whiteriver Service Unit",
+        "vendor": "Cerner-IHS",
+        "fhir_version": "R4",
+        "endpoint": "https://fhir.whiteriver.ihs.example/r4",
+        "primary_provider_id": "phys-yazzie"
+      }
+    },
+    {
+      "resourceType": "Patient",
+      "id": "94dfe9f3-fe07-40eb-9240-81eff64cb12f",
+      "meta": {
+        "profile": [
+          "http://onehealthrecord.org/StructureDefinition/HumanPatient"
+        ]
+      },
+      "extension": [
+        {
+          "url": "http://onehealthrecord.org/household-id",
+          "valueString": "HH-AZ-APACHE-006"
+        }
+      ],
+      "name": [
+        {
+          "family": "Begay",
+          "given": [
+            "Daniel"
+          ]
+        }
+      ],
+      "gender": "male",
+      "birthDate": "1985-08-21",
+      "address": [
+        {
+          "city": "St. Johns",
+          "state": "AZ",
+          "country": "US",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/geolocation",
+              "extension": [
+                {
+                  "url": "latitude",
+                  "valueDecimal": 35.39
+                },
+                {
+                  "url": "longitude",
+                  "valueDecimal": -109.49
+                }
+              ]
+            },
+            {
+              "url": "http://onehealthrecord.org/county-fips",
+              "valueString": "04001"
+            }
+          ]
+        }
+      ],
+      "_provenance": {
+        "site": "ihs_whiteriver",
+        "site_facility": "IHS Whiteriver Service Unit",
+        "vendor": "Cerner-IHS",
+        "fhir_version": "R4",
+        "endpoint": "https://fhir.whiteriver.ihs.example/r4",
+        "primary_provider_id": "phys-yazzie"
+      }
+    },
+    {
+      "resourceType": "Patient",
+      "id": "b1c2aac1-67e9-4a7f-ac97-08e821cbb1e1",
+      "meta": {
+        "profile": [
+          "http://onehealthrecord.org/StructureDefinition/HumanPatient"
+        ]
+      },
+      "extension": [
+        {
+          "url": "http://onehealthrecord.org/household-id",
+          "valueString": "HH-AZ-NAVAJO-012"
+        }
+      ],
+      "name": [
+        {
+          "family": "Yazzie",
+          "given": [
+            "William"
+          ]
+        }
+      ],
+      "gender": "male",
+      "birthDate": "1990-01-30",
+      "address": [
+        {
+          "city": "Holbrook",
+          "state": "AZ",
+          "country": "US",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/geolocation",
+              "extension": [
+                {
+                  "url": "latitude",
+                  "valueDecimal": 34.9
+                },
+                {
+                  "url": "longitude",
+                  "valueDecimal": -110.16
+                }
+              ]
+            },
+            {
+              "url": "http://onehealthrecord.org/county-fips",
+              "valueString": "04017"
+            }
+          ]
+        }
+      ],
+      "_provenance": {
+        "site": "ihs_whiteriver",
+        "site_facility": "IHS Whiteriver Service Unit",
+        "vendor": "Cerner-IHS",
+        "fhir_version": "R4",
+        "endpoint": "https://fhir.whiteriver.ihs.example/r4",
+        "primary_provider_id": "phys-yazzie"
+      }
+    },
+    {
+      "resourceType": "Patient",
+      "id": "6b34b2db-f30a-4a88-9ecb-163a71b9c010",
+      "meta": {
+        "profile": [
+          "http://onehealthrecord.org/StructureDefinition/HumanPatient"
+        ]
+      },
+      "extension": [
+        {
+          "url": "http://onehealthrecord.org/household-id",
+          "valueString": "HH-AZ-NAVAJO-012"
+        }
+      ],
+      "name": [
+        {
+          "family": "Yazzie",
+          "given": [
+            "Angela"
+          ]
+        }
+      ],
+      "gender": "female",
+      "birthDate": "1992-07-15",
+      "address": [
+        {
+          "city": "Holbrook",
+          "state": "AZ",
+          "country": "US",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/geolocation",
+              "extension": [
+                {
+                  "url": "latitude",
+                  "valueDecimal": 34.9
+                },
+                {
+                  "url": "longitude",
+                  "valueDecimal": -110.16
+                }
+              ]
+            },
+            {
+              "url": "http://onehealthrecord.org/county-fips",
+              "valueString": "04017"
+            }
+          ]
+        }
+      ],
+      "_provenance": {
+        "site": "ihs_whiteriver",
+        "site_facility": "IHS Whiteriver Service Unit",
+        "vendor": "Cerner-IHS",
+        "fhir_version": "R4",
+        "endpoint": "https://fhir.whiteriver.ihs.example/r4",
+        "primary_provider_id": "phys-yazzie"
+      }
+    },
+    {
+      "resourceType": "Patient",
+      "id": "a3b5bf15-a9eb-44cd-8043-f17575991d20",
+      "meta": {
+        "profile": [
+          "http://onehealthrecord.org/StructureDefinition/HumanPatient"
+        ]
+      },
+      "extension": [
+        {
+          "url": "http://onehealthrecord.org/household-id",
+          "valueString": "HH-AZ-NAVAJO-012"
+        }
+      ],
+      "name": [
+        {
+          "family": "Yazzie",
+          "given": [
+            "Ellie"
+          ]
+        }
+      ],
+      "gender": "female",
+      "birthDate": "2021-02-08",
+      "address": [
+        {
+          "city": "Holbrook",
+          "state": "AZ",
+          "country": "US",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/geolocation",
+              "extension": [
+                {
+                  "url": "latitude",
+                  "valueDecimal": 34.9
+                },
+                {
+                  "url": "longitude",
+                  "valueDecimal": -110.16
+                }
+              ]
+            },
+            {
+              "url": "http://onehealthrecord.org/county-fips",
+              "valueString": "04017"
+            }
+          ]
+        }
+      ],
+      "_provenance": {
+        "site": "ihs_whiteriver",
+        "site_facility": "IHS Whiteriver Service Unit",
+        "vendor": "Cerner-IHS",
+        "fhir_version": "R4",
+        "endpoint": "https://fhir.whiteriver.ihs.example/r4",
+        "primary_provider_id": "phys-yazzie"
+      }
+    },
+    {
+      "resourceType": "Patient",
+      "id": "12052ab2-9514-4b41-a961-6f6b8e804374",
+      "meta": {
+        "profile": [
+          "http://onehealthrecord.org/StructureDefinition/HumanPatient"
+        ]
+      },
+      "extension": [
+        {
+          "url": "http://onehealthrecord.org/household-id",
+          "valueString": "HH-AZ-NAVAJO-G010"
+        }
+      ],
+      "name": [
+        {
+          "family": "Patel",
+          "given": [
+            "Emma"
+          ]
+        }
+      ],
+      "gender": "female",
+      "birthDate": "1995-03-26",
+      "address": [
+        {
+          "city": "Holbrook",
+          "state": "AZ",
+          "country": "US",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/geolocation",
+              "extension": [
+                {
+                  "url": "latitude",
+                  "valueDecimal": 34.9
+                },
+                {
+                  "url": "longitude",
+                  "valueDecimal": -110.16
+                }
+              ]
+            },
+            {
+              "url": "http://onehealthrecord.org/county-fips",
+              "valueString": "04017"
+            }
+          ]
+        }
+      ],
+      "_provenance": {
+        "site": "ihs_whiteriver",
+        "site_facility": "IHS Whiteriver Service Unit",
+        "vendor": "Cerner-IHS",
+        "fhir_version": "R4",
+        "endpoint": "https://fhir.whiteriver.ihs.example/r4",
+        "primary_provider_id": "phys-yazzie"
+      }
+    },
+    {
+      "resourceType": "Patient",
+      "id": "e306aaac-7359-4021-8004-ba20a3fd2a79",
+      "meta": {
+        "profile": [
+          "http://onehealthrecord.org/StructureDefinition/HumanPatient"
+        ]
+      },
+      "extension": [
+        {
+          "url": "http://onehealthrecord.org/household-id",
+          "valueString": "HH-AZ-NAVAJO-G010"
+        }
+      ],
+      "name": [
+        {
+          "family": "Patel",
+          "given": [
+            "Susan"
+          ]
+        }
+      ],
+      "gender": "female",
+      "birthDate": "1997-11-22",
+      "address": [
+        {
+          "city": "Holbrook",
+          "state": "AZ",
+          "country": "US",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/geolocation",
+              "extension": [
+                {
+                  "url": "latitude",
+                  "valueDecimal": 34.9
+                },
+                {
+                  "url": "longitude",
+                  "valueDecimal": -110.16
+                }
+              ]
+            },
+            {
+              "url": "http://onehealthrecord.org/county-fips",
+              "valueString": "04017"
+            }
+          ]
+        }
+      ],
+      "_provenance": {
+        "site": "ihs_whiteriver",
+        "site_facility": "IHS Whiteriver Service Unit",
+        "vendor": "Cerner-IHS",
+        "fhir_version": "R4",
+        "endpoint": "https://fhir.whiteriver.ihs.example/r4",
+        "primary_provider_id": "phys-yazzie"
+      }
+    },
+    {
+      "resourceType": "Patient",
+      "id": "594ee351-0308-468b-91fa-cba861194314",
+      "meta": {
+        "profile": [
+          "http://onehealthrecord.org/StructureDefinition/HumanPatient"
+        ]
+      },
+      "extension": [
+        {
+          "url": "http://onehealthrecord.org/household-id",
+          "valueString": "HH-AZ-NAVAJO-G010"
+        }
+      ],
+      "name": [
+        {
+          "family": "Patel",
+          "given": [
+            "Fatima"
+          ]
+        }
+      ],
+      "gender": "female",
+      "birthDate": "2009-07-30",
+      "address": [
+        {
+          "city": "Holbrook",
+          "state": "AZ",
+          "country": "US",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/geolocation",
+              "extension": [
+                {
+                  "url": "latitude",
+                  "valueDecimal": 34.9
+                },
+                {
+                  "url": "longitude",
+                  "valueDecimal": -110.16
+                }
+              ]
+            },
+            {
+              "url": "http://onehealthrecord.org/county-fips",
+              "valueString": "04017"
+            }
+          ]
+        }
+      ],
+      "_provenance": {
+        "site": "ihs_whiteriver",
+        "site_facility": "IHS Whiteriver Service Unit",
+        "vendor": "Cerner-IHS",
+        "fhir_version": "R4",
+        "endpoint": "https://fhir.whiteriver.ihs.example/r4",
+        "primary_provider_id": "phys-yazzie"
+      }
+    },
+    {
+      "resourceType": "Patient",
+      "id": "49f150eb-7947-43d8-b3fe-df4e76bcaa24",
+      "meta": {
+        "profile": [
+          "http://onehealthrecord.org/StructureDefinition/HumanPatient"
+        ]
+      },
+      "extension": [
+        {
+          "url": "http://onehealthrecord.org/household-id",
+          "valueString": "HH-AZ-NAVAJO-G127"
+        }
+      ],
+      "name": [
+        {
+          "family": "Singh",
+          "given": [
+            "Asher"
+          ]
+        }
+      ],
+      "gender": "male",
+      "birthDate": "1969-09-26",
+      "address": [
+        {
+          "city": "Holbrook",
+          "state": "AZ",
+          "country": "US",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/geolocation",
+              "extension": [
+                {
+                  "url": "latitude",
+                  "valueDecimal": 34.9
+                },
+                {
+                  "url": "longitude",
+                  "valueDecimal": -110.16
+                }
+              ]
+            },
+            {
+              "url": "http://onehealthrecord.org/county-fips",
+              "valueString": "04017"
+            }
+          ]
+        }
+      ],
+      "_provenance": {
+        "site": "ihs_whiteriver",
+        "site_facility": "IHS Whiteriver Service Unit",
+        "vendor": "Cerner-IHS",
+        "fhir_version": "R4",
+        "endpoint": "https://fhir.whiteriver.ihs.example/r4",
+        "primary_provider_id": "phys-yazzie"
+      }
+    },
+    {
+      "resourceType": "Patient",
+      "id": "3b583549-9e43-49b2-b03b-e14b2631ab02",
+      "meta": {
+        "profile": [
+          "http://onehealthrecord.org/StructureDefinition/HumanPatient"
+        ]
+      },
+      "extension": [
+        {
+          "url": "http://onehealthrecord.org/household-id",
+          "valueString": "HH-AZ-NAVAJO-G127"
+        }
+      ],
+      "name": [
+        {
+          "family": "Singh",
+          "given": [
+            "Jackson"
+          ]
+        }
+      ],
+      "gender": "male",
+      "birthDate": "1997-08-13",
+      "address": [
+        {
+          "city": "Holbrook",
+          "state": "AZ",
+          "country": "US",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/geolocation",
+              "extension": [
+                {
+                  "url": "latitude",
+                  "valueDecimal": 34.9
+                },
+                {
+                  "url": "longitude",
+                  "valueDecimal": -110.16
+                }
+              ]
+            },
+            {
+              "url": "http://onehealthrecord.org/county-fips",
+              "valueString": "04017"
+            }
+          ]
+        }
+      ],
+      "_provenance": {
+        "site": "ihs_whiteriver",
+        "site_facility": "IHS Whiteriver Service Unit",
+        "vendor": "Cerner-IHS",
+        "fhir_version": "R4",
+        "endpoint": "https://fhir.whiteriver.ihs.example/r4",
+        "primary_provider_id": "phys-yazzie"
+      }
+    },
+    {
+      "resourceType": "Patient",
+      "id": "d22d6c67-38ff-4de0-b602-7c4104ab8ccc",
+      "meta": {
+        "profile": [
+          "http://onehealthrecord.org/StructureDefinition/HumanPatient"
+        ]
+      },
+      "extension": [
+        {
+          "url": "http://onehealthrecord.org/household-id",
+          "valueString": "HH-AZ-NAVAJO-G127"
+        }
+      ],
+      "name": [
+        {
+          "family": "Singh",
+          "given": [
+            "Ella"
+          ]
+        }
+      ],
+      "gender": "female",
+      "birthDate": "2008-08-21",
+      "address": [
+        {
+          "city": "Holbrook",
+          "state": "AZ",
+          "country": "US",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/geolocation",
+              "extension": [
+                {
+                  "url": "latitude",
+                  "valueDecimal": 34.9
+                },
+                {
+                  "url": "longitude",
+                  "valueDecimal": -110.16
+                }
+              ]
+            },
+            {
+              "url": "http://onehealthrecord.org/county-fips",
+              "valueString": "04017"
+            }
+          ]
+        }
+      ],
+      "_provenance": {
+        "site": "ihs_whiteriver",
+        "site_facility": "IHS Whiteriver Service Unit",
+        "vendor": "Cerner-IHS",
+        "fhir_version": "R4",
+        "endpoint": "https://fhir.whiteriver.ihs.example/r4",
+        "primary_provider_id": "phys-yazzie"
+      }
+    },
+    {
+      "resourceType": "Patient",
+      "id": "dc17ebbb-44cf-4ffd-82b6-c2185cbe612d",
+      "meta": {
+        "profile": [
+          "http://onehealthrecord.org/StructureDefinition/HumanPatient"
+        ]
+      },
+      "extension": [
+        {
+          "url": "http://onehealthrecord.org/household-id",
+          "valueString": "HH-AZ-NAVAJO-G189"
+        }
+      ],
+      "name": [
+        {
+          "family": "Wilson",
+          "given": [
+            "Wei"
+          ]
+        }
+      ],
+      "gender": "male",
+      "birthDate": "1956-10-21",
+      "address": [
+        {
+          "city": "Holbrook",
+          "state": "AZ",
+          "country": "US",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/geolocation",
+              "extension": [
+                {
+                  "url": "latitude",
+                  "valueDecimal": 34.9
+                },
+                {
+                  "url": "longitude",
+                  "valueDecimal": -110.16
+                }
+              ]
+            },
+            {
+              "url": "http://onehealthrecord.org/county-fips",
+              "valueString": "04017"
+            }
+          ]
+        }
+      ],
+      "_provenance": {
+        "site": "ihs_whiteriver",
+        "site_facility": "IHS Whiteriver Service Unit",
+        "vendor": "Cerner-IHS",
+        "fhir_version": "R4",
+        "endpoint": "https://fhir.whiteriver.ihs.example/r4",
+        "primary_provider_id": "phys-yazzie"
+      }
+    },
+    {
+      "resourceType": "Patient",
+      "id": "3399d4d5-025d-43d3-8765-fa4cc65cc523",
+      "meta": {
+        "profile": [
+          "http://onehealthrecord.org/StructureDefinition/HumanPatient"
+        ]
+      },
+      "extension": [
+        {
+          "url": "http://onehealthrecord.org/household-id",
+          "valueString": "HH-AZ-NAVAJO-G189"
+        }
+      ],
+      "name": [
+        {
+          "family": "Wilson",
+          "given": [
+            "Madison"
+          ]
+        }
+      ],
+      "gender": "female",
+      "birthDate": "1986-09-24",
+      "address": [
+        {
+          "city": "Holbrook",
+          "state": "AZ",
+          "country": "US",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/geolocation",
+              "extension": [
+                {
+                  "url": "latitude",
+                  "valueDecimal": 34.9
+                },
+                {
+                  "url": "longitude",
+                  "valueDecimal": -110.16
+                }
+              ]
+            },
+            {
+              "url": "http://onehealthrecord.org/county-fips",
+              "valueString": "04017"
+            }
+          ]
+        }
+      ],
+      "_provenance": {
+        "site": "ihs_whiteriver",
+        "site_facility": "IHS Whiteriver Service Unit",
+        "vendor": "Cerner-IHS",
+        "fhir_version": "R4",
+        "endpoint": "https://fhir.whiteriver.ihs.example/r4",
+        "primary_provider_id": "phys-yazzie"
+      }
+    },
+    {
+      "resourceType": "Patient",
+      "id": "cdff721a-b3d3-422e-9bb0-20552b02936d",
+      "meta": {
+        "profile": [
+          "http://onehealthrecord.org/StructureDefinition/HumanPatient"
+        ]
+      },
+      "extension": [
+        {
+          "url": "http://onehealthrecord.org/household-id",
+          "valueString": "HH-AZ-NAVAJO-G189"
+        }
+      ],
+      "name": [
+        {
+          "family": "Wilson",
+          "given": [
+            "Harper"
+          ]
+        }
+      ],
+      "gender": "female",
+      "birthDate": "2013-01-12",
+      "address": [
+        {
+          "city": "Holbrook",
+          "state": "AZ",
+          "country": "US",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/geolocation",
+              "extension": [
+                {
+                  "url": "latitude",
+                  "valueDecimal": 34.9
+                },
+                {
+                  "url": "longitude",
+                  "valueDecimal": -110.16
+                }
+              ]
+            },
+            {
+              "url": "http://onehealthrecord.org/county-fips",
+              "valueString": "04017"
+            }
+          ]
+        }
+      ],
+      "_provenance": {
+        "site": "ihs_whiteriver",
+        "site_facility": "IHS Whiteriver Service Unit",
+        "vendor": "Cerner-IHS",
+        "fhir_version": "R4",
+        "endpoint": "https://fhir.whiteriver.ihs.example/r4",
+        "primary_provider_id": "phys-yazzie"
+      }
+    },
+    {
+      "resourceType": "Patient",
+      "id": "b89b172c-a64f-464c-b30d-3a98fc3bbb4e",
+      "meta": {
+        "profile": [
+          "http://onehealthrecord.org/StructureDefinition/HumanPatient"
+        ]
+      },
+      "extension": [
+        {
+          "url": "http://onehealthrecord.org/household-id",
+          "valueString": "HH-AZ-APACHE-G196"
+        }
+      ],
+      "name": [
+        {
+          "family": "Mitchell",
+          "given": [
+            "Grace"
+          ]
+        }
+      ],
+      "gender": "female",
+      "birthDate": "1993-08-09",
+      "address": [
+        {
+          "city": "St. Johns",
+          "state": "AZ",
+          "country": "US",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/geolocation",
+              "extension": [
+                {
+                  "url": "latitude",
+                  "valueDecimal": 35.39
+                },
+                {
+                  "url": "longitude",
+                  "valueDecimal": -109.49
+                }
+              ]
+            },
+            {
+              "url": "http://onehealthrecord.org/county-fips",
+              "valueString": "04001"
+            }
+          ]
+        }
+      ],
+      "chronic_conditions": [
+        "Chronic obstructive pulmonary disease"
+      ],
+      "_provenance": {
+        "site": "ihs_whiteriver",
+        "site_facility": "IHS Whiteriver Service Unit",
+        "vendor": "Cerner-IHS",
+        "fhir_version": "R4",
+        "endpoint": "https://fhir.whiteriver.ihs.example/r4",
+        "primary_provider_id": "phys-yazzie"
+      }
+    },
+    {
+      "resourceType": "Patient",
+      "id": "e9defe67-5c1d-4ce5-8236-ee42d931dd9f",
+      "meta": {
+        "profile": [
+          "http://onehealthrecord.org/StructureDefinition/HumanPatient"
+        ]
+      },
+      "extension": [
+        {
+          "url": "http://onehealthrecord.org/household-id",
+          "valueString": "HH-AZ-APACHE-G196"
+        }
+      ],
+      "name": [
+        {
+          "family": "Mitchell",
+          "given": [
+            "Yuki"
+          ]
+        }
+      ],
+      "gender": "female",
+      "birthDate": "1961-08-19",
+      "address": [
+        {
+          "city": "St. Johns",
+          "state": "AZ",
+          "country": "US",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/geolocation",
+              "extension": [
+                {
+                  "url": "latitude",
+                  "valueDecimal": 35.39
+                },
+                {
+                  "url": "longitude",
+                  "valueDecimal": -109.49
+                }
+              ]
+            },
+            {
+              "url": "http://onehealthrecord.org/county-fips",
+              "valueString": "04001"
+            }
+          ]
+        }
+      ],
+      "_provenance": {
+        "site": "ihs_whiteriver",
+        "site_facility": "IHS Whiteriver Service Unit",
+        "vendor": "Cerner-IHS",
+        "fhir_version": "R4",
+        "endpoint": "https://fhir.whiteriver.ihs.example/r4",
+        "primary_provider_id": "phys-yazzie"
+      }
+    },
+    {
+      "resourceType": "Patient",
+      "id": "7e082b13-e57d-4b76-9fba-db3676dc239e",
+      "meta": {
+        "profile": [
+          "http://onehealthrecord.org/StructureDefinition/HumanPatient"
+        ]
+      },
+      "extension": [
+        {
+          "url": "http://onehealthrecord.org/household-id",
+          "valueString": "HH-AZ-APACHE-G196"
+        }
+      ],
+      "name": [
+        {
+          "family": "Mitchell",
+          "given": [
+            "Amelia"
+          ]
+        }
+      ],
+      "gender": "female",
+      "birthDate": "2014-10-14",
+      "address": [
+        {
+          "city": "St. Johns",
+          "state": "AZ",
+          "country": "US",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/geolocation",
+              "extension": [
+                {
+                  "url": "latitude",
+                  "valueDecimal": 35.39
+                },
+                {
+                  "url": "longitude",
+                  "valueDecimal": -109.49
+                }
+              ]
+            },
+            {
+              "url": "http://onehealthrecord.org/county-fips",
+              "valueString": "04001"
+            }
+          ]
+        }
+      ],
+      "_provenance": {
+        "site": "ihs_whiteriver",
+        "site_facility": "IHS Whiteriver Service Unit",
+        "vendor": "Cerner-IHS",
+        "fhir_version": "R4",
+        "endpoint": "https://fhir.whiteriver.ihs.example/r4",
+        "primary_provider_id": "phys-yazzie"
+      }
+    },
+    {
+      "resourceType": "Patient",
+      "id": "91b7315e-8bf0-4e00-b31a-a7025181c00a",
+      "meta": {
+        "profile": [
+          "http://onehealthrecord.org/StructureDefinition/HumanPatient"
+        ]
+      },
+      "extension": [
+        {
+          "url": "http://onehealthrecord.org/household-id",
+          "valueString": "HH-AZ-APACHE-G196"
+        }
+      ],
+      "name": [
+        {
+          "family": "Mitchell",
+          "given": [
+            "Mateo"
+          ]
+        }
+      ],
+      "gender": "male",
+      "birthDate": "2004-03-24",
+      "address": [
+        {
+          "city": "St. Johns",
+          "state": "AZ",
+          "country": "US",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/geolocation",
+              "extension": [
+                {
+                  "url": "latitude",
+                  "valueDecimal": 35.39
+                },
+                {
+                  "url": "longitude",
+                  "valueDecimal": -109.49
+                }
+              ]
+            },
+            {
+              "url": "http://onehealthrecord.org/county-fips",
+              "valueString": "04001"
+            }
+          ]
+        }
+      ],
+      "_provenance": {
+        "site": "ihs_whiteriver",
+        "site_facility": "IHS Whiteriver Service Unit",
+        "vendor": "Cerner-IHS",
+        "fhir_version": "R4",
+        "endpoint": "https://fhir.whiteriver.ihs.example/r4",
+        "primary_provider_id": "phys-yazzie"
+      }
+    },
+    {
+      "resourceType": "Patient",
+      "id": "66d8f66e-4f3c-420a-8a1b-0a661ed23729",
+      "meta": {
+        "profile": [
+          "http://onehealthrecord.org/StructureDefinition/HumanPatient"
+        ]
+      },
+      "extension": [
+        {
+          "url": "http://onehealthrecord.org/household-id",
+          "valueString": "HH-AZ-NAVAJO-G270"
+        }
+      ],
+      "name": [
+        {
+          "family": "Kim",
+          "given": [
+            "Grace"
+          ]
+        }
+      ],
+      "gender": "female",
+      "birthDate": "1968-11-25",
+      "address": [
+        {
+          "city": "Holbrook",
+          "state": "AZ",
+          "country": "US",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/geolocation",
+              "extension": [
+                {
+                  "url": "latitude",
+                  "valueDecimal": 34.9
+                },
+                {
+                  "url": "longitude",
+                  "valueDecimal": -110.16
+                }
+              ]
+            },
+            {
+              "url": "http://onehealthrecord.org/county-fips",
+              "valueString": "04017"
+            }
+          ]
+        }
+      ],
+      "_provenance": {
+        "site": "ihs_whiteriver",
+        "site_facility": "IHS Whiteriver Service Unit",
+        "vendor": "Cerner-IHS",
+        "fhir_version": "R4",
+        "endpoint": "https://fhir.whiteriver.ihs.example/r4",
+        "primary_provider_id": "phys-yazzie"
+      }
+    },
+    {
+      "resourceType": "Patient",
+      "id": "97718c36-c54f-476a-bb9a-b3dd2fc5aeb6",
+      "meta": {
+        "profile": [
+          "http://onehealthrecord.org/StructureDefinition/HumanPatient"
+        ]
+      },
+      "extension": [
+        {
+          "url": "http://onehealthrecord.org/household-id",
+          "valueString": "HH-AZ-NAVAJO-G270"
+        }
+      ],
+      "name": [
+        {
+          "family": "Kim",
+          "given": [
+            "Olivia"
+          ]
+        }
+      ],
+      "gender": "female",
+      "birthDate": "1970-05-26",
+      "address": [
+        {
+          "city": "Holbrook",
+          "state": "AZ",
+          "country": "US",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/geolocation",
+              "extension": [
+                {
+                  "url": "latitude",
+                  "valueDecimal": 34.9
+                },
+                {
+                  "url": "longitude",
+                  "valueDecimal": -110.16
+                }
+              ]
+            },
+            {
+              "url": "http://onehealthrecord.org/county-fips",
+              "valueString": "04017"
+            }
+          ]
+        }
+      ],
+      "_provenance": {
+        "site": "ihs_whiteriver",
+        "site_facility": "IHS Whiteriver Service Unit",
+        "vendor": "Cerner-IHS",
+        "fhir_version": "R4",
+        "endpoint": "https://fhir.whiteriver.ihs.example/r4",
+        "primary_provider_id": "phys-yazzie"
+      }
+    },
+    {
+      "resourceType": "Patient",
+      "id": "554b0215-38ef-444b-b636-67990ef6b9e8",
+      "meta": {
+        "profile": [
+          "http://onehealthrecord.org/StructureDefinition/HumanPatient"
+        ]
+      },
+      "extension": [
+        {
+          "url": "http://onehealthrecord.org/household-id",
+          "valueString": "HH-AZ-NAVAJO-G308"
+        }
+      ],
+      "name": [
+        {
+          "family": "Gomez",
+          "given": [
+            "Mateo"
+          ]
+        }
+      ],
+      "gender": "male",
+      "birthDate": "1997-11-10",
+      "address": [
+        {
+          "city": "Holbrook",
+          "state": "AZ",
+          "country": "US",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/geolocation",
+              "extension": [
+                {
+                  "url": "latitude",
+                  "valueDecimal": 34.9
+                },
+                {
+                  "url": "longitude",
+                  "valueDecimal": -110.16
+                }
+              ]
+            },
+            {
+              "url": "http://onehealthrecord.org/county-fips",
+              "valueString": "04017"
+            }
+          ]
+        }
+      ],
+      "chronic_conditions": [
+        "Type 2 diabetes mellitus",
+        "Hyperlipidemia"
+      ],
+      "_provenance": {
+        "site": "ihs_whiteriver",
+        "site_facility": "IHS Whiteriver Service Unit",
+        "vendor": "Cerner-IHS",
+        "fhir_version": "R4",
+        "endpoint": "https://fhir.whiteriver.ihs.example/r4",
+        "primary_provider_id": "phys-yazzie"
+      }
+    },
+    {
+      "resourceType": "Patient",
+      "id": "32f661ae-efc3-4fb3-8faf-f0fce5ef5314",
+      "meta": {
+        "profile": [
+          "http://onehealthrecord.org/StructureDefinition/HumanPatient"
+        ]
+      },
+      "extension": [
+        {
+          "url": "http://onehealthrecord.org/household-id",
+          "valueString": "HH-AZ-NAVAJO-G308"
+        }
+      ],
+      "name": [
+        {
+          "family": "Gomez",
+          "given": [
+            "Elijah"
+          ]
+        }
+      ],
+      "gender": "male",
+      "birthDate": "1955-07-28",
+      "address": [
+        {
+          "city": "Holbrook",
+          "state": "AZ",
+          "country": "US",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/geolocation",
+              "extension": [
+                {
+                  "url": "latitude",
+                  "valueDecimal": 34.9
+                },
+                {
+                  "url": "longitude",
+                  "valueDecimal": -110.16
+                }
+              ]
+            },
+            {
+              "url": "http://onehealthrecord.org/county-fips",
+              "valueString": "04017"
+            }
+          ]
+        }
+      ],
+      "chronic_conditions": [
+        "Hypothyroidism",
+        "Chronic obstructive pulmonary disease"
+      ],
+      "_provenance": {
+        "site": "ihs_whiteriver",
+        "site_facility": "IHS Whiteriver Service Unit",
+        "vendor": "Cerner-IHS",
+        "fhir_version": "R4",
+        "endpoint": "https://fhir.whiteriver.ihs.example/r4",
+        "primary_provider_id": "phys-yazzie"
+      }
+    },
+    {
+      "resourceType": "Patient",
+      "id": "09d5aeba-1efb-4008-8e33-7490537155cd",
+      "meta": {
+        "profile": [
+          "http://onehealthrecord.org/StructureDefinition/HumanPatient"
+        ]
+      },
+      "extension": [
+        {
+          "url": "http://onehealthrecord.org/household-id",
+          "valueString": "HH-AZ-NAVAJO-G308"
+        }
+      ],
+      "name": [
+        {
+          "family": "Gomez",
+          "given": [
+            "Scarlett"
+          ]
+        }
+      ],
+      "gender": "female",
+      "birthDate": "2003-07-05",
+      "address": [
+        {
+          "city": "Holbrook",
+          "state": "AZ",
+          "country": "US",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/geolocation",
+              "extension": [
+                {
+                  "url": "latitude",
+                  "valueDecimal": 34.9
+                },
+                {
+                  "url": "longitude",
+                  "valueDecimal": -110.16
+                }
+              ]
+            },
+            {
+              "url": "http://onehealthrecord.org/county-fips",
+              "valueString": "04017"
+            }
+          ]
+        }
+      ],
+      "_provenance": {
+        "site": "ihs_whiteriver",
+        "site_facility": "IHS Whiteriver Service Unit",
+        "vendor": "Cerner-IHS",
+        "fhir_version": "R4",
+        "endpoint": "https://fhir.whiteriver.ihs.example/r4",
+        "primary_provider_id": "phys-yazzie"
+      }
+    }
+  ],
+  "animal_patients": [],
+  "encounters": [
+    {
+      "resourceType": "Encounter",
+      "id": "02e72422-914d-4f34-abda-0a0107e60df2",
+      "subject": {
+        "reference": "Patient/dcfa636f-3fc7-411d-8ca5-a2d485799256",
+        "label": "Sarah Begay",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-APACHE-006",
+      "period": {
+        "start": "2025-05-28"
+      },
+      "provider": "Urgent Care",
+      "chief_complaint": "Seasonal allergies",
+      "vitals": {
+        "bp": "125/79",
+        "hr": 78,
+        "rr": 14,
+        "spo2": 99,
+        "temp_f": 99.3,
+        "glucose_mg_dl": 88
+      },
+      "narrative": "Patient with self-limited seasonal allergies. Symptomatic management. Return precautions reviewed.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "3989a8c2-4533-4d91-9cba-97e67288faf8",
+      "subject": {
+        "reference": "Patient/dcfa636f-3fc7-411d-8ca5-a2d485799256",
+        "label": "Sarah Begay",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-APACHE-006",
+      "period": {
+        "start": "2025-07-03"
+      },
+      "provider": "Urgent Care",
+      "chief_complaint": "Upper respiratory infection",
+      "vitals": {
+        "bp": "123/80",
+        "hr": 78,
+        "rr": 17,
+        "spo2": 100,
+        "temp_f": 98.5,
+        "glucose_mg_dl": 82
+      },
+      "narrative": "Patient with self-limited upper respiratory infection. Symptomatic management. Return precautions reviewed.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "79056358-7afd-4ec6-a9a9-2d04d8c95d33",
+      "subject": {
+        "reference": "Patient/dcfa636f-3fc7-411d-8ca5-a2d485799256",
+        "label": "Sarah Begay",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-APACHE-006",
+      "period": {
+        "start": "2025-07-15"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Annual physical examination",
+      "vitals": {
+        "bp": "119/70",
+        "hr": 83,
+        "rr": 15,
+        "spo2": 99,
+        "temp_f": 98.5,
+        "glucose_mg_dl": 84
+      },
+      "narrative": "39-year-old female for annual exam. Vitals: BP 119/70, HR 83, Temp 98.5 F, SpO2 99%. Routine labs ordered. Return in 12 months unless concerns.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "a19c68b7-9ff0-447c-8a1f-ae6d6f1e8271",
+      "subject": {
+        "reference": "Patient/dcfa636f-3fc7-411d-8ca5-a2d485799256",
+        "label": "Sarah Begay",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-APACHE-006",
+      "period": {
+        "start": "2025-07-21"
+      },
+      "provider": "Urgent Care",
+      "chief_complaint": "Ankle sprain",
+      "vitals": {
+        "bp": "117/79",
+        "hr": 70,
+        "rr": 14,
+        "spo2": 97,
+        "temp_f": 98.8,
+        "glucose_mg_dl": 93
+      },
+      "narrative": "Patient with self-limited ankle sprain. Symptomatic management. Return precautions reviewed.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "c27688c2-38ce-4f86-95df-be7371be883c",
+      "subject": {
+        "reference": "Patient/94dfe9f3-fe07-40eb-9240-81eff64cb12f",
+        "label": "Daniel Begay",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-APACHE-006",
+      "period": {
+        "start": "2024-12-14"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Annual physical examination",
+      "vitals": {
+        "bp": "128/82",
+        "hr": 79,
+        "rr": 15,
+        "spo2": 99,
+        "temp_f": 98.6,
+        "glucose_mg_dl": 103
+      },
+      "narrative": "41-year-old male for annual exam. Vitals: BP 128/82, HR 79, Temp 98.6 F, SpO2 99%. Routine labs ordered. Return in 12 months unless concerns.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "be2dca06-455e-4f71-8ea6-bdbf7506218b",
+      "subject": {
+        "reference": "Patient/94dfe9f3-fe07-40eb-9240-81eff64cb12f",
+        "label": "Daniel Begay",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-APACHE-006",
+      "period": {
+        "start": "2025-02-26"
+      },
+      "provider": "Urgent Care",
+      "chief_complaint": "Ankle sprain",
+      "vitals": {
+        "bp": "121/78",
+        "hr": 66,
+        "rr": 15,
+        "spo2": 99,
+        "temp_f": 98.9,
+        "glucose_mg_dl": 94
+      },
+      "narrative": "Patient with self-limited ankle sprain. Symptomatic management. Return precautions reviewed.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "56ec24fc-b918-4085-b45c-ee302797f59e",
+      "subject": {
+        "reference": "Patient/94dfe9f3-fe07-40eb-9240-81eff64cb12f",
+        "label": "Daniel Begay",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-APACHE-006",
+      "period": {
+        "start": "2026-03-04"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Annual physical examination",
+      "vitals": {
+        "bp": "122/79",
+        "hr": 72,
+        "rr": 14,
+        "spo2": 99,
+        "temp_f": 98.7,
+        "glucose_mg_dl": 103
+      },
+      "narrative": "41-year-old male for annual exam. Vitals: BP 122/79, HR 72, Temp 98.7 F, SpO2 99%. Routine labs ordered. Return in 12 months unless concerns.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "6d18244b-9d69-4274-9830-abc71d6e9dc9",
+      "subject": {
+        "reference": "Patient/b1c2aac1-67e9-4a7f-ac97-08e821cbb1e1",
+        "label": "William Yazzie",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-012",
+      "period": {
+        "start": "2024-12-18"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Annual physical examination",
+      "vitals": {
+        "bp": "131/74",
+        "hr": 62,
+        "rr": 14,
+        "spo2": 98,
+        "temp_f": 99.3,
+        "glucose_mg_dl": 108
+      },
+      "narrative": "36-year-old male for annual exam. Vitals: BP 131/74, HR 62, Temp 99.3 F, SpO2 98%. Routine labs ordered. Return in 12 months unless concerns.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "473ed52a-d2c5-410b-b21a-9fa01c68a10d",
+      "subject": {
+        "reference": "Patient/b1c2aac1-67e9-4a7f-ac97-08e821cbb1e1",
+        "label": "William Yazzie",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-012",
+      "period": {
+        "start": "2025-04-09"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Annual physical examination",
+      "vitals": {
+        "bp": "130/79",
+        "hr": 62,
+        "rr": 16,
+        "spo2": 100,
+        "temp_f": 98.1,
+        "glucose_mg_dl": 106
+      },
+      "narrative": "36-year-old male for annual exam. Vitals: BP 130/79, HR 62, Temp 98.1 F, SpO2 100%. Routine labs ordered. Return in 12 months unless concerns.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "c79f1600-063c-43cb-992d-c4c3c229e6f0",
+      "subject": {
+        "reference": "Patient/6b34b2db-f30a-4a88-9ecb-163a71b9c010",
+        "label": "Angela Yazzie",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-012",
+      "period": {
+        "start": "2024-06-05"
+      },
+      "provider": "Urgent Care",
+      "chief_complaint": "Seasonal allergies",
+      "vitals": {
+        "bp": "124/82",
+        "hr": 79,
+        "rr": 14,
+        "spo2": 99,
+        "temp_f": 98.1,
+        "glucose_mg_dl": 90
+      },
+      "narrative": "Patient with self-limited seasonal allergies. Symptomatic management. Return precautions reviewed.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "f39785f5-2423-4de9-80b3-e957facfa159",
+      "subject": {
+        "reference": "Patient/6b34b2db-f30a-4a88-9ecb-163a71b9c010",
+        "label": "Angela Yazzie",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-012",
+      "period": {
+        "start": "2024-12-08"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Annual physical examination",
+      "vitals": {
+        "bp": "117/79",
+        "hr": 75,
+        "rr": 17,
+        "spo2": 97,
+        "temp_f": 98.7,
+        "glucose_mg_dl": 95
+      },
+      "narrative": "34-year-old female for annual exam. Vitals: BP 117/79, HR 75, Temp 98.7 F, SpO2 97%. Routine labs ordered. Return in 12 months unless concerns.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "487a0adb-0d22-4a61-bfe7-0dc3f8546796",
+      "subject": {
+        "reference": "Patient/6b34b2db-f30a-4a88-9ecb-163a71b9c010",
+        "label": "Angela Yazzie",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-012",
+      "period": {
+        "start": "2025-05-25"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Annual physical examination",
+      "vitals": {
+        "bp": "122/75",
+        "hr": 83,
+        "rr": 14,
+        "spo2": 98,
+        "temp_f": 98.5,
+        "glucose_mg_dl": 104
+      },
+      "narrative": "34-year-old female for annual exam. Vitals: BP 122/75, HR 83, Temp 98.5 F, SpO2 98%. Routine labs ordered. Return in 12 months unless concerns.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "a81d9906-16b9-42d6-a49f-9b1363a63e35",
+      "subject": {
+        "reference": "Patient/a3b5bf15-a9eb-44cd-8043-f17575991d20",
+        "label": "Ellie Yazzie",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-012",
+      "period": {
+        "start": "2024-09-25"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Annual physical examination",
+      "vitals": {
+        "bp": "112/80",
+        "hr": 79,
+        "rr": 17,
+        "spo2": 99,
+        "temp_f": 98.1,
+        "glucose_mg_dl": 98
+      },
+      "narrative": "5-year-old female for annual exam. Vitals: BP 112/80, HR 79, Temp 98.1 F, SpO2 99%. Routine labs ordered. Return in 12 months unless concerns.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "79d4b0a8-db04-4ff3-be72-ecd7ce5a79ec",
+      "subject": {
+        "reference": "Patient/a3b5bf15-a9eb-44cd-8043-f17575991d20",
+        "label": "Ellie Yazzie",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-012",
+      "period": {
+        "start": "2025-01-16"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Annual physical examination",
+      "vitals": {
+        "bp": "123/79",
+        "hr": 86,
+        "rr": 17,
+        "spo2": 99,
+        "temp_f": 99.1,
+        "glucose_mg_dl": 88
+      },
+      "narrative": "5-year-old female for annual exam. Vitals: BP 123/79, HR 86, Temp 99.1 F, SpO2 99%. Routine labs ordered. Return in 12 months unless concerns.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "0d228d1a-b15b-417b-a27d-fe83c4305125",
+      "subject": {
+        "reference": "Patient/12052ab2-9514-4b41-a961-6f6b8e804374",
+        "label": "Emma Patel",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G010",
+      "period": {
+        "start": "2024-07-07"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Annual physical examination",
+      "vitals": {
+        "bp": "116/72",
+        "hr": 83,
+        "rr": 18,
+        "spo2": 100,
+        "temp_f": 98.5,
+        "glucose_mg_dl": 100
+      },
+      "narrative": "31-year-old female for annual exam. Vitals: BP 116/72, HR 83, Temp 98.5 F, SpO2 100%. Routine labs ordered. Return in 12 months unless concerns.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "c5907c51-2750-4b8e-8de8-e7846afbf2a0",
+      "subject": {
+        "reference": "Patient/12052ab2-9514-4b41-a961-6f6b8e804374",
+        "label": "Emma Patel",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G010",
+      "period": {
+        "start": "2024-07-19"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Annual physical examination",
+      "vitals": {
+        "bp": "113/70",
+        "hr": 64,
+        "rr": 14,
+        "spo2": 100,
+        "temp_f": 98.4,
+        "glucose_mg_dl": 88
+      },
+      "narrative": "31-year-old female for annual exam. Vitals: BP 113/70, HR 64, Temp 98.4 F, SpO2 100%. Routine labs ordered. Return in 12 months unless concerns.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "58559f19-5b8a-4db3-93f6-fee40eec80fa",
+      "subject": {
+        "reference": "Patient/12052ab2-9514-4b41-a961-6f6b8e804374",
+        "label": "Emma Patel",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G010",
+      "period": {
+        "start": "2025-02-12"
+      },
+      "provider": "Urgent Care",
+      "chief_complaint": "Low back pain",
+      "vitals": {
+        "bp": "131/80",
+        "hr": 62,
+        "rr": 17,
+        "spo2": 100,
+        "temp_f": 98.4,
+        "glucose_mg_dl": 91
+      },
+      "narrative": "Patient with self-limited low back pain. Symptomatic management. Return precautions reviewed.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "6c74ad88-6489-4b7a-a7b7-dba71ba09a2b",
+      "subject": {
+        "reference": "Patient/12052ab2-9514-4b41-a961-6f6b8e804374",
+        "label": "Emma Patel",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G010",
+      "period": {
+        "start": "2025-08-07"
+      },
+      "provider": "Urgent Care",
+      "chief_complaint": "Low back pain",
+      "vitals": {
+        "bp": "124/74",
+        "hr": 76,
+        "rr": 14,
+        "spo2": 97,
+        "temp_f": 98.2,
+        "glucose_mg_dl": 95
+      },
+      "narrative": "Patient with self-limited low back pain. Symptomatic management. Return precautions reviewed.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "ef0887be-10ce-4432-ba81-42056051d535",
+      "subject": {
+        "reference": "Patient/e306aaac-7359-4021-8004-ba20a3fd2a79",
+        "label": "Susan Patel",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G010",
+      "period": {
+        "start": "2024-06-22"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Annual physical examination",
+      "vitals": {
+        "bp": "116/75",
+        "hr": 84,
+        "rr": 16,
+        "spo2": 99,
+        "temp_f": 99.4,
+        "glucose_mg_dl": 86
+      },
+      "narrative": "29-year-old female for annual exam. Vitals: BP 116/75, HR 84, Temp 99.4 F, SpO2 99%. Routine labs ordered. Return in 12 months unless concerns.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "6c6a6778-834d-41c3-b4d0-97ab98c152e1",
+      "subject": {
+        "reference": "Patient/e306aaac-7359-4021-8004-ba20a3fd2a79",
+        "label": "Susan Patel",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G010",
+      "period": {
+        "start": "2025-03-22"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Annual physical examination",
+      "vitals": {
+        "bp": "123/78",
+        "hr": 79,
+        "rr": 14,
+        "spo2": 99,
+        "temp_f": 98.3,
+        "glucose_mg_dl": 85
+      },
+      "narrative": "29-year-old female for annual exam. Vitals: BP 123/78, HR 79, Temp 98.3 F, SpO2 99%. Routine labs ordered. Return in 12 months unless concerns.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "17d13d59-5d56-4eae-910f-299950684623",
+      "subject": {
+        "reference": "Patient/594ee351-0308-468b-91fa-cba861194314",
+        "label": "Fatima Patel",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G010",
+      "period": {
+        "start": "2024-06-14"
+      },
+      "provider": "Urgent Care",
+      "chief_complaint": "Ankle sprain",
+      "vitals": {
+        "bp": "127/74",
+        "hr": 79,
+        "rr": 14,
+        "spo2": 97,
+        "temp_f": 98.6,
+        "glucose_mg_dl": 90
+      },
+      "narrative": "Patient with self-limited ankle sprain. Symptomatic management. Return precautions reviewed.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "d5ba369e-c86d-4195-8d00-705e7c0e7ad0",
+      "subject": {
+        "reference": "Patient/594ee351-0308-468b-91fa-cba861194314",
+        "label": "Fatima Patel",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G010",
+      "period": {
+        "start": "2024-12-22"
+      },
+      "provider": "Urgent Care",
+      "chief_complaint": "Low back pain",
+      "vitals": {
+        "bp": "127/74",
+        "hr": 77,
+        "rr": 14,
+        "spo2": 97,
+        "temp_f": 99.3,
+        "glucose_mg_dl": 98
+      },
+      "narrative": "Patient with self-limited low back pain. Symptomatic management. Return precautions reviewed.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "0079033b-1a7a-4bd0-95a6-48e2c9cf7ac4",
+      "subject": {
+        "reference": "Patient/594ee351-0308-468b-91fa-cba861194314",
+        "label": "Fatima Patel",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G010",
+      "period": {
+        "start": "2025-08-11"
+      },
+      "provider": "Urgent Care",
+      "chief_complaint": "Viral gastroenteritis",
+      "vitals": {
+        "bp": "118/79",
+        "hr": 73,
+        "rr": 14,
+        "spo2": 97,
+        "temp_f": 98.4,
+        "glucose_mg_dl": 101
+      },
+      "narrative": "Patient with self-limited viral gastroenteritis. Symptomatic management. Return precautions reviewed.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "739926f1-b3db-406b-aacd-53ec56d34f8f",
+      "subject": {
+        "reference": "Patient/594ee351-0308-468b-91fa-cba861194314",
+        "label": "Fatima Patel",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G010",
+      "period": {
+        "start": "2025-11-26"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Annual physical examination",
+      "vitals": {
+        "bp": "121/76",
+        "hr": 81,
+        "rr": 17,
+        "spo2": 98,
+        "temp_f": 99.3,
+        "glucose_mg_dl": 87
+      },
+      "narrative": "17-year-old female for annual exam. Vitals: BP 121/76, HR 81, Temp 99.3 F, SpO2 98%. Routine labs ordered. Return in 12 months unless concerns.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "a0920ee4-2e8a-4f67-a2c5-b427a77e91a1",
+      "subject": {
+        "reference": "Patient/594ee351-0308-468b-91fa-cba861194314",
+        "label": "Fatima Patel",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G010",
+      "period": {
+        "start": "2026-01-13"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Annual physical examination",
+      "vitals": {
+        "bp": "122/79",
+        "hr": 85,
+        "rr": 16,
+        "spo2": 98,
+        "temp_f": 99.1,
+        "glucose_mg_dl": 97
+      },
+      "narrative": "17-year-old female for annual exam. Vitals: BP 122/79, HR 85, Temp 99.1 F, SpO2 98%. Routine labs ordered. Return in 12 months unless concerns.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "0faa38d8-16d5-4a40-83df-90966f5923b2",
+      "subject": {
+        "reference": "Patient/49f150eb-7947-43d8-b3fe-df4e76bcaa24",
+        "label": "Asher Singh",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G127",
+      "period": {
+        "start": "2025-01-01"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Annual physical examination",
+      "vitals": {
+        "bp": "131/74",
+        "hr": 72,
+        "rr": 16,
+        "spo2": 97,
+        "temp_f": 98.9,
+        "glucose_mg_dl": 103
+      },
+      "narrative": "57-year-old male for annual exam. Vitals: BP 131/74, HR 72, Temp 98.9 F, SpO2 97%. Routine labs ordered. Return in 12 months unless concerns.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "96ef5001-fe4e-4090-9ee1-b798e601e619",
+      "subject": {
+        "reference": "Patient/49f150eb-7947-43d8-b3fe-df4e76bcaa24",
+        "label": "Asher Singh",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G127",
+      "period": {
+        "start": "2025-07-26"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Annual physical examination",
+      "vitals": {
+        "bp": "132/82",
+        "hr": 82,
+        "rr": 16,
+        "spo2": 100,
+        "temp_f": 98.7,
+        "glucose_mg_dl": 94
+      },
+      "narrative": "57-year-old male for annual exam. Vitals: BP 132/82, HR 82, Temp 98.7 F, SpO2 100%. Routine labs ordered. Return in 12 months unless concerns.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "5e85c9e3-3e10-44e3-b953-1accdf9bc856",
+      "subject": {
+        "reference": "Patient/3b583549-9e43-49b2-b03b-e14b2631ab02",
+        "label": "Jackson Singh",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G127",
+      "period": {
+        "start": "2024-11-15"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Annual physical examination",
+      "vitals": {
+        "bp": "126/72",
+        "hr": 67,
+        "rr": 17,
+        "spo2": 99,
+        "temp_f": 98.0,
+        "glucose_mg_dl": 108
+      },
+      "narrative": "29-year-old male for annual exam. Vitals: BP 126/72, HR 67, Temp 98.0 F, SpO2 99%. Routine labs ordered. Return in 12 months unless concerns.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "603ed660-26bf-46af-80ab-edcd7c1b122a",
+      "subject": {
+        "reference": "Patient/3b583549-9e43-49b2-b03b-e14b2631ab02",
+        "label": "Jackson Singh",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G127",
+      "period": {
+        "start": "2025-02-10"
+      },
+      "provider": "Urgent Care",
+      "chief_complaint": "Urinary tract infection",
+      "vitals": {
+        "bp": "125/73",
+        "hr": 82,
+        "rr": 14,
+        "spo2": 100,
+        "temp_f": 98.3,
+        "glucose_mg_dl": 101
+      },
+      "narrative": "Patient with self-limited urinary tract infection. Symptomatic management. Return precautions reviewed.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "b15c2783-6356-4eca-bf00-26096e39f970",
+      "subject": {
+        "reference": "Patient/3b583549-9e43-49b2-b03b-e14b2631ab02",
+        "label": "Jackson Singh",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G127",
+      "period": {
+        "start": "2025-05-16"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Annual physical examination",
+      "vitals": {
+        "bp": "122/82",
+        "hr": 76,
+        "rr": 15,
+        "spo2": 97,
+        "temp_f": 98.5,
+        "glucose_mg_dl": 102
+      },
+      "narrative": "29-year-old male for annual exam. Vitals: BP 122/82, HR 76, Temp 98.5 F, SpO2 97%. Routine labs ordered. Return in 12 months unless concerns.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "43b898dc-bb1a-4f99-bbf2-8043c454de81",
+      "subject": {
+        "reference": "Patient/d22d6c67-38ff-4de0-b602-7c4104ab8ccc",
+        "label": "Ella Singh",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G127",
+      "period": {
+        "start": "2024-06-14"
+      },
+      "provider": "Urgent Care",
+      "chief_complaint": "Viral gastroenteritis",
+      "vitals": {
+        "bp": "124/78",
+        "hr": 78,
+        "rr": 15,
+        "spo2": 98,
+        "temp_f": 98.6,
+        "glucose_mg_dl": 105
+      },
+      "narrative": "Patient with self-limited viral gastroenteritis. Symptomatic management. Return precautions reviewed.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "3d2d3ebd-da14-445d-bc6e-2e815a86c359",
+      "subject": {
+        "reference": "Patient/d22d6c67-38ff-4de0-b602-7c4104ab8ccc",
+        "label": "Ella Singh",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G127",
+      "period": {
+        "start": "2024-06-30"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Annual physical examination",
+      "vitals": {
+        "bp": "130/81",
+        "hr": 75,
+        "rr": 14,
+        "spo2": 99,
+        "temp_f": 98.9,
+        "glucose_mg_dl": 87
+      },
+      "narrative": "18-year-old female for annual exam. Vitals: BP 130/81, HR 75, Temp 98.9 F, SpO2 99%. Routine labs ordered. Return in 12 months unless concerns.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "8a476e56-ea61-4b8e-ad92-8b777aafe18d",
+      "subject": {
+        "reference": "Patient/d22d6c67-38ff-4de0-b602-7c4104ab8ccc",
+        "label": "Ella Singh",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G127",
+      "period": {
+        "start": "2025-08-12"
+      },
+      "provider": "Urgent Care",
+      "chief_complaint": "Upper respiratory infection",
+      "vitals": {
+        "bp": "117/77",
+        "hr": 84,
+        "rr": 15,
+        "spo2": 99,
+        "temp_f": 98.2,
+        "glucose_mg_dl": 84
+      },
+      "narrative": "Patient with self-limited upper respiratory infection. Symptomatic management. Return precautions reviewed.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "a165e979-ef2f-4434-80a2-fde8583cace1",
+      "subject": {
+        "reference": "Patient/d22d6c67-38ff-4de0-b602-7c4104ab8ccc",
+        "label": "Ella Singh",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G127",
+      "period": {
+        "start": "2025-12-13"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Annual physical examination",
+      "vitals": {
+        "bp": "130/80",
+        "hr": 77,
+        "rr": 14,
+        "spo2": 99,
+        "temp_f": 98.0,
+        "glucose_mg_dl": 101
+      },
+      "narrative": "18-year-old female for annual exam. Vitals: BP 130/80, HR 77, Temp 98.0 F, SpO2 99%. Routine labs ordered. Return in 12 months unless concerns.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "c4a0a713-8663-4d07-b412-0daddaa527c1",
+      "subject": {
+        "reference": "Patient/dc17ebbb-44cf-4ffd-82b6-c2185cbe612d",
+        "label": "Wei Wilson",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G189",
+      "period": {
+        "start": "2024-10-31"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Annual physical examination",
+      "vitals": {
+        "bp": "128/73",
+        "hr": 73,
+        "rr": 18,
+        "spo2": 99,
+        "temp_f": 99.2,
+        "glucose_mg_dl": 99
+      },
+      "narrative": "70-year-old male for annual exam. Vitals: BP 128/73, HR 73, Temp 99.2 F, SpO2 99%. Routine labs ordered. Return in 12 months unless concerns.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "64d3d30f-f4d6-4a3c-b3c8-4d831985f6f3",
+      "subject": {
+        "reference": "Patient/3399d4d5-025d-43d3-8765-fa4cc65cc523",
+        "label": "Madison Wilson",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G189",
+      "period": {
+        "start": "2024-05-24"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Annual physical examination",
+      "vitals": {
+        "bp": "123/74",
+        "hr": 78,
+        "rr": 15,
+        "spo2": 99,
+        "temp_f": 98.2,
+        "glucose_mg_dl": 103
+      },
+      "narrative": "40-year-old female for annual exam. Vitals: BP 123/74, HR 78, Temp 98.2 F, SpO2 99%. Routine labs ordered. Return in 12 months unless concerns.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "7d7abafc-779c-46fe-a758-2ec0b82de30c",
+      "subject": {
+        "reference": "Patient/3399d4d5-025d-43d3-8765-fa4cc65cc523",
+        "label": "Madison Wilson",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G189",
+      "period": {
+        "start": "2025-09-14"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Annual physical examination",
+      "vitals": {
+        "bp": "129/81",
+        "hr": 86,
+        "rr": 15,
+        "spo2": 100,
+        "temp_f": 98.5,
+        "glucose_mg_dl": 90
+      },
+      "narrative": "40-year-old female for annual exam. Vitals: BP 129/81, HR 86, Temp 98.5 F, SpO2 100%. Routine labs ordered. Return in 12 months unless concerns.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "026499ae-6539-4bcd-810c-b05a42d64f80",
+      "subject": {
+        "reference": "Patient/cdff721a-b3d3-422e-9bb0-20552b02936d",
+        "label": "Harper Wilson",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G189",
+      "period": {
+        "start": "2025-06-04"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Annual physical examination",
+      "vitals": {
+        "bp": "113/70",
+        "hr": 83,
+        "rr": 17,
+        "spo2": 99,
+        "temp_f": 98.4,
+        "glucose_mg_dl": 93
+      },
+      "narrative": "13-year-old female for annual exam. Vitals: BP 113/70, HR 83, Temp 98.4 F, SpO2 99%. Routine labs ordered. Return in 12 months unless concerns.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "9594b65c-0df5-4441-8289-321da83edad6",
+      "subject": {
+        "reference": "Patient/b89b172c-a64f-464c-b30d-3a98fc3bbb4e",
+        "label": "Grace Mitchell",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-APACHE-G196",
+      "period": {
+        "start": "2024-09-11"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Chronic disease follow-up \u2014 Chronic obstructive pulmonary disease",
+      "vitals": {
+        "bp": "113/75",
+        "hr": 74,
+        "rr": 14,
+        "spo2": 97,
+        "temp_f": 98.1,
+        "glucose_mg_dl": 97
+      },
+      "narrative": "Follow-up for Chronic obstructive pulmonary disease. BP 113/75, HR 74. Doing well overall. Continue current regimen.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "b5f55dbd-0f8c-42d2-a4c5-5d69d75e7aaf",
+      "subject": {
+        "reference": "Patient/b89b172c-a64f-464c-b30d-3a98fc3bbb4e",
+        "label": "Grace Mitchell",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-APACHE-G196",
+      "period": {
+        "start": "2025-03-28"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Chronic disease follow-up \u2014 Chronic obstructive pulmonary disease",
+      "vitals": {
+        "bp": "130/79",
+        "hr": 62,
+        "rr": 14,
+        "spo2": 99,
+        "temp_f": 98.8,
+        "glucose_mg_dl": 108
+      },
+      "narrative": "Follow-up for Chronic obstructive pulmonary disease. BP 130/79, HR 62. Doing well overall. Continue current regimen.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "253607a4-8c67-4227-b5f3-15c3f3619c46",
+      "subject": {
+        "reference": "Patient/b89b172c-a64f-464c-b30d-3a98fc3bbb4e",
+        "label": "Grace Mitchell",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-APACHE-G196",
+      "period": {
+        "start": "2025-05-01"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Chronic disease follow-up \u2014 Chronic obstructive pulmonary disease",
+      "vitals": {
+        "bp": "129/70",
+        "hr": 64,
+        "rr": 18,
+        "spo2": 99,
+        "temp_f": 99.0,
+        "glucose_mg_dl": 97
+      },
+      "narrative": "Follow-up for Chronic obstructive pulmonary disease. BP 129/70, HR 64. Doing well overall. Continue current regimen.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "5ebd3595-9c9a-4981-a704-679d18ea9a06",
+      "subject": {
+        "reference": "Patient/b89b172c-a64f-464c-b30d-3a98fc3bbb4e",
+        "label": "Grace Mitchell",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-APACHE-G196",
+      "period": {
+        "start": "2025-05-18"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Annual physical examination",
+      "vitals": {
+        "bp": "114/78",
+        "hr": 71,
+        "rr": 18,
+        "spo2": 97,
+        "temp_f": 99.3,
+        "glucose_mg_dl": 102
+      },
+      "narrative": "33-year-old female for annual exam. Vitals: BP 114/78, HR 71, Temp 99.3 F, SpO2 97%. Routine labs ordered. Return in 12 months unless concerns.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "6c68e135-430c-4ca6-8239-52824e3fce02",
+      "subject": {
+        "reference": "Patient/b89b172c-a64f-464c-b30d-3a98fc3bbb4e",
+        "label": "Grace Mitchell",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-APACHE-G196",
+      "period": {
+        "start": "2025-09-03"
+      },
+      "provider": "Urgent Care",
+      "chief_complaint": "Viral gastroenteritis",
+      "vitals": {
+        "bp": "118/79",
+        "hr": 71,
+        "rr": 16,
+        "spo2": 100,
+        "temp_f": 99.0,
+        "glucose_mg_dl": 93
+      },
+      "narrative": "Patient with self-limited viral gastroenteritis. Symptomatic management. Return precautions reviewed.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "5e745456-fd4e-475f-994f-d79e5e7245c5",
+      "subject": {
+        "reference": "Patient/b89b172c-a64f-464c-b30d-3a98fc3bbb4e",
+        "label": "Grace Mitchell",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-APACHE-G196",
+      "period": {
+        "start": "2025-11-15"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Chronic disease follow-up \u2014 Chronic obstructive pulmonary disease",
+      "vitals": {
+        "bp": "120/70",
+        "hr": 86,
+        "rr": 15,
+        "spo2": 99,
+        "temp_f": 98.7,
+        "glucose_mg_dl": 104
+      },
+      "narrative": "Follow-up for Chronic obstructive pulmonary disease. BP 120/70, HR 86. Doing well overall. Continue current regimen.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "c56c4492-06f2-4324-9310-e18f93390fab",
+      "subject": {
+        "reference": "Patient/b89b172c-a64f-464c-b30d-3a98fc3bbb4e",
+        "label": "Grace Mitchell",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-APACHE-G196",
+      "period": {
+        "start": "2025-12-30"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Annual physical examination",
+      "vitals": {
+        "bp": "122/79",
+        "hr": 81,
+        "rr": 15,
+        "spo2": 100,
+        "temp_f": 98.5,
+        "glucose_mg_dl": 106
+      },
+      "narrative": "33-year-old female for annual exam. Vitals: BP 122/79, HR 81, Temp 98.5 F, SpO2 100%. Routine labs ordered. Return in 12 months unless concerns.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "22035fae-5b98-40d2-b67a-9f95c4fd8e8a",
+      "subject": {
+        "reference": "Patient/e9defe67-5c1d-4ce5-8236-ee42d931dd9f",
+        "label": "Yuki Mitchell",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-APACHE-G196",
+      "period": {
+        "start": "2025-01-27"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Annual physical examination",
+      "vitals": {
+        "bp": "127/77",
+        "hr": 74,
+        "rr": 15,
+        "spo2": 99,
+        "temp_f": 98.5,
+        "glucose_mg_dl": 88
+      },
+      "narrative": "65-year-old female for annual exam. Vitals: BP 127/77, HR 74, Temp 98.5 F, SpO2 99%. Routine labs ordered. Return in 12 months unless concerns.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "094e2c77-386b-4303-beb2-81c267c9c82e",
+      "subject": {
+        "reference": "Patient/e9defe67-5c1d-4ce5-8236-ee42d931dd9f",
+        "label": "Yuki Mitchell",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-APACHE-G196",
+      "period": {
+        "start": "2026-03-03"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Annual physical examination",
+      "vitals": {
+        "bp": "117/80",
+        "hr": 73,
+        "rr": 14,
+        "spo2": 97,
+        "temp_f": 98.7,
+        "glucose_mg_dl": 94
+      },
+      "narrative": "65-year-old female for annual exam. Vitals: BP 117/80, HR 73, Temp 98.7 F, SpO2 97%. Routine labs ordered. Return in 12 months unless concerns.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "335c3bf8-c165-4b1f-b00a-cd4715df8cf7",
+      "subject": {
+        "reference": "Patient/7e082b13-e57d-4b76-9fba-db3676dc239e",
+        "label": "Amelia Mitchell",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-APACHE-G196",
+      "period": {
+        "start": "2025-01-29"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Annual physical examination",
+      "vitals": {
+        "bp": "121/71",
+        "hr": 76,
+        "rr": 18,
+        "spo2": 99,
+        "temp_f": 98.3,
+        "glucose_mg_dl": 83
+      },
+      "narrative": "12-year-old female for annual exam. Vitals: BP 121/71, HR 76, Temp 98.3 F, SpO2 99%. Routine labs ordered. Return in 12 months unless concerns.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "5bb46b44-a9d8-44c0-a4f5-fd8002d49d88",
+      "subject": {
+        "reference": "Patient/7e082b13-e57d-4b76-9fba-db3676dc239e",
+        "label": "Amelia Mitchell",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-APACHE-G196",
+      "period": {
+        "start": "2025-08-29"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Annual physical examination",
+      "vitals": {
+        "bp": "132/72",
+        "hr": 83,
+        "rr": 18,
+        "spo2": 98,
+        "temp_f": 98.3,
+        "glucose_mg_dl": 89
+      },
+      "narrative": "12-year-old female for annual exam. Vitals: BP 132/72, HR 83, Temp 98.3 F, SpO2 98%. Routine labs ordered. Return in 12 months unless concerns.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "cf0d9457-024b-426b-bdfb-c9dd63863e04",
+      "subject": {
+        "reference": "Patient/91b7315e-8bf0-4e00-b31a-a7025181c00a",
+        "label": "Mateo Mitchell",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-APACHE-G196",
+      "period": {
+        "start": "2025-08-09"
+      },
+      "provider": "Urgent Care",
+      "chief_complaint": "Viral gastroenteritis",
+      "vitals": {
+        "bp": "112/72",
+        "hr": 65,
+        "rr": 14,
+        "spo2": 99,
+        "temp_f": 98.5,
+        "glucose_mg_dl": 89
+      },
+      "narrative": "Patient with self-limited viral gastroenteritis. Symptomatic management. Return precautions reviewed.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "9dbec4b9-885a-4896-8bac-e0d5c1d7f99f",
+      "subject": {
+        "reference": "Patient/91b7315e-8bf0-4e00-b31a-a7025181c00a",
+        "label": "Mateo Mitchell",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-APACHE-G196",
+      "period": {
+        "start": "2025-12-24"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Annual physical examination",
+      "vitals": {
+        "bp": "112/81",
+        "hr": 87,
+        "rr": 14,
+        "spo2": 100,
+        "temp_f": 98.1,
+        "glucose_mg_dl": 95
+      },
+      "narrative": "22-year-old male for annual exam. Vitals: BP 112/81, HR 87, Temp 98.1 F, SpO2 100%. Routine labs ordered. Return in 12 months unless concerns.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "aeb1336e-2742-42dc-bdbf-770929b4a32a",
+      "subject": {
+        "reference": "Patient/91b7315e-8bf0-4e00-b31a-a7025181c00a",
+        "label": "Mateo Mitchell",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-APACHE-G196",
+      "period": {
+        "start": "2026-02-26"
+      },
+      "provider": "Urgent Care",
+      "chief_complaint": "Seasonal allergies",
+      "vitals": {
+        "bp": "123/73",
+        "hr": 62,
+        "rr": 18,
+        "spo2": 100,
+        "temp_f": 99.3,
+        "glucose_mg_dl": 98
+      },
+      "narrative": "Patient with self-limited seasonal allergies. Symptomatic management. Return precautions reviewed.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "61dd94da-1e79-4b80-b201-0096bcad8dc5",
+      "subject": {
+        "reference": "Patient/66d8f66e-4f3c-420a-8a1b-0a661ed23729",
+        "label": "Grace Kim",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G270",
+      "period": {
+        "start": "2024-07-18"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Annual physical examination",
+      "vitals": {
+        "bp": "125/71",
+        "hr": 74,
+        "rr": 15,
+        "spo2": 98,
+        "temp_f": 99.2,
+        "glucose_mg_dl": 94
+      },
+      "narrative": "58-year-old female for annual exam. Vitals: BP 125/71, HR 74, Temp 99.2 F, SpO2 98%. Routine labs ordered. Return in 12 months unless concerns.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "89852bfe-7df7-4e93-b8a4-8cbb6cc80b8c",
+      "subject": {
+        "reference": "Patient/66d8f66e-4f3c-420a-8a1b-0a661ed23729",
+        "label": "Grace Kim",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G270",
+      "period": {
+        "start": "2025-03-16"
+      },
+      "provider": "Urgent Care",
+      "chief_complaint": "Seasonal allergies",
+      "vitals": {
+        "bp": "132/80",
+        "hr": 76,
+        "rr": 17,
+        "spo2": 100,
+        "temp_f": 99.1,
+        "glucose_mg_dl": 91
+      },
+      "narrative": "Patient with self-limited seasonal allergies. Symptomatic management. Return precautions reviewed.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "3f368a89-2700-4c2b-b6e9-65958d362e6d",
+      "subject": {
+        "reference": "Patient/66d8f66e-4f3c-420a-8a1b-0a661ed23729",
+        "label": "Grace Kim",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G270",
+      "period": {
+        "start": "2025-03-21"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Annual physical examination",
+      "vitals": {
+        "bp": "120/81",
+        "hr": 77,
+        "rr": 14,
+        "spo2": 100,
+        "temp_f": 99.0,
+        "glucose_mg_dl": 93
+      },
+      "narrative": "58-year-old female for annual exam. Vitals: BP 120/81, HR 77, Temp 99.0 F, SpO2 100%. Routine labs ordered. Return in 12 months unless concerns.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "38ed034e-b995-413c-986b-f80c3ee0f1ab",
+      "subject": {
+        "reference": "Patient/66d8f66e-4f3c-420a-8a1b-0a661ed23729",
+        "label": "Grace Kim",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G270",
+      "period": {
+        "start": "2025-06-02"
+      },
+      "provider": "Urgent Care",
+      "chief_complaint": "Minor laceration",
+      "vitals": {
+        "bp": "112/81",
+        "hr": 76,
+        "rr": 18,
+        "spo2": 100,
+        "temp_f": 99.1,
+        "glucose_mg_dl": 86
+      },
+      "narrative": "Patient with self-limited minor laceration. Symptomatic management. Return precautions reviewed.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "6d01cb1c-e454-4eba-af41-ca3866df7ecd",
+      "subject": {
+        "reference": "Patient/66d8f66e-4f3c-420a-8a1b-0a661ed23729",
+        "label": "Grace Kim",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G270",
+      "period": {
+        "start": "2026-04-14"
+      },
+      "provider": "Urgent Care",
+      "chief_complaint": "Upper respiratory infection",
+      "vitals": {
+        "bp": "121/82",
+        "hr": 86,
+        "rr": 16,
+        "spo2": 98,
+        "temp_f": 98.2,
+        "glucose_mg_dl": 89
+      },
+      "narrative": "Patient with self-limited upper respiratory infection. Symptomatic management. Return precautions reviewed.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "848c4196-d5b1-4fe7-94e5-b750eedb88b6",
+      "subject": {
+        "reference": "Patient/97718c36-c54f-476a-bb9a-b3dd2fc5aeb6",
+        "label": "Olivia Kim",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G270",
+      "period": {
+        "start": "2024-11-20"
+      },
+      "provider": "Urgent Care",
+      "chief_complaint": "Ankle sprain",
+      "vitals": {
+        "bp": "125/76",
+        "hr": 84,
+        "rr": 17,
+        "spo2": 99,
+        "temp_f": 98.1,
+        "glucose_mg_dl": 87
+      },
+      "narrative": "Patient with self-limited ankle sprain. Symptomatic management. Return precautions reviewed.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "485d89fb-c1ec-416f-b9eb-13025f29c34d",
+      "subject": {
+        "reference": "Patient/97718c36-c54f-476a-bb9a-b3dd2fc5aeb6",
+        "label": "Olivia Kim",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G270",
+      "period": {
+        "start": "2024-12-09"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Annual physical examination",
+      "vitals": {
+        "bp": "119/77",
+        "hr": 62,
+        "rr": 14,
+        "spo2": 100,
+        "temp_f": 98.4,
+        "glucose_mg_dl": 106
+      },
+      "narrative": "56-year-old female for annual exam. Vitals: BP 119/77, HR 62, Temp 98.4 F, SpO2 100%. Routine labs ordered. Return in 12 months unless concerns.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "9e687940-6607-4dcc-8797-e40d81bde061",
+      "subject": {
+        "reference": "Patient/97718c36-c54f-476a-bb9a-b3dd2fc5aeb6",
+        "label": "Olivia Kim",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G270",
+      "period": {
+        "start": "2025-05-15"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Annual physical examination",
+      "vitals": {
+        "bp": "123/73",
+        "hr": 83,
+        "rr": 18,
+        "spo2": 97,
+        "temp_f": 99.3,
+        "glucose_mg_dl": 103
+      },
+      "narrative": "56-year-old female for annual exam. Vitals: BP 123/73, HR 83, Temp 99.3 F, SpO2 97%. Routine labs ordered. Return in 12 months unless concerns.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "560e1f91-301f-4d69-ac32-0e992616a97f",
+      "subject": {
+        "reference": "Patient/554b0215-38ef-444b-b636-67990ef6b9e8",
+        "label": "Mateo Gomez",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G308",
+      "period": {
+        "start": "2024-07-03"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Annual physical examination",
+      "vitals": {
+        "bp": "126/80",
+        "hr": 63,
+        "rr": 14,
+        "spo2": 100,
+        "temp_f": 98.1,
+        "glucose_mg_dl": 187
+      },
+      "narrative": "29-year-old male for annual exam. Type 2 diabetic on metformin. Hyperlipidemia, on atorvastatin. Vitals: BP 126/80, HR 63, Temp 98.1 F, SpO2 100%. Plan: continue metformin, A1c at next visit. Routine labs ordered. Return in 12 months unless concerns.",
+      "conditions_recorded": [],
+      "medications_recorded": [
+        "Metformin 500 mg oral tablet",
+        "Atorvastatin 20 mg oral tablet"
+      ],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "21acd8f6-fa55-44a5-a909-d5af58a79e4b",
+      "subject": {
+        "reference": "Patient/554b0215-38ef-444b-b636-67990ef6b9e8",
+        "label": "Mateo Gomez",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G308",
+      "period": {
+        "start": "2024-12-25"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Chronic disease follow-up \u2014 Type 2 diabetes mellitus, Hyperlipidemia",
+      "vitals": {
+        "bp": "122/73",
+        "hr": 64,
+        "rr": 18,
+        "spo2": 98,
+        "temp_f": 98.9,
+        "glucose_mg_dl": 190
+      },
+      "narrative": "Follow-up for Type 2 diabetes mellitus, Hyperlipidemia. BP 122/73, HR 64. Glucose today 190 mg/dL. Doing well overall. Continue current regimen.",
+      "conditions_recorded": [],
+      "medications_recorded": [
+        "Metformin 500 mg oral tablet",
+        "Atorvastatin 20 mg oral tablet"
+      ],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "d94835a5-e8f5-43ab-90a8-e7e2f8126e35",
+      "subject": {
+        "reference": "Patient/554b0215-38ef-444b-b636-67990ef6b9e8",
+        "label": "Mateo Gomez",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G308",
+      "period": {
+        "start": "2024-12-27"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Chronic disease follow-up \u2014 Type 2 diabetes mellitus, Hyperlipidemia",
+      "vitals": {
+        "bp": "116/82",
+        "hr": 72,
+        "rr": 15,
+        "spo2": 99,
+        "temp_f": 99.1,
+        "glucose_mg_dl": 157
+      },
+      "narrative": "Follow-up for Type 2 diabetes mellitus, Hyperlipidemia. BP 116/82, HR 72. Glucose today 157 mg/dL. Doing well overall. Continue current regimen.",
+      "conditions_recorded": [],
+      "medications_recorded": [
+        "Metformin 500 mg oral tablet",
+        "Atorvastatin 20 mg oral tablet"
+      ],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "0789d658-6a60-4689-bc9e-8be8d9b1cf4b",
+      "subject": {
+        "reference": "Patient/554b0215-38ef-444b-b636-67990ef6b9e8",
+        "label": "Mateo Gomez",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G308",
+      "period": {
+        "start": "2025-05-15"
+      },
+      "provider": "Urgent Care",
+      "chief_complaint": "Viral gastroenteritis",
+      "vitals": {
+        "bp": "114/77",
+        "hr": 71,
+        "rr": 16,
+        "spo2": 99,
+        "temp_f": 98.5,
+        "glucose_mg_dl": 167
+      },
+      "narrative": "Patient with self-limited viral gastroenteritis. Symptomatic management. Return precautions reviewed.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "413df4dc-71de-4700-a572-4824cb4b95fb",
+      "subject": {
+        "reference": "Patient/554b0215-38ef-444b-b636-67990ef6b9e8",
+        "label": "Mateo Gomez",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G308",
+      "period": {
+        "start": "2025-07-05"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Chronic disease follow-up \u2014 Type 2 diabetes mellitus, Hyperlipidemia",
+      "vitals": {
+        "bp": "117/71",
+        "hr": 75,
+        "rr": 18,
+        "spo2": 97,
+        "temp_f": 98.8,
+        "glucose_mg_dl": 205
+      },
+      "narrative": "Follow-up for Type 2 diabetes mellitus, Hyperlipidemia. BP 117/71, HR 75. Glucose today 205 mg/dL. Doing well overall. Continue current regimen.",
+      "conditions_recorded": [],
+      "medications_recorded": [
+        "Metformin 500 mg oral tablet",
+        "Atorvastatin 20 mg oral tablet"
+      ],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "ba7c49fb-303c-4d5f-9cd1-edb479206578",
+      "subject": {
+        "reference": "Patient/554b0215-38ef-444b-b636-67990ef6b9e8",
+        "label": "Mateo Gomez",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G308",
+      "period": {
+        "start": "2025-10-17"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Chronic disease follow-up \u2014 Type 2 diabetes mellitus, Hyperlipidemia",
+      "vitals": {
+        "bp": "126/75",
+        "hr": 87,
+        "rr": 16,
+        "spo2": 100,
+        "temp_f": 98.0,
+        "glucose_mg_dl": 217
+      },
+      "narrative": "Follow-up for Type 2 diabetes mellitus, Hyperlipidemia. BP 126/75, HR 87. Glucose today 217 mg/dL. Doing well overall. Continue current regimen.",
+      "conditions_recorded": [],
+      "medications_recorded": [
+        "Metformin 500 mg oral tablet",
+        "Atorvastatin 20 mg oral tablet"
+      ],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "09565f15-375b-44aa-aba5-080913af99e9",
+      "subject": {
+        "reference": "Patient/554b0215-38ef-444b-b636-67990ef6b9e8",
+        "label": "Mateo Gomez",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G308",
+      "period": {
+        "start": "2025-11-08"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Annual physical examination",
+      "vitals": {
+        "bp": "129/79",
+        "hr": 65,
+        "rr": 15,
+        "spo2": 99,
+        "temp_f": 99.4,
+        "glucose_mg_dl": 158
+      },
+      "narrative": "29-year-old male for annual exam. Type 2 diabetic on metformin. Hyperlipidemia, on atorvastatin. Vitals: BP 129/79, HR 65, Temp 99.4 F, SpO2 99%. Plan: continue metformin, A1c at next visit. Routine labs ordered. Return in 12 months unless concerns.",
+      "conditions_recorded": [],
+      "medications_recorded": [
+        "Metformin 500 mg oral tablet",
+        "Atorvastatin 20 mg oral tablet"
+      ],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "01f1f890-11cc-4efd-80f6-1e478505d116",
+      "subject": {
+        "reference": "Patient/554b0215-38ef-444b-b636-67990ef6b9e8",
+        "label": "Mateo Gomez",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G308",
+      "period": {
+        "start": "2025-12-15"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Chronic disease follow-up \u2014 Type 2 diabetes mellitus, Hyperlipidemia",
+      "vitals": {
+        "bp": "119/73",
+        "hr": 86,
+        "rr": 16,
+        "spo2": 100,
+        "temp_f": 98.3,
+        "glucose_mg_dl": 204
+      },
+      "narrative": "Follow-up for Type 2 diabetes mellitus, Hyperlipidemia. BP 119/73, HR 86. Glucose today 204 mg/dL. Doing well overall. Continue current regimen.",
+      "conditions_recorded": [],
+      "medications_recorded": [
+        "Metformin 500 mg oral tablet",
+        "Atorvastatin 20 mg oral tablet"
+      ],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "e6660cb1-762c-4c0c-80f6-0cc3994da011",
+      "subject": {
+        "reference": "Patient/554b0215-38ef-444b-b636-67990ef6b9e8",
+        "label": "Mateo Gomez",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G308",
+      "period": {
+        "start": "2026-04-03"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Chronic disease follow-up \u2014 Type 2 diabetes mellitus, Hyperlipidemia",
+      "vitals": {
+        "bp": "121/73",
+        "hr": 83,
+        "rr": 18,
+        "spo2": 97,
+        "temp_f": 98.0,
+        "glucose_mg_dl": 186
+      },
+      "narrative": "Follow-up for Type 2 diabetes mellitus, Hyperlipidemia. BP 121/73, HR 83. Glucose today 186 mg/dL. Doing well overall. Continue current regimen.",
+      "conditions_recorded": [],
+      "medications_recorded": [
+        "Metformin 500 mg oral tablet",
+        "Atorvastatin 20 mg oral tablet"
+      ],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "d0bb75eb-efc5-48b9-b189-03697336d4d5",
+      "subject": {
+        "reference": "Patient/32f661ae-efc3-4fb3-8faf-f0fce5ef5314",
+        "label": "Elijah Gomez",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G308",
+      "period": {
+        "start": "2024-08-05"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Chronic disease follow-up \u2014 Hypothyroidism, Chronic obstructive pulmonary disease",
+      "vitals": {
+        "bp": "133/71",
+        "hr": 77,
+        "rr": 14,
+        "spo2": 99,
+        "temp_f": 99.0,
+        "glucose_mg_dl": 88
+      },
+      "narrative": "Follow-up for Hypothyroidism, Chronic obstructive pulmonary disease. BP 133/71, HR 77. Doing well overall. Continue current regimen.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "601e56ed-6e86-4bd6-940b-e5502e9e6c78",
+      "subject": {
+        "reference": "Patient/32f661ae-efc3-4fb3-8faf-f0fce5ef5314",
+        "label": "Elijah Gomez",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G308",
+      "period": {
+        "start": "2024-08-30"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Chronic disease follow-up \u2014 Hypothyroidism, Chronic obstructive pulmonary disease",
+      "vitals": {
+        "bp": "119/75",
+        "hr": 78,
+        "rr": 17,
+        "spo2": 97,
+        "temp_f": 99.3,
+        "glucose_mg_dl": 91
+      },
+      "narrative": "Follow-up for Hypothyroidism, Chronic obstructive pulmonary disease. BP 119/75, HR 78. Doing well overall. Continue current regimen.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "ee34cf66-48d1-45bc-a8fb-b7c04aab3ddb",
+      "subject": {
+        "reference": "Patient/32f661ae-efc3-4fb3-8faf-f0fce5ef5314",
+        "label": "Elijah Gomez",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G308",
+      "period": {
+        "start": "2024-09-12"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Chronic disease follow-up \u2014 Hypothyroidism, Chronic obstructive pulmonary disease",
+      "vitals": {
+        "bp": "118/72",
+        "hr": 84,
+        "rr": 17,
+        "spo2": 97,
+        "temp_f": 98.5,
+        "glucose_mg_dl": 94
+      },
+      "narrative": "Follow-up for Hypothyroidism, Chronic obstructive pulmonary disease. BP 118/72, HR 84. Doing well overall. Continue current regimen.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "c5e6730a-7926-48c5-8837-c26c94b86d3c",
+      "subject": {
+        "reference": "Patient/32f661ae-efc3-4fb3-8faf-f0fce5ef5314",
+        "label": "Elijah Gomez",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G308",
+      "period": {
+        "start": "2025-03-17"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Annual physical examination",
+      "vitals": {
+        "bp": "113/72",
+        "hr": 71,
+        "rr": 14,
+        "spo2": 97,
+        "temp_f": 98.2,
+        "glucose_mg_dl": 99
+      },
+      "narrative": "71-year-old male for annual exam. Vitals: BP 113/72, HR 71, Temp 98.2 F, SpO2 97%. Routine labs ordered. Return in 12 months unless concerns.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "f981567e-5326-45cb-b40b-79671865f0fe",
+      "subject": {
+        "reference": "Patient/32f661ae-efc3-4fb3-8faf-f0fce5ef5314",
+        "label": "Elijah Gomez",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G308",
+      "period": {
+        "start": "2025-05-02"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Chronic disease follow-up \u2014 Hypothyroidism, Chronic obstructive pulmonary disease",
+      "vitals": {
+        "bp": "123/78",
+        "hr": 86,
+        "rr": 18,
+        "spo2": 100,
+        "temp_f": 98.4,
+        "glucose_mg_dl": 89
+      },
+      "narrative": "Follow-up for Hypothyroidism, Chronic obstructive pulmonary disease. BP 123/78, HR 86. Doing well overall. Continue current regimen.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "714d9a09-4696-40d4-ae52-17428c1f5372",
+      "subject": {
+        "reference": "Patient/32f661ae-efc3-4fb3-8faf-f0fce5ef5314",
+        "label": "Elijah Gomez",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G308",
+      "period": {
+        "start": "2025-09-01"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Chronic disease follow-up \u2014 Hypothyroidism, Chronic obstructive pulmonary disease",
+      "vitals": {
+        "bp": "134/76",
+        "hr": 70,
+        "rr": 14,
+        "spo2": 100,
+        "temp_f": 98.6,
+        "glucose_mg_dl": 108
+      },
+      "narrative": "Follow-up for Hypothyroidism, Chronic obstructive pulmonary disease. BP 134/76, HR 70. Doing well overall. Continue current regimen.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "9c435452-c049-4741-94a9-52b187dfdd20",
+      "subject": {
+        "reference": "Patient/32f661ae-efc3-4fb3-8faf-f0fce5ef5314",
+        "label": "Elijah Gomez",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G308",
+      "period": {
+        "start": "2025-10-31"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Annual physical examination",
+      "vitals": {
+        "bp": "120/73",
+        "hr": 80,
+        "rr": 16,
+        "spo2": 99,
+        "temp_f": 98.7,
+        "glucose_mg_dl": 102
+      },
+      "narrative": "71-year-old male for annual exam. Vitals: BP 120/73, HR 80, Temp 98.7 F, SpO2 99%. Routine labs ordered. Return in 12 months unless concerns.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "ab6560fe-f172-4136-8a31-0ba14b124075",
+      "subject": {
+        "reference": "Patient/32f661ae-efc3-4fb3-8faf-f0fce5ef5314",
+        "label": "Elijah Gomez",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G308",
+      "period": {
+        "start": "2026-04-02"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Chronic disease follow-up \u2014 Hypothyroidism, Chronic obstructive pulmonary disease",
+      "vitals": {
+        "bp": "131/77",
+        "hr": 83,
+        "rr": 17,
+        "spo2": 97,
+        "temp_f": 98.0,
+        "glucose_mg_dl": 90
+      },
+      "narrative": "Follow-up for Hypothyroidism, Chronic obstructive pulmonary disease. BP 131/77, HR 83. Doing well overall. Continue current regimen.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "3bda4ad5-d728-4a79-8462-3427d6bcc823",
+      "subject": {
+        "reference": "Patient/09d5aeba-1efb-4008-8e33-7490537155cd",
+        "label": "Scarlett Gomez",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G308",
+      "period": {
+        "start": "2024-07-12"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Annual physical examination",
+      "vitals": {
+        "bp": "132/80",
+        "hr": 88,
+        "rr": 15,
+        "spo2": 97,
+        "temp_f": 98.9,
+        "glucose_mg_dl": 97
+      },
+      "narrative": "23-year-old female for annual exam. Vitals: BP 132/80, HR 88, Temp 98.9 F, SpO2 97%. Routine labs ordered. Return in 12 months unless concerns.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "40633b0d-6f9c-4e2a-8e72-807456977a2c",
+      "subject": {
+        "reference": "Patient/09d5aeba-1efb-4008-8e33-7490537155cd",
+        "label": "Scarlett Gomez",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G308",
+      "period": {
+        "start": "2024-11-25"
+      },
+      "provider": "Primary Care",
+      "chief_complaint": "Annual physical examination",
+      "vitals": {
+        "bp": "119/70",
+        "hr": 69,
+        "rr": 15,
+        "spo2": 98,
+        "temp_f": 98.4,
+        "glucose_mg_dl": 107
+      },
+      "narrative": "23-year-old female for annual exam. Vitals: BP 119/70, HR 69, Temp 98.4 F, SpO2 98%. Routine labs ordered. Return in 12 months unless concerns.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Encounter",
+      "id": "658e18c7-7c49-49f8-9130-f38ab8c7427e",
+      "subject": {
+        "reference": "Patient/09d5aeba-1efb-4008-8e33-7490537155cd",
+        "label": "Scarlett Gomez",
+        "kind": "Person"
+      },
+      "household_id": "HH-AZ-NAVAJO-G308",
+      "period": {
+        "start": "2025-01-07"
+      },
+      "provider": "Urgent Care",
+      "chief_complaint": "Seasonal allergies",
+      "vitals": {
+        "bp": "122/82",
+        "hr": 77,
+        "rr": 16,
+        "spo2": 99,
+        "temp_f": 98.2,
+        "glucose_mg_dl": 82
+      },
+      "narrative": "Patient with self-limited seasonal allergies. Symptomatic management. Return precautions reviewed.",
+      "conditions_recorded": [],
+      "medications_recorded": [],
+      "source": "machine_authored",
+      "_site": "ihs_whiteriver"
+    }
+  ],
+  "conditions": [
+    {
+      "resourceType": "Condition",
+      "id": "reportable-anthrax-6b34b2db-0211",
+      "clinicalStatus": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+            "code": "active"
+          }
+        ]
+      },
+      "verificationStatus": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+            "code": "confirmed"
+          }
+        ]
+      },
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+              "code": "encounter-diagnosis"
+            }
+          ]
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "21927003",
+            "display": "Anthrax"
+          },
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "A22.9",
+            "display": "Anthrax"
+          }
+        ],
+        "text": "Anthrax"
+      },
+      "subject": {
+        "reference": "Patient/6b34b2db-f30a-4a88-9ecb-163a71b9c010"
+      },
+      "encounter": {
+        "reference": "Encounter/f39785f5-2423-4de9-80b3-e957facfa159"
+      },
+      "onsetDateTime": "2025-10-31",
+      "recordedDate": "2025-10-31",
+      "_reportable": {
+        "disease_id": "anthrax",
+        "common_name": "Anthrax",
+        "is_reportable": true,
+        "human_reporting": {
+          "is_reportable": true,
+          "adhs_class": "immediate",
+          "adhs_timeline": "immediate",
+          "nndss_condition_code": "10240",
+          "destinations": [
+            "adhs",
+            "cdc_nndss",
+            "tribal_if_applicable",
+            "local_health_dept"
+          ]
+        },
+        "animal_reporting": {
+          "is_reportable": true,
+          "ada_required": true,
+          "aphis_notifiable": true,
+          "woah_code": "B051",
+          "destinations": [
+            "ada",
+            "aphis",
+            "adhs_cross_species"
+          ]
+        },
+        "is_zoonotic": true,
+        "is_select_agent": true,
+        "applies_to_subject_kind": "human",
+        "report_status": "unreported"
+      },
+      "_household_id": "HH-AZ-NAVAJO-012",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Condition",
+      "id": "reportable-botulism-6b34b2db-0213",
+      "clinicalStatus": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+            "code": "active"
+          }
+        ]
+      },
+      "verificationStatus": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+            "code": "confirmed"
+          }
+        ]
+      },
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+              "code": "encounter-diagnosis"
+            }
+          ]
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "414488002",
+            "display": "Botulism"
+          },
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "A05.1",
+            "display": "Botulism"
+          }
+        ],
+        "text": "Botulism"
+      },
+      "subject": {
+        "reference": "Patient/6b34b2db-f30a-4a88-9ecb-163a71b9c010"
+      },
+      "encounter": {
+        "reference": "Encounter/f39785f5-2423-4de9-80b3-e957facfa159"
+      },
+      "onsetDateTime": "2025-04-04",
+      "recordedDate": "2025-04-04",
+      "_reportable": {
+        "disease_id": "botulism",
+        "common_name": "Botulism",
+        "is_reportable": true,
+        "human_reporting": {
+          "is_reportable": true,
+          "adhs_class": "immediate",
+          "adhs_timeline": "immediate",
+          "nndss_condition_code": "10530",
+          "destinations": [
+            "adhs",
+            "cdc_nndss",
+            "local_health_dept"
+          ]
+        },
+        "animal_reporting": {
+          "is_reportable": false
+        },
+        "is_zoonotic": false,
+        "is_select_agent": true,
+        "applies_to_subject_kind": "human",
+        "report_status": "unreported"
+      },
+      "_household_id": "HH-AZ-NAVAJO-012",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Condition",
+      "id": "reportable-listeriosis-49f150eb-0141",
+      "clinicalStatus": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+            "code": "active"
+          }
+        ]
+      },
+      "verificationStatus": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+            "code": "confirmed"
+          }
+        ]
+      },
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+              "code": "encounter-diagnosis"
+            }
+          ]
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "4241002",
+            "display": "Listeriosis"
+          },
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "A32.9",
+            "display": "Listeriosis"
+          }
+        ],
+        "text": "Listeriosis"
+      },
+      "subject": {
+        "reference": "Patient/49f150eb-7947-43d8-b3fe-df4e76bcaa24"
+      },
+      "encounter": {
+        "reference": "Encounter/0faa38d8-16d5-4a40-83df-90966f5923b2"
+      },
+      "onsetDateTime": "2026-02-23",
+      "recordedDate": "2026-02-23",
+      "_reportable": {
+        "disease_id": "listeriosis",
+        "common_name": "Listeriosis",
+        "is_reportable": true,
+        "human_reporting": {
+          "is_reportable": true,
+          "adhs_class": "one_working_day",
+          "adhs_timeline": "one_working_day",
+          "nndss_condition_code": "10630",
+          "destinations": [
+            "adhs",
+            "cdc_nndss",
+            "local_health_dept"
+          ]
+        },
+        "animal_reporting": {
+          "is_reportable": false
+        },
+        "is_zoonotic": true,
+        "is_select_agent": false,
+        "applies_to_subject_kind": "human",
+        "report_status": "unreported"
+      },
+      "_household_id": "HH-AZ-NAVAJO-G127",
+      "_site": "ihs_whiteriver"
+    },
+    {
+      "resourceType": "Condition",
+      "id": "reportable-hiv_infant-b89b172c-0150",
+      "clinicalStatus": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+            "code": "active"
+          }
+        ]
+      },
+      "verificationStatus": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+            "code": "confirmed"
+          }
+        ]
+      },
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+              "code": "encounter-diagnosis"
+            }
+          ]
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "86406008",
+            "display": "HIV infection and related disease in an infant"
+          },
+          {
+            "system": "http://hl7.org/fhir/sid/icd-10-cm",
+            "code": "B20",
+            "display": "HIV infection and related disease in an infant"
+          }
+        ],
+        "text": "HIV infection and related disease in an infant"
+      },
+      "subject": {
+        "reference": "Patient/b89b172c-a64f-464c-b30d-3a98fc3bbb4e"
+      },
+      "encounter": {
+        "reference": "Encounter/253607a4-8c67-4227-b5f3-15c3f3619c46"
+      },
+      "onsetDateTime": "2025-01-20",
+      "recordedDate": "2025-01-20",
+      "_reportable": {
+        "disease_id": "hiv_infant",
+        "common_name": "HIV infection and related disease in an infant",
+        "is_reportable": true,
+        "human_reporting": {
+          "is_reportable": true,
+          "adhs_class": "five_working_days",
+          "adhs_timeline": "five_working_days",
+          "nndss_condition_code": "10720",
+          "destinations": [
+            "adhs",
+            "cdc_nndss",
+            "local_health_dept"
+          ]
+        },
+        "animal_reporting": {
+          "is_reportable": false
+        },
+        "is_zoonotic": false,
+        "is_select_agent": false,
+        "applies_to_subject_kind": "human",
+        "report_status": "unreported"
+      },
+      "_household_id": "HH-AZ-APACHE-G196",
+      "_site": "ihs_whiteriver"
+    }
+  ],
+  "household_refs": [
+    "HH-AZ-APACHE-006",
+    "HH-AZ-APACHE-G196",
+    "HH-AZ-NAVAJO-012",
+    "HH-AZ-NAVAJO-G010",
+    "HH-AZ-NAVAJO-G127",
+    "HH-AZ-NAVAJO-G189",
+    "HH-AZ-NAVAJO-G270",
+    "HH-AZ-NAVAJO-G308"
+  ]
+}

@@ -1,0 +1,1284 @@
+{
+  "_metadata": {
+    "model": "gradient_boosting",
+    "n_features": 51,
+    "n_examples": 4676,
+    "explainer": "shap.TreeExplainer",
+    "base_value": -11.298537487900374
+  },
+  "global_shap_importance": [
+    {
+      "feature": "day_of_year",
+      "label": "Day of year",
+      "importance": 0.8756349671084128
+    },
+    {
+      "feature": "v_temp_f",
+      "label": "Temperature (\u00b0F)",
+      "importance": 0.5242749371515042
+    },
+    {
+      "feature": "hh_n_animals",
+      "label": "Household size (animals)",
+      "importance": 0.4910922303387646
+    },
+    {
+      "feature": "hh_enc_90d",
+      "label": "Household encounters in last 90d",
+      "importance": 0.2742687224686404
+    },
+    {
+      "feature": "v_glucose",
+      "label": "Glucose",
+      "importance": 0.23382702520301452
+    },
+    {
+      "feature": "hh_has_bird",
+      "label": "Household has bird",
+      "importance": 0.20933427268672905
+    },
+    {
+      "feature": "v_bp_dia",
+      "label": "Diastolic BP",
+      "importance": 0.17565399938734977
+    },
+    {
+      "feature": "v_bp_sys",
+      "label": "Systolic BP",
+      "importance": 0.12891592070559696
+    },
+    {
+      "feature": "hh_n_humans",
+      "label": "Household size (humans)",
+      "importance": 0.11200977626683589
+    },
+    {
+      "feature": "co_lon",
+      "label": "County longitude",
+      "importance": 0.0829431198872209
+    },
+    {
+      "feature": "co_is_tribal",
+      "label": "Tribal-land county",
+      "importance": 0.08270793346690145
+    },
+    {
+      "feature": "age_years",
+      "label": "Age (years)",
+      "importance": 0.07423578390933573
+    },
+    {
+      "feature": "cc_zoo_specific",
+      "label": "CC: named zoonotic disease",
+      "importance": 0.07086949876407057
+    },
+    {
+      "feature": "hh_distinct_cc_90d",
+      "label": "Distinct CC patterns in household 90d",
+      "importance": 0.04602626881412234
+    },
+    {
+      "feature": "hh_has_reptile",
+      "label": "Household has reptile",
+      "importance": 0.03806487910270516
+    },
+    {
+      "feature": "v_rr",
+      "label": "Respiratory rate",
+      "importance": 0.03626732466425945
+    },
+    {
+      "feature": "v_hr",
+      "label": "Heart rate",
+      "importance": 0.03468897862026763
+    },
+    {
+      "feature": "cc_fever",
+      "label": "CC: fever",
+      "importance": 0.018633327341411796
+    },
+    {
+      "feature": "surv_recent_cases",
+      "label": "County recent case count",
+      "importance": 0.018084873679431103
+    },
+    {
+      "feature": "cc_gi",
+      "label": "CC: gastrointestinal",
+      "importance": 0.012559436262156373
+    },
+    {
+      "feature": "co_lat",
+      "label": "County latitude",
+      "importance": 0.011948152265885482
+    },
+    {
+      "feature": "cc_respiratory",
+      "label": "CC: respiratory",
+      "importance": 0.0068205553387139135
+    },
+    {
+      "feature": "hh_distinct_subjects_90d",
+      "label": "Distinct household subjects in 90d",
+      "importance": 0.005547001885167489
+    },
+    {
+      "feature": "hh_enc_30d",
+      "label": "Household encounters in last 30d",
+      "importance": 0.004367072985729197
+    },
+    {
+      "feature": "sex_female",
+      "label": "Sex is female",
+      "importance": 0.003896505816481354
+    },
+    {
+      "feature": "co_epa_eqi",
+      "label": "EPA Environmental Quality Index",
+      "importance": 0.002493493244154754
+    },
+    {
+      "feature": "v_spo2",
+      "label": "SpO\u2082",
+      "importance": 0.0007691209881813473
+    },
+    {
+      "feature": "month",
+      "label": "Month of encounter",
+      "importance": 0.00030751078967101406
+    },
+    {
+      "feature": "surv_z_score",
+      "label": "County surveillance z-score",
+      "importance": 0.00011392483393061895
+    },
+    {
+      "feature": "hh_has_cat",
+      "label": "Household has cat",
+      "importance": 1.6566378823297815e-05
+    },
+    {
+      "feature": "co_population",
+      "label": "County population",
+      "importance": 1.2356526599881251e-05
+    },
+    {
+      "feature": "hh_distinct_codes_90d",
+      "label": "Distinct disease codes in household (90d)",
+      "importance": 7.103463168607504e-06
+    },
+    {
+      "feature": "cc_rash_skin",
+      "label": "CC: rash / skin",
+      "importance": 1.9826168089362385e-06
+    },
+    {
+      "feature": "v_tachy",
+      "label": "Tachycardia (HR >100)",
+      "importance": 1.5483966260322412e-06
+    },
+    {
+      "feature": "hh_has_livestock",
+      "label": "Household has livestock",
+      "importance": 5.269837992262827e-07
+    },
+    {
+      "feature": "is_animal",
+      "label": "Subject is an animal",
+      "importance": 0.0
+    },
+    {
+      "feature": "v_fever",
+      "label": "Fever (>100.4\u00b0F)",
+      "importance": 0.0
+    },
+    {
+      "feature": "v_tachypnea",
+      "label": "Tachypnea (RR >20)",
+      "importance": 0.0
+    },
+    {
+      "feature": "v_hypoxia",
+      "label": "Hypoxia (SpO\u2082 <94)",
+      "importance": 0.0
+    },
+    {
+      "feature": "cc_neuro",
+      "label": "CC: neurologic",
+      "importance": 0.0
+    },
+    {
+      "feature": "cc_musculo",
+      "label": "CC: musculoskeletal",
+      "importance": 0.0
+    },
+    {
+      "feature": "cc_fatigue",
+      "label": "CC: fatigue / malaise",
+      "importance": 0.0
+    },
+    {
+      "feature": "cc_exposure",
+      "label": "CC: exposure documented",
+      "importance": 0.0
+    },
+    {
+      "feature": "hh_has_dog",
+      "label": "Household has dog",
+      "importance": 0.0
+    },
+    {
+      "feature": "co_cocci_high",
+      "label": "Cocci endemicity: high",
+      "importance": 0.0
+    },
+    {
+      "feature": "co_cocci_med",
+      "label": "Cocci endemicity: medium",
+      "importance": 0.0
+    },
+    {
+      "feature": "co_is_rural",
+      "label": "Rural county",
+      "importance": 0.0
+    },
+    {
+      "feature": "hh_other_species_cond_90d",
+      "label": "Cross-species condition in household (90d)",
+      "importance": 0.0
+    },
+    {
+      "feature": "surv_vector_anomaly",
+      "label": "County vector anomaly active",
+      "importance": 0.0
+    },
+    {
+      "feature": "is_summer",
+      "label": "Encounter in summer",
+      "importance": 0.0
+    },
+    {
+      "feature": "is_monsoon",
+      "label": "Encounter in monsoon season",
+      "importance": 0.0
+    }
+  ],
+  "permutation_importance": [
+    {
+      "feature": "cc_zoo_specific",
+      "label": "CC: named zoonotic disease",
+      "importance": 0.05045560803396785,
+      "std": 0.000289074490124312
+    },
+    {
+      "feature": "cc_fever",
+      "label": "CC: fever",
+      "importance": 0.014427985306044565,
+      "std": 5.082600007793937e-05
+    },
+    {
+      "feature": "day_of_year",
+      "label": "Day of year",
+      "importance": 0.004570392633939213,
+      "std": 0.0025501109891090112
+    },
+    {
+      "feature": "co_lon",
+      "label": "County longitude",
+      "importance": 0.003881017127045472,
+      "std": 0.0002941477288100001
+    },
+    {
+      "feature": "cc_gi",
+      "label": "CC: gastrointestinal",
+      "importance": 0.0003554219741424447,
+      "std": 2.3127140200468562e-05
+    },
+    {
+      "feature": "v_bp_sys",
+      "label": "Systolic BP",
+      "importance": 0.00020275750202756183,
+      "std": 3.288022697411396e-05
+    },
+    {
+      "feature": "v_hr",
+      "label": "Heart rate",
+      "importance": 6.440532417344436e-05,
+      "std": 6.979027163935891e-05
+    },
+    {
+      "feature": "v_glucose",
+      "label": "Glucose",
+      "importance": 3.578073565191353e-05,
+      "std": 2.613055472095035e-05
+    },
+    {
+      "feature": "co_is_tribal",
+      "label": "Tribal-land county",
+      "importance": 2.862458852155303e-05,
+      "std": 1.6178450415338155e-05
+    },
+    {
+      "feature": "v_temp_f",
+      "label": "Temperature (\u00b0F)",
+      "importance": 2.3853823767927552e-05,
+      "std": 2.1335508587359433e-05
+    },
+    {
+      "feature": "is_animal",
+      "label": "Subject is an animal",
+      "importance": 0.0,
+      "std": 0.0
+    },
+    {
+      "feature": "age_years",
+      "label": "Age (years)",
+      "importance": 0.0,
+      "std": 0.0
+    },
+    {
+      "feature": "sex_female",
+      "label": "Sex is female",
+      "importance": 0.0,
+      "std": 0.0
+    },
+    {
+      "feature": "v_rr",
+      "label": "Respiratory rate",
+      "importance": 0.0,
+      "std": 0.0
+    },
+    {
+      "feature": "v_spo2",
+      "label": "SpO\u2082",
+      "importance": 0.0,
+      "std": 0.0
+    },
+    {
+      "feature": "v_bp_dia",
+      "label": "Diastolic BP",
+      "importance": 0.0,
+      "std": 0.0
+    },
+    {
+      "feature": "v_fever",
+      "label": "Fever (>100.4\u00b0F)",
+      "importance": 0.0,
+      "std": 0.0
+    },
+    {
+      "feature": "v_tachy",
+      "label": "Tachycardia (HR >100)",
+      "importance": 0.0,
+      "std": 0.0
+    },
+    {
+      "feature": "v_tachypnea",
+      "label": "Tachypnea (RR >20)",
+      "importance": 0.0,
+      "std": 0.0
+    },
+    {
+      "feature": "v_hypoxia",
+      "label": "Hypoxia (SpO\u2082 <94)",
+      "importance": 0.0,
+      "std": 0.0
+    },
+    {
+      "feature": "cc_respiratory",
+      "label": "CC: respiratory",
+      "importance": 0.0,
+      "std": 0.0
+    },
+    {
+      "feature": "cc_neuro",
+      "label": "CC: neurologic",
+      "importance": 0.0,
+      "std": 0.0
+    },
+    {
+      "feature": "cc_rash_skin",
+      "label": "CC: rash / skin",
+      "importance": 0.0,
+      "std": 0.0
+    },
+    {
+      "feature": "cc_musculo",
+      "label": "CC: musculoskeletal",
+      "importance": 0.0,
+      "std": 0.0
+    },
+    {
+      "feature": "cc_fatigue",
+      "label": "CC: fatigue / malaise",
+      "importance": 0.0,
+      "std": 0.0
+    },
+    {
+      "feature": "cc_exposure",
+      "label": "CC: exposure documented",
+      "importance": 0.0,
+      "std": 0.0
+    },
+    {
+      "feature": "hh_n_humans",
+      "label": "Household size (humans)",
+      "importance": 0.0,
+      "std": 0.0
+    },
+    {
+      "feature": "hh_n_animals",
+      "label": "Household size (animals)",
+      "importance": 0.0,
+      "std": 0.0
+    },
+    {
+      "feature": "hh_has_dog",
+      "label": "Household has dog",
+      "importance": 0.0,
+      "std": 0.0
+    },
+    {
+      "feature": "hh_has_cat",
+      "label": "Household has cat",
+      "importance": 0.0,
+      "std": 0.0
+    },
+    {
+      "feature": "hh_has_livestock",
+      "label": "Household has livestock",
+      "importance": 0.0,
+      "std": 0.0
+    },
+    {
+      "feature": "hh_has_bird",
+      "label": "Household has bird",
+      "importance": 0.0,
+      "std": 0.0
+    },
+    {
+      "feature": "hh_has_reptile",
+      "label": "Household has reptile",
+      "importance": 0.0,
+      "std": 0.0
+    },
+    {
+      "feature": "co_population",
+      "label": "County population",
+      "importance": 0.0,
+      "std": 0.0
+    },
+    {
+      "feature": "co_epa_eqi",
+      "label": "EPA Environmental Quality Index",
+      "importance": 0.0,
+      "std": 0.0
+    },
+    {
+      "feature": "co_cocci_high",
+      "label": "Cocci endemicity: high",
+      "importance": 0.0,
+      "std": 0.0
+    },
+    {
+      "feature": "co_cocci_med",
+      "label": "Cocci endemicity: medium",
+      "importance": 0.0,
+      "std": 0.0
+    },
+    {
+      "feature": "co_is_rural",
+      "label": "Rural county",
+      "importance": 0.0,
+      "std": 0.0
+    },
+    {
+      "feature": "co_lat",
+      "label": "County latitude",
+      "importance": 0.0,
+      "std": 0.0
+    },
+    {
+      "feature": "hh_enc_30d",
+      "label": "Household encounters in last 30d",
+      "importance": 0.0,
+      "std": 0.0
+    },
+    {
+      "feature": "hh_enc_90d",
+      "label": "Household encounters in last 90d",
+      "importance": 0.0,
+      "std": 0.0
+    },
+    {
+      "feature": "hh_distinct_subjects_90d",
+      "label": "Distinct household subjects in 90d",
+      "importance": 0.0,
+      "std": 0.0
+    },
+    {
+      "feature": "hh_distinct_cc_90d",
+      "label": "Distinct CC patterns in household 90d",
+      "importance": 0.0,
+      "std": 0.0
+    },
+    {
+      "feature": "hh_other_species_cond_90d",
+      "label": "Cross-species condition in household (90d)",
+      "importance": 0.0,
+      "std": 0.0
+    },
+    {
+      "feature": "hh_distinct_codes_90d",
+      "label": "Distinct disease codes in household (90d)",
+      "importance": 0.0,
+      "std": 0.0
+    },
+    {
+      "feature": "surv_z_score",
+      "label": "County surveillance z-score",
+      "importance": 0.0,
+      "std": 0.0
+    },
+    {
+      "feature": "surv_vector_anomaly",
+      "label": "County vector anomaly active",
+      "importance": 0.0,
+      "std": 0.0
+    },
+    {
+      "feature": "surv_recent_cases",
+      "label": "County recent case count",
+      "importance": 0.0,
+      "std": 0.0
+    },
+    {
+      "feature": "month",
+      "label": "Month of encounter",
+      "importance": 0.0,
+      "std": 0.0
+    },
+    {
+      "feature": "is_summer",
+      "label": "Encounter in summer",
+      "importance": 0.0,
+      "std": 0.0
+    },
+    {
+      "feature": "is_monsoon",
+      "label": "Encounter in monsoon season",
+      "importance": 0.0,
+      "std": 0.0
+    }
+  ],
+  "per_patient_explanations": [
+    {
+      "household_id": "HH-AZ-PIMA-001",
+      "encounter_id": "85714807-bae1-4ffd-bf80-5166dcff0586",
+      "subject_ref": "Patient/5987f320-d799-446b-821b-29ef986c37f3",
+      "period_start": "2026-04-20",
+      "predicted_proba": 0.9984748731548917,
+      "actual_label": 1,
+      "base_value": -11.298537487900374,
+      "top_contributions": [
+        {
+          "feature": "cc_fever",
+          "label": "CC: fever",
+          "value": 1.0,
+          "shap": 5.656541563506076
+        },
+        {
+          "feature": "cc_zoo_specific",
+          "label": "CC: named zoonotic disease",
+          "value": 1.0,
+          "shap": 4.88915029297006
+        },
+        {
+          "feature": "day_of_year",
+          "label": "Day of year",
+          "value": 110.0,
+          "shap": 2.8506565212695127
+        },
+        {
+          "feature": "v_bp_dia",
+          "label": "Diastolic BP",
+          "value": 81.0,
+          "shap": 1.9631013384481022
+        },
+        {
+          "feature": "co_lat",
+          "label": "County latitude",
+          "value": 32.22,
+          "shap": 1.9603581617849966
+        },
+        {
+          "feature": "v_bp_sys",
+          "label": "Systolic BP",
+          "value": 117.0,
+          "shap": 1.7868447557544087
+        },
+        {
+          "feature": "v_hr",
+          "label": "Heart rate",
+          "value": 75.0,
+          "shap": -1.3913687588888315
+        },
+        {
+          "feature": "v_temp_f",
+          "label": "Temperature (\u00b0F)",
+          "value": 98.2,
+          "shap": -0.7931334771797591
+        }
+      ]
+    },
+    {
+      "household_id": "HH-AZ-PINAL-002",
+      "encounter_id": "9ab5ae6b-b143-4219-9d2f-877d6c5e5882",
+      "subject_ref": "AnimalPatient/13c90547-b7c6-46b1-8a17-dc27cd2fba44",
+      "period_start": "2026-04-26",
+      "predicted_proba": 0.9968759844796895,
+      "actual_label": 1,
+      "base_value": -11.298537487900374,
+      "top_contributions": [
+        {
+          "feature": "cc_zoo_specific",
+          "label": "CC: named zoonotic disease",
+          "value": 1.0,
+          "shap": 8.960148370240885
+        },
+        {
+          "feature": "day_of_year",
+          "label": "Day of year",
+          "value": 116.0,
+          "shap": 4.825965047178121
+        },
+        {
+          "feature": "v_hr",
+          "label": "Heart rate",
+          "value": 102.0,
+          "shap": 2.07791815105477
+        },
+        {
+          "feature": "v_temp_f",
+          "label": "Temperature (\u00b0F)",
+          "value": 101.4,
+          "shap": 0.7078013237818658
+        },
+        {
+          "feature": "hh_n_animals",
+          "label": "Household size (animals)",
+          "value": 1.0,
+          "shap": 0.42225557542270326
+        },
+        {
+          "feature": "age_years",
+          "label": "Age (years)",
+          "value": 6.113620807665982,
+          "shap": 0.2111338661288636
+        },
+        {
+          "feature": "v_bp_dia",
+          "label": "Diastolic BP",
+          "value": 77.0,
+          "shap": -0.20284618193441079
+        },
+        {
+          "feature": "hh_n_humans",
+          "label": "Household size (humans)",
+          "value": 2.0,
+          "shap": 0.15537600116017466
+        }
+      ]
+    },
+    {
+      "household_id": "HH-AZ-MARICOPA-003",
+      "encounter_id": "9b8a21fe-3a0b-4f09-85b2-0d74771b6081",
+      "subject_ref": "Patient/b164feac-e8c9-4edb-9fef-13ad41576195",
+      "period_start": "2025-02-26",
+      "predicted_proba": 9.85458594981237e-05,
+      "actual_label": 0,
+      "base_value": -11.298537487900374,
+      "top_contributions": [
+        {
+          "feature": "day_of_year",
+          "label": "Day of year",
+          "value": 57.0,
+          "shap": 2.263925214849974
+        },
+        {
+          "feature": "v_temp_f",
+          "label": "Temperature (\u00b0F)",
+          "value": 98.2,
+          "shap": -0.5267864860295617
+        },
+        {
+          "feature": "hh_n_animals",
+          "label": "Household size (animals)",
+          "value": 0.0,
+          "shap": 0.40701757221606144
+        },
+        {
+          "feature": "v_bp_dia",
+          "label": "Diastolic BP",
+          "value": 95.0,
+          "shap": 0.36958657010354595
+        },
+        {
+          "feature": "hh_enc_90d",
+          "label": "Household encounters in last 90d",
+          "value": 0.0,
+          "shap": 0.28343599455424906
+        },
+        {
+          "feature": "v_bp_sys",
+          "label": "Systolic BP",
+          "value": 166.0,
+          "shap": -0.2590412216338253
+        },
+        {
+          "feature": "v_glucose",
+          "label": "Glucose",
+          "value": 87.0,
+          "shap": -0.1780703662073479
+        },
+        {
+          "feature": "hh_n_humans",
+          "label": "Household size (humans)",
+          "value": 2.0,
+          "shap": 0.16485530797197392
+        }
+      ]
+    },
+    {
+      "household_id": "HH-AZ-YUMA-004",
+      "encounter_id": "2e60a1ed-db0b-41c6-a832-98a9cd7f9c1f",
+      "subject_ref": "AnimalPatient/d9a789ae-bd12-4536-b8db-566ba8e4b725",
+      "period_start": "2026-05-01",
+      "predicted_proba": 0.9975826935094212,
+      "actual_label": 1,
+      "base_value": -11.298537487900374,
+      "top_contributions": [
+        {
+          "feature": "cc_zoo_specific",
+          "label": "CC: named zoonotic disease",
+          "value": 1.0,
+          "shap": 8.632811662712257
+        },
+        {
+          "feature": "day_of_year",
+          "label": "Day of year",
+          "value": 121.0,
+          "shap": 4.089735623090536
+        },
+        {
+          "feature": "v_hr",
+          "label": "Heart rate",
+          "value": 107.0,
+          "shap": 2.07791815105477
+        },
+        {
+          "feature": "co_lon",
+          "label": "County longitude",
+          "value": -114.62,
+          "shap": 1.1621293508178794
+        },
+        {
+          "feature": "v_temp_f",
+          "label": "Temperature (\u00b0F)",
+          "value": 101.6,
+          "shap": 0.9339863176456437
+        },
+        {
+          "feature": "hh_n_animals",
+          "label": "Household size (animals)",
+          "value": 1.0,
+          "shap": 0.42224528702898134
+        },
+        {
+          "feature": "age_years",
+          "label": "Age (years)",
+          "value": 7.6331279945242985,
+          "shap": 0.26123138326381484
+        },
+        {
+          "feature": "v_bp_dia",
+          "label": "Diastolic BP",
+          "value": 77.0,
+          "shap": -0.168756563620677
+        }
+      ]
+    },
+    {
+      "household_id": "HH-AZ-COCONINO-005",
+      "encounter_id": "c1b6291a-fc42-412a-916d-3372e719e27d",
+      "subject_ref": "Patient/42ac9717-83c9-407e-b3d9-45ca4cc79a13",
+      "period_start": "2026-01-24",
+      "predicted_proba": 0.0002381151570974255,
+      "actual_label": 0,
+      "base_value": -11.298537487900374,
+      "top_contributions": [
+        {
+          "feature": "day_of_year",
+          "label": "Day of year",
+          "value": 24.0,
+          "shap": 1.0192091540865766
+        },
+        {
+          "feature": "v_temp_f",
+          "label": "Temperature (\u00b0F)",
+          "value": 99.4,
+          "shap": 0.9548653840178333
+        },
+        {
+          "feature": "v_bp_dia",
+          "label": "Diastolic BP",
+          "value": 81.0,
+          "shap": 0.6222791852496942
+        },
+        {
+          "feature": "hh_n_animals",
+          "label": "Household size (animals)",
+          "value": 0.0,
+          "shap": 0.42225557542270326
+        },
+        {
+          "feature": "v_glucose",
+          "label": "Glucose",
+          "value": 107.0,
+          "shap": 0.3376340615339673
+        },
+        {
+          "feature": "hh_enc_90d",
+          "label": "Household encounters in last 90d",
+          "value": 0.0,
+          "shap": 0.2822912731246981
+        },
+        {
+          "feature": "v_bp_sys",
+          "label": "Systolic BP",
+          "value": 131.0,
+          "shap": -0.25895883782679135
+        },
+        {
+          "feature": "surv_recent_cases",
+          "label": "County recent case count",
+          "value": 0.0,
+          "shap": -0.18348871942381453
+        }
+      ]
+    },
+    {
+      "household_id": "HH-AZ-APACHE-006",
+      "encounter_id": "b32ac3eb-5ed0-4175-b3d1-6b827f25b4ba",
+      "subject_ref": "AnimalPatient/ed5dde89-34c5-47b1-92b5-06ae34b04132",
+      "period_start": "2026-04-30",
+      "predicted_proba": 0.9996356458820709,
+      "actual_label": 1,
+      "base_value": -11.298537487900374,
+      "top_contributions": [
+        {
+          "feature": "cc_zoo_specific",
+          "label": "CC: named zoonotic disease",
+          "value": 1.0,
+          "shap": 9.062369299413307
+        },
+        {
+          "feature": "day_of_year",
+          "label": "Day of year",
+          "value": 120.0,
+          "shap": 4.021265764902954
+        },
+        {
+          "feature": "co_lon",
+          "label": "County longitude",
+          "value": -109.49,
+          "shap": 2.8604746436108375
+        },
+        {
+          "feature": "v_hr",
+          "label": "Heart rate",
+          "value": 153.0,
+          "shap": 2.0739671559796475
+        },
+        {
+          "feature": "co_is_tribal",
+          "label": "Tribal-land county",
+          "value": 1.0,
+          "shap": 0.8125076904323466
+        },
+        {
+          "feature": "hh_n_animals",
+          "label": "Household size (animals)",
+          "value": 1.0,
+          "shap": 0.435048083170792
+        },
+        {
+          "feature": "hh_n_humans",
+          "label": "Household size (humans)",
+          "value": 2.0,
+          "shap": 0.37462094250253153
+        },
+        {
+          "feature": "v_temp_f",
+          "label": "Temperature (\u00b0F)",
+          "value": 102.2,
+          "shap": 0.2956557194423209
+        }
+      ]
+    },
+    {
+      "household_id": "HH-AZ-COCHISE-007",
+      "encounter_id": "fc67b287-0cc4-4f26-9dff-a8286b360852",
+      "subject_ref": "AnimalPatient/e7521913-0913-4533-b702-7b011b18f883",
+      "period_start": "2026-04-22",
+      "predicted_proba": 0.9941985800519956,
+      "actual_label": 1,
+      "base_value": -11.298537487900374,
+      "top_contributions": [
+        {
+          "feature": "cc_zoo_specific",
+          "label": "CC: named zoonotic disease",
+          "value": 1.0,
+          "shap": 8.323150698287225
+        },
+        {
+          "feature": "day_of_year",
+          "label": "Day of year",
+          "value": 112.0,
+          "shap": 4.0725265514216105
+        },
+        {
+          "feature": "co_lon",
+          "label": "County longitude",
+          "value": -109.75,
+          "shap": 3.5139199555986775
+        },
+        {
+          "feature": "v_hr",
+          "label": "Heart rate",
+          "value": 37.0,
+          "shap": -1.498612403235528
+        },
+        {
+          "feature": "co_lat",
+          "label": "County latitude",
+          "value": 31.88,
+          "shap": 0.8466916510384325
+        },
+        {
+          "feature": "v_temp_f",
+          "label": "Temperature (\u00b0F)",
+          "value": 100.8,
+          "shap": 0.6895153977785241
+        },
+        {
+          "feature": "hh_n_animals",
+          "label": "Household size (animals)",
+          "value": 1.0,
+          "shap": 0.42224528702898134
+        },
+        {
+          "feature": "hh_n_humans",
+          "label": "Household size (humans)",
+          "value": 2.0,
+          "shap": 0.3584681335822113
+        }
+      ]
+    },
+    {
+      "household_id": "HH-AZ-MOHAVE-008",
+      "encounter_id": "59692fa0-b27d-4cc0-af04-51b9c9d0b84a",
+      "subject_ref": "Patient/c30a826e-66ed-4a9c-88f9-867391a2a7b7",
+      "period_start": "2025-03-22",
+      "predicted_proba": 0.0005123824593760073,
+      "actual_label": 0,
+      "base_value": -11.298537487900374,
+      "top_contributions": [
+        {
+          "feature": "day_of_year",
+          "label": "Day of year",
+          "value": 81.0,
+          "shap": 1.8743223225116172
+        },
+        {
+          "feature": "v_temp_f",
+          "label": "Temperature (\u00b0F)",
+          "value": 99.2,
+          "shap": 0.9444517720652278
+        },
+        {
+          "feature": "v_bp_dia",
+          "label": "Diastolic BP",
+          "value": 82.0,
+          "shap": 0.5906903364489323
+        },
+        {
+          "feature": "hh_n_animals",
+          "label": "Household size (animals)",
+          "value": 1.0,
+          "shap": 0.42253969936587293
+        },
+        {
+          "feature": "hh_enc_90d",
+          "label": "Household encounters in last 90d",
+          "value": 1.0,
+          "shap": 0.28067389339507204
+        },
+        {
+          "feature": "v_glucose",
+          "label": "Glucose",
+          "value": 97.0,
+          "shap": -0.14245630312327767
+        },
+        {
+          "feature": "hh_has_bird",
+          "label": "Household has bird",
+          "value": 0.0,
+          "shap": -0.12861441830326753
+        },
+        {
+          "feature": "hh_n_humans",
+          "label": "Household size (humans)",
+          "value": 3.0,
+          "shap": -0.08069455014192103
+        }
+      ]
+    },
+    {
+      "household_id": "HH-AZ-SANTACRUZ-009",
+      "encounter_id": "a2b2ac35-84dd-46ae-9e26-337204311df8",
+      "subject_ref": "AnimalPatient/5042d4a8-f4f0-48b5-bacc-fd8a70333d9b",
+      "period_start": "2026-04-16",
+      "predicted_proba": 0.9997920395623714,
+      "actual_label": 1,
+      "base_value": -11.298537487900374,
+      "top_contributions": [
+        {
+          "feature": "v_temp_f",
+          "label": "Temperature (\u00b0F)",
+          "value": 103.1,
+          "shap": 6.713702985983387
+        },
+        {
+          "feature": "cc_zoo_specific",
+          "label": "CC: named zoonotic disease",
+          "value": 1.0,
+          "shap": 5.025584091322557
+        },
+        {
+          "feature": "cc_fever",
+          "label": "CC: fever",
+          "value": 1.0,
+          "shap": 4.526471241844503
+        },
+        {
+          "feature": "co_lat",
+          "label": "County latitude",
+          "value": 31.34,
+          "shap": 2.7966941122196065
+        },
+        {
+          "feature": "day_of_year",
+          "label": "Day of year",
+          "value": 106.0,
+          "shap": 1.671266735671872
+        },
+        {
+          "feature": "hh_n_animals",
+          "label": "Household size (animals)",
+          "value": 2.0,
+          "shap": -0.3427671448957759
+        },
+        {
+          "feature": "co_epa_eqi",
+          "label": "EPA Environmental Quality Index",
+          "value": 0.221,
+          "shap": -0.2602869947095553
+        },
+        {
+          "feature": "v_bp_dia",
+          "label": "Diastolic BP",
+          "value": 77.0,
+          "shap": -0.1814172401001489
+        }
+      ]
+    },
+    {
+      "household_id": "HH-AZ-MARICOPA-010",
+      "encounter_id": "ef99bee2-8f70-4e45-9d3c-8c2c35873e2f",
+      "subject_ref": "AnimalPatient/5b016824-86b6-4534-bf71-07e8a9b18ea5",
+      "period_start": "2026-04-20",
+      "predicted_proba": 0.9977334772616326,
+      "actual_label": 1,
+      "base_value": -11.298537487900374,
+      "top_contributions": [
+        {
+          "feature": "cc_zoo_specific",
+          "label": "CC: named zoonotic disease",
+          "value": 1.0,
+          "shap": 8.221104760556686
+        },
+        {
+          "feature": "day_of_year",
+          "label": "Day of year",
+          "value": 110.0,
+          "shap": 4.854916303513842
+        },
+        {
+          "feature": "v_hr",
+          "label": "Heart rate",
+          "value": 288.0,
+          "shap": 2.073532107169367
+        },
+        {
+          "feature": "hh_has_bird",
+          "label": "Household has bird",
+          "value": 1.0,
+          "shap": 1.4024760455447551
+        },
+        {
+          "feature": "v_rr",
+          "label": "Respiratory rate",
+          "value": 37.0,
+          "shap": 0.9432243790116693
+        },
+        {
+          "feature": "v_temp_f",
+          "label": "Temperature (\u00b0F)",
+          "value": 98.9,
+          "shap": -0.41716723193164346
+        },
+        {
+          "feature": "hh_n_animals",
+          "label": "Household size (animals)",
+          "value": 1.0,
+          "shap": 0.4070072838223396
+        },
+        {
+          "feature": "v_bp_dia",
+          "label": "Diastolic BP",
+          "value": 77.0,
+          "shap": -0.23255786469019835
+        }
+      ]
+    },
+    {
+      "household_id": "HH-AZ-PINAL-011",
+      "encounter_id": "deccaed8-c18b-41f5-9291-a23b8169468f",
+      "subject_ref": "Patient/beb510fa-eb26-4e0d-ac4e-976ec2ae8f8a",
+      "period_start": "2025-01-11",
+      "predicted_proba": 3.928657506624875e-05,
+      "actual_label": 0,
+      "base_value": -11.298537487900374,
+      "top_contributions": [
+        {
+          "feature": "day_of_year",
+          "label": "Day of year",
+          "value": 11.0,
+          "shap": 0.9431999802941691
+        },
+        {
+          "feature": "hh_n_animals",
+          "label": "Household size (animals)",
+          "value": 0.0,
+          "shap": 0.4070072838223396
+        },
+        {
+          "feature": "v_glucose",
+          "label": "Glucose",
+          "value": 102.0,
+          "shap": 0.32461049577230944
+        },
+        {
+          "feature": "v_temp_f",
+          "label": "Temperature (\u00b0F)",
+          "value": 99.1,
+          "shap": -0.309200780109468
+        },
+        {
+          "feature": "hh_enc_90d",
+          "label": "Household encounters in last 90d",
+          "value": 1.0,
+          "shap": 0.2800465459786842
+        },
+        {
+          "feature": "v_bp_sys",
+          "label": "Systolic BP",
+          "value": 126.0,
+          "shap": -0.24761757555850467
+        },
+        {
+          "feature": "hh_n_humans",
+          "label": "Household size (humans)",
+          "value": 2.0,
+          "shap": 0.16611318643634815
+        },
+        {
+          "feature": "v_bp_dia",
+          "label": "Diastolic BP",
+          "value": 71.0,
+          "shap": -0.11268788457547704
+        }
+      ]
+    },
+    {
+      "household_id": "HH-AZ-NAVAJO-012",
+      "encounter_id": "1bfc725b-dfe3-48c2-8b4c-ff8ae1c29d04",
+      "subject_ref": "AnimalPatient/8e554d4d-da88-4566-a5af-4eb2642c3623",
+      "period_start": "2026-03-21",
+      "predicted_proba": 0.9667148415460766,
+      "actual_label": 1,
+      "base_value": -11.298537487900374,
+      "top_contributions": [
+        {
+          "feature": "co_is_tribal",
+          "label": "Tribal-land county",
+          "value": 1.0,
+          "shap": 3.884749746579448
+        },
+        {
+          "feature": "hh_has_reptile",
+          "label": "Household has reptile",
+          "value": 1.0,
+          "shap": 3.469174319713776
+        },
+        {
+          "feature": "day_of_year",
+          "label": "Day of year",
+          "value": 80.0,
+          "shap": 3.1675345326911577
+        },
+        {
+          "feature": "cc_respiratory",
+          "label": "CC: respiratory",
+          "value": 1.0,
+          "shap": 1.9716865763000175
+        },
+        {
+          "feature": "hh_distinct_subjects_90d",
+          "label": "Distinct household subjects in 90d",
+          "value": 0.0,
+          "shap": 0.7735701791085976
+        },
+        {
+          "feature": "hh_n_animals",
+          "label": "Household size (animals)",
+          "value": 1.0,
+          "shap": 0.6246106963294153
+        },
+        {
+          "feature": "hh_enc_90d",
+          "label": "Household encounters in last 90d",
+          "value": 0.0,
+          "shap": 0.40449124478319315
+        },
+        {
+          "feature": "hh_distinct_cc_90d",
+          "label": "Distinct CC patterns in household 90d",
+          "value": 0.0,
+          "shap": 0.3707917536999777
+        }
+      ]
+    }
+  ]
+}

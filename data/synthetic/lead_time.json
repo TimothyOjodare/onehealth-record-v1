@@ -1,0 +1,133 @@
+{
+  "_metadata": {
+    "n_scenarios": 11,
+    "schema": "0.2.0",
+    "approach": "earliest household encounter with predicted risk >= 0.20, or cross-species root match, or county surveillance z>2sigma, or syndromic household pattern, before traditional confirmation"
+  },
+  "summary": {
+    "n_scenarios": 11,
+    "n_with_positive_lead": 0,
+    "mean_lead_days": 0.0,
+    "median_lead_days": 0.0,
+    "min_lead_days": 0,
+    "max_lead_days": 0,
+    "model_risk_threshold": 0.01,
+    "lookback_days": 90,
+    "baseline_arbonet": {
+      "description": "ArboNET-equivalent: confirmation reporting only",
+      "lead_days": 0
+    }
+  },
+  "per_scenario": [
+    {
+      "household_id": "HH-AZ-PIMA-001",
+      "household_name": "Hernandez",
+      "county": "Pima",
+      "disease": "valley_fever",
+      "confirmation_date": "2026-04-15",
+      "best_signal": null,
+      "best_lead_days": 0,
+      "all_signals": []
+    },
+    {
+      "household_id": "HH-AZ-PINAL-002",
+      "household_name": "Johnson",
+      "county": "Pinal",
+      "disease": "ehrlichiosis",
+      "confirmation_date": "2026-04-21",
+      "best_signal": null,
+      "best_lead_days": 0,
+      "all_signals": []
+    },
+    {
+      "household_id": "HH-AZ-MARICOPA-003",
+      "household_name": "Williams",
+      "county": "Maricopa",
+      "disease": "hantavirus",
+      "confirmation_date": "2026-04-22",
+      "best_signal": null,
+      "best_lead_days": 0,
+      "all_signals": []
+    },
+    {
+      "household_id": "HH-AZ-YUMA-004",
+      "household_name": "Patel",
+      "county": "Yuma",
+      "disease": "leptospirosis",
+      "confirmation_date": "2026-04-26",
+      "best_signal": null,
+      "best_lead_days": 0,
+      "all_signals": []
+    },
+    {
+      "household_id": "HH-AZ-APACHE-006",
+      "household_name": "Begay",
+      "county": "Apache",
+      "disease": "plague",
+      "confirmation_date": "2026-04-25",
+      "best_signal": null,
+      "best_lead_days": 0,
+      "all_signals": []
+    },
+    {
+      "household_id": "HH-AZ-COCHISE-007",
+      "household_name": "Ramirez",
+      "county": "Cochise",
+      "disease": "west_nile",
+      "confirmation_date": "2026-04-17",
+      "best_signal": null,
+      "best_lead_days": 0,
+      "all_signals": []
+    },
+    {
+      "household_id": "HH-AZ-MOHAVE-008",
+      "household_name": "Thompson",
+      "county": "Mohave",
+      "disease": "rabies",
+      "confirmation_date": "2026-04-19",
+      "best_signal": null,
+      "best_lead_days": 0,
+      "all_signals": []
+    },
+    {
+      "household_id": "HH-AZ-SANTACRUZ-009",
+      "household_name": "Becker",
+      "county": "Santa Cruz",
+      "disease": "q_fever",
+      "confirmation_date": "2026-04-11",
+      "best_signal": null,
+      "best_lead_days": 0,
+      "all_signals": []
+    },
+    {
+      "household_id": "HH-AZ-MARICOPA-010",
+      "household_name": "Nguyen",
+      "county": "Maricopa",
+      "disease": "psittacosis",
+      "confirmation_date": "2026-04-15",
+      "best_signal": null,
+      "best_lead_days": 0,
+      "all_signals": []
+    },
+    {
+      "household_id": "HH-AZ-PINAL-011",
+      "household_name": "Sanchez",
+      "county": "Pinal",
+      "disease": "tularemia",
+      "confirmation_date": "2026-04-23",
+      "best_signal": null,
+      "best_lead_days": 0,
+      "all_signals": []
+    },
+    {
+      "household_id": "HH-AZ-NAVAJO-012",
+      "household_name": "Yazzie",
+      "county": "Navajo",
+      "disease": "salmonellosis",
+      "confirmation_date": "2026-04-20",
+      "best_signal": null,
+      "best_lead_days": 0,
+      "all_signals": []
+    }
+  ]
+}

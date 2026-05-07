@@ -1,0 +1,75 @@
+# ============================================================================
+# ONE-HealthRecord — .gitignore
+# ============================================================================
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.cache
+.mypy_cache/
+.ruff_cache/
+venv/
+env/
+.venv/
+.env
+
+# ---- Node / npm (used for slide deck + Word doc generation) ----
+node_modules/
+package-lock.json
+.npm
+*.tgz
+
+# ---- IDE / editor ----
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- Build / output artifacts ----
+dist/
+build/
+*.egg
+.ipynb_checkpoints/
+
+# ---- Slide-build intermediates (generated; large) ----
+docs/slide-*.jpg
+docs/slide-*.png
+docs/_temp_pptx/
+
+# ---- Local server / playwright artifacts (testing) ----
+playwright-report/
+test-results/
+.playwright/
+/tmp/
+
+# ---- Generated bundles that can be reproduced from src/ ----
+# (We KEEP data/synthetic/*.json because reviewers need the dataset to run the
+#  app without re-running the generators. Only ignore truly transient files.)
+*.log
+*.tmp
+
+# ---- OS-specific ----
+*.lnk
+ehthumbs.db
+
+# ---- Sensitive — never commit these ----
+.env.local
+.env.production
+secrets.json
+credentials.json
+*.pem
+*.key

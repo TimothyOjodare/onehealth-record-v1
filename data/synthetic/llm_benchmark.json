@@ -1,0 +1,1463 @@
+{
+  "_metadata": {
+    "is_simulated": true,
+    "simulation_seed": 42,
+    "model": "claude-haiku-4-5-20251001",
+    "to_run_real": "ANTHROPIC_API_KEY=... python src/ml/llm_benchmark.py",
+    "n_dictations": 25,
+    "total_tokens": 10675,
+    "total_latency_seconds": 19.135262134280943,
+    "avg_latency_ms": 765.4104853712377,
+    "estimated_cost_usd": 0.032025,
+    "calibration_basis": "Calibrated to published Haiku 4.5 clinical NER benchmarks"
+  },
+  "llm_overall": {
+    "support": 138,
+    "tp": 134,
+    "fp": 6,
+    "fn": 4,
+    "precision": 0.9571428571428572,
+    "recall": 0.9710144927536232,
+    "f1": 0.9640287769784173
+  },
+  "llm_per_kind": {
+    "vital_sign": {
+      "support": 56,
+      "tp": 56,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "medication": {
+      "support": 17,
+      "tp": 17,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "condition": {
+      "support": 20,
+      "tp": 20,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "symptom": {
+      "support": 45,
+      "tp": 41,
+      "fp": 6,
+      "fn": 4,
+      "precision": 0.8723404255319149,
+      "recall": 0.9111111111111111,
+      "f1": 0.891304347826087
+    }
+  },
+  "rule_based_overall": {
+    "precision": 0.9037037037037037,
+    "recall": 0.8840579710144928,
+    "f1": 0.8937728937728937
+  },
+  "head_to_head": {
+    "rule_based": {
+      "precision": 0.9037037037037037,
+      "recall": 0.8840579710144928,
+      "f1": 0.8937728937728937,
+      "latency_ms": 1.2,
+      "cost_per_dictation_usd": 0.0,
+      "deterministic": true,
+      "auditable": true
+    },
+    "llm_haiku": {
+      "precision": 0.9571428571428572,
+      "recall": 0.9710144927536232,
+      "f1": 0.9640287769784173,
+      "latency_ms": 765.4104853712377,
+      "cost_per_dictation_usd": 0.001281,
+      "deterministic": false,
+      "auditable": "with logging"
+    }
+  },
+  "per_dictation": [
+    {
+      "scenario_id": "GOLD-000",
+      "text_preview": "Sixty-one-year-old female from Tucson, Pima County, with a six-week dry cough an...",
+      "n_predicted": 12,
+      "n_gold": 11,
+      "overall": {
+        "precision": 0.9166666666666666,
+        "recall": 1.0,
+        "f1": 0.9565217391304348,
+        "tp": 11,
+        "fp": 1,
+        "fn": 0,
+        "support": 11
+      },
+      "per_kind": {
+        "vital_sign": {
+          "support": 5,
+          "tp": 5,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "condition": {
+          "support": 2,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "symptom": {
+          "support": 3,
+          "tp": 3,
+          "fp": 1,
+          "fn": 0,
+          "precision": 0.75,
+          "recall": 1.0,
+          "f1": 0.8571428571428571
+        },
+        "medication": {
+          "support": 1,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "latency_seconds": 0.6753598167376561,
+      "tokens_used": 446
+    },
+    {
+      "scenario_id": "GOLD-001",
+      "text_preview": "Fifty-year-old male, lives in Phoenix, presents with two weeks of fever and ches...",
+      "n_predicted": 8,
+      "n_gold": 8,
+      "overall": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 8,
+        "fp": 0,
+        "fn": 0,
+        "support": 8
+      },
+      "per_kind": {
+        "vital_sign": {
+          "support": 4,
+          "tp": 4,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "condition": {
+          "support": 1,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "symptom": {
+          "support": 2,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "medication": {
+          "support": 1,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "latency_seconds": 0.8314421614986985,
+      "tokens_used": 434
+    },
+    {
+      "scenario_id": "GOLD-002",
+      "text_preview": "Forty-five-year-old male, lives in rural Pinal County, presents with fever, head...",
+      "n_predicted": 8,
+      "n_gold": 9,
+      "overall": {
+        "precision": 1.0,
+        "recall": 0.8888888888888888,
+        "f1": 0.9411764705882353,
+        "tp": 8,
+        "fp": 0,
+        "fn": 1,
+        "support": 9
+      },
+      "per_kind": {
+        "vital_sign": {
+          "support": 3,
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "condition": {
+          "support": 2,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "symptom": {
+          "support": 3,
+          "tp": 2,
+          "fp": 0,
+          "fn": 1,
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8
+        },
+        "medication": {
+          "support": 1,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "latency_seconds": 0.9238869128674262,
+      "tokens_used": 416
+    },
+    {
+      "scenario_id": "GOLD-003",
+      "text_preview": "Fifty-two-year-old female, hiking enthusiast, presents with abrupt fever and sev...",
+      "n_predicted": 8,
+      "n_gold": 7,
+      "overall": {
+        "precision": 0.875,
+        "recall": 1.0,
+        "f1": 0.9333333333333333,
+        "tp": 7,
+        "fp": 1,
+        "fn": 0,
+        "support": 7
+      },
+      "per_kind": {
+        "vital_sign": {
+          "support": 2,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "condition": {
+          "support": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "symptom": {
+          "support": 4,
+          "tp": 4,
+          "fp": 1,
+          "fn": 0,
+          "precision": 0.8,
+          "recall": 1.0,
+          "f1": 0.888888888888889
+        },
+        "medication": {
+          "support": 1,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "latency_seconds": 0.6488706118339272,
+      "tokens_used": 497
+    },
+    {
+      "scenario_id": "GOLD-004",
+      "text_preview": "Sixty-five-year-old female, lives in rural Maricopa County, presents with fever,...",
+      "n_predicted": 10,
+      "n_gold": 9,
+      "overall": {
+        "precision": 0.9,
+        "recall": 1.0,
+        "f1": 0.9473684210526316,
+        "tp": 9,
+        "fp": 1,
+        "fn": 0,
+        "support": 9
+      },
+      "per_kind": {
+        "vital_sign": {
+          "support": 5,
+          "tp": 5,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "condition": {
+          "support": 1,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "symptom": {
+          "support": 3,
+          "tp": 3,
+          "fp": 1,
+          "fn": 0,
+          "precision": 0.75,
+          "recall": 1.0,
+          "f1": 0.8571428571428571
+        },
+        "medication": {
+          "support": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "latency_seconds": 0.6400931100442904,
+      "tokens_used": 497
+    },
+    {
+      "scenario_id": "GOLD-005",
+      "text_preview": "Thirty-eight-year-old male, lives in Yuma, presents with fever, severe muscle pa...",
+      "n_predicted": 7,
+      "n_gold": 7,
+      "overall": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 7,
+        "fp": 0,
+        "fn": 0,
+        "support": 7
+      },
+      "per_kind": {
+        "vital_sign": {
+          "support": 2,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "condition": {
+          "support": 2,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "symptom": {
+          "support": 2,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "medication": {
+          "support": 1,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "latency_seconds": 0.777682008692172,
+      "tokens_used": 410
+    },
+    {
+      "scenario_id": "GOLD-006",
+      "text_preview": "Forty-year-old female, lives near St. Johns in Apache County, presents with abru...",
+      "n_predicted": 7,
+      "n_gold": 7,
+      "overall": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 7,
+        "fp": 0,
+        "fn": 0,
+        "support": 7
+      },
+      "per_kind": {
+        "vital_sign": {
+          "support": 3,
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "condition": {
+          "support": 1,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "symptom": {
+          "support": 2,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "medication": {
+          "support": 1,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "latency_seconds": 0.9314323058542979,
+      "tokens_used": 381
+    },
+    {
+      "scenario_id": "GOLD-007",
+      "text_preview": "Sixty-two-year-old male, lives in Cochise County, presents with severe headache,...",
+      "n_predicted": 7,
+      "n_gold": 8,
+      "overall": {
+        "precision": 1.0,
+        "recall": 0.875,
+        "f1": 0.9333333333333333,
+        "tp": 7,
+        "fp": 0,
+        "fn": 1,
+        "support": 8
+      },
+      "per_kind": {
+        "vital_sign": {
+          "support": 3,
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "condition": {
+          "support": 2,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "symptom": {
+          "support": 3,
+          "tp": 2,
+          "fp": 0,
+          "fn": 1,
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8
+        },
+        "medication": {
+          "support": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "latency_seconds": 0.7396473049991001,
+      "tokens_used": 455
+    },
+    {
+      "scenario_id": "GOLD-008",
+      "text_preview": "Eight-year-old male, presents with a small puncture wound on the left hand susta...",
+      "n_predicted": 5,
+      "n_gold": 5,
+      "overall": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 5,
+        "fp": 0,
+        "fn": 0,
+        "support": 5
+      },
+      "per_kind": {
+        "vital_sign": {
+          "support": 2,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "condition": {
+          "support": 3,
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "symptom": {
+          "support": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "medication": {
+          "support": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "latency_seconds": 0.680129624333904,
+      "tokens_used": 368
+    },
+    {
+      "scenario_id": "GOLD-009",
+      "text_preview": "Forty-three-year-old male, runs a goat dairy in Santa Cruz County, presents with...",
+      "n_predicted": 8,
+      "n_gold": 7,
+      "overall": {
+        "precision": 0.875,
+        "recall": 1.0,
+        "f1": 0.9333333333333333,
+        "tp": 7,
+        "fp": 1,
+        "fn": 0,
+        "support": 7
+      },
+      "per_kind": {
+        "vital_sign": {
+          "support": 2,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "condition": {
+          "support": 1,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "symptom": {
+          "support": 3,
+          "tp": 3,
+          "fp": 1,
+          "fn": 0,
+          "precision": 0.75,
+          "recall": 1.0,
+          "f1": 0.8571428571428571
+        },
+        "medication": {
+          "support": 1,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "latency_seconds": 0.9023428619293611,
+      "tokens_used": 373
+    },
+    {
+      "scenario_id": "GOLD-010",
+      "text_preview": "Twenty-nine-year-old female, lives in Phoenix, presents with five days of high f...",
+      "n_predicted": 8,
+      "n_gold": 7,
+      "overall": {
+        "precision": 0.875,
+        "recall": 1.0,
+        "f1": 0.9333333333333333,
+        "tp": 7,
+        "fp": 1,
+        "fn": 0,
+        "support": 7
+      },
+      "per_kind": {
+        "vital_sign": {
+          "support": 3,
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "condition": {
+          "support": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "symptom": {
+          "support": 3,
+          "tp": 3,
+          "fp": 1,
+          "fn": 0,
+          "precision": 0.75,
+          "recall": 1.0,
+          "f1": 0.8571428571428571
+        },
+        "medication": {
+          "support": 1,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "latency_seconds": 0.8282507128994827,
+      "tokens_used": 498
+    },
+    {
+      "scenario_id": "GOLD-011",
+      "text_preview": "Fifty-five-year-old male, hunter, presents with fever and a painful axillary lym...",
+      "n_predicted": 4,
+      "n_gold": 4,
+      "overall": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 4,
+        "fp": 0,
+        "fn": 0,
+        "support": 4
+      },
+      "per_kind": {
+        "vital_sign": {
+          "support": 2,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "condition": {
+          "support": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "symptom": {
+          "support": 1,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "medication": {
+          "support": 1,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "latency_seconds": 0.6205223899902627,
+      "tokens_used": 457
+    },
+    {
+      "scenario_id": "GOLD-012",
+      "text_preview": "Five-year-old female with three days of severe diarrhea, fever, and dehydration....",
+      "n_predicted": 5,
+      "n_gold": 5,
+      "overall": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 5,
+        "fp": 0,
+        "fn": 0,
+        "support": 5
+      },
+      "per_kind": {
+        "vital_sign": {
+          "support": 3,
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "condition": {
+          "support": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "symptom": {
+          "support": 2,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "medication": {
+          "support": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "latency_seconds": 0.666464253543673,
+      "tokens_used": 415
+    },
+    {
+      "scenario_id": "GOLD-013",
+      "text_preview": "Thirty-year-old female annual physical. No fever, no cough, no chest pain. Denie...",
+      "n_predicted": 7,
+      "n_gold": 7,
+      "overall": {
+        "precision": 0.8571428571428571,
+        "recall": 0.8571428571428571,
+        "f1": 0.8571428571428571,
+        "tp": 6,
+        "fp": 1,
+        "fn": 1,
+        "support": 7
+      },
+      "per_kind": {
+        "vital_sign": {
+          "support": 2,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "condition": {
+          "support": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "symptom": {
+          "support": 5,
+          "tp": 4,
+          "fp": 1,
+          "fn": 1,
+          "precision": 0.8,
+          "recall": 0.8,
+          "f1": 0.8000000000000002
+        },
+        "medication": {
+          "support": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "latency_seconds": 0.7413214429613971,
+      "tokens_used": 423
+    },
+    {
+      "scenario_id": "GOLD-014",
+      "text_preview": "Sixty-year-old male follow-up for hypertension. No new symptoms. Denies dyspnea ...",
+      "n_predicted": 5,
+      "n_gold": 5,
+      "overall": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 5,
+        "fp": 0,
+        "fn": 0,
+        "support": 5
+      },
+      "per_kind": {
+        "vital_sign": {
+          "support": 2,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "condition": {
+          "support": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "symptom": {
+          "support": 2,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "medication": {
+          "support": 1,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "latency_seconds": 0.6458073987446098,
+      "tokens_used": 436
+    },
+    {
+      "scenario_id": "GOLD-015",
+      "text_preview": "Forty-five-year-old male with two weeks of cough. Possibly community-acquired pn...",
+      "n_predicted": 6,
+      "n_gold": 6,
+      "overall": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 6,
+        "fp": 0,
+        "fn": 0,
+        "support": 6
+      },
+      "per_kind": {
+        "vital_sign": {
+          "support": 3,
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "condition": {
+          "support": 1,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "symptom": {
+          "support": 1,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "medication": {
+          "support": 1,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "latency_seconds": 0.685499545777846,
+      "tokens_used": 432
+    },
+    {
+      "scenario_id": "GOLD-016",
+      "text_preview": "Twenty-five-year-old female. Likely viral URI versus seasonal allergies. Subject...",
+      "n_predicted": 2,
+      "n_gold": 2,
+      "overall": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "support": 2
+      },
+      "per_kind": {
+        "vital_sign": {
+          "support": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "condition": {
+          "support": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "symptom": {
+          "support": 2,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "medication": {
+          "support": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "latency_seconds": 0.9455315722710265,
+      "tokens_used": 495
+    },
+    {
+      "scenario_id": "GOLD-017",
+      "text_preview": "Fifty-eight-year-old male with end-stage renal disease, hypertension, and type 2...",
+      "n_predicted": 8,
+      "n_gold": 8,
+      "overall": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 8,
+        "fp": 0,
+        "fn": 0,
+        "support": 8
+      },
+      "per_kind": {
+        "vital_sign": {
+          "support": 4,
+          "tp": 4,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "condition": {
+          "support": 1,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "symptom": {
+          "support": 1,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "medication": {
+          "support": 2,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "latency_seconds": 0.9168677718777631,
+      "tokens_used": 373
+    },
+    {
+      "scenario_id": "GOLD-018",
+      "text_preview": "Patient Charlie, three-year-old male neutered Beagle, presented for two weeks of...",
+      "n_predicted": 4,
+      "n_gold": 4,
+      "overall": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 4,
+        "fp": 0,
+        "fn": 0,
+        "support": 4
+      },
+      "per_kind": {
+        "vital_sign": {
+          "support": 1,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "condition": {
+          "support": 1,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "symptom": {
+          "support": 1,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "medication": {
+          "support": 1,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "latency_seconds": 0.7930881473942369,
+      "tokens_used": 469
+    },
+    {
+      "scenario_id": "GOLD-019",
+      "text_preview": "Patient Daisy, six-year-old female spayed Labrador Retriever, presented for thre...",
+      "n_predicted": 2,
+      "n_gold": 2,
+      "overall": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "support": 2
+      },
+      "per_kind": {
+        "vital_sign": {
+          "support": 1,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "condition": {
+          "support": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "symptom": {
+          "support": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "medication": {
+          "support": 1,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "latency_seconds": 0.6521689999174818,
+      "tokens_used": 369
+    },
+    {
+      "scenario_id": "GOLD-020",
+      "text_preview": "Patient Buddy, four-year-old male intact Mixed Breed, presented for vomiting and...",
+      "n_predicted": 2,
+      "n_gold": 2,
+      "overall": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "support": 2
+      },
+      "per_kind": {
+        "vital_sign": {
+          "support": 1,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "condition": {
+          "support": 1,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "symptom": {
+          "support": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "medication": {
+          "support": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "latency_seconds": 0.7078904224755468,
+      "tokens_used": 370
+    },
+    {
+      "scenario_id": "GOLD-021",
+      "text_preview": "Patient Star, ten-year-old gelding Quarter Horse, presented for two days of prog...",
+      "n_predicted": 2,
+      "n_gold": 2,
+      "overall": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "support": 2
+      },
+      "per_kind": {
+        "vital_sign": {
+          "support": 1,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "condition": {
+          "support": 1,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "symptom": {
+          "support": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "medication": {
+          "support": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "latency_seconds": 0.873040684655005,
+      "tokens_used": 464
+    },
+    {
+      "scenario_id": "GOLD-022",
+      "text_preview": "Patient Whiskers, three-year-old female spayed Domestic Shorthair, presented for...",
+      "n_predicted": 3,
+      "n_gold": 4,
+      "overall": {
+        "precision": 1.0,
+        "recall": 0.75,
+        "f1": 0.8571428571428571,
+        "tp": 3,
+        "fp": 0,
+        "fn": 1,
+        "support": 4
+      },
+      "per_kind": {
+        "vital_sign": {
+          "support": 1,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "condition": {
+          "support": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "symptom": {
+          "support": 2,
+          "tp": 1,
+          "fp": 0,
+          "fn": 1,
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6666666666666666
+        },
+        "medication": {
+          "support": 1,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "latency_seconds": 0.744303043623829,
+      "tokens_used": 405
+    },
+    {
+      "scenario_id": "GOLD-023",
+      "text_preview": "Patient Pepper, four-year-old female Nubian goat, presented for recent late-term...",
+      "n_predicted": 1,
+      "n_gold": 1,
+      "overall": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "support": 1
+      },
+      "per_kind": {
+        "vital_sign": {
+          "support": 1,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "condition": {
+          "support": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "symptom": {
+          "support": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "medication": {
+          "support": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "latency_seconds": 0.9257855601169139,
+      "tokens_used": 423
+    },
+    {
+      "scenario_id": "GOLD-024",
+      "text_preview": "Patient Sunny, six-year-old male African Grey, presented for two weeks of lethar...",
+      "n_predicted": 1,
+      "n_gold": 1,
+      "overall": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "support": 1
+      },
+      "per_kind": {
+        "vital_sign": {
+          "support": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "condition": {
+          "support": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "symptom": {
+          "support": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "medication": {
+          "support": 1,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "latency_seconds": 0.637833469241035,
+      "tokens_used": 369
+    }
+  ]
+}
