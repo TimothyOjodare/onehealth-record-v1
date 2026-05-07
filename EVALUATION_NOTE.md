@@ -13,7 +13,7 @@ of the project's intellectual journey, not as a deliverable for evaluation.
 
 The graded submission is in a **separate repository**:
 
-> **`notifi-az`** ([link](https://github.com/timothyojodare/notifi-az))
+> **`notifi-az`** ([link](https://github.com/timothyojodare/notifi-arizona))
 
 That repository contains NotifiAZ — a focused single-thesis system for reportable
 disease reporting that emerged from this prototype after scope reduction.
@@ -41,5 +41,5 @@ Three reasons:
 
 ## If you only have time for one repository
 
-Visit **`notifi-az`** ([link](https://github.com/timothyojodare/notifi-az)). That is
+Visit **`notifi-az`** ([link](https://github.com/timothyojodare/notifi-arizona)). That is
 the grading submission. This repository is supplementary.
